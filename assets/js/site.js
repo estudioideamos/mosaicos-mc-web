@@ -2,6 +2,17 @@ window.addEventListener("load", () => {
   document.body.classList.add("is-ready");
 });
 
+const siteHeader = document.querySelector(".site-header");
+
+if (siteHeader) {
+  const syncHeaderState = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  syncHeaderState();
+  window.addEventListener("scroll", syncHeaderState, { passive: true });
+}
+
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
 

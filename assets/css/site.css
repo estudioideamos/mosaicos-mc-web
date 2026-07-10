@@ -122,6 +122,7 @@ body.is-ready .shell {
   backdrop-filter: blur(16px);
   background: rgba(252, 250, 247, 0.82);
   border-bottom: 1px solid rgba(48, 41, 38, 0.08);
+  transition: background-color 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .site-header__inner,
@@ -140,6 +141,12 @@ body.is-ready .shell {
   justify-content: space-between;
   gap: 24px;
   animation: fadeUp 700ms ease both;
+}
+
+.site-header.is-scrolled {
+  background: rgba(252, 250, 247, 0.96);
+  border-bottom-color: rgba(48, 41, 38, 0.12);
+  box-shadow: 0 10px 30px rgba(23, 19, 17, 0.08);
 }
 
 .brand {
@@ -195,6 +202,12 @@ body.is-ready .shell {
   gap: 8px;
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .site-nav__link {
   padding: 10px 14px;
   border-radius: 999px;
@@ -206,6 +219,38 @@ body.is-ready .shell {
 .site-nav__link[aria-current="page"] {
   background: rgba(48, 41, 38, 0.08);
   color: var(--graphite-900);
+}
+
+.site-nav__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(35, 121, 72, 0.32);
+  background: rgba(255, 253, 250, 0.92);
+  color: #2d6e4a;
+  font-weight: 800;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.site-nav__whatsapp:hover {
+  transform: translateY(-2px);
+  background: rgba(45, 110, 74, 0.08);
+  border-color: rgba(35, 121, 72, 0.48);
+}
+
+.site-nav__whatsapp-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.site-nav__whatsapp-text {
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
 }
 
 .menu-toggle {
@@ -1476,9 +1521,8 @@ body.is-ready .shell {
 .footer__brand {
   position: relative;
   z-index: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
   margin-bottom: 18px;
 }
 
@@ -1515,6 +1559,7 @@ body.is-ready .shell {
   color: rgba(255, 255, 255, 0.92);
   transform-origin: left center;
   animation: footerWordmarkFloat 9s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 .footer__subline {
@@ -1878,6 +1923,20 @@ body.is-ready .shell {
     align-items: stretch;
   }
 
+  .site-header__actions {
+    gap: 10px;
+  }
+
+  .site-nav__whatsapp {
+    min-width: 46px;
+    min-height: 46px;
+    padding: 0 14px;
+  }
+
+  .site-nav__whatsapp-text {
+    display: none;
+  }
+
   .site-nav.is-open {
     display: flex;
   }
@@ -1957,7 +2016,6 @@ body.is-ready .shell {
   }
 
   .footer__brand {
-    flex-direction: column;
     align-items: start;
   }
 
