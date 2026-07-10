@@ -151,6 +151,12 @@ body.is-ready .shell {
   font-weight: 800;
 }
 
+.brand__logo {
+  display: block;
+  width: auto;
+  height: 56px;
+}
+
 .brand__mark {
   width: 48px;
   height: 48px;
@@ -1128,6 +1134,10 @@ body.is-ready .shell {
   .menu-toggle {
     display: inline-grid;
     place-items: center;
+  }
+
+  .brand__logo {
+    height: 46px;
   }
 
   .site-nav {
