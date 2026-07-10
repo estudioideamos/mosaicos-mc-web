@@ -349,52 +349,56 @@
       )
       .join("")}</div>`;
 
-  const renderLineCards = () =>
-    `<div class="line-grid">${lines
-      .map((line) => {
-        const featured = line.products[0];
-        return `
-          <article class="line-card reveal is-visible">
-            <img src="${line.heroImage}" alt="${line.name}" />
-            <div class="line-card__body">
-              <span class="kicker">linea de producto</span>
-              <h3>${line.name}</h3>
-              <p>${line.description}</p>
-              <div class="product-meta">
-                ${line.badges.map((badge) => `<span>${badge}</span>`).join("")}
-                <span>${line.products.length} productos</span>
+    const renderLineCards = () =>
+      `<div class="line-grid">${lines
+        .map((line) => {
+          const featured = line.products[0];
+          return `
+            <article class="line-card reveal is-visible">
+              <a class="line-card__media" href="${lineHref(line.slug)}" aria-label="Ver coleccion ${line.name}">
+                <img src="${line.heroImage}" alt="${line.name}" />
+              </a>
+              <div class="line-card__body">
+                <span class="kicker">linea de producto</span>
+                <h3><a class="line-card__title-link" href="${lineHref(line.slug)}">${line.name}</a></h3>
+                <p>${line.description}</p>
+                <div class="product-meta">
+                  ${line.badges.map((badge) => `<span>${badge}</span>`).join("")}
+                  <span>${line.products.length} productos</span>
+                </div>
+                <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
+                ${
+                  featured
+                    ? `<a class="line-card__secondary" href="${productHref(line.slug, featured.slug)}">Producto destacado: ${featured.name}</a>`
+                    : ""
+                }
               </div>
-              <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
-              ${
-                featured
-                  ? `<a class="line-card__secondary" href="${productHref(line.slug, featured.slug)}">Producto destacado: ${featured.name}</a>`
-                  : ""
-              }
-            </div>
-          </article>
-        `;
-      })
-      .join("")}</div>`;
+            </article>
+          `;
+        })
+        .join("")}</div>`;
 
-  const renderProductCards = (line) =>
-    `<div class="product-grid">${line.products
-      .map(
-        (product) => `
-          <article class="product-card reveal is-visible">
-            <img src="${product.image}" alt="${product.name}" />
-            <div class="product-card__body">
-              <span class="kicker">${product.kicker}</span>
-              <h3>${product.name}</h3>
-              <p>${product.cardSummary}</p>
-              <div class="product-meta">
-                ${product.meta.map((item) => `<span>${item}</span>`).join("")}
+    const renderProductCards = (line) =>
+      `<div class="product-grid">${line.products
+        .map(
+          (product) => `
+            <article class="product-card reveal is-visible">
+              <a class="product-card__media" href="${productHref(line.slug, product.slug)}" aria-label="Ver detalle ${product.name}">
+                <img src="${product.image}" alt="${product.name}" />
+              </a>
+              <div class="product-card__body">
+                <span class="kicker">${product.kicker}</span>
+                <h3><a class="product-card__title-link" href="${productHref(line.slug, product.slug)}">${product.name}</a></h3>
+                <p>${product.cardSummary}</p>
+                <div class="product-meta">
+                  ${product.meta.map((item) => `<span>${item}</span>`).join("")}
+                </div>
+                <a class="link-arrow" href="${productHref(line.slug, product.slug)}">Ver detalle</a>
               </div>
-              <a class="link-arrow" href="${productHref(line.slug, product.slug)}">Ver detalle</a>
-            </div>
-          </article>
-        `
-      )
-      .join("")}</div>`;
+            </article>
+          `
+        )
+        .join("")}</div>`;
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
@@ -517,23 +521,25 @@
               </div>
               <div class="product-grid">
                 ${relatedProducts
-                  .map(
-                    (related) => `
-                      <article class="product-card reveal is-visible">
-                        <img src="${related.image}" alt="${related.name}" />
-                        <div class="product-card__body">
-                          <span class="kicker">${related.kicker}</span>
-                          <h3>${related.name}</h3>
-                          <p>${related.cardSummary}</p>
-                          <div class="product-meta">
-                            ${related.meta.map((item) => `<span>${item}</span>`).join("")}
+                    .map(
+                      (related) => `
+                        <article class="product-card reveal is-visible">
+                          <a class="product-card__media" href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
+                            <img src="${related.image}" alt="${related.name}" />
+                          </a>
+                          <div class="product-card__body">
+                            <span class="kicker">${related.kicker}</span>
+                            <h3><a class="product-card__title-link" href="${productHref(line.slug, related.slug)}">${related.name}</a></h3>
+                            <p>${related.cardSummary}</p>
+                            <div class="product-meta">
+                              ${related.meta.map((item) => `<span>${item}</span>`).join("")}
+                            </div>
+                            <a class="link-arrow" href="${productHref(line.slug, related.slug)}">Ver detalle</a>
                           </div>
-                          <a class="link-arrow" href="${productHref(line.slug, related.slug)}">Ver detalle</a>
-                        </div>
-                      </article>
-                    `
-                  )
-                  .join("")}
+                        </article>
+                      `
+                    )
+                    .join("")}
               </div>
             `
             : ""
