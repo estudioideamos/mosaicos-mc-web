@@ -41,3 +41,79 @@ if ("IntersectionObserver" in window && revealItems.length > 0) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+const homeSlider = document.querySelector("[data-home-slider]");
+
+if (homeSlider) {
+  const slides = Array.from(homeSlider.querySelectorAll("[data-slide]"));
+  const prevButton = homeSlider.querySelector("[data-slide-prev]");
+  const nextButton = homeSlider.querySelector("[data-slide-next]");
+  const dotsContainer = homeSlider.querySelector("[data-slide-dots]");
+  let currentIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+  let autoplayId = 0;
+
+  if (currentIndex < 0) {
+    currentIndex = 0;
+  }
+
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "home-slider__dot";
+    dot.setAttribute("aria-label", `Ir al slide ${index + 1}`);
+    dot.addEventListener("click", () => {
+      setSlide(index);
+      restartAutoplay();
+    });
+    dotsContainer?.appendChild(dot);
+    return dot;
+  });
+
+  const setSlide = (index) => {
+    currentIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === currentIndex);
+    });
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === currentIndex);
+    });
+  };
+
+  const nextSlide = () => setSlide(currentIndex + 1);
+  const prevSlide = () => setSlide(currentIndex - 1);
+
+  const restartAutoplay = () => {
+    window.clearInterval(autoplayId);
+    autoplayId = window.setInterval(nextSlide, 5500);
+  };
+
+  prevButton?.addEventListener("click", () => {
+    prevSlide();
+    restartAutoplay();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    nextSlide();
+    restartAutoplay();
+  });
+
+  homeSlider.addEventListener("mouseenter", () => {
+    window.clearInterval(autoplayId);
+  });
+
+  homeSlider.addEventListener("mouseleave", restartAutoplay);
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      prevSlide();
+      restartAutoplay();
+    }
+    if (event.key === "ArrowRight") {
+      nextSlide();
+      restartAutoplay();
+    }
+  });
+
+  setSlide(currentIndex);
+  restartAutoplay();
+}
