@@ -1408,8 +1408,27 @@ body.is-ready .shell {
   border-radius: 50%;
   background: rgba(23, 19, 17, 0.92);
   color: var(--white);
-  font-size: 1.2rem;
   box-shadow: var(--shadow-card);
+}
+
+.contact-icon img {
+  display: block;
+  width: var(--contact-icon-size, 20px);
+  height: var(--contact-icon-size, 20px);
+}
+
+.contact-icon--pin {
+  --contact-icon-size: 18px;
+}
+
+.contact-icon--clock,
+.contact-icon--phone,
+.contact-icon--mail {
+  --contact-icon-size: 19px;
+}
+
+.contact-icon--mobile {
+  --contact-icon-size: 18px;
 }
 
 .contact-item__body {
@@ -1462,6 +1481,19 @@ body.is-ready .shell {
   color: var(--white);
   font-weight: 700;
   transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.contact-social__icon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-social__icon img {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 .contact-social__link:hover {
