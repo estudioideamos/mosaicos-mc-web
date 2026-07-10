@@ -244,8 +244,32 @@ body.is-ready .shell {
 }
 
 .site-nav__whatsapp-icon {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
   font-size: 0.95rem;
   line-height: 1;
+}
+
+.site-nav__whatsapp-icon::before,
+.whatsapp-float__icon::before,
+.footer__social-link[href*="wa.me"] .footer__social-mark::before {
+  content: "";
+  display: block;
+  width: var(--whatsapp-icon-size, 18px);
+  height: var(--whatsapp-icon-size, 18px);
+  background-color: currentColor;
+  -webkit-mask: url("../img/whatsapp.svg") center / contain no-repeat;
+  mask: url("../img/whatsapp.svg") center / contain no-repeat;
+}
+
+.site-nav__whatsapp-icon,
+.whatsapp-float__icon,
+.footer__social-link[href*="wa.me"] .footer__social-mark {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
 }
 
 .site-nav__whatsapp-text {
@@ -1642,6 +1666,10 @@ body.is-ready .shell {
   letter-spacing: 0.06em;
 }
 
+.footer__social-link[href*="wa.me"] .footer__social-mark {
+  --whatsapp-icon-size: 13px;
+}
+
 .footer__social-text {
   font-size: 0.88rem;
   font-weight: 700;
@@ -1677,7 +1705,8 @@ body.is-ready .shell {
   height: 32px;
   border-radius: 50%;
   background: rgba(255,255,255,0.16);
-  font-size: 1rem;
+  color: var(--white);
+  --whatsapp-icon-size: 18px;
 }
 
 .whatsapp-float__text {
