@@ -264,9 +264,35 @@ body.is-ready .shell {
   mask: url("../img/whatsapp.svg") center / contain no-repeat;
 }
 
+.footer__social-link[href*="instagram.com"] .footer__social-mark::before,
+.footer__social-link[href^="mailto:"] .footer__social-mark::before {
+  content: "";
+  display: block;
+  width: var(--footer-social-icon-size, 13px);
+  height: var(--footer-social-icon-size, 13px);
+  background-color: currentColor;
+}
+
+.footer__social-link[href*="instagram.com"] .footer__social-mark::before {
+  -webkit-mask: url("../img/contact-instagram.svg") center / contain no-repeat;
+  mask: url("../img/contact-instagram.svg") center / contain no-repeat;
+}
+
+.footer__social-link[href^="mailto:"] .footer__social-mark::before {
+  -webkit-mask: url("../img/contact-mail.svg") center / contain no-repeat;
+  mask: url("../img/contact-mail.svg") center / contain no-repeat;
+}
+
 .site-nav__whatsapp-icon,
 .whatsapp-float__icon,
 .footer__social-link[href*="wa.me"] .footer__social-mark {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+}
+
+.footer__social-link[href*="instagram.com"] .footer__social-mark,
+.footer__social-link[href^="mailto:"] .footer__social-mark {
   font-size: 0;
   line-height: 0;
   letter-spacing: 0;
@@ -1815,22 +1841,28 @@ body.is-ready .shell {
 .footer__social-mark {
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.08);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.06em;
 }
 
+.footer__social-link[href*="instagram.com"] .footer__social-mark,
+.footer__social-link[href^="mailto:"] .footer__social-mark,
 .footer__social-link[href*="wa.me"] .footer__social-mark {
+  --footer-social-icon-size: 13px;
   --whatsapp-icon-size: 13px;
+  color: rgba(255, 253, 250, 0.95);
 }
 
 .footer__social-text {
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .whatsapp-float {
