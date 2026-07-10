@@ -997,20 +997,21 @@ body.is-ready .shell {
 }
 
 .page-hero {
-  margin-top: 34px;
-  padding: 40px 0 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 .page-hero__inner {
-  padding: 46px;
-  border-radius: var(--radius-xl);
+  width: 100%;
+  padding: 56px max(24px, calc((100vw - 1180px) / 2 + 20px));
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   background:
     linear-gradient(140deg, rgba(23, 19, 17, 0.18), rgba(23, 19, 17, 0.52)),
     var(--hero-image, url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1600&q=80")) center/cover;
   color: var(--white);
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 
 .page-hero h1 {
