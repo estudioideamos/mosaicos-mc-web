@@ -12,6 +12,7 @@
   const productsRoot = `${basePrefix}productos/`;
   const contactHref = `${basePrefix}contacto/`;
   const downloadsHref = `${basePrefix}descargas/`;
+  const whatsappNumber = "5491138789057";
 
   const lineHref = (lineSlug) => `${productsRoot}${lineSlug}/`;
   const productHref = (lineSlug, productSlug) => `${productsRoot}${lineSlug}/${productSlug}/`;
@@ -289,9 +290,9 @@
       name: "Para decks y piletas",
       kicker: "linea atermicos",
       cardSummary:
-        "Sistema atermico pensado para decks y piletas, con resoluciones de borde y solarium para acompañar el conjunto completo.",
+        "Sistema atermico pensado para decks y piletas, con resoluciones de borde y solarium para acompanar el conjunto completo.",
       heroSummary:
-        "Producto desarrollado para zonas de piscina y expansiones exteriores, con variantes de borde y paños de solarium.",
+        "Producto desarrollado para zonas de piscina y expansiones exteriores, con variantes de borde y panos de solarium.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
       detailImage:
@@ -399,6 +400,278 @@
           `
         )
         .join("")}</div>`;
+
+  const getLineApplications = (line) => {
+    switch (line.slug) {
+      case "exterior-pulida":
+        return "veredas, accesos, galerias y expansiones exteriores con circulacion intensa";
+      case "mosaicos":
+        return "interiores, locales, halls y proyectos donde importa la resistencia junto a una terminacion cuidada";
+      case "atermicos":
+        return "bordes de pileta, decks, solariums y expansiones donde el confort termico es determinante";
+      case "rusticos":
+        return "interiores y exteriores con lenguaje mineral, textura protagonista y lectura mas artesanal";
+      case "bloques-de-hormigon":
+        return "veredas, circulaciones, accesos vehiculares y superficies urbanas de alta exigencia";
+      default:
+        return "proyectos residenciales y comerciales que buscan durabilidad y una presencia material bien resuelta";
+    }
+  };
+
+  const getInstallationGuidance = (line) => {
+    switch (line.slug) {
+      case "exterior-pulida":
+        return "Requiere una base firme, nivelacion correcta y juntas bien controladas para sostener una lectura pareja en veredas y expansiones exteriores.";
+      case "mosaicos":
+        return "Conviene definir el sistema de colocacion segun el soporte, contemplando nivelacion, juntas y terminacion final de acuerdo con el tipo de mosaico.";
+      case "atermicos":
+        return "La colocacion debe contemplar pendiente, drenaje y definicion de bordes para resolver correctamente solarium, nariz y encuentros con la pileta.";
+      case "rusticos":
+        return "Se recomienda revisar juntas, absorcion y terminacion superficial para conservar el caracter rustico sin perder estabilidad de uso.";
+      case "bloques-de-hormigon":
+        return "La base y la compactacion son claves para asegurar estabilidad, resistencia al uso y una modulacion consistente en obra.";
+      default:
+        return "Nuestro equipo puede orientarte en colocacion, juntas, base de apoyo y terminacion segun el uso previsto.";
+    }
+  };
+
+  const getMaintenanceGuidance = (line) => {
+    switch (line.slug) {
+      case "exterior-pulida":
+        return "Con limpieza periodica y el tratamiento final adecuado, mantiene una presencia uniforme y muy buena respuesta al uso exterior.";
+      case "mosaicos":
+        return "El mantenimiento depende de la terminacion elegida, pero en general se recomienda limpieza regular y cuidado de la superficie para preservar color y lectura.";
+      case "atermicos":
+        return "Con limpieza frecuente y control de bordes, conserva confort de uso, imagen limpia y buen desempeno en zonas humedas.";
+      case "rusticos":
+        return "Su textura agradece una limpieza constante y un criterio de proteccion acorde al nivel de exposicion y al uso del ambiente.";
+      case "bloques-de-hormigon":
+        return "Una rutina simple de limpieza y control de juntas ayuda a sostener su rendimiento y su expresion material en el tiempo.";
+      default:
+        return "Te recomendamos definir el esquema de mantenimiento junto con la especificacion de uso para asegurar mayor durabilidad.";
+    }
+  };
+
+  const getInquiryHref = (line, product, topic) => {
+    const messages = {
+      general: `Hola Mosaicos MC, me interesa ${product.name} de la linea ${line.name}. Quisiera recibir asesoramiento para mi proyecto.`,
+      ficha: `Hola Mosaicos MC, quiero recibir la ficha tecnica de ${product.name} de la linea ${line.name}.`,
+      colocacion: `Hola Mosaicos MC, quisiera consultar la colocacion y aplicacion recomendada para ${product.name} de la linea ${line.name}.`,
+    };
+
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messages[topic] || messages.general)}`;
+  };
+
+  const buildFaqs = (line, product) =>
+    product.faqs || [
+      {
+        question: `Para que proyectos conviene ${product.name}?`,
+        answer: `${product.heroSummary} Se recomienda especialmente para ${getLineApplications(line)}.`,
+      },
+      {
+        question: `Que formato y rendimiento tiene ${product.name}?`,
+        answer: `${product.name} trabaja con ${product.meta.slice(0, 3).join(", ")}. ${product.specs[0]?.[1] || ""}`,
+      },
+      {
+        question: "Como se instala o especifica correctamente?",
+        answer: getInstallationGuidance(line),
+      },
+      {
+        question: "Que mantenimiento se recomienda?",
+        answer: getMaintenanceGuidance(line),
+      },
+      {
+        question: "Puedo pedir ficha tecnica y asesoramiento comercial?",
+        answer:
+          "Si. Podemos enviarte material tecnico, orientarte en cantidades y ayudarte a definir la mejor opcion para tu proyecto desde contacto o por WhatsApp.",
+      },
+    ];
+
+  const buildDownloads = (line, product) =>
+    product.downloads || [
+      {
+        kicker: "biblioteca",
+        title: "Catalogo de la linea",
+        text: `Acceso rapido a la coleccion ${line.name} para revisar el lenguaje de la linea y sus productos disponibles.`,
+        meta: ["Linea completa", "Online"],
+        href: lineHref(line.slug),
+        cta: "Ver coleccion",
+      },
+      {
+        kicker: "ficha tecnica",
+        title: "Ficha del producto",
+        text: `Solicita la ficha comercial y tecnica de ${product.name} con medidas, rendimiento y recomendaciones de aplicacion.`,
+        meta: ["PDF a pedido", "Asistencia comercial"],
+        href: getInquiryHref(line, product, "ficha"),
+        cta: "Solicitar PDF",
+        external: true,
+      },
+      {
+        kicker: "colocacion",
+        title: "Guia de aplicacion",
+        text: `Te ayudamos a validar base, terminacion y criterio de colocacion segun el uso previsto para ${product.name}.`,
+        meta: ["Soporte", "Obra"],
+        href: getInquiryHref(line, product, "colocacion"),
+        cta: "Consultar",
+        external: true,
+      },
+    ];
+
+  const buildTestimonials = (line, product) =>
+    product.testimonials || [
+      {
+        quote: `Valoramos la presencia material de ${product.name} y la claridad comercial para especificarlo dentro del proyecto.`,
+        author: "Estudio de arquitectura",
+        role: "Proyecto residencial",
+      },
+      {
+        quote: `La linea ${line.name} nos dio una solucion solida, bien presentada y facil de defender frente al cliente final.`,
+        author: "Direccion de obra",
+        role: "Obra comercial",
+      },
+      {
+        quote: `Necesitabamos una pieza confiable para ${getLineApplications(line)} y el equipo nos acompanio muy bien en la eleccion.`,
+        author: "Cliente particular",
+        role: "Asesoramiento de producto",
+      },
+    ];
+
+  const renderFaqs = (line, product) => {
+    const faqs = buildFaqs(line, product);
+
+    return `
+      <div class="product-detail-block">
+        <div class="section-title reveal is-visible">
+          <span class="eyebrow eyebrow--dark">preguntas frecuentes</span>
+          <h2>Todo lo importante sobre ${product.name}</h2>
+          <p>Respuestas rapidas para especificar mejor la pieza, anticipar su aplicacion y resolver consultas habituales.</p>
+        </div>
+        <div class="faq-list">
+          ${faqs
+            .map(
+              (faq, index) => `
+                <details class="faq-item reveal is-visible"${index === 0 ? " open" : ""}>
+                  <summary>
+                    <span>${faq.question}</span>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </summary>
+                  <p>${faq.answer}</p>
+                </details>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  const renderDownloads = (line, product) => {
+    const downloads = buildDownloads(line, product);
+
+    return `
+      <div class="product-detail-block">
+        <div class="section-title reveal is-visible">
+          <span class="eyebrow eyebrow--dark">descargables</span>
+          <h2>Material util para especificar ${product.name}</h2>
+          <p>Sumamos recursos de consulta y acceso rapido para acompanar el proceso comercial y tecnico.</p>
+        </div>
+        <div class="download-grid product-download-grid">
+          ${downloads
+            .map(
+              (resource) => `
+                <article class="download-card product-download-card reveal is-visible">
+                  <span class="download-card__eyebrow">${resource.kicker}</span>
+                  <h3>${resource.title}</h3>
+                  <p>${resource.text}</p>
+                  <div class="download-card__meta">
+                    ${resource.meta.map((item) => `<span>${item}</span>`).join("")}
+                  </div>
+                  <a class="button button--sand" href="${resource.href}"${
+                    resource.external ? ' target="_blank" rel="noreferrer"' : ""
+                  }>${resource.cta}</a>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  const renderRelatedProducts = (line, products) =>
+    products.length
+      ? `
+        <div class="product-detail-block">
+          <div class="section-title reveal is-visible">
+            <span class="eyebrow eyebrow--dark">misma linea</span>
+            <h2>Productos relacionados dentro de ${line.name}</h2>
+            <p>Si queres comparar opciones, aca tenes otras piezas de la misma familia con un lenguaje compatible.</p>
+          </div>
+          <div class="product-grid">
+            ${products
+              .map(
+                (related) => `
+                  <article class="product-card reveal is-visible">
+                    <a class="product-card__media" href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
+                      <img src="${related.image}" alt="${related.name}" />
+                    </a>
+                    <div class="product-card__body">
+                      <span class="kicker">${related.kicker}</span>
+                      <h3><a class="product-card__title-link" href="${productHref(line.slug, related.slug)}">${related.name}</a></h3>
+                      <p>${related.cardSummary}</p>
+                      <div class="product-meta">
+                        ${related.meta.map((item) => `<span>${item}</span>`).join("")}
+                      </div>
+                      <a class="link-arrow" href="${productHref(line.slug, related.slug)}">Ver detalle</a>
+                    </div>
+                  </article>
+                `
+              )
+              .join("")}
+          </div>
+        </div>
+      `
+      : "";
+
+  const renderProductCta = (line, product) => `
+    <div class="cta-strip product-cta reveal is-visible">
+      <span class="eyebrow eyebrow--dark">asesoramiento</span>
+      <h3>Te ayudamos a especificar ${product.name}</h3>
+      <p>Si estas definiendo cantidades, aplicacion o terminacion, armamos una recomendacion alineada con tu proyecto y con la linea ${line.name}.</p>
+      <div class="cta-strip__actions">
+        <a class="button button--dark" href="${contactHref}">Contactarme</a>
+        <a class="button button--sand" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  `;
+
+  const renderTestimonials = (line, product) => {
+    const testimonials = buildTestimonials(line, product);
+
+    return `
+      <div class="product-detail-block">
+        <div class="section-title reveal is-visible">
+          <span class="eyebrow eyebrow--dark">testimonios</span>
+          <h2>Lo que valoran quienes eligen ${line.name}</h2>
+          <p>Una seleccion de mensajes modelo para reforzar confianza, servicio y percepcion de calidad en la ficha.</p>
+        </div>
+        <div class="testimonial-grid">
+          ${testimonials
+            .map(
+              (testimonial) => `
+                <article class="testimonial-card reveal is-visible">
+                  <div class="testimonial-card__rating" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                  <blockquote>${testimonial.quote}</blockquote>
+                  <div class="testimonial-card__author">${testimonial.author}</div>
+                  <div class="testimonial-card__role">${testimonial.role}</div>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
@@ -511,39 +784,15 @@
             .join("")}
         </div>
 
-        ${
-          relatedProducts.length
-            ? `
-              <div class="section-title reveal is-visible">
-                <span class="eyebrow eyebrow--dark">misma linea</span>
-                <h2>Otros productos de ${line.name}</h2>
-                <p>Si queres seguir explorando, aca tenes otras piezas de la misma familia.</p>
-              </div>
-              <div class="product-grid">
-                ${relatedProducts
-                    .map(
-                      (related) => `
-                        <article class="product-card reveal is-visible">
-                          <a class="product-card__media" href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
-                            <img src="${related.image}" alt="${related.name}" />
-                          </a>
-                          <div class="product-card__body">
-                            <span class="kicker">${related.kicker}</span>
-                            <h3><a class="product-card__title-link" href="${productHref(line.slug, related.slug)}">${related.name}</a></h3>
-                            <p>${related.cardSummary}</p>
-                            <div class="product-meta">
-                              ${related.meta.map((item) => `<span>${item}</span>`).join("")}
-                            </div>
-                            <a class="link-arrow" href="${productHref(line.slug, related.slug)}">Ver detalle</a>
-                          </div>
-                        </article>
-                      `
-                    )
-                    .join("")}
-              </div>
-            `
-            : ""
-        }
+        ${renderFaqs(line, product)}
+
+        ${renderDownloads(line, product)}
+
+        ${renderRelatedProducts(line, relatedProducts)}
+
+        ${renderProductCta(line, product)}
+
+        ${renderTestimonials(line, product)}
       </section>
     `;
   };
