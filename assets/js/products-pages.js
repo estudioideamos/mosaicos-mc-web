@@ -15,7 +15,212 @@
 
   const lineHref = (lineSlug) => `${productsRoot}${lineSlug}/`;
   const productHref = (lineSlug, productSlug) => `${productsRoot}${lineSlug}/${productSlug}/`;
+  const exteriorPulidaOverride = [
+    {
+      slug: "64-panes",
+      name: "64 Panes",
+      kicker: "linea exterior pulida",
+      cardSummary:
+        "Placa exterior de reticula fina, pensada para veredas, accesos y espacios de alto transito con una lectura muy marcada.",
+      heroSummary:
+        "Una de las piezas mas representativas de Exterior pulida, con trama de 64 panes y lenguaje bien tecnico.",
+      image:
+        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+      specs: [
+        ["Peso unitario", "12 Kg aprox. por unidad."],
+        ["Peso por m2", "75 Kg aprox."],
+        ["Medida", "40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Uso sugerido",
+          text: "Ideal para veredas, entradas y sectores exteriores donde se busca una textura modular bien definida.",
+        },
+        {
+          title: "Variantes visibles",
+          text: "En la referencia aparecen los codigos P64PG200, P64PN201, P64PR202 y P64PBL204.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Podemos cargar despues las fotos y codigos definitivos de cada variante dentro de esta misma ficha.",
+        },
+      ],
+    },
+    {
+      slug: "16-panes",
+      name: "16 Panes",
+      kicker: "linea exterior pulida",
+      cardSummary:
+        "Version de lectura mas amplia y despojada, con 16 panes grandes y una presencia visual mas serena.",
+      heroSummary:
+        "Placa de 16 panes para exterior pulido, pensada para quienes buscan una grilla mas abierta.",
+      image:
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+      specs: [
+        ["Peso unitario", "12 Kg aprox. por unidad."],
+        ["Peso por m2", "75 Kg aprox."],
+        ["Medida", "40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Uso sugerido",
+          text: "Muy buena opcion para galerias, expansiones y superficies exteriores de dibujo mas calmo.",
+        },
+        {
+          title: "Variantes visibles",
+          text: "En la referencia aparecen los codigos P16PBL204, P16PG200 y P16PN201.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Podemos sumar luego colores, terminaciones y fotos aplicadas de cada opcion real.",
+        },
+      ],
+    },
+    {
+      slug: "8-barras",
+      name: "8 Barras",
+      kicker: "linea exterior pulida",
+      cardSummary:
+        "Pieza ranurada de lenguaje lineal, ideal para sumar ritmo y una expresion mas tecnica en superficies exteriores.",
+      heroSummary:
+        "Producto lineal de Exterior pulida con lectura de barras, muy util para panos de gran caracter.",
+      image:
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+      specs: [
+        ["Peso unitario", "12 Kg aprox. por unidad."],
+        ["Peso por m2", "75 Kg aprox."],
+        ["Medida", "40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Uso sugerido",
+          text: "Funciona bien en galerias, veredas y sectores donde interesa reforzar un dibujo lineal.",
+        },
+        {
+          title: "Variantes visibles",
+          text: "En la referencia figuran los codigos P8BGC y P8BNC, ademas del modelo gris plomo blanco negro.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Despues podemos cargar el detalle exacto de colores y fotos por variante dentro de esta misma pagina.",
+        },
+      ],
+    },
+    {
+      slug: "ondas",
+      name: "Ondas",
+      kicker: "linea exterior pulida",
+      cardSummary:
+        "Modelo decorativo de trazo ondulado para sumar movimiento sin perder la robustez de la linea exterior.",
+      heroSummary:
+        "Una pieza expresiva con dibujo de ondas, pensada para proyectos donde la textura es protagonista.",
+      image:
+        "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+      specs: [
+        ["Peso unitario", "12 Kg aprox. por unidad."],
+        ["Peso por m2", "75 Kg aprox."],
+        ["Medida", "40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Colores disponibles",
+          text: "Segun la referencia: gris claro, gris plomo, blanco negro y rojo.",
+        },
+        {
+          title: "Modelos visibles",
+          text: "En la captura se muestran Ondas gris plomo y Ondas gris claro.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Podemos agregar luego una ficha por color si queres desglosar esta pieza en mas detalle.",
+        },
+      ],
+    },
+    {
+      slug: "espiga",
+      name: "Espiga",
+      kicker: "linea exterior pulida",
+      cardSummary:
+        "Trama geometrica en espiga para proyectos exteriores con un lenguaje mas grafico y decorativo.",
+      heroSummary:
+        "Modelo de dibujo espigado para quienes buscan una placa exterior pulida con personalidad propia.",
+      image:
+        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+      specs: [
+        ["Peso unitario", "12 Kg aprox. por unidad."],
+        ["Peso por m2", "75 Kg aprox."],
+        ["Medida", "40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Uso sugerido",
+          text: "Ideal para zonas protagonistas donde se busca una trama visible y un dibujo mas distintivo.",
+        },
+        {
+          title: "Modelos visibles",
+          text: "En la referencia aparecen Espiga gris claro y Gris plomo negro.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Podemos completar mas adelante con variantes, codigos y fotos aplicadas de obra real.",
+        },
+      ],
+    },
+    {
+      slug: "1-pan",
+      name: "1 Pan",
+      kicker: "linea exterior pulida",
+      cardSummary:
+        "La opcion mas limpia de la linea, con un solo plano protagonista y una expresion exterior muy sobria.",
+      heroSummary:
+        "Pieza de lectura lisa y despojada para superficies exteriores que necesitan simpleza y continuidad.",
+      image:
+        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+      specs: [
+        ["Peso unitario", "12 Kg aprox. por unidad."],
+        ["Peso por m2", "75 Kg aprox."],
+        ["Medida", "40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Uso sugerido",
+          text: "Muy buena base para patios, expansiones y superficies exteriores donde interesa una lectura mas limpia.",
+        },
+        {
+          title: "Variantes visibles",
+          text: "En la captura se ven Blanco gris claro y Gris claro, ademas de fotos aplicadas del producto.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Si queres, despues armamos una galeria propia con las fotos de aplicacion reales de esta pieza.",
+        },
+      ],
+    },
+  ];
   const lines = catalog.lines;
+  const exteriorPulidaLine = lines.find((line) => line.slug === "exterior-pulida");
+
+  if (exteriorPulidaLine) {
+    exteriorPulidaLine.products = exteriorPulidaOverride;
+  }
 
   const findLine = (lineSlug) => lines.find((line) => line.slug === lineSlug);
   const findProduct = (line, productSlug) => line?.products.find((product) => product.slug === productSlug);
