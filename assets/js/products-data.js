@@ -5,7 +5,7 @@ window.productCatalog = {
       name: "Exterior pulida",
       title: "Exterior pulida",
       description:
-        "La loseta exterior pulida MC es ideal para vereda, entrada de garage y espacios de alto transito como plazas y galerias.",
+        "Una linea de exterior pulido pensada para veredas, ingresos y superficies de uso intenso, con una imagen ordenada, tecnica y de presencia contemporanea.",
       heroImage:
         "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80",
       overviewTitle: "Terminacion pulida para espacios exteriores exigentes.",
@@ -86,7 +86,7 @@ window.productCatalog = {
       name: "Mosaicos",
       title: "Mosaicos",
       description:
-        "El mosaico pulido MC es una placa ideal para lograr superficies de alta resistencia y buena terminacion. El sistema bicapa provee al producto mayor dureza y durabilidad con el paso del tiempo. Los pisos MC son fabricados con cemento y materiales de origen natural. Recomendamos el encerado del piso.",
+        "Superficies de gran resistencia y terminacion cuidada, desarrolladas para pisos y paredes con lenguaje atemporal, nobleza material y una lectura sobria de alta calidad.",
       heroImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto18.jpg",
       overviewTitle: "La linea mas versatil para pisos y paredes con identidad propia.",
@@ -166,7 +166,8 @@ window.productCatalog = {
       slug: "atermicos",
       name: "At&eacute;rmicos",
       title: "Atermicos",
-      description: "Baldosas atermicas para piscinas.",
+      description:
+        "Soluciones atermicas para piscinas y expansiones exteriores, concebidas para aportar confort, seguridad y una estetica serena en sectores vinculados al agua.",
       heroImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3.jpg",
       overviewTitle: "Soluciones para bordes, solariums y sectores de relax junto al agua.",
@@ -247,7 +248,7 @@ window.productCatalog = {
       name: "R&uacute;sticos",
       title: "Rusticos",
       description:
-        "Las losetas calcareas MC de terminacion rustica son ideales para espacios de interior y exterior, presentando una superficie irregular simulando una terminacion de piedra natural. Se recomienda el encerado de las placas una vez colocadas para dar una terminacion brillosa.",
+        "Piezas de terminacion rustica para interior y exterior, con textura irregular y una expresion mineral que remite a la piedra natural con refinamiento.",
       heroImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1.jpg",
       overviewTitle: "Textura mineral y presencia natural para pisos y expansiones.",
@@ -328,7 +329,7 @@ window.productCatalog = {
       name: "Bloques de hormig&oacute;n",
       title: "Bloques de hormigon",
       description:
-        "Ideal para superficies irregulares y proyectos exteriores que necesitan resistencia, simpleza y una trama bien definida.",
+        "Bloques de hormigon para exteriores exigentes, con tramas definidas, resistencia estructural y una expresion limpia para circulaciones, patios y recorridos.",
       heroImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1.jpg",
       overviewTitle: "Tramas resistentes para exteriores y superficies de mucha exigencia.",
