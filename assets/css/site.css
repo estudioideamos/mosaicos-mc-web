@@ -1551,15 +1551,17 @@ body.is-ready .shell {
   z-index: 1;
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(3.8rem, 12vw, 10rem);
+  font-size: clamp(3rem, 8.6vw, 8rem);
   line-height: 0.9;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.92);
   transform-origin: left center;
   animation: footerWordmarkFloat 9s ease-in-out infinite;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .footer__subline {
@@ -1879,6 +1881,11 @@ body.is-ready .shell {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .footer__wordmark {
+    font-size: clamp(2.8rem, 9vw, 6rem);
+    line-height: 0.94;
+  }
+
   .footer__base {
     flex-direction: column;
     align-items: start;
@@ -2024,7 +2031,8 @@ body.is-ready .shell {
   }
 
   .footer__wordmark {
-    font-size: clamp(2.8rem, 18vw, 5.6rem);
+    font-size: clamp(2.4rem, 12vw, 4.4rem);
+    line-height: 0.96;
   }
 
   .footer__subline {
