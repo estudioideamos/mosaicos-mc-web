@@ -17,8 +17,8 @@
   --radius-sm: 12px;
   --content-width: min(1180px, calc(100vw - 40px));
   --nav-height: 88px;
-  --font-sans: "Manrope", "Segoe UI", sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --font-serif: "Montserrat", "Segoe UI", sans-serif;
 }
 
 *,
