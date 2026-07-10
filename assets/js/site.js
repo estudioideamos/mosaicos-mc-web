@@ -49,6 +49,7 @@ if (homeSlider) {
   const prevButton = homeSlider.querySelector("[data-slide-prev]");
   const nextButton = homeSlider.querySelector("[data-slide-next]");
   const dotsContainer = homeSlider.querySelector("[data-slide-dots]");
+  const progressFill = homeSlider.querySelector("[data-slide-progress]");
   let currentIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
   let autoplayId = 0;
 
@@ -77,6 +78,11 @@ if (homeSlider) {
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle("is-active", dotIndex === currentIndex);
     });
+    if (progressFill) {
+      progressFill.classList.remove("is-animating");
+      void progressFill.offsetWidth;
+      progressFill.classList.add("is-animating");
+    }
   };
 
   const nextSlide = () => setSlide(currentIndex + 1);
