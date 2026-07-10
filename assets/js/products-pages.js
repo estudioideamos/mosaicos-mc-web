@@ -215,11 +215,84 @@
       ],
     },
   ];
+  const mosaicosOverride = [
+    {
+      slug: "bicapa",
+      name: "Bicapa",
+      kicker: "linea mosaicos",
+      cardSummary:
+        "Mosaico bicapa con terminacion semi pulida, pensado para terminarse en obra mediante pulidor de pisos.",
+      heroSummary:
+        "El sistema bicapa aporta dureza y durabilidad, y se completa con pulido final en obra para lograr la terminacion deseada.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa1.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa3.jpg",
+      meta: ["40 x 40 x 3,3 cm", "12 kg aprox.", "75 kg/m2", "6,25 un/m2"],
+      specs: [
+        ["Terminacion", "Semi pulida; normalmente se termina pulido en obra."],
+        ["Medida", "40 x 40 x 3,3 cm."],
+        ["Peso y rendimiento", "12 kg aprox. por unidad, 75 kg por m2 y 6,25 unidades por m2."],
+      ],
+      notes: [
+        {
+          title: "Descripcion",
+          text: "Es un mosaico ideal para lograr superficies de alta resistencia y buena terminacion con lenguaje clasico.",
+        },
+        {
+          title: "Variante visible",
+          text: "En la referencia se muestra la variante Gris claro junto a fotos de pieza y aplicacion.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Despues podemos sumar aca mas colores, codigos y fotos reales de obra de esta familia.",
+        },
+      ],
+    },
+    {
+      slug: "mosaico-compacto",
+      name: "Mosaico compacto",
+      kicker: "linea mosaicos",
+      cardSummary:
+        "Revestimiento de terminacion pulida terminada, que no necesita ser pulido en obra una vez colocado.",
+      heroSummary:
+        "Una linea de mosaicos de terminacion ya pulida, con gran variedad de colores y dos formatos base segun la referencia.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto1.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto18.jpg",
+      meta: ["30 x 30 x 1,8 cm", "43 kg/m2", "11,11 un/m2", "40 x 40 x 2,2 cm"],
+      specs: [
+        ["Formato 30 x 30", "30 x 30 x 1,8 cm, 43 kg por m2 y 11,11 unidades por m2."],
+        ["Formato 40 x 40", "40 x 40 x 2,2 cm, 51 kg por m2 y 6,25 unidades por m2."],
+        ["Terminacion", "Pulida terminada; no necesita pulido en obra."],
+      ],
+      notes: [
+        {
+          title: "Colores visibles",
+          text: "Beige Medano, Blanco con Rosa, Blanco Natural, Blanco Torino, Chiampo Rosa, Gris Bardiglio, Gris Chiampo, Gris Claro, Gris Glaciar, Gris Plomo, Negro Alpes, Rojo Dragon, Rosa Firenze, Sahara y Terra.",
+        },
+        {
+          title: "Galeria de referencia",
+          text: "La pagina original muestra muestras de color, una pieza rotulada y dos fotos aplicadas de la linea.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Si queres, la proxima pasada la hacemos con cada color cargado como variante separada dentro de esta misma ficha.",
+        },
+      ],
+    },
+  ];
   const lines = catalog.lines;
   const exteriorPulidaLine = lines.find((line) => line.slug === "exterior-pulida");
+  const mosaicosLine = lines.find((line) => line.slug === "mosaicos");
 
   if (exteriorPulidaLine) {
     exteriorPulidaLine.products = exteriorPulidaOverride;
+  }
+
+  if (mosaicosLine) {
+    mosaicosLine.products = mosaicosOverride;
   }
 
   const findLine = (lineSlug) => lines.find((line) => line.slug === lineSlug);
