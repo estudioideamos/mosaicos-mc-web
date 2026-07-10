@@ -319,10 +319,112 @@
       ],
     },
   ];
+  const rusticosOverride = [
+    {
+      slug: "simil-adoquin-rustico",
+      name: "Simil adoquin rustico",
+      kicker: "linea rusticos",
+      cardSummary:
+        "Placa calcarea de lectura simil adoquin para interiores y exteriores con una expresion mineral sobria y consistente.",
+      heroSummary:
+        "Una pieza rustica pensada para proyectos que buscan textura, caracter y una terminacion cercana a la piedra natural.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin3.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Rustico"],
+      specs: [
+        ["Peso unitario", "12 kg aprox. por unidad."],
+        ["Peso por m2", "75 kg aprox."],
+        ["Rendimiento y medida", "6,25 unidades por m2 en formato 40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Variantes visibles",
+          text: "En la referencia aparecen una version gris, una negra y una terracota, ademas de una foto de pieza en perspectiva.",
+        },
+        {
+          title: "Aplicacion",
+          text: "Funciona muy bien en patios, galerias, expansiones y sectores donde se busca una textura tipo adoquin con lectura controlada.",
+        },
+        {
+          title: "Terminacion sugerida",
+          text: "Como en el resto de la linea rustica, se recomienda el encerado luego de la colocacion para reforzar el acabado final.",
+        },
+      ],
+    },
+    {
+      slug: "loseta-lisa-biselada",
+      name: "Loseta lisa biselada",
+      kicker: "linea rusticos",
+      cardSummary:
+        "Pieza de lenguaje mas limpio dentro de Rusticos, con borde biselado y una lectura versatil para distintos criterios de colocacion.",
+      heroSummary:
+        "Una loseta sobria y tecnica que conserva el espiritu mineral de la linea mientras suma una imagen mas serena y contemporanea.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/lose2.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/lose3.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Biselada"],
+      specs: [
+        ["Peso unitario", "12 kg aprox. por unidad."],
+        ["Peso por m2", "75 kg aprox."],
+        ["Rendimiento y medida", "6,25 unidades por m2 en formato 40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Uso visible en referencia",
+          text: "La pagina original muestra la pieza lisa, una aplicacion en piso y una opcion de colocacion sobre apoyos o tacos plasticos.",
+        },
+        {
+          title: "Aplicacion",
+          text: "Es una muy buena opcion para terrazas, expansiones y superficies que necesitan una lectura mas despejada sin salir de la familia rustica.",
+        },
+        {
+          title: "Terminacion sugerida",
+          text: "El encerado posterior ayuda a consolidar una terminacion mas brillante y una presencia visual mejor definida.",
+        },
+      ],
+    },
+    {
+      slug: "accesibilidad",
+      name: "Accesibilidad",
+      kicker: "linea rusticos",
+      cardSummary:
+        "Solucion tactil y de guiado dentro de la linea rustica, pensada para recorridos accesibles con lenguaje tecnico y alta legibilidad.",
+      heroSummary:
+        "Una familia funcional para resolver circulaciones accesibles mediante losetas guia y piezas tactiles de clara lectura.",
+      image:
+        "https://images.unsplash.com/photo-1592595896616-c37162298647?auto=format&fit=crop&w=1200&q=80",
+      detailImage:
+        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1400&q=80",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Accesibilidad"],
+      specs: [
+        ["Peso unitario", "12 kg aprox. por unidad."],
+        ["Peso por m2", "75 kg aprox."],
+        ["Rendimiento y medida", "6,25 unidades por m2 en formato 40 x 40 x 3,6 cm."],
+      ],
+      notes: [
+        {
+          title: "Piezas visibles",
+          text: "La referencia muestra dos resoluciones concretas: loseta 6 barras guia y loseta tactil.",
+        },
+        {
+          title: "Aplicacion",
+          text: "Pensado para recorridos peatonales, accesos y sectores donde hace falta reforzar guiado y advertencia tactil dentro del proyecto.",
+        },
+        {
+          title: "Asesoramiento",
+          text: "Podemos ayudarte a definir despiece, ubicacion y combinacion con otras piezas de la linea segun el recorrido previsto.",
+        },
+      ],
+    },
+  ];
   const lines = catalog.lines;
   const exteriorPulidaLine = lines.find((line) => line.slug === "exterior-pulida");
   const mosaicosLine = lines.find((line) => line.slug === "mosaicos");
   const atermicosLine = lines.find((line) => line.slug === "atermicos");
+  const rusticosLine = lines.find((line) => line.slug === "rusticos");
 
   if (exteriorPulidaLine) {
     exteriorPulidaLine.products = exteriorPulidaOverride;
@@ -334,6 +436,10 @@
 
   if (atermicosLine) {
     atermicosLine.products = atermicosOverride;
+  }
+
+  if (rusticosLine) {
+    rusticosLine.products = rusticosOverride;
   }
 
   const findLine = (lineSlug) => lines.find((line) => line.slug === lineSlug);
