@@ -154,7 +154,7 @@ body.is-ready .shell {
 .brand__logo {
   display: block;
   width: auto;
-  height: 56px;
+  height: 46px;
 }
 
 .brand__mark {
@@ -1637,7 +1637,7 @@ body.is-ready .shell {
   }
 
   .brand__logo {
-    height: 46px;
+    height: 40px;
   }
 
   .site-nav {
