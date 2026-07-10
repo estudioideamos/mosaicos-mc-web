@@ -224,13 +224,13 @@ body.is-ready .shell {
 
 .home-slider {
   position: relative;
-  width: var(--content-width);
-  min-height: calc(100vh - var(--nav-height) - 26px);
-  margin: 14px auto 20px;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+  margin: 0;
   overflow: hidden;
-  border-radius: 34px;
+  border-radius: 0;
   background: linear-gradient(180deg, rgba(246, 241, 234, 0.92), rgba(236, 225, 209, 0.88));
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 
 .home-slider::before,
@@ -264,7 +264,7 @@ body.is-ready .shell {
 
 .home-slider__slides {
   position: relative;
-  min-height: calc(100vh - var(--nav-height) - 26px);
+  min-height: calc(100vh - var(--nav-height));
 }
 
 .home-slide {
@@ -1580,13 +1580,13 @@ body.is-ready .shell {
   }
 
   .home-slider {
-    min-height: calc(100vh - var(--nav-height) - 8px);
-    margin: 10px auto 14px;
-    border-radius: 26px;
+    min-height: calc(100vh - var(--nav-height));
+    margin: 0;
+    border-radius: 0;
   }
 
   .home-slider__slides {
-    min-height: calc(100vh - var(--nav-height) - 8px);
+    min-height: calc(100vh - var(--nav-height));
   }
 
   .home-slide {
