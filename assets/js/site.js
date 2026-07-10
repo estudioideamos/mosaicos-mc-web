@@ -1,3 +1,7 @@
+window.addEventListener("load", () => {
+  document.body.classList.add("is-ready");
+});
+
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
 
