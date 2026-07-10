@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Mosaicos MC</title>
+    <meta name="description" content="Blog demo con articulos editoriales sobre materiales y espacios." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="grain"></div>
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="brand" href="../">
+            <span class="brand__mark">m</span>
+            <span class="brand__text">
+              <span class="brand__name">Mosaicos MC</span>
+              <span class="brand__tag">superficies con caracter</span>
+            </span>
+          </a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">
+            <span>+</span>
+          </button>
+          <nav class="site-nav" data-site-nav aria-label="Principal">
+            <a class="site-nav__link" href="../nosotros/">Nosotros</a>
+            <a class="site-nav__link" href="../productos/">Productos</a>
+            <a class="site-nav__link" href="../obras/">Obras</a>
+            <a class="site-nav__link" href="../descargas/">Descargas</a>
+            <a class="site-nav__link" href="./" aria-current="page">Blog</a>
+            <a class="site-nav__link" href="../contacto/">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero" style="--hero-image: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80');">
+          <div class="page-hero__inner reveal">
+            <span class="eyebrow">blog</span>
+            <h1>Contenido para inspirar, educar y posicionar la marca.</h1>
+            <p>Indice editorial con notas cortas de ejemplo. Ideal para crecer con SEO, tendencias y casos de aplicacion.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="article-grid">
+            <article class="article-card reveal">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Pared texturada en living" />
+              <div class="article-card__body">
+                <span class="kicker">materialidad</span>
+                <h3>Como usar textura sin recargar un ambiente</h3>
+                <p>Una nota introductoria para clientes que buscan impacto visual con lectura serena.</p>
+                <a class="link-arrow" href="materialidad-sensorial/">Leer articulo</a>
+              </div>
+            </article>
+            <article class="article-card reveal">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Fachada de casa" />
+              <div class="article-card__body">
+                <span class="kicker">fachadas</span>
+                <h3>Que mirar antes de elegir un revestimiento exterior</h3>
+                <p>Pieza de contenido ideal para responder dudas frecuentes y ordenar el proceso de compra.</p>
+                <a class="link-arrow" href="../contacto/">Pedir asesoria</a>
+              </div>
+            </article>
+            <article class="article-card reveal">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Muro de bar con textura" />
+              <div class="article-card__body">
+                <span class="kicker">comercial</span>
+                <h3>Por que los espacios con criterio material se recuerdan mas</h3>
+                <p>Texto orientado a interioristas, gastronomia y proyectos comerciales.</p>
+                <a class="link-arrow" href="materialidad-sensorial/">Ver formato</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div>
+            <h3>Mosaicos MC</h3>
+            <p>Blog demo con tono editorial listo para expandirse con contenido real.</p>
+          </div>
+          <div class="footer-links">
+            <a href="../">Inicio</a>
+            <a href="../productos/">Productos</a>
+            <a href="../obras/">Obras</a>
+            <a href="../contacto/">Contacto</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

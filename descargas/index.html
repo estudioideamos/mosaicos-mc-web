@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descargas | Mosaicos MC</title>
+    <meta name="description" content="Centro de descargas demo con fichas y catalogos." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="grain"></div>
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="brand" href="../">
+            <span class="brand__mark">m</span>
+            <span class="brand__text">
+              <span class="brand__name">Mosaicos MC</span>
+              <span class="brand__tag">superficies con caracter</span>
+            </span>
+          </a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">
+            <span>+</span>
+          </button>
+          <nav class="site-nav" data-site-nav aria-label="Principal">
+            <a class="site-nav__link" href="../nosotros/">Nosotros</a>
+            <a class="site-nav__link" href="../productos/">Productos</a>
+            <a class="site-nav__link" href="../obras/">Obras</a>
+            <a class="site-nav__link" href="./" aria-current="page">Descargas</a>
+            <a class="site-nav__link" href="../blog/">Blog</a>
+            <a class="site-nav__link" href="../contacto/">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero" style="--hero-image: url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80');">
+          <div class="page-hero__inner reveal">
+            <span class="eyebrow">descargas</span>
+            <h1>Fichas, catalogos y archivos de apoyo listos para compartir.</h1>
+            <p>Deje unos PDFs de muestra para que la seccion ya funcione desde el primer dia.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="download-grid">
+            <article class="download-card reveal">
+              <span class="kicker">pdf</span>
+              <h3>Catalogo General</h3>
+              <p>Recorrido visual resumido por colecciones, tonos y aplicaciones de ejemplo.</p>
+              <div class="download-card__meta">
+                <span>3 paginas</span>
+                <span>demo</span>
+              </div>
+              <a class="link-arrow" href="../assets/docs/catalogo-general-demo.pdf" download>Descargar</a>
+            </article>
+            <article class="download-card reveal">
+              <span class="kicker">pdf</span>
+              <h3>Ficha Tecnica Marea Caliza</h3>
+              <p>Documento de muestra con medidas, usos y observaciones comerciales basicas.</p>
+              <div class="download-card__meta">
+                <span>1 pagina</span>
+                <span>demo</span>
+              </div>
+              <a class="link-arrow" href="../assets/docs/ficha-marea-caliza.pdf" download>Descargar</a>
+            </article>
+            <article class="download-card reveal">
+              <span class="kicker">pdf</span>
+              <h3>Guia de Instalacion</h3>
+              <p>Archivo simple para que la seccion se vea completa aunque despues lo reemplacemos.</p>
+              <div class="download-card__meta">
+                <span>2 paginas</span>
+                <span>demo</span>
+              </div>
+              <a class="link-arrow" href="../assets/docs/guia-instalacion-demo.pdf" download>Descargar</a>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div>
+            <h3>Mosaicos MC</h3>
+            <p>Centro de descargas de ejemplo, con archivos listos para sustituir por los definitivos.</p>
+          </div>
+          <div class="footer-links">
+            <a href="../">Inicio</a>
+            <a href="../productos/">Productos</a>
+            <a href="../obras/">Obras</a>
+            <a href="../contacto/">Contacto</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

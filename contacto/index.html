@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Mosaicos MC</title>
+    <meta name="description" content="Pagina demo de contacto para consultas comerciales." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="grain"></div>
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="brand" href="../">
+            <span class="brand__mark">m</span>
+            <span class="brand__text">
+              <span class="brand__name">Mosaicos MC</span>
+              <span class="brand__tag">superficies con caracter</span>
+            </span>
+          </a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">
+            <span>+</span>
+          </button>
+          <nav class="site-nav" data-site-nav aria-label="Principal">
+            <a class="site-nav__link" href="../nosotros/">Nosotros</a>
+            <a class="site-nav__link" href="../productos/">Productos</a>
+            <a class="site-nav__link" href="../obras/">Obras</a>
+            <a class="site-nav__link" href="../descargas/">Descargas</a>
+            <a class="site-nav__link" href="../blog/">Blog</a>
+            <a class="site-nav__link" href="./" aria-current="page">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero" style="--hero-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80');">
+          <div class="page-hero__inner reveal">
+            <span class="eyebrow">contacto</span>
+            <h1>Hablemos del espacio que queres construir.</h1>
+            <p>Pagina de contacto simple, clara y lista para conectar despues con WhatsApp, mail o un formulario real.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="contact-grid">
+            <article class="contact-card reveal">
+              <span class="kicker">canales</span>
+              <h3>Elegi la forma mas comoda de avanzar.</h3>
+              <p>
+                Toda esta informacion es de ejemplo. Despues podemos reemplazarla por tus datos reales, sumar mapa o conectar un envio real.
+              </p>
+              <div class="contact-list">
+                <a href="mailto:hola@mosaicosmc.demo">hola@mosaicosmc.demo</a>
+                <a href="tel:+540000000000">+54 00 0000 0000</a>
+                <span>Showroom demo, Buenos Aires</span>
+                <span>Lunes a viernes, 9 a 18 hs</span>
+              </div>
+            </article>
+
+            <form class="contact-form reveal">
+              <span class="kicker">consulta</span>
+              <h2>Contanos que estas proyectando</h2>
+              <p>Este formulario es visual en esta version. Si queres, despues lo conectamos con Formspree, correo o backend propio.</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="tu@email.com" />
+                </div>
+                <div class="form-field">
+                  <label for="tipo">Tipo de proyecto</label>
+                  <select id="tipo" name="tipo">
+                    <option>Residencial</option>
+                    <option>Comercial</option>
+                    <option>Showroom</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="superficie">Superficie aproximada</label>
+                  <input id="superficie" name="superficie" type="text" placeholder="Ej: 35 m2" />
+                </div>
+                <div class="form-field form-field--full">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" rows="7" placeholder="Contanos que material te interesa y donde iria aplicado"></textarea>
+                </div>
+                <div class="form-field form-field--full">
+                  <button class="button button--dark" type="button">Enviar consulta</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div>
+            <h3>Mosaicos MC</h3>
+            <p>Punto de contacto demo listo para conectarse despues a un canal real.</p>
+          </div>
+          <div class="footer-links">
+            <a href="../">Inicio</a>
+            <a href="../productos/">Productos</a>
+            <a href="../obras/">Obras</a>
+            <a href="../blog/">Blog</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
