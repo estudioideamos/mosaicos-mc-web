@@ -283,9 +283,45 @@
       ],
     },
   ];
+  const atermicosOverride = [
+    {
+      slug: "para-decks-y-piletas",
+      name: "Para decks y piletas",
+      kicker: "linea atermicos",
+      cardSummary:
+        "Sistema atermico pensado para decks y piletas, con resoluciones de borde y solarium para acompañar el conjunto completo.",
+      heroSummary:
+        "Producto desarrollado para zonas de piscina y expansiones exteriores, con variantes de borde y paños de solarium.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3.jpg",
+      meta: ["50 x 50 x 3 cm", "14 kg aprox.", "4 un/m2", "2 un/ml"],
+      specs: [
+        ["Medida", "50 x 50 x 3 cm."],
+        ["Peso unitario", "14 kg aprox."],
+        ["Rendimiento", "4 unidades por m2 y 2 unidades por metro lineal."],
+      ],
+      notes: [
+        {
+          title: "Resoluciones visibles",
+          text: "En la referencia aparecen tres variantes: Borde con bisel, Borde con nariz y Solarium.",
+        },
+        {
+          title: "Aplicacion",
+          text: "Pensado para piletas, decks y expansiones donde importa el confort de uso y una imagen limpia junto al agua.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Si queres, en la siguiente pasada lo desglosamos en fichas separadas para cada resolucion de borde.",
+        },
+      ],
+    },
+  ];
   const lines = catalog.lines;
   const exteriorPulidaLine = lines.find((line) => line.slug === "exterior-pulida");
   const mosaicosLine = lines.find((line) => line.slug === "mosaicos");
+  const atermicosLine = lines.find((line) => line.slug === "atermicos");
 
   if (exteriorPulidaLine) {
     exteriorPulidaLine.products = exteriorPulidaOverride;
@@ -293,6 +329,10 @@
 
   if (mosaicosLine) {
     mosaicosLine.products = mosaicosOverride;
+  }
+
+  if (atermicosLine) {
+    atermicosLine.products = atermicosOverride;
   }
 
   const findLine = (lineSlug) => lines.find((line) => line.slug === lineSlug);
