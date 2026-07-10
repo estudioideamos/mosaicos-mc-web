@@ -46,7 +46,7 @@
                 ${line.badges.map((badge) => `<span>${badge}</span>`).join("")}
                 <span>${line.products.length} productos</span>
               </div>
-              <a class="link-arrow" href="${lineHref(line.slug)}">Ver linea</a>
+              <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
               ${
                 featured
                   ? `<a class="line-card__secondary" href="${productHref(line.slug, featured.slug)}">Producto destacado: ${featured.name}</a>`
