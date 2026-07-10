@@ -7,7 +7,7 @@ window.productCatalog = {
       description:
         "La loseta exterior pulida MC es ideal para vereda, entrada de garage y espacios de alto transito como plazas y galerias.",
       heroImage:
-        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80",
       overviewTitle: "Terminacion pulida para espacios exteriores exigentes.",
       overviewText:
         "Es una linea pensada para veredas, galerias, entradas y sectores de circulacion intensa. Combina buena presencia visual con una lectura pareja en superficies amplias.",
@@ -88,7 +88,7 @@ window.productCatalog = {
       description:
         "El mosaico pulido MC es una placa ideal para lograr superficies de alta resistencia y buena terminacion. El sistema bicapa provee al producto mayor dureza y durabilidad con el paso del tiempo. Los pisos MC son fabricados con cemento y materiales de origen natural. Recomendamos el encerado del piso.",
       heroImage:
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto18.jpg",
       overviewTitle: "La linea mas versatil para pisos y paredes con identidad propia.",
       overviewText:
         "Los mosaicos MC trabajan muy bien en interiores, sectores comerciales y proyectos donde se busca resistencia, durabilidad y una terminacion cuidada.",
@@ -168,7 +168,7 @@ window.productCatalog = {
       title: "Atermicos",
       description: "Baldosas atermicas para piscinas.",
       heroImage:
-        "https://images.unsplash.com/photo-1576013551627-0ae9d5c36f41?auto=format&fit=crop&w=1600&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3.jpg",
       overviewTitle: "Soluciones para bordes, solariums y sectores de relax junto al agua.",
       overviewText:
         "La linea atermica esta pensada para piscinas y expansiones exteriores donde importa el confort de uso, la seguridad y una imagen cuidada.",
@@ -183,9 +183,9 @@ window.productCatalog = {
           heroSummary:
             "Una opcion clara y fresca para acompanar piscinas y superficies exteriores de uso recreativo.",
           image:
-            "https://images.unsplash.com/photo-1576013551627-0ae9d5c36f41?auto=format&fit=crop&w=1200&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3.jpg",
           detailImage:
-            "https://images.unsplash.com/photo-1576013551627-0ae9d5c36f41?auto=format&fit=crop&w=1400&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
           meta: ["50 x 50 cm", "Atermico", "Exterior", "Piscina"],
           specs: [
             ["Uso recomendado", "Solariums, patios humedos y expansiones junto a la piscina."],
@@ -216,9 +216,9 @@ window.productCatalog = {
           heroSummary:
             "Producto pensado para resolver remates y bordes de piscina con una imagen clara y consistente.",
           image:
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
           detailImage:
-            "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/ater2.jpg",
           meta: ["Borde", "Atermico", "Exterior", "Piscina"],
           specs: [
             ["Uso recomendado", "Bordes de piscina, escalones y cambios de nivel."],
@@ -249,7 +249,7 @@ window.productCatalog = {
       description:
         "Las losetas calcareas MC de terminacion rustica son ideales para espacios de interior y exterior, presentando una superficie irregular simulando una terminacion de piedra natural. Se recomienda el encerado de las placas una vez colocadas para dar una terminacion brillosa.",
       heroImage:
-        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1.jpg",
       overviewTitle: "Textura mineral y presencia natural para pisos y expansiones.",
       overviewText:
         "Los rusticos trabajan bien en interiores con impronta material y tambien en exteriores donde se busca una lectura cercana a la piedra.",
@@ -264,9 +264,9 @@ window.productCatalog = {
           heroSummary:
             "Una opcion rustica de muy buena presencia para espacios donde la textura es parte del caracter.",
           image:
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin2.jpg",
           detailImage:
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin3.jpg",
           meta: ["40 x 40 cm", "Rustico", "Interior + exterior", "Piedra"],
           specs: [
             ["Uso recomendado", "Galerias, patios, quinchos y sectores interiores de alto caracter."],
@@ -297,9 +297,9 @@ window.productCatalog = {
           heroSummary:
             "Pieza de terminacion irregular para proyectos exteriores e interiores donde manda la textura.",
           image:
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/lose2.jpg",
           detailImage:
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/lose3.jpg",
           meta: ["50 x 50 cm", "Rustico", "Exterior", "Galerias"],
           specs: [
             ["Uso recomendado", "Patios, expansiones, quinchos y areas sociales semicubiertas."],
@@ -330,7 +330,7 @@ window.productCatalog = {
       description:
         "Ideal para superficies irregulares y proyectos exteriores que necesitan resistencia, simpleza y una trama bien definida.",
       heroImage:
-        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1.jpg",
       overviewTitle: "Tramas resistentes para exteriores y superficies de mucha exigencia.",
       overviewText:
         "Es una linea vinculada a senderos, patios, calles internas y expansiones donde interesa una lectura clara, modular y durable.",
@@ -345,9 +345,9 @@ window.productCatalog = {
           heroSummary:
             "Una pieza modular para exteriores donde se priorizan resistencia, orden y facilidad de mantenimiento.",
           image:
-            "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda2.jpg",
           detailImage:
-            "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda4.jpg",
           meta: ["20 x 10 cm", "Hormigon", "Exterior", "Senderos"],
           specs: [
             ["Uso recomendado", "Senderos, patios, calles internas y circulaciones exteriores."],
@@ -378,9 +378,9 @@ window.productCatalog = {
           heroSummary:
             "Bloque pensado para paños exigidos, de colocacion flexible y una imagen urbana muy limpia.",
           image:
-            "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1.jpg",
           detailImage:
-            "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80",
+            "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped2.jpg",
           meta: ["Adoquin", "Hormigon", "Exterior", "Patios"],
           specs: [
             ["Uso recomendado", "Patios, cocheras, senderos y superficies exteriores irregulares."],
