@@ -652,19 +652,19 @@
   const buildTestimonials = (line, product) =>
     product.testimonials || [
       {
-        quote: `Valoramos la presencia material de ${product.name} y la claridad comercial para especificarlo dentro del proyecto.`,
-        author: "Estudio de arquitectura",
-        role: "Proyecto residencial",
+        quote: "Excelente atencion y calidad. Precios acorde a la mercaderia.",
+        author: "Sebastian Almeida",
+        role: "Resena 5 estrellas en Google",
       },
       {
-        quote: `La linea ${line.name} nos dio una solucion solida, bien presentada y facil de defender frente al cliente final.`,
-        author: "Direccion de obra",
-        role: "Obra comercial",
+        quote: "La verdad que quede muy satisfecho.",
+        author: "ricardo",
+        role: "Resena 5 estrellas en Google",
       },
       {
-        quote: `Necesitabamos una pieza confiable para ${getLineApplications(line)} y el equipo nos acompanio muy bien en la eleccion.`,
-        author: "Cliente particular",
-        role: "Asesoramiento de producto",
+        quote: "Muy buena relacion precio calidad.",
+        author: "Carlos Mariano Capisto",
+        role: "Resena 5 estrellas en Google",
       },
     ];
 
@@ -787,7 +787,7 @@
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">testimonios</span>
           <h2>Lo que valoran quienes eligen ${line.name}</h2>
-          <p>Una seleccion de mensajes modelo para reforzar confianza, servicio y percepcion de calidad en la ficha.</p>
+          <p>Una seleccion de resenas reales de 5 estrellas que destacan atencion, calidad y relacion precio-calidad.</p>
         </div>
         <div class="testimonial-grid">
           ${testimonials
@@ -843,7 +843,9 @@
             <h3>${line.overviewTitle}</h3>
             <p>${line.overviewText}</p>
             <div class="product-meta">
-              ${line.badges.map((badge) => `<span>${badge}</span>`).join("")}
+              ${line.badges
+                .map((badge, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${badge}</span>`)
+                .join("")}
             </div>
           </article>
           <article class="split-card split-card--image reveal is-visible">
@@ -885,7 +887,9 @@
             <h3>${product.name}</h3>
             <p>${product.cardSummary}</p>
             <div class="product-meta">
-              ${product.meta.map((item) => `<span>${item}</span>`).join("")}
+              ${product.meta
+                .map((item, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${item}</span>`)
+                .join("")}
             </div>
             <div class="hero__actions product-detail__actions">
               <a class="button button--dark" href="${contactHref}">Pedir presupuesto</a>
