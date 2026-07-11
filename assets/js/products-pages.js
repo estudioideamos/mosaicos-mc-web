@@ -16,6 +16,21 @@
 
   const lineHref = (lineSlug) => `${productsRoot}${lineSlug}/`;
   const productHref = (lineSlug, productSlug) => `${productsRoot}${lineSlug}/${productSlug}/`;
+  const resolveAsset = (src) => {
+    if (!src) {
+      return src;
+    }
+
+    if (/^(https?:)?\/\//.test(src) || src.startsWith("data:")) {
+      return src;
+    }
+
+    if (src.startsWith("@/")) {
+      return `${basePrefix}${src.slice(2)}`;
+    }
+
+    return `${basePrefix}${src.replace(/^\.?\//, "")}`;
+  };
   const exteriorPulidaOverride = [
     {
       slug: "64-panes",
@@ -460,10 +475,11 @@
       `<div class="line-grid">${lines
         .map((line) => {
           const featured = line.products[0];
+          const lineImage = resolveAsset(line.heroImage);
           return `
             <article class="line-card reveal is-visible">
               <a class="line-card__media" href="${lineHref(line.slug)}" aria-label="Ver coleccion ${line.name}">
-                <img src="${line.heroImage}" alt="${line.name}" />
+                <img src="${lineImage}" alt="${line.name}" />
               </a>
               <div class="line-card__body">
                 <span class="kicker">linea de producto</span>
@@ -491,7 +507,7 @@
           (product) => `
             <article class="product-card reveal is-visible">
               <a class="product-card__media" href="${productHref(line.slug, product.slug)}" aria-label="Ver detalle ${product.name}">
-                <img src="${product.image}" alt="${product.name}" />
+                <img src="${resolveAsset(product.image)}" alt="${product.name}" />
               </a>
               <div class="product-card__body">
                 <span class="kicker">${product.kicker}</span>
@@ -719,7 +735,7 @@
                 (related) => `
                   <article class="product-card reveal is-visible">
                     <a class="product-card__media" href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
-                      <img src="${related.image}" alt="${related.name}" />
+                      <img src="${resolveAsset(related.image)}" alt="${related.name}" />
                     </a>
                     <div class="product-card__body">
                       <span class="kicker">${related.kicker}</span>
@@ -781,7 +797,7 @@
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80');">
+      <section class="page-hero" style="--hero-image: url('${resolveAsset("@/assets/img/generated/home-brand-editorial.png")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catalogo</span>
           <h1>Lineas de producto</h1>
@@ -797,8 +813,9 @@
   };
 
   const renderLinePage = (line) => {
+    const lineImage = resolveAsset(line.heroImage);
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${line.heroImage}');">
+      <section class="page-hero" style="--hero-image: url('${lineImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">linea de producto</span>
           <h1>${line.name}</h1>
@@ -818,7 +835,7 @@
             </div>
           </article>
           <article class="split-card split-card--image reveal is-visible">
-            <img src="${line.heroImage}" alt="${line.name}" />
+            <img src="${lineImage}" alt="${line.name}" />
           </article>
         </div>
 
@@ -834,9 +851,10 @@
 
   const renderProductPage = (line, product) => {
     const relatedProducts = line.products.filter((item) => item.slug !== product.slug);
+    const productDetailImage = resolveAsset(product.detailImage);
 
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${product.detailImage}');">
+      <section class="page-hero" style="--hero-image: url('${productDetailImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">${line.name}</span>
           <h1>${product.name}</h1>
@@ -848,7 +866,7 @@
         ${renderLineNav(line.slug)}
         <div class="product-detail-grid">
           <article class="split-card split-card--image reveal is-visible">
-            <img src="${product.detailImage}" alt="${product.name}" />
+            <img src="${productDetailImage}" alt="${product.name}" />
           </article>
           <article class="split-card split-card--copy reveal is-visible">
             <span class="eyebrow eyebrow--dark">detalle de producto</span>
