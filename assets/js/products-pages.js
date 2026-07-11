@@ -587,25 +587,31 @@
   const buildFaqs = (line, product) =>
     product.faqs || [
       {
-        question: `Para que proyectos conviene ${product.name}?`,
-        answer: `${product.heroSummary} Se recomienda especialmente para ${getLineApplications(line)}.`,
+        question: `Sirve ${product.name} para el uso previsto en este tipo de proyecto?`,
+        answer: `${product.heroSummary} Dentro de la linea ${line.name}, se recomienda especialmente para ${getLineApplications(line)}.`,
       },
       {
-        question: `Que formato y rendimiento tiene ${product.name}?`,
-        answer: `${product.name} trabaja con ${product.meta.slice(0, 3).join(", ")}. ${product.specs[0]?.[1] || ""}`,
+        question: "Cuantas unidades necesito por metro cuadrado?",
+        answer: `${product.name} trabaja con ${product.meta.slice(0, 3).join(", ")}. Para cotizar con mas precision, conviene contemplar cortes, encuentros y un margen adicional segun el tipo de obra.`,
       },
       {
-        question: "Como se instala o especifica correctamente?",
+        question: "Como se coloca: con pegamento o con sistema tradicional?",
         answer: getInstallationGuidance(line),
       },
       {
-        question: "Que mantenimiento se recomienda?",
-        answer: getMaintenanceGuidance(line),
+        question: "Cuando se define la junta y que hay que prever en obra?",
+        answer:
+          "La separacion entre piezas, las juntas y los encuentros deben definirse segun soporte, modulado y exposicion. Podemos orientarte en ese criterio junto con la colocacion recomendada para evitar improvisaciones en obra.",
       },
       {
-        question: "Puedo pedir ficha tecnica y asesoramiento comercial?",
+        question: "Tiene ficha tecnica o respaldo comercial para especificarlo?",
         answer:
-          "Si. Podemos enviarte material tecnico, orientarte en cantidades y ayudarte a definir la mejor opcion para tu proyecto desde contacto o por WhatsApp.",
+          "Si. Podemos enviarte la ficha comercial o tecnica disponible, revisar cantidades, aplicaciones y ayudarte a validar si esta pieza es la indicada para tu proyecto.",
+      },
+      {
+        question: "Como se mantiene una vez colocado?",
+        answer:
+          getMaintenanceGuidance(line),
       },
     ];
 
