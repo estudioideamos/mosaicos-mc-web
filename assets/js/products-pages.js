@@ -35,19 +35,19 @@
     {
       slug: "64-panes",
       name: "64 Panes",
-      kicker: "linea exterior pulida",
+      kicker: "línea exterior pulida",
       cardSummary:
-        "Placa exterior de reticula fina, pensada para veredas, accesos y espacios de alto transito con una lectura muy marcada.",
+        "Placa exterior de reticula fina, pensada para veredas, accesos y espacios de alto tránsito con una lectura muy marcada.",
       heroSummary:
-        "Una de las piezas mas representativas de Exterior pulida, con trama de 64 panes y lenguaje bien tecnico.",
+        "Una de las piezas más representativas de Exterior pulida, con trama de 64 panes y lenguaje técnico.",
       image:
-        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior7-150x150.jpg",
       detailImage:
-        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior14-150x150.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
-        ["Peso por m2", "75 Kg aprox."],
+        ["Peso por m²", "75 Kg aprox."],
         ["Medida", "40 x 40 x 3,6 cm."],
       ],
       notes: [
@@ -57,102 +57,102 @@
         },
         {
           title: "Variantes visibles",
-          text: "En la referencia aparecen los codigos P64PG200, P64PN201, P64PR202 y P64PBL204.",
+          text: "En la referencia aparecen los códigos P64PG200, P64PN201, P64PR202 y P64PBL204.",
         },
         {
           title: "Consulta comercial",
-          text: "Podemos cargar despues las fotos y codigos definitivos de cada variante dentro de esta misma ficha.",
+          text: "Podemos cargar después las fotos y códigos definitivos de cada variante dentro de esta misma ficha.",
         },
       ],
     },
     {
       slug: "16-panes",
       name: "16 Panes",
-      kicker: "linea exterior pulida",
+      kicker: "línea exterior pulida",
       cardSummary:
-        "Version de lectura mas amplia y despojada, con 16 panes grandes y una presencia visual mas serena.",
+        "Versión de lectura más amplia y despojada, con 16 panes grandes y una presencia visual más serena.",
       heroSummary:
-        "Placa de 16 panes para exterior pulido, pensada para quienes buscan una grilla mas abierta.",
+        "Placa de 16 panes para exterior pulido, pensada para quienes buscan una grilla más abierta.",
       image:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior2-150x150.jpg",
       detailImage:
-        "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior17-150x150.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
-        ["Peso por m2", "75 Kg aprox."],
+        ["Peso por m²", "75 Kg aprox."],
         ["Medida", "40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Uso sugerido",
-          text: "Muy buena opcion para galerias, expansiones y superficies exteriores de dibujo mas calmo.",
+          text: "Muy buena opción para galerías, expansiones y superficies exteriores de dibujo más calmo.",
         },
         {
           title: "Variantes visibles",
-          text: "En la referencia aparecen los codigos P16PBL204, P16PG200 y P16PN201.",
+          text: "En la referencia aparecen los códigos P16PBL204, P16PG200 y P16PN201.",
         },
         {
           title: "Consulta comercial",
-          text: "Podemos sumar luego colores, terminaciones y fotos aplicadas de cada opcion real.",
+          text: "Podemos sumar luego colores, terminaciónes y fotos aplicadas de cada opción real.",
         },
       ],
     },
     {
       slug: "8-barras",
       name: "8 Barras",
-      kicker: "linea exterior pulida",
+      kicker: "línea exterior pulida",
       cardSummary:
-        "Pieza ranurada de lenguaje lineal, ideal para sumar ritmo y una expresion mas tecnica en superficies exteriores.",
+        "Pieza ranurada de lenguaje lineal, ideal para sumar ritmo y una expresión más técnica en superficies exteriores.",
       heroSummary:
-        "Producto lineal de Exterior pulida con lectura de barras, muy util para panos de gran caracter.",
+        "Producto lineal de Exterior pulida con lectura de barras, muy útil para paños de gran carácter.",
       image:
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior6-150x150.jpg",
       detailImage:
-        "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior18-150x150.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
-        ["Peso por m2", "75 Kg aprox."],
+        ["Peso por m²", "75 Kg aprox."],
         ["Medida", "40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Uso sugerido",
-          text: "Funciona bien en galerias, veredas y sectores donde interesa reforzar un dibujo lineal.",
+          text: "Funciona bien en galerías, veredas y sectores donde interesa reforzar un dibujo lineal.",
         },
         {
           title: "Variantes visibles",
-          text: "En la referencia figuran los codigos P8BGC y P8BNC, ademas del modelo gris plomo blanco negro.",
+          text: "En la referencia figuran los códigos P8BGC y P8BNC, además del modelo gris plomo blanco negro.",
         },
         {
           title: "Consulta comercial",
-          text: "Despues podemos cargar el detalle exacto de colores y fotos por variante dentro de esta misma pagina.",
+          text: "Después podemos cargar el detalle exacto de colores y fotos por variante dentro de esta misma página.",
         },
       ],
     },
     {
       slug: "ondas",
       name: "Ondas",
-      kicker: "linea exterior pulida",
+      kicker: "línea exterior pulida",
       cardSummary:
-        "Modelo decorativo de trazo ondulado para sumar movimiento sin perder la robustez de la linea exterior.",
+        "Modelo decorativo de trazo ondulado para sumar movimiento sin perder la robustez de la línea exterior.",
       heroSummary:
         "Una pieza expresiva con dibujo de ondas, pensada para proyectos donde la textura es protagonista.",
       image:
-        "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior10-150x150.jpg",
       detailImage:
-        "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior3-150x150.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
-        ["Peso por m2", "75 Kg aprox."],
+        ["Peso por m²", "75 Kg aprox."],
         ["Medida", "40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Colores disponibles",
-          text: "Segun la referencia: gris claro, gris plomo, blanco negro y rojo.",
+          text: "Según la referencia: gris claro, gris plomo, blanco negro y rojo.",
         },
         {
           title: "Modelos visibles",
@@ -160,73 +160,73 @@
         },
         {
           title: "Consulta comercial",
-          text: "Podemos agregar luego una ficha por color si queres desglosar esta pieza en mas detalle.",
+          text: "Podemos agregar luego una ficha por color si querés desglosar esta pieza en más detalle.",
         },
       ],
     },
     {
       slug: "espiga",
       name: "Espiga",
-      kicker: "linea exterior pulida",
+      kicker: "línea exterior pulida",
       cardSummary:
-        "Trama geometrica en espiga para proyectos exteriores con un lenguaje mas grafico y decorativo.",
+        "Trama geométrica en espiga para proyectos exteriores con un lenguaje más gráfico y decorativo.",
       heroSummary:
         "Modelo de dibujo espigado para quienes buscan una placa exterior pulida con personalidad propia.",
       image:
-        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior15-150x150.jpg",
       detailImage:
-        "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior12-150x150.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
-        ["Peso por m2", "75 Kg aprox."],
+        ["Peso por m²", "75 Kg aprox."],
         ["Medida", "40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Uso sugerido",
-          text: "Ideal para zonas protagonistas donde se busca una trama visible y un dibujo mas distintivo.",
+          text: "Ideal para zonas protagonistas donde se busca una trama visible y un dibujo más distintivo.",
         },
         {
           title: "Modelos visibles",
-          text: "En la referencia aparecen Espiga gris claro y Gris plomo negro.",
+          text: "En la referencia aparecen Espiga gris claro y gris plomo negro.",
         },
         {
           title: "Consulta comercial",
-          text: "Podemos completar mas adelante con variantes, codigos y fotos aplicadas de obra real.",
+          text: "Podemos completar más adelante con variantes, códigos y fotos aplicadas de obra real.",
         },
       ],
     },
     {
       slug: "1-pan",
       name: "1 Pan",
-      kicker: "linea exterior pulida",
+      kicker: "línea exterior pulida",
       cardSummary:
-        "La opcion mas limpia de la linea, con un solo plano protagonista y una expresion exterior muy sobria.",
+        "La opción más limpia de la línea, con un solo plano protagonista y una expresión exterior muy sobria.",
       heroSummary:
         "Pieza de lectura lisa y despojada para superficies exteriores que necesitan simpleza y continuidad.",
       image:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior1-150x150.jpg",
       detailImage:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Exterior"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior20-150x150.jpg",
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
-        ["Peso por m2", "75 Kg aprox."],
+        ["Peso por m²", "75 Kg aprox."],
         ["Medida", "40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Uso sugerido",
-          text: "Muy buena base para patios, expansiones y superficies exteriores donde interesa una lectura mas limpia.",
+          text: "Muy buena base para patios, expansiones y superficies exteriores donde interesa una lectura más limpia.",
         },
         {
           title: "Variantes visibles",
-          text: "En la captura se ven Blanco gris claro y Gris claro, ademas de fotos aplicadas del producto.",
+          text: "En la captura se ven Blanco gris claro y Gris claro, además de fotos aplicadas del producto.",
         },
         {
           title: "Consulta comercial",
-          text: "Si queres, despues armamos una galeria propia con las fotos de aplicacion reales de esta pieza.",
+          text: "Si querés, después armamos una galería propia con las fotos de aplicación reales de esta pieza.",
         },
       ],
     },
@@ -235,53 +235,53 @@
     {
       slug: "bicapa",
       name: "Bicapa",
-      kicker: "linea mosaicos",
+      kicker: "línea mosaicos",
       cardSummary:
-        "Mosaico bicapa con terminacion semi pulida, pensado para terminarse en obra mediante pulidor de pisos.",
+        "Mosaico bicapa con terminación semi pulida, pensado para terminarse en obra mediante pulidor de pisos.",
       heroSummary:
-        "El sistema bicapa aporta dureza y durabilidad, y se completa con pulido final en obra para lograr la terminacion deseada.",
+        "El sistema bicapa aporta dureza y durabilidad, y se completa con pulido final en obra para lograr la terminación deseada.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa1.jpg",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa3.jpg",
-      meta: ["40 x 40 x 3,3 cm", "12 kg aprox.", "75 kg/m2", "6,25 un/m2"],
+      meta: ["40 x 40 x 3,3 cm", "12 kg aprox.", "75 kg/m²", "6,25 un/m²"],
       specs: [
-        ["Terminacion", "Semi pulida; normalmente se termina pulido en obra."],
+        ["Terminación", "Semi pulida; normalmente se termina pulido en obra."],
         ["Medida", "40 x 40 x 3,3 cm."],
-        ["Peso y rendimiento", "12 kg aprox. por unidad, 75 kg por m2 y 6,25 unidades por m2."],
+        ["Peso y rendimiento", "12 kg aprox. por unidad, 75 kg por m² y 6,25 unidades por m²."],
       ],
       notes: [
         {
           title: "Descripcion",
-          text: "Es un mosaico ideal para lograr superficies de alta resistencia y buena terminacion con lenguaje clasico.",
+          text: "Es un mosaico ideal para lograr superficies de alta resistencia y buena terminación con lenguaje clásico.",
         },
         {
           title: "Variante visible",
-          text: "En la referencia se muestra la variante Gris claro junto a fotos de pieza y aplicacion.",
+          text: "En la referencia se muestra la variante Gris claro junto a fotos de pieza y aplicación.",
         },
         {
           title: "Consulta comercial",
-          text: "Despues podemos sumar aca mas colores, codigos y fotos reales de obra de esta familia.",
+          text: "Después podemos sumar aca más colores, códigos y fotos reales de obra de esta familia.",
         },
       ],
     },
     {
       slug: "mosaico-compacto",
       name: "Mosaico compacto",
-      kicker: "linea mosaicos",
+      kicker: "línea mosaicos",
       cardSummary:
-        "Revestimiento de terminacion pulida terminada, que no necesita ser pulido en obra una vez colocado.",
+        "Revestimiento de terminación pulida terminada, que no necesita ser pulido en obra una vez colocado.",
       heroSummary:
-        "Una linea de mosaicos de terminacion ya pulida, con gran variedad de colores y dos formatos base segun la referencia.",
+        "Una línea de mosaicos de terminación ya pulida, con gran variedad de colores y dos formatos base según la referencia.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto1.jpg",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto18.jpg",
-      meta: ["30 x 30 x 1,8 cm", "43 kg/m2", "11,11 un/m2", "40 x 40 x 2,2 cm"],
+      meta: ["30 x 30 x 1,8 cm", "43 kg/m²", "11,11 un/m²", "40 x 40 x 2,2 cm"],
       specs: [
-        ["Formato 30 x 30", "30 x 30 x 1,8 cm, 43 kg por m2 y 11,11 unidades por m2."],
-        ["Formato 40 x 40", "40 x 40 x 2,2 cm, 51 kg por m2 y 6,25 unidades por m2."],
-        ["Terminacion", "Pulida terminada; no necesita pulido en obra."],
+        ["Formato 30 x 30", "30 x 30 x 1,8 cm, 43 kg por m² y 11,11 unidades por m²."],
+        ["Formato 40 x 40", "40 x 40 x 2,2 cm, 51 kg por m² y 6,25 unidades por m²."],
+        ["Terminación", "Pulida terminada; no necesita pulido en obra."],
       ],
       notes: [
         {
@@ -289,12 +289,12 @@
           text: "Beige Medano, Blanco con Rosa, Blanco Natural, Blanco Torino, Chiampo Rosa, Gris Bardiglio, Gris Chiampo, Gris Claro, Gris Glaciar, Gris Plomo, Negro Alpes, Rojo Dragon, Rosa Firenze, Sahara y Terra.",
         },
         {
-          title: "Galeria de referencia",
-          text: "La pagina original muestra muestras de color, una pieza rotulada y dos fotos aplicadas de la linea.",
+          title: "Galería de referencia",
+          text: "La página original muestra muestras de color, una pieza rotulada y dos fotos aplicadas de la línea.",
         },
         {
           title: "Consulta comercial",
-          text: "Si queres, la proxima pasada la hacemos con cada color cargado como variante separada dentro de esta misma ficha.",
+          text: "Si querés, la proxima pasada la hacemos con cada color cargado como variante separada dentro de esta misma ficha.",
         },
       ],
     },
@@ -303,33 +303,33 @@
     {
       slug: "para-decks-y-piletas",
       name: "Para decks y piletas",
-      kicker: "linea atermicos",
+      kicker: "línea atérmicos",
       cardSummary:
-        "Sistema atermico pensado para decks y piletas, con resoluciones de borde y solarium para acompanar el conjunto completo.",
+        "Sistema atérmico pensado para decks y piletas, con resoluciónes de borde y solárium para acompañar el conjunto completo.",
       heroSummary:
-        "Producto desarrollado para zonas de piscina y expansiones exteriores, con variantes de borde y panos de solarium.",
+        "Producto desarrollado para zonas de piscina y expansiones exteriores, con variantes de borde y paños de solárium.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3.jpg",
-      meta: ["50 x 50 x 3 cm", "14 kg aprox.", "4 un/m2", "2 un/ml"],
+      meta: ["50 x 50 x 3 cm", "14 kg aprox.", "4 un/m²", "2 un/ml"],
       specs: [
         ["Medida", "50 x 50 x 3 cm."],
         ["Peso unitario", "14 kg aprox."],
-        ["Rendimiento", "4 unidades por m2 y 2 unidades por metro lineal."],
+        ["Rendimiento", "4 unidades por m² y 2 unidades por metro lineal."],
       ],
       notes: [
         {
-          title: "Resoluciones visibles",
+          title: "Resoluciónes visibles",
           text: "En la referencia aparecen tres variantes: Borde con bisel, Borde con nariz y Solarium.",
         },
         {
-          title: "Aplicacion",
+          title: "Aplicación",
           text: "Pensado para piletas, decks y expansiones donde importa el confort de uso y una imagen limpia junto al agua.",
         },
         {
           title: "Consulta comercial",
-          text: "Si queres, en la siguiente pasada lo desglosamos en fichas separadas para cada resolucion de borde.",
+          text: "Si querés, en la siguiente pasada lo desglosamos en fichas separadas para cada resolución de borde.",
         },
       ],
     },
@@ -337,100 +337,168 @@
   const rusticosOverride = [
     {
       slug: "simil-adoquin-rustico",
-      name: "Simil adoquin rustico",
-      kicker: "linea rusticos",
+      name: "Símil adoquín rústico",
+      kicker: "línea rústicos",
       cardSummary:
-        "Placa calcarea de lectura simil adoquin para interiores y exteriores con una expresion mineral sobria y consistente.",
+        "Placa calcárea de lectura símil adoquín para interiores y exteriores con una expresión mineral sobria y consistente.",
       heroSummary:
-        "Una pieza rustica pensada para proyectos que buscan textura, caracter y una terminacion cercana a la piedra natural.",
+        "Una pieza rustica pensada para proyectos que buscan textura, carácter y una terminación cercana a la piedra natural.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1.jpg",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin3.jpg",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Rustico"],
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Rustico"],
       specs: [
         ["Peso unitario", "12 kg aprox. por unidad."],
-        ["Peso por m2", "75 kg aprox."],
-        ["Rendimiento y medida", "6,25 unidades por m2 en formato 40 x 40 x 3,6 cm."],
+        ["Peso por m²", "75 kg aprox."],
+        ["Rendimiento y medida", "6,25 unidades por m² en formato 40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Variantes visibles",
-          text: "En la referencia aparecen una version gris, una negra y una terracota, ademas de una foto de pieza en perspectiva.",
+          text: "En la referencia aparecen una versión gris, una negra y una terracota, además de una foto de pieza en perspectiva.",
         },
         {
-          title: "Aplicacion",
-          text: "Funciona muy bien en patios, galerias, expansiones y sectores donde se busca una textura tipo adoquin con lectura controlada.",
+          title: "Aplicación",
+          text: "Funciona muy bien en patios, galerías, expansiones y sectores donde se busca una textura tipo adoquín con lectura controlada.",
         },
         {
-          title: "Terminacion sugerida",
-          text: "Como en el resto de la linea rustica, se recomienda el encerado luego de la colocacion para reforzar el acabado final.",
+          title: "Terminación sugerida",
+          text: "Como en el resto de la línea rustica, se recomienda el encerado luego de la colocación para reforzar el acabado final.",
         },
       ],
     },
     {
       slug: "loseta-lisa-biselada",
       name: "Loseta lisa biselada",
-      kicker: "linea rusticos",
+      kicker: "línea rústicos",
       cardSummary:
-        "Pieza de lenguaje mas limpio dentro de Rusticos, con borde biselado y una lectura versatil para distintos criterios de colocacion.",
+        "Pieza de lenguaje más limpio dentro de Rusticos, con borde biselado y una lectura versátil para distintos criterios de colocación.",
       heroSummary:
-        "Una loseta sobria y tecnica que conserva el espiritu mineral de la linea mientras suma una imagen mas serena y contemporanea.",
+        "Una loseta sobria y técnica que conserva el espíritu mineral de la línea mientras suma una imagen más serena y contemporánea.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/lose2.jpg",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/lose3.jpg",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Biselada"],
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Biselada"],
       specs: [
         ["Peso unitario", "12 kg aprox. por unidad."],
-        ["Peso por m2", "75 kg aprox."],
-        ["Rendimiento y medida", "6,25 unidades por m2 en formato 40 x 40 x 3,6 cm."],
+        ["Peso por m²", "75 kg aprox."],
+        ["Rendimiento y medida", "6,25 unidades por m² en formato 40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Uso visible en referencia",
-          text: "La pagina original muestra la pieza lisa, una aplicacion en piso y una opcion de colocacion sobre apoyos o tacos plasticos.",
+          text: "La página original muestra la pieza lisa, una aplicación en piso y una opción de colocación sobre apoyos o tacos plasticos.",
         },
         {
-          title: "Aplicacion",
-          text: "Es una muy buena opcion para terrazas, expansiones y superficies que necesitan una lectura mas despejada sin salir de la familia rustica.",
+          title: "Aplicación",
+          text: "Es una muy buena opción para terrazas, expansiones y superficies que necesitan una lectura más despejada sin salir de la familia rustica.",
         },
         {
-          title: "Terminacion sugerida",
-          text: "El encerado posterior ayuda a consolidar una terminacion mas brillante y una presencia visual mejor definida.",
+          title: "Terminación sugerida",
+          text: "El encerado posterior ayuda a consolidar una terminación más brillante y una presencia visual mejor definida.",
         },
       ],
     },
     {
       slug: "accesibilidad",
       name: "Accesibilidad",
-      kicker: "linea rusticos",
+      kicker: "línea rústicos",
       cardSummary:
-        "Solucion tactil y de guiado dentro de la linea rustica, pensada para recorridos accesibles con lenguaje tecnico y alta legibilidad.",
+        "Solucion táctil y de guíado dentro de la línea rustica, pensada para recorridos accesibles con lenguaje técnico y alta legibilidad.",
       heroSummary:
-        "Una familia funcional para resolver circulaciones accesibles mediante losetas guia y piezas tactiles de clara lectura.",
+        "Una familia funcional para resolver circulaciones accesibles mediante losetas guía y piezas táctiles de clara lectura.",
       image:
         "https://images.unsplash.com/photo-1592595896616-c37162298647?auto=format&fit=crop&w=1200&q=80",
       detailImage:
         "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1400&q=80",
-      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m2", "Accesibilidad"],
+      meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Accesibilidad"],
       specs: [
         ["Peso unitario", "12 kg aprox. por unidad."],
-        ["Peso por m2", "75 kg aprox."],
-        ["Rendimiento y medida", "6,25 unidades por m2 en formato 40 x 40 x 3,6 cm."],
+        ["Peso por m²", "75 kg aprox."],
+        ["Rendimiento y medida", "6,25 unidades por m² en formato 40 x 40 x 3,6 cm."],
       ],
       notes: [
         {
           title: "Piezas visibles",
-          text: "La referencia muestra dos resoluciones concretas: loseta 6 barras guia y loseta tactil.",
+          text: "La referencia muestra dos resoluciónes concretas: loseta 6 barras guía y loseta táctil.",
         },
         {
-          title: "Aplicacion",
-          text: "Pensado para recorridos peatonales, accesos y sectores donde hace falta reforzar guiado y advertencia tactil dentro del proyecto.",
+          title: "Aplicación",
+          text: "Pensado para recorridos peatonales, accesos y sectores donde hace falta reforzar guíado y advertencia táctil dentro del proyecto.",
         },
         {
           title: "Asesoramiento",
-          text: "Podemos ayudarte a definir despiece, ubicacion y combinacion con otras piezas de la linea segun el recorrido previsto.",
+          text: "Podemos ayudarte a definir despiece, ubicación y combinación con otras piezas de la línea según el recorrido previsto.",
+        },
+      ],
+    },
+  ];
+  const bloquesOverride = [
+    {
+      slug: "adoquin-gris",
+      name: "Adoquín Holanda",
+      kicker: "línea bloques de hormigón",
+      cardSummary:
+        "Bloque intertrabado de alto rendimiento para circulaciones, patios y superficies exteriores con uso intenso.",
+      heroSummary:
+        "Una solución robusta para superficies exigidas, con lectura modular, gran resistencia y opciónes cromáticas para obra exterior.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda2.jpg",
+      meta: ["10 x 20 x 6 cm", "123 kg/m²", "50 un/m²", "Exterior"],
+      specs: [
+        ["Medida", "10 x 20 x 6 cm."],
+        ["Peso por m²", "123 kg aprox."],
+        ["Unidades por m²", "50 piezas."],
+      ],
+      notes: [
+        {
+          title: "Variantes visibles",
+          text: "La referencia muestra combinaciones rojo y amarillo, gris claro, gris medio, negro y rojo aplicado en obra.",
+        },
+        {
+          title: "Uso sugerido",
+          text: "Ideal para accesos, patios, veredas, calles internas y superficies exteriores que exigen durabilidad y mantenimiento simple.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Podemos definir colores, cantidad de piezas y tipo de traba según el proyecto y el uso previsto.",
+        },
+      ],
+    },
+    {
+      slug: "trama-urbana",
+      name: "Bloque de Césped",
+      kicker: "línea bloques de hormigón",
+      cardSummary:
+        "Pieza drenante pensada para pisos verdes, estacionamientos y áreas exteriores que requieren resistencia y permeabilidad.",
+      heroSummary:
+        "Una solución funcional para combinar hormigón y césped en superficies exteriores con tránsito controlado y buena presencia técnica.",
+      image:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1.jpg",
+      detailImage:
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped2.jpg",
+      meta: ["40 x 30 x 8 cm", "105 kg/m²", "8 un/m²", "Exterior"],
+      specs: [
+        ["Medida", "40 x 30 x 8 cm."],
+        ["Peso por m²", "105 kg aprox."],
+        ["Unidades por m²", "8 piezas."],
+      ],
+      notes: [
+        {
+          title: "Uso sugerido",
+          text: "Muy útil para cocheras, estacionamientos, senderos y superficies exteriores con necesidad de drenaje y apoyo firme.",
+        },
+        {
+          title: "Variantes visibles",
+          text: "La referencia muestra el bloque de césped prensado aplicado y una vista aislada de la pieza.",
+        },
+        {
+          title: "Consulta comercial",
+          text: "Te ayudamos a calcular cantidad, sistema de base y criterio de implantación según el tipo de suelo y tránsito.",
         },
       ],
     },
@@ -440,6 +508,7 @@
   const mosaicosLine = lines.find((line) => line.slug === "mosaicos");
   const atermicosLine = lines.find((line) => line.slug === "atermicos");
   const rusticosLine = lines.find((line) => line.slug === "rusticos");
+  const bloquesLine = lines.find((line) => line.slug === "bloques-de-hormigon");
 
   if (exteriorPulidaLine) {
     exteriorPulidaLine.products = exteriorPulidaOverride;
@@ -455,6 +524,10 @@
 
   if (rusticosLine) {
     rusticosLine.products = rusticosOverride;
+  }
+
+  if (bloquesLine) {
+    bloquesLine.products = bloquesOverride;
   }
 
   const findLine = (lineSlug) => lines.find((line) => line.slug === lineSlug);
@@ -482,7 +555,7 @@
                 <img src="${lineImage}" alt="${line.name}" />
               </a>
               <div class="line-card__body">
-                <span class="kicker">linea de producto</span>
+                <span class="kicker">línea de producto</span>
                 <h3><a class="line-card__title-link" href="${lineHref(line.slug)}">${line.name}</a></h3>
                 <p>${line.description}</p>
                 <div class="product-meta">
@@ -530,13 +603,13 @@
   const getLineApplications = (line) => {
     switch (line.slug) {
       case "exterior-pulida":
-        return "veredas, accesos, galerias y expansiones exteriores con circulacion intensa";
+        return "veredas, accesos, galerías y expansiones exteriores con circulación intensa";
       case "mosaicos":
-        return "interiores, locales, halls y proyectos donde importa la resistencia junto a una terminacion cuidada";
+        return "interiores, locales, halls y proyectos donde importa la resistencia junto a una terminación cuidada";
       case "atermicos":
-        return "bordes de pileta, decks, solariums y expansiones donde el confort termico es determinante";
+        return "bordes de pileta, decks, soláriums y expansiones donde el confort térmico es determinante";
       case "rusticos":
-        return "interiores y exteriores con lenguaje mineral, textura protagonista y lectura mas artesanal";
+        return "interiores y exteriores con lenguaje mineral, textura protagonista y lectura más artesanal";
       case "bloques-de-hormigon":
         return "veredas, circulaciones, accesos vehiculares y superficies urbanas de alta exigencia";
       default:
@@ -549,30 +622,30 @@
       case "exterior-pulida":
         return "Requiere una base firme, nivelacion correcta y juntas bien controladas para sostener una lectura pareja en veredas y expansiones exteriores.";
       case "mosaicos":
-        return "Conviene definir el sistema de colocacion segun el soporte, contemplando nivelacion, juntas y terminacion final de acuerdo con el tipo de mosaico.";
+        return "Conviene definir el sistema de colocación según el soporte, contemplando nivelacion, juntas y terminación final de acuerdo con el tipo de mosaico.";
       case "atermicos":
-        return "La colocacion debe contemplar pendiente, drenaje y definicion de bordes para resolver correctamente solarium, nariz y encuentros con la pileta.";
+        return "La colocación debe contemplar pendiente, drenaje y definicion de bordes para resolver correctamente solárium, nariz y encuentros con la pileta.";
       case "rusticos":
-        return "Se recomienda revisar juntas, absorcion y terminacion superficial para conservar el caracter rustico sin perder estabilidad de uso.";
+        return "Se recomienda revisar juntas, absorción y terminación superficial para conservar el carácter rústico sin perder estabilidad de uso.";
       case "bloques-de-hormigon":
         return "La base y la compactacion son claves para asegurar estabilidad, resistencia al uso y una modulacion consistente en obra.";
       default:
-        return "Nuestro equipo puede orientarte en colocacion, juntas, base de apoyo y terminacion segun el uso previsto.";
+        return "Nuestro equipo puede orientarte en colocación, juntas, base de apoyo y terminación según el uso previsto.";
     }
   };
 
   const getMaintenanceGuidance = (line) => {
     switch (line.slug) {
       case "exterior-pulida":
-        return "Con limpieza periodica y el tratamiento final adecuado, mantiene una presencia uniforme y muy buena respuesta al uso exterior.";
+        return "Con limpieza periódica y el tratamiento final adecuado, mantiene una presencia uniforme y muy buena respuesta al uso exterior.";
       case "mosaicos":
-        return "El mantenimiento depende de la terminacion elegida, pero en general se recomienda limpieza regular y cuidado de la superficie para preservar color y lectura.";
+        return "El mantenimiento depende de la terminación elegida, pero en general se recomienda limpieza regular y cuidado de la superficie para preservar color y lectura.";
       case "atermicos":
-        return "Con limpieza frecuente y control de bordes, conserva confort de uso, imagen limpia y buen desempeno en zonas humedas.";
+        return "Con limpieza frecuente y control de bordes, conserva confort de uso, imagen limpia y buen desempeño en zonas humedas.";
       case "rusticos":
-        return "Su textura agradece una limpieza constante y un criterio de proteccion acorde al nivel de exposicion y al uso del ambiente.";
+        return "Su textura agradece una limpieza constante y un criterio de proteccion acorde al nivel de exposición y al uso del ambiente.";
       case "bloques-de-hormigon":
-        return "Una rutina simple de limpieza y control de juntas ayuda a sostener su rendimiento y su expresion material en el tiempo.";
+        return "Una rutina simple de limpieza y control de juntas ayuda a sostener su rendimiento y su expresión material en el tiempo.";
       default:
         return "Te recomendamos definir el esquema de mantenimiento junto con la especificacion de uso para asegurar mayor durabilidad.";
     }
@@ -580,9 +653,9 @@
 
   const getInquiryHref = (line, product, topic) => {
     const messages = {
-      general: `Hola Mosaicos MC, me interesa ${product.name} de la linea ${line.name}. Quisiera recibir asesoramiento para mi proyecto.`,
-      ficha: `Hola Mosaicos MC, quiero recibir la ficha tecnica de ${product.name} de la linea ${line.name}.`,
-      colocacion: `Hola Mosaicos MC, quisiera consultar la colocacion y aplicacion recomendada para ${product.name} de la linea ${line.name}.`,
+      general: `Hola Mosaicos MC, me interesa ${product.name} de la línea ${line.name}. Quisiera recibir asesoramiento para mi proyecto.`,
+      ficha: `Hola Mosaicos MC, quiero recibir la ficha técnica de ${product.name} de la línea ${line.name}.`,
+      colocación: `Hola Mosaicos MC, quisiera consultar la colocación y aplicación recomendada para ${product.name} de la línea ${line.name}.`,
     };
 
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messages[topic] || messages.general)}`;
@@ -592,11 +665,11 @@
     product.faqs || [
       {
         question: `Sirve ${product.name} para el uso previsto en este tipo de proyecto?`,
-        answer: `${product.heroSummary} Dentro de la linea ${line.name}, se recomienda especialmente para ${getLineApplications(line)}.`,
+        answer: `${product.heroSummary} Dentro de la línea ${line.name}, se recomienda especialmente para ${getLineApplications(line)}.`,
       },
       {
         question: "Cuantas unidades necesito por metro cuadrado?",
-        answer: `${product.name} trabaja con ${product.meta.slice(0, 3).join(", ")}. Para cotizar con mas precision, conviene contemplar cortes, encuentros y un margen adicional segun el tipo de obra.`,
+        answer: `${product.name} trabaja con ${product.meta.slice(0, 3).join(", ")}. Para cotizar con más precisión, conviene contemplar cortes, encuentros y un margen adicional según el tipo de obra.`,
       },
       {
         question: "Como se coloca: con pegamento o con sistema tradicional?",
@@ -605,12 +678,12 @@
       {
         question: "Cuando se define la junta y que hay que prever en obra?",
         answer:
-          "La separacion entre piezas, las juntas y los encuentros deben definirse segun soporte, modulado y exposicion. Podemos orientarte en ese criterio junto con la colocacion recomendada para evitar improvisaciones en obra.",
+          "La separación entre piezas, las juntas y los encuentros deben definirse según soporte, modulado y exposición. Podemos orientarte en ese criterio junto con la colocación recomendada para evitar improvisaciones en obra.",
       },
       {
-        question: "Tiene ficha tecnica o respaldo comercial para especificarlo?",
+        question: "Tiene ficha técnica o respaldo comercial para especificarlo?",
         answer:
-          "Si. Podemos enviarte la ficha comercial o tecnica disponible, revisar cantidades, aplicaciones y ayudarte a validar si esta pieza es la indicada para tu proyecto.",
+          "Si. Podemos enviarte la ficha comercial o técnica disponible, revisar cantidades, aplicaciónes y ayudarte a validar si esta pieza es la indicada para tu proyecto.",
       },
       {
         question: "Como se mantiene una vez colocado?",
@@ -623,27 +696,27 @@
     product.downloads || [
       {
         kicker: "biblioteca",
-        title: "Catalogo de la linea",
-        text: `Acceso rapido a la coleccion ${line.name} para revisar el lenguaje de la linea y sus productos disponibles.`,
-        meta: ["Linea completa", "Online"],
+        title: "Catálogo de la línea",
+        text: `Acceso rapido a la coleccion ${line.name} para revisar el lenguaje de la línea y sus productos disponibles.`,
+        meta: ["Línea completa", "Online"],
         href: lineHref(line.slug),
         cta: "Ver coleccion",
       },
       {
-        kicker: "ficha tecnica",
+        kicker: "ficha técnica",
         title: "Ficha del producto",
-        text: `Solicita la ficha comercial y tecnica de ${product.name} con medidas, rendimiento y recomendaciones de aplicacion.`,
+        text: `Solicita la ficha comercial y técnica de ${product.name} con medidas, rendimiento y recomendaciones de aplicación.`,
         meta: ["PDF a pedido", "Asistencia comercial"],
         href: getInquiryHref(line, product, "ficha"),
         cta: "Solicitar PDF",
         external: true,
       },
       {
-        kicker: "colocacion",
-        title: "Guia de aplicacion",
-        text: `Te ayudamos a validar base, terminacion y criterio de colocacion segun el uso previsto para ${product.name}.`,
+        kicker: "colocación",
+        title: "Guía de aplicación",
+        text: `Te ayudamos a validar base, terminación y criterio de colocación según el uso previsto para ${product.name}.`,
         meta: ["Soporte", "Obra"],
-        href: getInquiryHref(line, product, "colocacion"),
+        href: getInquiryHref(line, product, "colocación"),
         cta: "Consultar",
         external: true,
       },
@@ -652,7 +725,7 @@
   const buildTestimonials = (line, product) =>
     product.testimonials || [
       {
-        quote: "Excelente atencion y calidad. Precios acorde a la mercaderia.",
+        quote: "Excelente atención y calidad. Precios acorde a la mercaderia.",
         author: "Sebastian Almeida",
         role: "Resena 5 estrellas en Google",
       },
@@ -662,14 +735,21 @@
         role: "Resena 5 estrellas en Google",
       },
       {
-        quote: "Muy buena relacion precio calidad.",
+        quote: "Muy buena relación precio calidad.",
         author: "Carlos Mariano Capisto",
         role: "Resena 5 estrellas en Google",
       },
     ];
 
+  const normalizeText = (value) =>
+    String(value || "")
+      .toLowerCase()
+      .replace(/²/g, "2")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
   const getMetaIconType = (value) => {
-    const normalized = String(value || "").toLowerCase();
+    const normalized = normalizeText(value);
 
     if (normalized.includes("cm") || (/\d/.test(normalized) && /\d+\s*x\s*\d+/.test(normalized))) {
       return "dimension";
@@ -679,7 +759,7 @@
       return "weight";
     }
 
-    if (normalized.includes("m2") || normalized.includes("m²") || normalized.includes("un/")) {
+    if (normalized.includes("m2") || normalized.includes("un/")) {
       return "grid";
     }
 
@@ -702,7 +782,7 @@
   };
 
   const getSpecIconType = (label) => {
-    const normalized = String(label || "").toLowerCase();
+    const normalized = normalizeText(label);
 
     if (normalized.includes("medida")) {
       return "dimension";
@@ -715,8 +795,7 @@
     if (
       normalized.includes("unidades") ||
       normalized.includes("cantidad") ||
-      normalized.includes("m2") ||
-      normalized.includes("m²")
+      normalized.includes("m2")
     ) {
       return "grid";
     }
@@ -725,11 +804,11 @@
       return "application";
     }
 
-    if (normalized.includes("terminacion")) {
+    if (normalized.includes("terminación")) {
       return "finish";
     }
 
-    if (normalized.includes("colocacion")) {
+    if (normalized.includes("colocación")) {
       return "layout";
     }
 
@@ -737,7 +816,7 @@
   };
 
   const getNoteIconType = (title) => {
-    const normalized = String(title || "").toLowerCase();
+    const normalized = normalizeText(title);
 
     if (normalized.includes("aplic")) {
       return "application";
@@ -755,15 +834,15 @@
       return "care";
     }
 
-    if (normalized.includes("consulta") || normalized.includes("asesoria")) {
+    if (normalized.includes("consulta") || normalized.includes("asesoría")) {
       return "chat";
     }
 
-    if (normalized.includes("terminacion")) {
+    if (normalized.includes("terminación")) {
       return "finish";
     }
 
-    if (normalized.includes("colocacion")) {
+    if (normalized.includes("colocación")) {
       return "layout";
     }
 
@@ -777,8 +856,8 @@
       <div class="product-detail-block">
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">preguntas frecuentes</span>
-          <h2>Todo lo importante sobre ${product.name}</h2>
-          <p>Respuestas rapidas para especificar mejor la pieza, anticipar su aplicacion y resolver consultas habituales.</p>
+          <h2>Preguntas frecuentes</h2>
+          <p>Respuestas claras para especificar mejor la pieza, anticipar su aplicación y resolver consultas habituales.</p>
         </div>
         <div class="faq-list">
           ${faqs
@@ -806,8 +885,8 @@
       <div class="product-detail-block">
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">descargables</span>
-          <h2>Material util para especificar ${product.name}</h2>
-          <p>Sumamos recursos de consulta y acceso rapido para acompanar el proceso comercial y tecnico.</p>
+          <h2>Descargables</h2>
+          <p>Recursos útiles para acompañar el proceso comercial y técnico de esta pieza.</p>
         </div>
         <div class="download-grid product-download-grid">
           ${downloads
@@ -837,12 +916,14 @@
       ? `
         <div class="product-detail-block">
           <div class="section-title reveal is-visible">
-            <span class="eyebrow eyebrow--dark">misma linea</span>
-            <h2>Productos relacionados dentro de ${line.name}</h2>
-            <p>Si queres comparar opciones, aca tenes otras piezas de la misma familia con un lenguaje compatible.</p>
+            <span class="eyebrow eyebrow--dark">selección</span>
+            <h2>Productos relacionados</h2>
+            <p>Otras piezas de la misma familia para comparar formatos, lenguaje y aplicaciónes.</p>
           </div>
-          <div class="product-grid">
-            ${products
+          <div class="related-carousel" data-related-carousel>
+            <div class="related-carousel__viewport">
+              <div class="related-carousel__track">
+                ${products
               .map(
                 (related) => `
                   <article class="product-card reveal is-visible">
@@ -855,7 +936,7 @@
                       <p>${related.cardSummary}</p>
                       <div class="product-meta">
                         ${related.meta
-                          .map((item, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${item}</span>`)
+                          .map((item) => `<span class="product-meta__item" data-icon="${getMetaIconType(item)}">${item}</span>`)
                           .join("")}
                       </div>
                       <a class="link-arrow" href="${productHref(line.slug, related.slug)}">Ver detalle</a>
@@ -864,6 +945,12 @@
                 `
               )
               .join("")}
+              </div>
+            </div>
+            <div class="related-carousel__controls">
+              <button class="related-carousel__button" type="button" data-related-prev aria-label="Anterior">‹</button>
+              <button class="related-carousel__button" type="button" data-related-next aria-label="Siguiente">›</button>
+            </div>
           </div>
         </div>
       `
@@ -873,7 +960,7 @@
     <div class="cta-strip product-cta reveal is-visible">
       <span class="eyebrow eyebrow--dark">asesoramiento</span>
       <h3>Te ayudamos a especificar ${product.name}</h3>
-      <p>Si estas definiendo cantidades, aplicacion o terminacion, armamos una recomendacion alineada con tu proyecto y con la linea ${line.name}.</p>
+      <p>Si estas definiendo cantidades, aplicación o terminación, armamos una recomendacion alineada con tu proyecto y con la línea ${line.name}.</p>
       <div class="cta-strip__actions">
         <a class="button button--dark" href="${contactHref}">Contactarme</a>
         <a class="button button--sand" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
@@ -888,8 +975,8 @@
       <div class="product-detail-block">
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">testimonios</span>
-          <h2>Lo que valoran quienes eligen ${line.name}</h2>
-          <p>Una seleccion de resenas reales de 5 estrellas que destacan atencion, calidad y relacion precio-calidad.</p>
+          <h2>Reseñas destacadas</h2>
+          <p>Mensajes reales de clientes que destacan atención, calidad y relación precio-calidad.</p>
         </div>
         <div class="testimonial-grid">
           ${testimonials
@@ -913,9 +1000,9 @@
     shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${resolveAsset("@/assets/img/generated/home-brand-editorial.png")}');">
         <div class="page-hero__inner reveal is-visible">
-          <span class="eyebrow">catalogo</span>
-          <h1>Lineas de producto</h1>
-          <p>Estas son las familias principales de Mosaicos MC. Cada linea abre su propia pagina con productos y cada pieza lleva a su detalle individual.</p>
+          <span class="eyebrow">catálogo</span>
+          <h1>Líneas de producto</h1>
+          <p>Estas son las familias principales de Mosaicos MC. Cada línea abre su propia página con productos y cada pieza lleva a su detalle individual.</p>
         </div>
       </section>
 
@@ -931,7 +1018,7 @@
     shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${lineImage}');">
         <div class="page-hero__inner reveal is-visible">
-          <span class="eyebrow">linea de producto</span>
+          <span class="eyebrow">línea de producto</span>
           <h1>${line.name}</h1>
           <p>${line.description}</p>
         </div>
@@ -941,7 +1028,7 @@
         ${renderLineNav(line.slug)}
         <div class="line-intro">
           <article class="split-card split-card--copy reveal is-visible">
-            <span class="eyebrow eyebrow--dark">sobre la linea</span>
+            <span class="eyebrow eyebrow--dark">sobre la línea</span>
             <h3>${line.overviewTitle}</h3>
             <p>${line.overviewText}</p>
             <div class="product-meta">
@@ -958,11 +1045,92 @@
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">productos</span>
           <h2>${line.name}</h2>
-          <p>Selecciona una pieza para ver su ficha, aplicaciones y recomendaciones de uso.</p>
+          <p>Selecciona una pieza para ver su ficha, aplicaciónes y recomendaciones de uso.</p>
         </div>
         ${renderProductCards(line)}
       </section>
     `;
+  };
+
+  const initRelatedCarousels = () => {
+    const carousels = shell.querySelectorAll("[data-related-carousel]");
+
+    carousels.forEach((carousel) => {
+      const viewport = carousel.querySelector(".related-carousel__viewport");
+      const track = carousel.querySelector(".related-carousel__track");
+      const cards = Array.from(carousel.querySelectorAll(".product-card"));
+      const prevButton = carousel.querySelector("[data-related-prev]");
+      const nextButton = carousel.querySelector("[data-related-next]");
+
+      if (!viewport || !track || cards.length <= 1) {
+        if (prevButton) prevButton.disabled = true;
+        if (nextButton) nextButton.disabled = true;
+        return;
+      }
+
+      let currentIndex = 0;
+      let intervalId = null;
+
+      const getPerView = () => {
+        if (window.innerWidth <= 820) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+      };
+
+      const update = () => {
+        const perView = getPerView();
+        const maxIndex = Math.max(0, cards.length - perView);
+        currentIndex = Math.min(currentIndex, maxIndex);
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const gap = 22;
+        track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+        if (prevButton) prevButton.disabled = maxIndex === 0;
+        if (nextButton) nextButton.disabled = maxIndex === 0;
+      };
+
+      const next = () => {
+        const perView = getPerView();
+        const maxIndex = Math.max(0, cards.length - perView);
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        update();
+      };
+
+      const previous = () => {
+        const perView = getPerView();
+        const maxIndex = Math.max(0, cards.length - perView);
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        update();
+      };
+
+      const stopAuto = () => {
+        if (intervalId) {
+          window.clearInterval(intervalId);
+          intervalId = null;
+        }
+      };
+
+      const startAuto = () => {
+        stopAuto();
+        intervalId = window.setInterval(next, 4200);
+      };
+
+      prevButton?.addEventListener("click", () => {
+        previous();
+        startAuto();
+      });
+
+      nextButton?.addEventListener("click", () => {
+        next();
+        startAuto();
+      });
+
+      carousel.addEventListener("mouseenter", stopAuto);
+      carousel.addEventListener("mouseleave", startAuto);
+      window.addEventListener("resize", update);
+
+      update();
+      startAuto();
+    });
   };
 
   const renderProductPage = (line, product) => {
@@ -1039,6 +1207,8 @@
         ${renderTestimonials(line, product)}
       </section>
     `;
+
+    initRelatedCarousels();
   };
 
   if (pageType === "catalog") {
@@ -1053,8 +1223,8 @@
       <section class="section">
         <div class="split-card split-card--copy reveal is-visible">
           <span class="eyebrow eyebrow--dark">productos</span>
-          <h3>No encontramos esta linea.</h3>
-          <p>Volvamos al catalogo principal para seguir navegando por las familias disponibles.</p>
+          <h3>No encontramos esta línea.</h3>
+          <p>Volvamos al catálogo principal para seguir navegando por las familias disponibles.</p>
           <a class="button button--dark" href="${productsRoot}">Ir a productos</a>
         </div>
       </section>
@@ -1076,7 +1246,7 @@
           <div class="split-card split-card--copy reveal is-visible">
             <span class="eyebrow eyebrow--dark">${line.name}</span>
             <h3>No encontramos este producto.</h3>
-            <p>Te dejo el acceso a la linea completa para que sigas explorando las piezas disponibles.</p>
+            <p>Te dejo el acceso a la línea completa para que sigas explorando las piezas disponibles.</p>
             <a class="button button--dark" href="${lineHref(line.slug)}">Ver ${line.name}</a>
           </div>
         </section>
