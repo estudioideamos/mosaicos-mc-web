@@ -668,6 +668,96 @@
       },
     ];
 
+  const getMetaIconType = (value) => {
+    const normalized = String(value || "").toLowerCase();
+
+    if (normalized.includes("cm") || (/\d/.test(normalized) && /\d+\s*x\s*\d+/.test(normalized))) {
+      return "dimension";
+    }
+
+    if (normalized.includes("kg")) {
+      return "weight";
+    }
+
+    if (
+      normalized.includes("pulido") ||
+      normalized.includes("rustico") ||
+      normalized.includes("atermico") ||
+      normalized.includes("hormigon") ||
+      normalized.includes("bicapa") ||
+      normalized.includes("borde")
+    ) {
+      return "finish";
+    }
+
+    if (normalized.includes("interior") || normalized.includes("exterior")) {
+      return "setting";
+    }
+
+    return "application";
+  };
+
+  const getSpecIconType = (label) => {
+    const normalized = String(label || "").toLowerCase();
+
+    if (normalized.includes("medida")) {
+      return "dimension";
+    }
+
+    if (normalized.includes("peso")) {
+      return "weight";
+    }
+
+    if (
+      normalized.includes("unidades") ||
+      normalized.includes("cantidad") ||
+      normalized.includes("m2") ||
+      normalized.includes("m²")
+    ) {
+      return "grid";
+    }
+
+    if (normalized.includes("uso")) {
+      return "application";
+    }
+
+    if (normalized.includes("terminacion")) {
+      return "finish";
+    }
+
+    if (normalized.includes("colocacion")) {
+      return "layout";
+    }
+
+    return "info";
+  };
+
+  const getNoteIconType = (title) => {
+    const normalized = String(title || "").toLowerCase();
+
+    if (normalized.includes("aplic")) {
+      return "application";
+    }
+
+    if (normalized.includes("mantenimiento")) {
+      return "care";
+    }
+
+    if (normalized.includes("consulta") || normalized.includes("asesoria")) {
+      return "chat";
+    }
+
+    if (normalized.includes("terminacion")) {
+      return "finish";
+    }
+
+    if (normalized.includes("colocacion")) {
+      return "layout";
+    }
+
+    return "info";
+  };
+
   const renderFaqs = (line, product) => {
     const faqs = buildFaqs(line, product);
 
@@ -888,7 +978,7 @@
             <p>${product.cardSummary}</p>
             <div class="product-meta">
               ${product.meta
-                .map((item, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${item}</span>`)
+                .map((item) => `<span class="product-meta__item" data-icon="${getMetaIconType(item)}">${item}</span>`)
                 .join("")}
             </div>
             <div class="hero__actions product-detail__actions">
@@ -903,7 +993,7 @@
             .map(
               (spec) => `
                 <article class="spec-card reveal is-visible">
-                  <span class="spec-card__icon" aria-hidden="true"></span>
+                  <span class="spec-card__icon" data-icon="${getSpecIconType(spec[0])}" aria-hidden="true"></span>
                   <span class="spec-card__label">${spec[0]}</span>
                   <p>${spec[1]}</p>
                 </article>
@@ -917,7 +1007,7 @@
             .map(
               (note) => `
                 <article class="detail-note reveal is-visible">
-                  <span class="detail-note__icon" aria-hidden="true"></span>
+                  <span class="detail-note__icon" data-icon="${getNoteIconType(note.title)}" aria-hidden="true"></span>
                   <h3>${note.title}</h3>
                   <p>${note.text}</p>
                 </article>

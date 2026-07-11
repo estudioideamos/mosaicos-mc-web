@@ -1197,6 +1197,88 @@ body.is-ready .shell {
   opacity: 0.8;
 }
 
+.product-meta__item::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.product-meta__item[data-icon="dimension"]::before {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.product-meta__item[data-icon="weight"]::before {
+  width: 11px;
+  height: 9px;
+  top: calc(50% + 2px);
+  border: 1.5px solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  background: transparent;
+}
+
+.product-meta__item[data-icon="weight"]::after {
+  width: 6px;
+  height: 4px;
+  border: 1.5px solid currentColor;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  top: calc(50% - 5px);
+  left: 14px;
+  opacity: 1;
+}
+
+.product-meta__item[data-icon="finish"]::before {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background:
+    linear-gradient(90deg, transparent 0 2px, currentColor 2px 3px, transparent 3px 5px, currentColor 5px 6px, transparent 6px 8px, currentColor 8px 9px, transparent 9px 12px);
+  opacity: 0.8;
+}
+
+.product-meta__item[data-icon="setting"]::before {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.product-meta__item[data-icon="setting"]::after {
+  width: 5px;
+  height: 5px;
+  left: 18px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.9;
+}
+
+.product-meta__item[data-icon="application"]::before {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 50% 50% 50% 2px;
+  background: transparent;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.product-meta__item[data-icon="application"]::after {
+  width: 4px;
+  height: 4px;
+  left: 15px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.92;
+}
+
 .product-meta__item[style*="--meta-icon:1"]::before,
 .product-meta__item[style*="--meta-icon:3"]::before {
   width: 11px;
@@ -1352,6 +1434,7 @@ body.is-ready .shell {
 
 .spec-card__icon,
 .detail-note__icon {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1385,6 +1468,165 @@ body.is-ready .shell {
   border-radius: 50%;
   background: currentColor;
   opacity: 0.85;
+}
+
+.spec-card__icon::after,
+.detail-note__icon::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+.spec-card__icon[data-icon="dimension"]::before {
+  width: 13px;
+  height: 13px;
+  border: 1.6px solid currentColor;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.spec-card__icon[data-icon="weight"]::before {
+  width: 12px;
+  height: 10px;
+  transform: translateY(2px);
+  border: 1.6px solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  background: transparent;
+}
+
+.spec-card__icon[data-icon="weight"]::after {
+  width: 7px;
+  height: 5px;
+  top: 8px;
+  left: 13px;
+  border: 1.6px solid currentColor;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  opacity: 1;
+}
+
+.spec-card__icon[data-icon="grid"]::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background:
+    linear-gradient(currentColor, currentColor) left 4px top 0 / 1.4px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) left 9px top 0 / 1.4px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) left 0 top 4px / 100% 1.4px no-repeat,
+    linear-gradient(currentColor, currentColor) left 0 top 9px / 100% 1.4px no-repeat;
+  border: 1.4px solid currentColor;
+  opacity: 0.9;
+}
+
+.spec-card__icon[data-icon="application"]::before,
+.detail-note__icon[data-icon="application"]::before {
+  width: 12px;
+  height: 12px;
+  border: 1.6px solid currentColor;
+  border-radius: 50% 50% 50% 2px;
+  background: transparent;
+  transform: rotate(-45deg);
+}
+
+.spec-card__icon[data-icon="application"]::after,
+.detail-note__icon[data-icon="application"]::after {
+  width: 4px;
+  height: 4px;
+  top: 15px;
+  left: 15px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.9;
+}
+
+.spec-card__icon[data-icon="finish"]::before,
+.detail-note__icon[data-icon="finish"]::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background:
+    linear-gradient(90deg, transparent 0 3px, currentColor 3px 4px, transparent 4px 7px, currentColor 7px 8px, transparent 8px 11px, currentColor 11px 12px, transparent 12px 14px);
+  opacity: 0.9;
+}
+
+.spec-card__icon[data-icon="layout"]::before,
+.detail-note__icon[data-icon="layout"]::before {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.spec-card__icon[data-icon="layout"]::after,
+.detail-note__icon[data-icon="layout"]::after {
+  width: 12px;
+  height: 1.6px;
+  top: 16px;
+  left: 11px;
+  background: currentColor;
+  box-shadow: 0 -4px 0 currentColor, 0 4px 0 currentColor;
+  opacity: 0.9;
+}
+
+.spec-card__icon[data-icon="info"]::before,
+.detail-note__icon[data-icon="info"]::before {
+  width: 13px;
+  height: 13px;
+  border: 1.6px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.spec-card__icon[data-icon="info"]::after,
+.detail-note__icon[data-icon="info"]::after {
+  width: 2px;
+  height: 7px;
+  top: 12px;
+  left: 16px;
+  background: currentColor;
+  box-shadow: 0 -5px 0 0 currentColor;
+  opacity: 0.92;
+}
+
+.detail-note__icon[data-icon="care"]::before {
+  width: 13px;
+  height: 13px;
+  border: 1.6px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  border-right-color: transparent;
+}
+
+.detail-note__icon[data-icon="care"]::after {
+  width: 6px;
+  height: 6px;
+  top: 10px;
+  left: 17px;
+  border-top: 1.6px solid currentColor;
+  border-right: 1.6px solid currentColor;
+  transform: rotate(28deg);
+  opacity: 0.92;
+}
+
+.detail-note__icon[data-icon="chat"]::before {
+  width: 14px;
+  height: 11px;
+  border: 1.6px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.detail-note__icon[data-icon="chat"]::after {
+  width: 6px;
+  height: 6px;
+  left: 12px;
+  top: 18px;
+  border-left: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: skew(-18deg);
+  opacity: 0.92;
 }
 
 .spec-card p,
