@@ -486,8 +486,10 @@
                 <h3><a class="line-card__title-link" href="${lineHref(line.slug)}">${line.name}</a></h3>
                 <p>${line.description}</p>
                 <div class="product-meta">
-                  ${line.badges.map((badge) => `<span>${badge}</span>`).join("")}
-                  <span>${line.products.length} productos</span>
+                  ${line.badges
+                    .map((badge, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${badge}</span>`)
+                    .join("")}
+                  <span class="product-meta__item" style="--meta-icon:4;">${line.products.length} productos</span>
                 </div>
                 <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
                 ${
@@ -514,7 +516,9 @@
                 <h3><a class="product-card__title-link" href="${productHref(line.slug, product.slug)}">${product.name}</a></h3>
                 <p>${product.cardSummary}</p>
                 <div class="product-meta">
-                  ${product.meta.map((item) => `<span>${item}</span>`).join("")}
+                  ${product.meta
+                    .map((item, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${item}</span>`)
+                    .join("")}
                 </div>
                 <a class="link-arrow" href="${productHref(line.slug, product.slug)}">Ver detalle</a>
               </div>
@@ -748,7 +752,9 @@
                       <h3><a class="product-card__title-link" href="${productHref(line.slug, related.slug)}">${related.name}</a></h3>
                       <p>${related.cardSummary}</p>
                       <div class="product-meta">
-                        ${related.meta.map((item) => `<span>${item}</span>`).join("")}
+                        ${related.meta
+                          .map((item, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${item}</span>`)
+                          .join("")}
                       </div>
                       <a class="link-arrow" href="${productHref(line.slug, related.slug)}">Ver detalle</a>
                     </div>
@@ -893,6 +899,7 @@
             .map(
               (spec) => `
                 <article class="spec-card reveal is-visible">
+                  <span class="spec-card__icon" aria-hidden="true"></span>
                   <span class="spec-card__label">${spec[0]}</span>
                   <p>${spec[1]}</p>
                 </article>
@@ -906,6 +913,7 @@
             .map(
               (note) => `
                 <article class="detail-note reveal is-visible">
+                  <span class="detail-note__icon" aria-hidden="true"></span>
                   <h3>${note.title}</h3>
                   <p>${note.text}</p>
                 </article>
