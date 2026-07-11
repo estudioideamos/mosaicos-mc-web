@@ -679,6 +679,10 @@
       return "weight";
     }
 
+    if (normalized.includes("m2") || normalized.includes("m²") || normalized.includes("un/")) {
+      return "grid";
+    }
+
     if (
       normalized.includes("pulido") ||
       normalized.includes("rustico") ||
@@ -737,6 +741,14 @@
 
     if (normalized.includes("aplic")) {
       return "application";
+    }
+
+    if (normalized.includes("uso")) {
+      return "application";
+    }
+
+    if (normalized.includes("variante")) {
+      return "finish";
     }
 
     if (normalized.includes("mantenimiento")) {
