@@ -69,7 +69,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Podemos cargar después las fotos y códigos definitivos de cada variante dentro de esta misma ficha.",
+          text: "Disponible con variantes identificadas por código para facilitar la selección comercial y la especificación del proyecto.",
         },
       ],
     },
@@ -102,7 +102,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Podemos sumar luego colores, terminaciónes y fotos aplicadas de cada opción real.",
+          text: "La línea combina distintas lecturas cromáticas y mantiene una presencia sobria, ideal para veredas, galerías y expansiones exteriores.",
         },
       ],
     },
@@ -135,7 +135,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Después podemos cargar el detalle exacto de colores y fotos por variante dentro de esta misma página.",
+          text: "Sus variantes permiten trabajar desde tramas técnicas hasta composiciones más expresivas, siempre dentro de un lenguaje exterior muy controlado.",
         },
       ],
     },
@@ -201,7 +201,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Podemos completar más adelante con variantes, códigos y fotos aplicadas de obra real.",
+          text: "La geometría de la pieza acompaña proyectos que buscan ritmo visual, textura marcada y una impronta exterior con identidad propia.",
         },
       ],
     },
@@ -234,7 +234,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Si querés, después armamos una galería propia con las fotos de aplicación reales de esta pieza.",
+          text: "Su lectura limpia la vuelve una opción muy versátil para patios, expansiones y paños continuos donde la continuidad visual es protagonista.",
         },
       ],
     },
@@ -269,7 +269,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Después podemos sumar aca más colores, códigos y fotos reales de obra de esta familia.",
+          text: "Es una alternativa confiable para obras que valoran resistencia, durabilidad y una terminación noble con presencia clásica.",
         },
       ],
     },
@@ -302,7 +302,7 @@
         },
         {
           title: "Consulta comercial",
-          text: "Si querés, la proxima pasada la hacemos con cada color cargado como variante separada dentro de esta misma ficha.",
+          text: "Su paleta amplia permite adaptar la pieza a lenguajes residenciales, comerciales y de alto tránsito sin resignar coherencia visual.",
         },
       ],
     },
@@ -511,6 +511,161 @@
       ],
     },
   ];
+  const catalogMediaByLine = {
+    "exterior-pulida": {
+      "64-panes": {
+        heroImage: "@/assets/img/generated/product-64-panes.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/64panes2-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/64panes2.jpg",
+        variants: [
+          { name: "C&oacute;digo P64PG200", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/64panes2-400x284.jpg" },
+          { name: "C&oacute;digo P64PN201", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/64panes4-400x284.jpg" },
+          { name: "C&oacute;digo P64PR202", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/64panes3-400x284.jpg" },
+          { name: "C&oacute;digo P64PBL204", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/64panes1-400x284.jpg" },
+        ],
+      },
+      "16-panes": {
+        heroImage: "@/assets/img/generated/product-16-panes.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/16panes1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/16panes1.jpg",
+        variants: [
+          { name: "C&oacute;digo P16PBL204", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/16panes1-400x284.jpg" },
+          { name: "C&oacute;digo P16PG200", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/16panes2-400x284.jpg" },
+          { name: "C&oacute;digo P16PN201", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/16panes3-400x284.jpg" },
+        ],
+      },
+      "8-barras": {
+        heroImage: "@/assets/img/generated/product-8-barras.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/8barras5-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/8barras5.jpg",
+        variants: [
+          { name: "C&oacute;digo P8BGC", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/8barras5-400x284.jpg" },
+          { name: "C&oacute;digo P8BNC", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/8barras4-400x284.jpg" },
+          { name: "Modelo gris plomo, blanco y negro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/8barras2-400x284.jpg" },
+        ],
+      },
+      ondas: {
+        heroImage: "@/assets/img/generated/product-ondas.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ondas1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/ondas1.jpg",
+        variants: [
+          { name: "Modelo ondas gris plomo", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ondas1-400x284.jpg" },
+          { name: "Modelo ondas gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ondas2-400x284.jpg" },
+        ],
+      },
+      espiga: {
+        heroImage: "@/assets/img/generated/product-espiga.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/espiga3-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/espiga3.jpg",
+        variants: [
+          { name: "Modelo espiga gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/espiga3-400x284.jpg" },
+          { name: "Modelo gris plomo y negro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/espiga1-400x284.jpg" },
+        ],
+      },
+      "1-pan": {
+        heroImage: "@/assets/img/generated/product-1-pan.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/1pan1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/1pan1.jpg",
+        variants: [
+          { name: "Blanco y gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/1pan1-400x284.jpg" },
+          { name: "Gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/1pan2-400x284.jpg" },
+          { name: "Gris claro aplicado", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/1pan3-400x284.jpg" },
+        ],
+      },
+    },
+    mosaicos: {
+      bicapa: {
+        heroImage: "@/assets/img/generated/product-bicapa.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa1.jpg",
+        variants: [{ name: "Gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa1-400x284.jpg" }],
+      },
+      "mosaico-compacto": {
+        heroImage: "@/assets/img/generated/product-mosaico-compacto.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto1.jpg",
+        variants: [
+          { name: "Beige Medano", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto1-400x284.jpg" },
+          { name: "Blanco con rosa", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto2-400x284.jpg" },
+          { name: "Blanco natural", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto3-400x284.jpg" },
+          { name: "Blanco Torino", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto4-400x284.jpg" },
+          { name: "Chiampo rosa", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto5-400x284.jpg" },
+          { name: "Gris Bardiglio", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto6-400x284.jpg" },
+          { name: "Gris Chiampo", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto7-400x284.jpg" },
+          { name: "Gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto8-400x284.jpg" },
+          { name: "Gris Glaciar", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto9-400x284.jpg" },
+          { name: "Gris plomo", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto10-400x284.jpg" },
+          { name: "Negro Alpes", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto11-400x284.jpg" },
+          { name: "Rojo Dragon", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto12-400x284.jpg" },
+          { name: "Rosa Firenze", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto13-400x284.jpg" },
+          { name: "Sahara", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto14-400x284.jpg" },
+          { name: "Terra", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto15-400x284.jpg" },
+        ],
+      },
+    },
+    atermicos: {
+      "para-decks-y-piletas": {
+        heroImage: "@/assets/img/generated/product-para-decks-y-piletas.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
+        variants: [
+          { name: "Borde con bisel", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1-400x284.jpg" },
+          { name: "Borde con nariz", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ater2-400x284.jpg" },
+          { name: "Solarium", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3-400x284.jpg" },
+        ],
+      },
+    },
+    rusticos: {
+      "simil-adoquin-rustico": {
+        heroImage: "@/assets/img/generated/product-simil-adoquin-rustico.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1.jpg",
+        variants: [
+          { name: "C&oacute;digo CAG104", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1-400x284.jpg" },
+          { name: "C&oacute;digo CAG105", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin2-400x284.jpg" },
+          { name: "C&oacute;digo CAR106", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin3-400x284.jpg" },
+        ],
+      },
+      "loseta-lisa-biselada": {
+        heroImage: "@/assets/img/generated/product-loseta-lisa-biselada.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/lose1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/lose1.jpg",
+        variants: [{ name: "LBG104", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/lose1-400x284.jpg" }],
+      },
+      accesibilidad: {
+        heroImage: "@/assets/img/generated/product-accesibilidad.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/acce1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/acce1.jpg",
+        variants: [
+          { name: "Losetas 6 barras gu&iacute;a", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/acce1-400x284.jpg" },
+          { name: "Loseta t&aacute;ctil", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/acce2-400x284.jpg" },
+        ],
+      },
+    },
+    "bloques-de-hormigon": {
+      "adoquin-gris": {
+        heroImage: "@/assets/img/generated/product-adoquin-holanda.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1.jpg",
+        variants: [
+          { name: "Adoqu&iacute;n Holanda rojo y amarillo", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1-400x284.jpg" },
+          { name: "Adoqu&iacute;n gris claro AHGC10206", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda2-400x284.jpg" },
+          { name: "Gris claro, gris medio y negro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda3-400x284.jpg" },
+          { name: "Negro, gris medio y gris claro", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda4-400x284.jpg" },
+          { name: "Adoqu&iacute;n Holanda rojo", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda5-400x284.jpg" },
+        ],
+      },
+      "trama-urbana": {
+        heroImage: "@/assets/img/generated/product-bloque-cesped.png",
+        image: "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1-400x284.jpg",
+        detailImage: "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1.jpg",
+        variants: [
+          { name: "Bloque de c&eacute;sped prensado", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1-400x284.jpg" },
+          { name: "BC200", image: "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped2-400x284.jpg" },
+        ],
+      },
+    },
+  };
   const lines = catalog.lines;
   const exteriorPulidaLine = lines.find((line) => line.slug === "exterior-pulida");
   const mosaicosLine = lines.find((line) => line.slug === "mosaicos");
@@ -537,6 +692,21 @@
   if (bloquesLine) {
     bloquesLine.products = bloquesOverride;
   }
+
+  const applyCatalogMedia = (line) => {
+    const mediaMap = catalogMediaByLine[line?.slug];
+
+    if (!line || !mediaMap) {
+      return;
+    }
+
+    line.products = line.products.map((product) => {
+      const media = mediaMap[product.slug];
+      return media ? { ...product, ...media } : product;
+    });
+  };
+
+  [exteriorPulidaLine, mosaicosLine, atermicosLine, rusticosLine, bloquesLine].forEach(applyCatalogMedia);
 
   const findLine = (lineSlug) => lines.find((line) => line.slug === lineSlug);
   const findProduct = (line, productSlug) => line?.products.find((product) => product.slug === productSlug);
@@ -886,6 +1056,39 @@
     `;
   };
 
+  const renderProductVariants = (product) => {
+    if (!product.variants || !product.variants.length) {
+      return "";
+    }
+
+    return `
+      <div class="product-detail-block">
+        <div class="section-title reveal is-visible">
+          <span class="eyebrow eyebrow--dark">cat&aacute;logo real</span>
+          <h2>Versiones disponibles</h2>
+          <p>Mostramos la pieza real de cat&aacute;logo sobre fondo blanco para que puedas revisar modelos, colores y terminaciones con una lectura clara.</p>
+        </div>
+        <div class="variant-grid">
+          ${product.variants
+            .map(
+              (variant) => `
+                <article class="variant-card reveal is-visible">
+                  <div class="variant-card__media">
+                    <img src="${resolveAsset(variant.image)}" alt="${variant.name}" loading="lazy" />
+                  </div>
+                  <div class="variant-card__body">
+                    <span class="variant-card__eyebrow">variante</span>
+                    <h3>${variant.name}</h3>
+                  </div>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
+
   const renderDownloads = (line, product) => {
     const downloads = buildDownloads(line, product);
 
@@ -1144,8 +1347,8 @@
 
   const renderProductPage = (line, product) => {
     const relatedProducts = line.products.filter((item) => item.slug !== product.slug);
-    const productDetailImage = resolveAsset(product.detailImage);
-    const productHeroImage = resolveHeroAsset(product.detailImage);
+    const productDetailImage = resolveAsset(product.detailImage || product.image);
+    const productHeroImage = resolveHeroAsset(product.heroImage || product.detailImage || product.image);
 
     shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${productHeroImage}');">
@@ -1159,7 +1362,7 @@
       <section class="section">
         ${renderLineNav(line.slug)}
         <div class="product-detail-grid">
-          <article class="split-card split-card--image reveal is-visible">
+          <article class="split-card split-card--image split-card--catalog-image reveal is-visible">
             <img src="${productDetailImage}" alt="${product.name}" />
           </article>
           <article class="split-card split-card--copy reveal is-visible">
@@ -1191,6 +1394,8 @@
             )
             .join("")}
         </div>
+
+        ${renderProductVariants(product)}
 
         <div class="detail-notes">
           ${product.notes

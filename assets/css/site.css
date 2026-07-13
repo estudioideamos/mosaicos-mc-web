@@ -954,6 +954,12 @@ body.is-ready .shell {
   transition: transform 500ms ease;
 }
 
+.product-card img {
+  padding: 18px;
+  background: #fff;
+  object-fit: contain;
+}
+
 .card__body,
 .product-card__body,
 .article-card__body,
@@ -1000,6 +1006,22 @@ body.is-ready .shell {
   height: 100%;
   min-height: 420px;
   object-fit: cover;
+}
+
+.split-card--catalog-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: #fff;
+}
+
+.split-card--catalog-image img {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: 520px;
+  object-fit: contain;
 }
 
 .split-card--copy {
@@ -1343,6 +1365,10 @@ body.is-ready .shell {
   overflow: hidden;
 }
 
+.product-card__media {
+  background: #fff;
+}
+
 .line-card__body,
 .spec-card,
 .detail-note {
@@ -1628,6 +1654,57 @@ body.is-ready .shell {
 
 .gallery-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.variant-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.variant-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 253, 250, 0.92);
+  box-shadow: var(--shadow-card);
+}
+
+.variant-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 0.78;
+  padding: 20px;
+  background: #fff;
+}
+
+.variant-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.variant-card__body {
+  padding: 18px 20px 22px;
+}
+
+.variant-card__eyebrow {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--ochre-500);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.variant-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .gallery-card img {
@@ -2736,7 +2813,8 @@ body.is-ready .shell {
   }
 
   .spec-grid,
-  .detail-notes {
+  .detail-notes,
+  .variant-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2841,7 +2919,8 @@ body.is-ready .shell {
   .line-intro,
   .product-detail-grid,
   .spec-grid,
-  .detail-notes {
+  .detail-notes,
+  .variant-grid {
     grid-template-columns: 1fr;
   }
 
