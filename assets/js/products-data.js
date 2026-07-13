@@ -167,12 +167,12 @@ window.productCatalog = {
       name: "At&eacute;rmicos",
       title: "Atermicos",
       description:
-        "Soluciones atérmicas para piscinas y expansiones exteriores, concebidas para aportar confort, seguridad y una estética serena en sectores vinculados al agua.",
+        "Superficies at&eacute;rmicas para piscinas y expansiones exteriores, pensadas para aportar confort, seguridad y una presencia serena en proyectos residenciales y comerciales de alto nivel.",
       heroImage:
         "@/assets/img/generated/line-atermicos-hero.png",
-      overviewTitle: "Soluciones para bordes, soláriums y sectores de relax junto al agua.",
+      overviewTitle: "Piezas para bordes, sol&aacute;riums y recorridos exteriores junto al agua.",
       overviewText:
-        "La línea atérmica está pensada para piscinas y expansiones exteriores donde importa el confort de uso, la seguridad y una imagen cuidada.",
+        "La linea at&eacute;rmica de Mosaicos MC resuelve piscinas y expansiones con un lenguaje limpio, noble y funcional, priorizando confort de uso y continuidad visual.",
       badges: ["Piscinas", "Solarium", "Bordes", "Exterior"],
       products: [
         {
@@ -329,12 +329,12 @@ window.productCatalog = {
       name: "Bloques de hormig&oacute;n",
       title: "Bloques de hormigón",
       description:
-        "Bloques de hormigón para exteriores exigentes, con tramas definidas, resistencia estructural y una expresión limpia para circulaciones, patios y recorridos.",
+        "Bloques de hormig&oacute;n para exteriores exigentes, desarrollados para aportar resistencia estructural, orden visual y una lectura modular sobria en patios, circulaciones y accesos.",
       heroImage:
         "@/assets/img/generated/line-bloques-hormigon-hero.png",
-      overviewTitle: "Tramas resistentes para exteriores y superficies de mucha exigencia.",
+      overviewTitle: "Tramas resistentes para patios, veredas y superficies de uso intenso.",
       overviewText:
-        "Es una línea vinculada a senderos, patios, calles internas y expansiones donde interesa una lectura clara, modular y durable.",
+        "Es una linea pensada para proyectos donde la durabilidad, la estabilidad y la calidad de terminacion tienen que convivir con una imagen urbana prolija y contemporanea.",
       badges: ["Exterior", "Alta resistencia", "Trama modular", "Circulacion"],
       products: [
         {

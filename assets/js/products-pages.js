@@ -303,33 +303,33 @@
     {
       slug: "para-decks-y-piletas",
       name: "Para decks y piletas",
-      kicker: "línea atérmicos",
+      kicker: "linea at&eacute;rmicos",
       cardSummary:
-        "Sistema atérmico pensado para decks y piletas, con resoluciónes de borde y solárium para acompañar el conjunto completo.",
+        "Sistema at&eacute;rmico concebido para bordes de piscina, decks y sol&aacute;riums, con una presencia serena y un lenguaje t&eacute;cnico alineado a proyectos de alto nivel.",
       heroSummary:
-        "Producto desarrollado para zonas de piscina y expansiones exteriores, con variantes de borde y paños de solárium.",
+        "Una pieza desarrollada para acompa&ntilde;ar piscinas y expansiones exteriores con confort de uso, imagen limpia y resoluciones consistentes en cada encuentro.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
+        "@/assets/img/generated/line-atermicos-hero.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater3.jpg",
-      meta: ["50 x 50 x 3 cm", "14 kg aprox.", "4 un/m²", "2 un/ml"],
+        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
+      meta: ["50 x 50 x 3 cm", "14 kg aprox.", "4 un/m2", "2 un/ml"],
       specs: [
         ["Medida", "50 x 50 x 3 cm."],
         ["Peso unitario", "14 kg aprox."],
-        ["Rendimiento", "4 unidades por m² y 2 unidades por metro lineal."],
+        ["Rendimiento", "4 unidades por m2 y 2 unidades por metro lineal."],
       ],
       notes: [
         {
-          title: "Resoluciónes visibles",
-          text: "En la referencia aparecen tres variantes: Borde con bisel, Borde con nariz y Solarium.",
+          title: "Resoluciones disponibles",
+          text: "La familia contempla borde con bisel, borde con nariz y piezas para sol&aacute;rium, para resolver la escena completa con continuidad visual.",
         },
         {
-          title: "Aplicación",
-          text: "Pensado para piletas, decks y expansiones donde importa el confort de uso y una imagen limpia junto al agua.",
+          title: "Aplicacion sugerida",
+          text: "Ideal para piletas, decks y expansiones donde se busca una superficie amable al paso, visualmente refinada y lista para convivir con el agua.",
         },
         {
-          title: "Consulta comercial",
-          text: "Si querés, en la siguiente pasada lo desglosamos en fichas separadas para cada resolución de borde.",
+          title: "Asesoramiento comercial",
+          text: "Podemos ayudarte a definir el mix entre pa&ntilde;os, remates y bordes seg&uacute;n el dise&ntilde;o de la piscina y el recorrido exterior del proyecto.",
         },
       ],
     },
@@ -438,67 +438,67 @@
   const bloquesOverride = [
     {
       slug: "adoquin-gris",
-      name: "Adoquín Holanda",
-      kicker: "línea bloques de hormigón",
+      name: "Adoqu&iacute;n Holanda",
+      kicker: "linea bloques de hormig&oacute;n",
       cardSummary:
-        "Bloque intertrabado de alto rendimiento para circulaciones, patios y superficies exteriores con uso intenso.",
+        "Bloque intertrabado de alta prestacion para veredas, patios y circulaciones exigentes, con una lectura urbana limpia y muy buena respuesta al uso.",
       heroSummary:
-        "Una solución robusta para superficies exigidas, con lectura modular, gran resistencia y opciónes cromáticas para obra exterior.",
+        "Una soluci&oacute;n robusta para exteriores de alto tr&aacute;nsito, pensada para aportar resistencia, orden visual y continuidad en grandes pa&ntilde;os.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda1.jpg",
+        "@/assets/img/generated/line-bloques-hormigon-hero.png",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda2.jpg",
-      meta: ["10 x 20 x 6 cm", "123 kg/m²", "50 un/m²", "Exterior"],
+      meta: ["10 x 20 x 6 cm", "123 kg/m2", "50 un/m2", "Exterior"],
       specs: [
         ["Medida", "10 x 20 x 6 cm."],
-        ["Peso por m²", "123 kg aprox."],
-        ["Unidades por m²", "50 piezas."],
+        ["Peso por m2", "123 kg aprox."],
+        ["Unidades por m2", "50 piezas."],
       ],
       notes: [
         {
           title: "Variantes visibles",
-          text: "La referencia muestra combinaciones rojo y amarillo, gris claro, gris medio, negro y rojo aplicado en obra.",
+          text: "Disponible en distintas lecturas cromaticas para acompa&ntilde;ar desde patios residenciales hasta circulaciones de perfil mas urbano.",
         },
         {
           title: "Uso sugerido",
-          text: "Ideal para accesos, patios, veredas, calles internas y superficies exteriores que exigen durabilidad y mantenimiento simple.",
+          text: "Ideal para accesos, veredas, patios, calles internas y superficies exteriores donde importan la resistencia, la estabilidad y el mantenimiento simple.",
         },
         {
-          title: "Consulta comercial",
-          text: "Podemos definir colores, cantidad de piezas y tipo de traba según el proyecto y el uso previsto.",
+          title: "Asesoramiento comercial",
+          text: "Te ayudamos a definir color, cantidad de piezas y tipo de traba segun el uso previsto y la escala real del pa&ntilde;o.",
         },
       ],
     },
     {
       slug: "trama-urbana",
-      name: "Bloque de Césped",
-      kicker: "línea bloques de hormigón",
+      name: "Bloque de C&eacute;sped",
+      kicker: "linea bloques de hormig&oacute;n",
       cardSummary:
-        "Pieza drenante pensada para pisos verdes, estacionamientos y áreas exteriores que requieren resistencia y permeabilidad.",
+        "Pieza drenante para pisos verdes, cocheras y sectores exteriores que necesitan soporte firme, permeabilidad y una imagen tecnica bien resuelta.",
       heroSummary:
-        "Una solución funcional para combinar hormigón y césped en superficies exteriores con tránsito controlado y buena presencia técnica.",
+        "Una solucion funcional para combinar hormigon y cesped en superficies exteriores con transito controlado, drenaje eficiente y una presencia prolija.",
       image:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1.jpg",
       detailImage:
         "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped2.jpg",
-      meta: ["40 x 30 x 8 cm", "105 kg/m²", "8 un/m²", "Exterior"],
+      meta: ["40 x 30 x 8 cm", "105 kg/m2", "8 un/m2", "Exterior"],
       specs: [
         ["Medida", "40 x 30 x 8 cm."],
-        ["Peso por m²", "105 kg aprox."],
-        ["Unidades por m²", "8 piezas."],
+        ["Peso por m2", "105 kg aprox."],
+        ["Unidades por m2", "8 piezas."],
       ],
       notes: [
         {
           title: "Uso sugerido",
-          text: "Muy útil para cocheras, estacionamientos, senderos y superficies exteriores con necesidad de drenaje y apoyo firme.",
+          text: "Muy util para cocheras, estacionamientos, senderos y superficies exteriores donde el drenaje y el apoyo firme tienen que convivir en una sola pieza.",
         },
         {
-          title: "Variantes visibles",
-          text: "La referencia muestra el bloque de césped prensado aplicado y una vista aislada de la pieza.",
+          title: "Lectura de proyecto",
+          text: "Permite resolver sectores transitables con una presencia mas verde, ordenada y compatible con paisajismo y accesos vehiculares livianos.",
         },
         {
-          title: "Consulta comercial",
-          text: "Te ayudamos a calcular cantidad, sistema de base y criterio de implantación según el tipo de suelo y tránsito.",
+          title: "Asesoramiento comercial",
+          text: "Podemos calcular cantidad, base e implantacion segun el tipo de suelo, el drenaje del lote y la intensidad de uso prevista.",
         },
       ],
     },
