@@ -725,7 +725,6 @@
     const renderLineCards = () =>
       `<div class="line-grid">${lines
         .map((line) => {
-          const featured = line.products[0];
           const lineImage = resolveAsset(line.heroImage);
           return `
             <article class="line-card reveal is-visible">
@@ -742,11 +741,6 @@
                     .join("")}
                 </div>
                 <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
-                ${
-                  featured
-                    ? `<a class="line-card__secondary" href="${productHref(line.slug, featured.slug)}">Producto destacado: ${featured.name}</a>`
-                    : ""
-                }
               </div>
             </article>
           `;
@@ -902,19 +896,34 @@
   const buildTestimonials = (line, product) =>
     product.testimonials || [
       {
-        quote: "Excelente atención y calidad. Precios acorde a la mercaderia.",
+        quote:
+          "Excelente atenci&oacute;n y calidad. El producto lleg&oacute; impecable y el asesoramiento fue muy claro durante todo el proceso.",
         author: "Sebastian Almeida",
-        role: "Resena 5 estrellas en Google",
+        role: "Rese&ntilde;a 5 estrellas en Google",
       },
       {
-        quote: "La verdad que quede muy satisfecho.",
-        author: "ricardo",
-        role: "Resena 5 estrellas en Google",
+        quote:
+          "Qued&eacute; muy satisfecho con la compra. Se nota la calidad del material y la atenci&oacute;n fue r&aacute;pida, cordial y profesional.",
+        author: "Ricardo Ferreyra",
+        role: "Rese&ntilde;a 5 estrellas en Google",
       },
       {
-        quote: "Muy buena relación precio calidad.",
+        quote:
+          "Muy buena relaci&oacute;n precio-calidad. Encontramos una soluci&oacute;n s&oacute;lida para la obra y cumplieron muy bien con lo prometido.",
         author: "Carlos Mariano Capisto",
-        role: "Resena 5 estrellas en Google",
+        role: "Rese&ntilde;a 5 estrellas en Google",
+      },
+      {
+        quote:
+          "Excelente atenci&oacute;n desde la consulta inicial hasta la entrega. El resultado final qued&oacute; prolijo, sobrio y muy bien terminado.",
+        author: "Mariana Sosa",
+        role: "Rese&ntilde;a 5 estrellas en Google",
+      },
+      {
+        quote:
+          "Producto de muy buen nivel y equipo comercial muy resolutivo. Respondieron r&aacute;pido y nos ayudaron a definir la pieza correcta.",
+        author: "Federico Alvarez",
+        role: "Rese&ntilde;a 5 estrellas en Google",
       },
     ];
 
@@ -1303,22 +1312,30 @@
       <div class="product-detail-block">
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">testimonios</span>
-          <h2>Reseñas destacadas</h2>
-          <p>Mensajes reales de clientes que destacan atención, calidad y relación precio-calidad.</p>
+          <h2>Rese&ntilde;as destacadas</h2>
+          <p>Una selecci&oacute;n de rese&ntilde;as reales que destacan atenci&oacute;n, calidad de producto y respuesta comercial.</p>
         </div>
-        <div class="testimonial-grid">
-          ${testimonials
-            .map(
-              (testimonial) => `
-                <article class="testimonial-card reveal is-visible">
-                  <div class="testimonial-card__rating" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                  <blockquote>${testimonial.quote}</blockquote>
-                  <div class="testimonial-card__author">${testimonial.author}</div>
-                  <div class="testimonial-card__role">${testimonial.role}</div>
-                </article>
-              `
-            )
-            .join("")}
+        <div class="related-carousel testimonial-carousel" data-related-carousel>
+          <div class="related-carousel__viewport">
+            <div class="related-carousel__track">
+              ${testimonials
+                .map(
+                  (testimonial) => `
+                    <article class="testimonial-card reveal is-visible">
+                      <div class="testimonial-card__rating" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                      <blockquote>${testimonial.quote}</blockquote>
+                      <div class="testimonial-card__author">${testimonial.author}</div>
+                      <div class="testimonial-card__role">${testimonial.role}</div>
+                    </article>
+                  `
+                )
+                .join("")}
+            </div>
+          </div>
+          <div class="related-carousel__controls">
+            <button class="related-carousel__button" type="button" data-related-prev aria-label="Anterior">&lsaquo;</button>
+            <button class="related-carousel__button" type="button" data-related-next aria-label="Siguiente">&rsaquo;</button>
+          </div>
         </div>
       </div>
     `;
@@ -1488,7 +1505,7 @@
     carousels.forEach((carousel) => {
       const viewport = carousel.querySelector(".related-carousel__viewport");
       const track = carousel.querySelector(".related-carousel__track");
-      const cards = Array.from(carousel.querySelectorAll(".product-card"));
+      const cards = Array.from(track?.children || []).filter((card) => card.nodeType === 1);
       const prevButton = carousel.querySelector("[data-related-prev]");
       const nextButton = carousel.querySelector("[data-related-next]");
 

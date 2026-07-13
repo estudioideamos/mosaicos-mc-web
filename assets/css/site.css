@@ -1392,13 +1392,6 @@ body.is-ready .shell {
   color: var(--stone-500);
 }
 
-.line-card__secondary {
-  display: inline-flex;
-  margin-top: 12px;
-  color: var(--stone-500);
-  font-weight: 600;
-}
-
 .line-intro,
 .product-detail-grid,
 .detail-notes,
@@ -1882,6 +1875,9 @@ body.is-ready .shell {
 }
 
 .testimonial-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   padding: 28px;
   border-radius: var(--radius-xl);
   border: 1px solid rgba(48, 41, 38, 0.08);
@@ -1901,6 +1897,7 @@ body.is-ready .shell {
   font-size: 1.12rem;
   line-height: 1.65;
   color: var(--graphite-900);
+  flex: 1;
 }
 
 .testimonial-card__author {
@@ -2202,6 +2199,11 @@ body.is-ready .shell {
 }
 
 .related-carousel__track .product-card {
+  flex: 0 0 calc((100% - 44px) / 3);
+  min-width: 0;
+}
+
+.related-carousel__track .testimonial-card {
   flex: 0 0 calc((100% - 44px) / 3);
   min-width: 0;
 }
@@ -2936,7 +2938,8 @@ body.is-ready .shell {
     align-items: start;
   }
 
-  .related-carousel__track .product-card {
+  .related-carousel__track .product-card,
+  .related-carousel__track .testimonial-card {
     flex-basis: calc((100% - 22px) / 2);
   }
 }
@@ -3174,7 +3177,8 @@ body.is-ready .shell {
     width: 100%;
   }
 
-  .related-carousel__track .product-card {
+  .related-carousel__track .product-card,
+  .related-carousel__track .testimonial-card {
     flex-basis: 100%;
   }
 
