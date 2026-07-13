@@ -1983,6 +1983,119 @@
     `;
   };
 
+  const getProductGalleryImages = (product) => {
+    const seen = new Set();
+    const items = [];
+
+    const pushItem = (image, label) => {
+      if (!image) return;
+      const resolved = resolveAsset(image);
+      if (seen.has(resolved)) return;
+      seen.add(resolved);
+      items.push({
+        image: resolved,
+        label: label || product.name,
+      });
+    };
+
+    pushItem(product.detailImage || product.image, product.name);
+
+    (product.variants || []).forEach((variant, index) => {
+      pushItem(variant.image, variant.name || `${product.name} ${index + 1}`);
+    });
+
+    return items;
+  };
+
+  const renderProductGallery = (product) => {
+    const galleryImages = getProductGalleryImages(product);
+    const primaryImage = galleryImages[0];
+
+    if (!primaryImage) {
+      return `
+        <img src="${resolveAsset(product.detailImage || product.image)}" alt="${product.name}" />
+      `;
+    }
+
+    return `
+      <div class="product-gallery" data-product-gallery data-product-name="${product.name}">
+        <div class="product-gallery__viewer">
+          <div class="product-gallery__frame">
+            <img src="${primaryImage.image}" alt="${primaryImage.label}" data-gallery-main />
+          </div>
+          <div class="product-gallery__caption">
+            <strong data-gallery-caption>${primaryImage.label}</strong>
+            <span>${galleryImages.length} vista${galleryImages.length === 1 ? "" : "s"} disponible${galleryImages.length === 1 ? "" : "s"}</span>
+          </div>
+        </div>
+        ${
+          galleryImages.length > 1
+            ? `
+              <div class="product-gallery__thumbs" aria-label="Galería de producto">
+                ${galleryImages
+                  .map(
+                    (item, index) => `
+                      <button
+                        class="product-gallery__thumb${index === 0 ? " is-active" : ""}"
+                        type="button"
+                        data-gallery-thumb
+                        data-gallery-image="${item.image}"
+                        data-gallery-label="${item.label}"
+                        aria-label="${item.label}"
+                        aria-pressed="${index === 0 ? "true" : "false"}"
+                      >
+                        <img src="${item.image}" alt="${item.label}" loading="lazy" />
+                      </button>
+                    `
+                  )
+                  .join("")}
+              </div>
+            `
+            : ""
+        }
+      </div>
+    `;
+  };
+
+  const initProductGalleries = () => {
+    const galleries = shell.querySelectorAll("[data-product-gallery]");
+
+    galleries.forEach((gallery) => {
+      const productName = gallery.dataset.productName || "Producto";
+      const mainImage = gallery.querySelector("[data-gallery-main]");
+      const caption = gallery.querySelector("[data-gallery-caption]");
+      const thumbs = Array.from(gallery.querySelectorAll("[data-gallery-thumb]"));
+
+      if (!mainImage || !thumbs.length) {
+        return;
+      }
+
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          const nextImage = thumb.dataset.galleryImage;
+          const nextLabel = thumb.dataset.galleryLabel || "";
+
+          if (nextImage) {
+            mainImage.src = nextImage;
+            mainImage.alt = nextLabel || productName;
+          }
+
+          if (caption) {
+            caption.textContent = nextLabel || productName;
+          }
+
+          thumbs.forEach((item) => {
+            item.classList.remove("is-active");
+            item.setAttribute("aria-pressed", "false");
+          });
+
+          thumb.classList.add("is-active");
+          thumb.setAttribute("aria-pressed", "true");
+        });
+      });
+    });
+  };
+
   const initRelatedCarousels = () => {
     const carousels = shell.querySelectorAll("[data-related-carousel]");
 
@@ -2095,8 +2208,8 @@
       <section class="section">
         ${renderLineNav(line.slug)}
         <div class="product-detail-grid">
-          <article class="split-card split-card--image split-card--catalog-image reveal is-visible">
-            <img src="${productDetailImage}" alt="${product.name}" />
+          <article class="split-card split-card--image split-card--catalog-image product-gallery-card reveal is-visible">
+            ${renderProductGallery(product)}
           </article>
           <article class="split-card split-card--copy reveal is-visible">
             <span class="eyebrow eyebrow--dark">detalle de producto</span>
@@ -2157,6 +2270,7 @@
       </section>
     `;
 
+    initProductGalleries();
     initRelatedCarousels();
     initQuoteBuilder(line, product);
   };
