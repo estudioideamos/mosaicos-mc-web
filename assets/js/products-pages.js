@@ -31,6 +31,14 @@
 
     return `${basePrefix}${src.replace(/^\.?\//, "")}`;
   };
+  const resolveHeroAsset = (src) => {
+    const resolved = resolveAsset(src);
+    try {
+      return new URL(resolved, window.location.href).href;
+    } catch (_error) {
+      return resolved;
+    }
+  };
   const exteriorPulidaOverride = [
     {
       slug: "64-panes",
@@ -998,7 +1006,7 @@
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${resolveAsset("@/assets/img/generated/catalog-products-hero.png")}');">
+      <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/generated/catalog-products-hero.png")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catálogo</span>
           <h1>Líneas de producto</h1>
@@ -1015,8 +1023,9 @@
 
   const renderLinePage = (line) => {
     const lineImage = resolveAsset(line.heroImage);
+    const lineHeroImage = resolveHeroAsset(line.heroImage);
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${lineImage}');">
+      <section class="page-hero" style="--hero-image: url('${lineHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">línea de producto</span>
           <h1>${line.name}</h1>
@@ -1136,9 +1145,10 @@
   const renderProductPage = (line, product) => {
     const relatedProducts = line.products.filter((item) => item.slug !== product.slug);
     const productDetailImage = resolveAsset(product.detailImage);
+    const productHeroImage = resolveHeroAsset(product.detailImage);
 
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${productDetailImage}');">
+      <section class="page-hero" style="--hero-image: url('${productHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">${line.name}</span>
           <h1>${product.name}</h1>
