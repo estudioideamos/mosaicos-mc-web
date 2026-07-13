@@ -918,6 +918,124 @@
       },
     ];
 
+  const parseNumericValue = (value) => {
+    const normalized = String(value || "").replace(/\s+/g, "").replace(",", ".");
+    const match = normalized.match(/(\d+(?:\.\d+)?)/);
+    return match ? Number(match[1]) : 0;
+  };
+
+  const formatNumber = (value, digits = 2) =>
+    new Intl.NumberFormat("es-AR", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: digits,
+    }).format(value);
+
+  const getUnitsPerSquareMeter = (product) => {
+    const sources = [
+      ...(product.meta || []),
+      ...((product.specs || []).flatMap((spec) => spec)),
+    ];
+
+    for (const source of sources) {
+      const normalized = normalizeText(source);
+      const match =
+        normalized.match(/(\d+(?:[.,]\d+)?)\s*un\/m2/) ||
+        normalized.match(/(\d+(?:[.,]\d+)?)\s*unidades?\s*por\s*m2/);
+
+      if (match) {
+        return Number(match[1].replace(",", "."));
+      }
+    }
+
+    return 0;
+  };
+
+  const renderQuoteBuilder = (line, product) => {
+    const unitsPerM2 = getUnitsPerSquareMeter(product);
+    const defaultWaste = 10;
+
+    return `
+      <div class="product-detail-block">
+        <div class="section-title reveal is-visible">
+          <span class="eyebrow eyebrow--dark">presupuesto rapido</span>
+          <h2>Solicitar presupuesto</h2>
+          <p>Carga los m² del proyecto, define un margen de desperdicio y envianos el pedido directo por WhatsApp con una lectura comercial clara.</p>
+        </div>
+        <div class="quote-builder reveal is-visible" id="quote-builder">
+          <form class="contact-form quote-builder__form" data-quote-form>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="quote-area">Cantidad requerida (m²)</label>
+                <input id="quote-area" name="area" type="number" min="0" step="0.01" placeholder="Ej. 25" data-quote-area required />
+              </div>
+              <div class="form-field">
+                <label for="quote-waste">Desperdicio (%)</label>
+                <input id="quote-waste" name="waste" type="number" min="0" step="1" value="${defaultWaste}" data-quote-waste required />
+              </div>
+              <div class="form-field">
+                <label for="quote-name">Nombre</label>
+                <input id="quote-name" name="name" type="text" placeholder="Tu nombre" data-quote-name required />
+              </div>
+              <div class="form-field">
+                <label for="quote-phone">Telefono</label>
+                <input id="quote-phone" name="phone" type="tel" placeholder="+54 9 11..." data-quote-phone required />
+              </div>
+              <div class="form-field">
+                <label for="quote-email">Email</label>
+                <input id="quote-email" name="email" type="email" placeholder="tu@email.com" data-quote-email />
+              </div>
+              <div class="form-field">
+                <label for="quote-location">Localidad</label>
+                <input id="quote-location" name="location" type="text" placeholder="Ciudad / Zona" data-quote-location />
+              </div>
+              <div class="form-field form-field--full">
+                <label class="quote-builder__toggle">
+                  <input type="checkbox" data-quote-extras checked />
+                  <span>Incluir adicionales sugeridos y asesoramiento complementario</span>
+                </label>
+              </div>
+              <div class="form-field form-field--full">
+                <label for="quote-notes">Comentarios del proyecto</label>
+                <textarea id="quote-notes" name="notes" rows="4" placeholder="Contanos si es vereda, pileta, interior, obra nueva, reposicion, etc." data-quote-notes></textarea>
+              </div>
+            </div>
+            <div class="hero__actions product-detail__actions quote-builder__actions">
+              <button class="button button--dark" type="submit">Enviar por WhatsApp</button>
+              <a class="button button--sand" href="${contactHref}">Prefiero email</a>
+            </div>
+          </form>
+          <aside class="quote-builder__summary" data-quote-summary>
+            <span class="quote-builder__eyebrow">resumen estimado</span>
+            <h3>${product.name}</h3>
+            <p>Preparamos una vista rápida del pedido para que el equipo comercial reciba contexto útil desde el primer mensaje.</p>
+            <div class="quote-builder__metrics">
+              <div class="quote-builder__metric">
+                <span>M² cargados</span>
+                <strong data-quote-area-output>0</strong>
+              </div>
+              <div class="quote-builder__metric">
+                <span>M² con desperdicio</span>
+                <strong data-quote-total-output>0</strong>
+              </div>
+              <div class="quote-builder__metric">
+                <span>Rendimiento</span>
+                <strong>${unitsPerM2 ? `${formatNumber(unitsPerM2, 2)} un/m²` : "A definir"}</strong>
+              </div>
+              <div class="quote-builder__metric">
+                <span>Cantidad estimada</span>
+                <strong data-quote-units-output>${unitsPerM2 ? "0 un" : "Consultar"}</strong>
+              </div>
+            </div>
+            <div class="quote-builder__foot">
+              <span data-quote-extras-output>Incluye adicionales sugeridos</span>
+              <span>Respuesta comercial por WhatsApp</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    `;
+  };
+
   const normalizeText = (value) =>
     String(value || "")
       .toLowerCase()
@@ -1206,6 +1324,107 @@
     `;
   };
 
+  const initQuoteBuilder = (line, product) => {
+    const form = shell.querySelector("[data-quote-form]");
+
+    if (!form) {
+      return;
+    }
+
+    const areaInput = form.querySelector("[data-quote-area]");
+    const wasteInput = form.querySelector("[data-quote-waste]");
+    const nameInput = form.querySelector("[data-quote-name]");
+    const phoneInput = form.querySelector("[data-quote-phone]");
+    const emailInput = form.querySelector("[data-quote-email]");
+    const locationInput = form.querySelector("[data-quote-location]");
+    const extrasInput = form.querySelector("[data-quote-extras]");
+    const notesInput = form.querySelector("[data-quote-notes]");
+    const areaOutput = shell.querySelector("[data-quote-area-output]");
+    const totalOutput = shell.querySelector("[data-quote-total-output]");
+    const unitsOutput = shell.querySelector("[data-quote-units-output]");
+    const extrasOutput = shell.querySelector("[data-quote-extras-output]");
+    const unitsPerM2 = getUnitsPerSquareMeter(product);
+
+    const compute = () => {
+      const area = parseNumericValue(areaInput.value);
+      const waste = parseNumericValue(wasteInput.value);
+      const totalArea = area > 0 ? area * (1 + waste / 100) : 0;
+      const units = unitsPerM2 > 0 ? Math.ceil(totalArea * unitsPerM2) : 0;
+
+      if (areaOutput) {
+        areaOutput.textContent = `${formatNumber(area, 2)} m²`;
+      }
+
+      if (totalOutput) {
+        totalOutput.textContent = `${formatNumber(totalArea, 2)} m²`;
+      }
+
+      if (unitsOutput) {
+        unitsOutput.textContent = unitsPerM2 > 0 ? `${formatNumber(units, 0)} un` : "Consultar";
+      }
+
+      if (extrasOutput) {
+        extrasOutput.textContent = extrasInput.checked
+          ? "Incluye adicionales sugeridos"
+          : "Sin adicionales";
+      }
+
+      return { area, waste, totalArea, units };
+    };
+
+    [areaInput, wasteInput, extrasInput].forEach((field) => {
+      field?.addEventListener("input", compute);
+      field?.addEventListener("change", compute);
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const { area, waste, totalArea, units } = compute();
+
+      if (!area || !nameInput.value.trim() || !phoneInput.value.trim()) {
+        form.reportValidity();
+        return;
+      }
+
+      const lines = [
+        "Hola Mosaicos MC, quiero solicitar presupuesto.",
+        "",
+        `Producto: ${product.name}`,
+        `Linea: ${line.name}`,
+        `M² requeridos: ${formatNumber(area, 2)} m²`,
+        `Desperdicio: ${formatNumber(waste, 0)}%`,
+        `M² calculados: ${formatNumber(totalArea, 2)} m²`,
+      ];
+
+      if (unitsPerM2 > 0) {
+        lines.push(`Rendimiento estimado: ${formatNumber(unitsPerM2, 2)} un/m²`);
+        lines.push(`Cantidad estimada: ${formatNumber(units, 0)} unidades`);
+      }
+
+      lines.push(`Incluir adicionales: ${extrasInput.checked ? "Si" : "No"}`);
+      lines.push("");
+      lines.push(`Nombre: ${nameInput.value.trim()}`);
+      lines.push(`Telefono: ${phoneInput.value.trim()}`);
+
+      if (emailInput.value.trim()) {
+        lines.push(`Email: ${emailInput.value.trim()}`);
+      }
+
+      if (locationInput.value.trim()) {
+        lines.push(`Localidad: ${locationInput.value.trim()}`);
+      }
+
+      if (notesInput.value.trim()) {
+        lines.push(`Comentarios: ${notesInput.value.trim()}`);
+      }
+
+      const href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(href, "_blank", "noopener");
+    });
+
+    compute();
+  };
+
   const renderCatalogPage = () => {
     shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/generated/catalog-products-hero.png")}');">
@@ -1374,11 +1593,13 @@
                 .join("")}
             </div>
             <div class="hero__actions product-detail__actions">
-              <a class="button button--dark" href="${contactHref}">Pedir presupuesto</a>
+              <a class="button button--dark" href="#quote-builder">Pedir presupuesto</a>
               <a class="button button--sand" href="${downloadsHref}">Ver descargas</a>
             </div>
           </article>
         </div>
+
+        ${renderQuoteBuilder(line, product)}
 
         <div class="spec-grid">
           ${product.specs
@@ -1423,6 +1644,7 @@
     `;
 
     initRelatedCarousels();
+    initQuoteBuilder(line, product);
   };
 
   if (pageType === "catalog") {

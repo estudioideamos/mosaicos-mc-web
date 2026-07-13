@@ -2395,6 +2395,102 @@ body.is-ready .shell {
   color: var(--graphite-900);
 }
 
+.quote-builder {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 22px;
+  margin-top: 28px;
+  align-items: start;
+}
+
+.quote-builder__form,
+.quote-builder__summary {
+  min-width: 0;
+}
+
+.quote-builder__summary {
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(28, 29, 27, 0.96), rgba(17, 17, 16, 0.98));
+  color: rgba(255, 253, 250, 0.9);
+  box-shadow: var(--shadow-card);
+}
+
+.quote-builder__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.quote-builder__summary h3 {
+  margin: 16px 0 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 0.94;
+  color: var(--white);
+}
+
+.quote-builder__summary > p {
+  margin: 0;
+  color: rgba(255, 253, 250, 0.72);
+}
+
+.quote-builder__metrics {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.quote-builder__metric {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quote-builder__metric span {
+  color: rgba(255, 253, 250, 0.68);
+}
+
+.quote-builder__metric strong {
+  font-size: 1.08rem;
+  color: var(--white);
+}
+
+.quote-builder__foot {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  color: rgba(255, 253, 250, 0.7);
+  font-size: 0.94rem;
+}
+
+.quote-builder__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.quote-builder__toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-blue);
+}
+
+.quote-builder__actions {
+  margin-top: 22px;
+}
+
 .footer {
   position: relative;
   padding: 0;
@@ -2920,6 +3016,7 @@ body.is-ready .shell {
   .product-detail-grid,
   .spec-grid,
   .detail-notes,
+  .quote-builder,
   .variant-grid {
     grid-template-columns: 1fr;
   }
