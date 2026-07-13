@@ -742,7 +742,7 @@
                     .map((badge, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${badge}</span>`)
                     .join("")}
                 </div>
-                <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
+                <a class="link-arrow" href="${lineHref(line.slug)}">Ver colecci&oacute;n</a>
               </div>
             </article>
           `;
@@ -826,7 +826,7 @@
 
   const getInquiryHref = (line, product, topic) => {
     const messages = {
-      general: `Hola Mosaicos MC, me interesa ${product.name} de la línea ${line.name}. Quisiera recibir asesoramiento para mi proyecto.`,
+      general: `Hola Mosaicos MC, me interesa ${product.name} de la línea ${line.name}. Quisiera asesoramiento para definir la mejor opción para mi proyecto.`,
       ficha: `Hola Mosaicos MC, quiero recibir la ficha técnica de ${product.name} de la línea ${line.name}.`,
       colocación: `Hola Mosaicos MC, quisiera consultar la colocación y aplicación recomendada para ${product.name} de la línea ${line.name}.`,
     };
@@ -851,12 +851,12 @@
       {
         question: "Cuando se define la junta y que hay que prever en obra?",
         answer:
-          "La separación entre piezas, las juntas y los encuentros deben definirse según soporte, modulado y exposición. Podemos orientarte en ese criterio junto con la colocación recomendada para evitar improvisaciones en obra.",
+          "La separación entre piezas, las juntas y los encuentros deben definirse según soporte, modulación y nivel de exposición. Te orientamos en ese criterio para que la colocación se resuelva con mayor precisión desde el inicio.",
       },
       {
         question: "Tiene ficha técnica o respaldo comercial para especificarlo?",
         answer:
-          "Si. Podemos enviarte la ficha comercial o técnica disponible, revisar cantidades, aplicaciónes y ayudarte a validar si esta pieza es la indicada para tu proyecto.",
+          "Sí. Te enviamos la ficha comercial o técnica disponible, revisamos cantidades y confirmamos contigo si esta pieza es la indicada para tu proyecto.",
       },
       {
         question: "Como se mantiene una vez colocado?",
@@ -870,10 +870,10 @@
       {
         kicker: "biblioteca",
         title: "Catálogo de la línea",
-        text: `Acceso rapido a la coleccion ${line.name} para revisar el lenguaje de la línea y sus productos disponibles.`,
+        text: `Accede rápidamente a la colección ${line.name} para revisar la línea completa y sus productos disponibles.`,
         meta: ["Línea completa", "Online"],
         href: lineHref(line.slug),
-        cta: "Ver coleccion",
+        cta: "Ver colección",
       },
       {
         kicker: "ficha técnica",
@@ -887,7 +887,7 @@
       {
         kicker: "colocación",
         title: "Guía de aplicación",
-        text: `Te ayudamos a validar base, terminación y criterio de colocación según el uso previsto para ${product.name}.`,
+        text: `Recibe una recomendación clara sobre base, terminación y criterio de colocación para especificar ${product.name} con mayor seguridad.`,
         meta: ["Soporte", "Obra"],
         href: getInquiryHref(line, product, "colocación"),
         cta: "Consultar",
@@ -1109,8 +1109,8 @@
       <div class="product-detail-block">
         <div class="quote-inline reveal is-visible" id="quote-builder">
           <div class="quote-inline__copy">
-            <span class="eyebrow eyebrow--dark">presupuesto rapido</span>
-            <h2>Solicitar presupuesto</h2>
+            <span class="eyebrow eyebrow--dark">presupuesto express</span>
+            <h2>Preparar presupuesto</h2>
             <p>Carga la superficie del proyecto, define el desperdicio y agrega esta pieza al carrito comercial para enviar la consulta por WhatsApp en un solo paso.</p>
           </div>
           <div class="quote-inline__card">
@@ -1126,7 +1126,7 @@
               <div class="form-field form-field--full">
                 <label class="quote-inline__toggle">
                   <input type="checkbox" data-quote-extras checked />
-                  <span>Incluir adicionales sugeridos y asesoramiento complementario</span>
+                  <span>Quiero incluir adicionales sugeridos y asesoramiento complementario</span>
                 </label>
               </div>
             </div>
@@ -1144,7 +1144,7 @@
               <button class="button button--dark" type="button" data-add-to-cart>Agregar al carrito</button>
               <button class="button button--sand" type="button" data-open-cart disabled>Ver carrito</button>
             </div>
-            <p class="quote-inline__note" data-quote-extras-output>Incluye adicionales sugeridos. Los precios se envian al solicitar el presupuesto.</p>
+            <p class="quote-inline__note" data-quote-extras-output>Podemos sumar materiales complementarios y asesoramiento según las necesidades de tu obra.</p>
           </div>
         </div>
         <div class="quote-drawer" data-quote-drawer hidden>
@@ -1160,16 +1160,16 @@
               </header>
               <div class="quote-drawer__body">
                 <div class="quote-drawer__empty" data-quote-empty>
-                  <h4>Todavia no agregaste productos.</h4>
-                  <p>Define metros cuadrados y desperdicio para sumar esta pieza al carrito de presupuesto.</p>
+                  <h4>Tu carrito de presupuesto está vacío.</h4>
+                  <p>Ingresa los metros cuadrados y agrega la pieza para preparar una consulta comercial clara y completa.</p>
                 </div>
                 <div class="quote-drawer__cart-list" data-quote-cart-list></div>
               </div>
               <footer class="quote-drawer__footer">
-                <p>Armamos el resumen del pedido y luego completamos tus datos comerciales en este mismo panel.</p>
+                <p>Agrega una o varias piezas y envía la consulta completa desde este mismo panel.</p>
                 <div class="quote-drawer__footer-actions">
                   <button class="button button--sand" type="button" data-quote-clear disabled>Vaciar carrito</button>
-                  <button class="button button--dark" type="button" data-quote-to-form disabled>Solicitar presupuesto</button>
+                  <button class="button button--dark" type="button" data-quote-to-form disabled>Continuar con mis datos</button>
                 </div>
               </footer>
             </div>
@@ -1342,7 +1342,7 @@
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">preguntas frecuentes</span>
           <h2>Preguntas frecuentes</h2>
-          <p>Respuestas claras para especificar mejor la pieza, anticipar su aplicación y resolver consultas habituales.</p>
+          <p>Respondemos las consultas clave para ayudarte a elegir, especificar y cotizar la pieza con mayor seguridad.</p>
         </div>
         <div class="faq-list">
           ${faqs
@@ -1373,7 +1373,7 @@
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">cat&aacute;logo real</span>
           <h2>Versiones disponibles</h2>
-          <p>Mostramos la pieza real de cat&aacute;logo sobre fondo blanco para que puedas revisar modelos, colores y terminaciones con una lectura clara.</p>
+          <p>Revisa la pieza en formato de cat&aacute;logo para comparar modelos, colores y terminaciones con una lectura clara y profesional.</p>
         </div>
         <div class="variant-grid">
           ${product.variants
@@ -1477,11 +1477,11 @@
   const renderProductCta = (line, product) => `
     <div class="cta-strip product-cta reveal is-visible">
       <span class="eyebrow eyebrow--dark">asesoramiento</span>
-      <h3>Te ayudamos a especificar ${product.name}</h3>
-      <p>Si estas definiendo cantidades, aplicación o terminación, armamos una recomendacion alineada con tu proyecto y con la línea ${line.name}.</p>
+      <h3>Asesoramiento para tu proyecto</h3>
+      <p>Cuéntanos qué superficie quieres resolver y te ayudamos a definir la mejor configuración de ${product.name} según uso, escala y terminación.</p>
       <div class="cta-strip__actions">
-        <a class="button button--dark" href="${contactHref}">Contactarme</a>
-        <a class="button button--sand" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+        <a class="button button--dark" href="${contactHref}">Solicitar asesoramiento</a>
+        <a class="button button--sand" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
       </div>
     </div>
   `;
@@ -1493,8 +1493,8 @@
       <div class="product-detail-block">
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">testimonios</span>
-          <h2>Rese&ntilde;as destacadas</h2>
-          <p>Una selecci&oacute;n de rese&ntilde;as reales que destacan atenci&oacute;n, calidad de producto y respuesta comercial.</p>
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>Reseñas reales que destacan la calidad del producto, la atención y el acompañamiento comercial.</p>
         </div>
         <div class="related-carousel testimonial-carousel" data-related-carousel>
           <div class="related-carousel__viewport">
@@ -1687,8 +1687,8 @@
 
       if (extrasOutput) {
         extrasOutput.textContent = extrasInput.checked
-          ? "Incluye adicionales sugeridos. Los precios se envian al solicitar el presupuesto."
-          : "Pedido sin adicionales sugeridos. Los precios se envian al solicitar el presupuesto.";
+          ? "Podemos sumar materiales complementarios y asesoramiento según las necesidades de tu obra."
+          : "Presupuesto sin adicionales sugeridos. Si lo necesitas, luego podemos incorporarlos.";
       }
 
       return { area, waste, totalArea, units, unitsPerM2, includeExtras: extrasInput.checked };
@@ -1768,7 +1768,7 @@
                   <div class="quote-drawer__item-metrics">
                     <span>${formatSquareMeters(item.area)} requeridos</span>
                     <span>${formatSquareMeters(item.totalArea)} con desperdicio</span>
-                    <span>${item.unitsPerM2 > 0 ? formatUnits(item.units) : "Cantidad a definir"}</span>
+                    <span>${item.unitsPerM2 > 0 ? formatUnits(item.units) : "Cantidad a cotizar"}</span>
                   </div>
                   <p>${item.includeExtras ? "Incluye adicionales sugeridos" : "Sin adicionales sugeridos"}</p>
                 </div>
@@ -1898,7 +1898,7 @@
         lines.push(`   - Desperdicio: ${formatNumber(item.waste, 0)}%`);
         lines.push(`   - Calculado: ${formatSquareMeters(item.totalArea)}`);
         lines.push(
-          `   - Cantidad estimada: ${item.unitsPerM2 > 0 ? formatUnits(item.units) : "A definir"}`
+          `   - Cantidad estimada: ${item.unitsPerM2 > 0 ? formatUnits(item.units) : "A cotizar"}`
         );
         lines.push(`   - Adicionales: ${item.includeExtras ? "Si" : "No"}`);
       });
@@ -1983,7 +1983,7 @@
         <div class="section-title reveal is-visible">
           <span class="eyebrow eyebrow--dark">productos</span>
           <h2>${line.name}</h2>
-          <p>Selecciona una pieza para ver su ficha, aplicaciónes y recomendaciones de uso.</p>
+          <p>Explora cada producto para ver medidas, variantes, aplicaciones y respaldo comercial.</p>
         </div>
         ${renderProductCards(line)}
       </section>

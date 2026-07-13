@@ -42,7 +42,7 @@ window.productCatalog = {
             },
             {
               title: "Consulta comercial",
-              text: "Podemos definir combinaciones, cantidades y asesorarte según la superficie total del proyecto.",
+              text: "Te ayudamos a definir combinaciones, cantidades y despiece según la superficie y el lenguaje del proyecto.",
             },
           ],
         },
@@ -75,7 +75,7 @@ window.productCatalog = {
             },
             {
               title: "Asesoría",
-              text: "También podemos sugerir combinaciones con líneas rusticas o bloques para zonas complementarias.",
+              text: "Nuestro equipo puede sugerir combinaciones con líneas rústicas o bloques para resolver zonas complementarias con coherencia material.",
             },
           ],
         },
@@ -123,7 +123,7 @@ window.productCatalog = {
             },
             {
               title: "Consulta comercial",
-              text: "Podemos ayudarte a definir cantidad, despiece y ritmo de colocación según tu planta.",
+              text: "Te asesoramos en cantidad, despiece y ritmo de colocación para optimizar la modulación en obra.",
             },
           ],
         },
@@ -156,7 +156,7 @@ window.productCatalog = {
             },
             {
               title: "Asesoría",
-              text: "Si querés, podemos combinarlo con líneas rusticas o atérmicas para espacios vinculados.",
+              text: "Su tono claro combina muy bien con líneas rústicas o atérmicas en proyectos que articulan distintos usos.",
             },
           ],
         },
@@ -204,7 +204,7 @@ window.productCatalog = {
             },
             {
               title: "Consulta comercial",
-              text: "También podemos cotizar bordes, esquineros y piezas especiales de la misma línea.",
+              text: "Podemos incorporar bordes, esquineros y piezas especiales para resolver el conjunto con continuidad visual.",
             },
           ],
         },
@@ -237,7 +237,7 @@ window.productCatalog = {
             },
             {
               title: "Asesoría",
-              text: "Podemos definir el conjunto completo de borde, solárium y piezas especiales según la obra.",
+              text: "Te ayudamos a resolver el conjunto completo de borde, solárium y piezas especiales de acuerdo con la obra.",
             },
           ],
         },
@@ -285,7 +285,7 @@ window.productCatalog = {
             },
             {
               title: "Consulta comercial",
-              text: "Podemos sugerirte variantes de tono y combinaciones con piezas de borde o transicion.",
+              text: "Recomendamos variantes de tono y combinaciones con piezas de borde o transición para lograr un resultado más integrado.",
             },
           ],
         },
@@ -318,7 +318,7 @@ window.productCatalog = {
             },
             {
               title: "Asesoría",
-              text: "Podemos ayudarte a combinarla con líneas pulidas o bloques según la zonificación de la obra.",
+              text: "Te ayudamos a combinarla con líneas pulidas o bloques para ordenar mejor la zonificación del proyecto.",
             },
           ],
         },
@@ -366,7 +366,7 @@ window.productCatalog = {
             },
             {
               title: "Consulta comercial",
-              text: "También podemos cotizar combinaciones de trabas y cantidades según el tipo de paño.",
+              text: "Podemos definir la traba, la cantidad y el esquema de colocación más conveniente según la escala del paño.",
             },
           ],
         },
@@ -399,7 +399,7 @@ window.productCatalog = {
             },
             {
               title: "Asesoría",
-              text: "Te podemos orientar con la cantidad y la mejor modulacion según el recorrido y el uso del area.",
+              text: "Te ayudamos a definir cantidad, modulación y mejor resolución según el recorrido y el uso previsto.",
             },
           ],
         },
