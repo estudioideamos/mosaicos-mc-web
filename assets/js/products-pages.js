@@ -740,7 +740,6 @@
                   ${line.badges
                     .map((badge, index) => `<span class="product-meta__item" style="--meta-icon:${index};">${badge}</span>`)
                     .join("")}
-                  <span class="product-meta__item" style="--meta-icon:4;">${line.products.length} productos</span>
                 </div>
                 <a class="link-arrow" href="${lineHref(line.slug)}">Ver Coleccion</a>
                 ${
