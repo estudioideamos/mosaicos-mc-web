@@ -191,7 +191,8 @@ body.is-ready .shell {
   color: var(--graphite-900);
 }
 
-.site-nav__whatsapp {
+.site-nav__whatsapp,
+.site-nav__cart {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -207,19 +208,39 @@ body.is-ready .shell {
   transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
-.site-nav__whatsapp:hover {
+.site-nav__cart {
+  position: relative;
+  border-color: rgba(48, 41, 38, 0.14);
+  color: var(--graphite-900);
+}
+
+.site-nav__whatsapp:hover,
+.site-nav__cart:hover {
   transform: translateY(-2px);
+}
+
+.site-nav__whatsapp:hover {
   background: rgba(45, 110, 74, 0.08);
   border-color: rgba(35, 121, 72, 0.48);
 }
 
-.site-nav__whatsapp-icon {
+.site-nav__cart:hover {
+  background: rgba(48, 41, 38, 0.06);
+  border-color: rgba(48, 41, 38, 0.28);
+}
+
+.site-nav__whatsapp-icon,
+.site-nav__cart-icon {
   display: grid;
   place-items: center;
   width: 20px;
   height: 20px;
   font-size: 0.95rem;
   line-height: 1;
+}
+
+.site-nav__cart-icon {
+  position: relative;
 }
 
 .site-nav__whatsapp-icon::before,
@@ -232,6 +253,32 @@ body.is-ready .shell {
   background-color: currentColor;
   -webkit-mask: url("../img/whatsapp.svg") center / contain no-repeat;
   mask: url("../img/whatsapp.svg") center / contain no-repeat;
+}
+
+.site-nav__cart-icon::before,
+.site-nav__cart-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.site-nav__cart-icon::before {
+  bottom: 1px;
+  width: 14px;
+  height: 11px;
+  border: 1.8px solid currentColor;
+  border-radius: 3px 3px 4px 4px;
+}
+
+.site-nav__cart-icon::after {
+  top: 1px;
+  width: 8px;
+  height: 6px;
+  border: 1.8px solid currentColor;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .footer__social-link[href*="instagram.com"] .footer__social-mark::before,
@@ -254,6 +301,7 @@ body.is-ready .shell {
 }
 
 .site-nav__whatsapp-icon,
+.site-nav__cart-icon,
 .whatsapp-float__icon,
 .footer__social-link[href*="wa.me"] .footer__social-mark {
   font-size: 0;
@@ -268,9 +316,28 @@ body.is-ready .shell {
   letter-spacing: 0;
 }
 
-.site-nav__whatsapp-text {
+.site-nav__whatsapp-text,
+.site-nav__cart-text {
   font-size: 0.84rem;
   letter-spacing: 0.02em;
+}
+
+.site-nav__cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #0000b6;
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .menu-toggle {
@@ -3288,7 +3355,14 @@ body.is-ready .shell {
     padding: 0 14px;
   }
 
-  .site-nav__whatsapp-text {
+  .site-nav__cart {
+    min-width: 46px;
+    min-height: 46px;
+    padding: 0 14px;
+  }
+
+  .site-nav__whatsapp-text,
+  .site-nav__cart-text {
     display: none;
   }
 

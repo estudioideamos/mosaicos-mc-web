@@ -15,6 +15,84 @@ if (siteHeader) {
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
+const brandLink = document.querySelector(".brand");
+const quoteCartStorageKey = "mosaicosMcQuoteCart";
+
+const readHeaderCartItems = () => {
+  try {
+    const raw = window.localStorage.getItem(quoteCartStorageKey);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    return [];
+  }
+};
+
+const syncHeaderCartButton = (button) => {
+  if (!button) return;
+
+  const count = readHeaderCartItems().length;
+  const countBadge = button.querySelector("[data-cart-count]");
+
+  button.setAttribute("aria-label", count ? `Abrir carrito (${count})` : "Abrir carrito");
+
+  if (countBadge) {
+    countBadge.textContent = String(count);
+    countBadge.hidden = count === 0;
+  }
+};
+
+const createHeaderCartButton = () => {
+  if (!siteHeader || siteHeader.querySelector("[data-open-header-cart]")) {
+    return;
+  }
+
+  const actions = siteHeader.querySelector(".site-header__actions");
+  const whatsappButton = actions?.querySelector(".site-nav__whatsapp");
+
+  if (!actions || !whatsappButton) {
+    return;
+  }
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "site-nav__cart";
+  button.setAttribute("data-open-header-cart", "");
+  button.innerHTML = `
+    <span class="site-nav__cart-icon" aria-hidden="true"></span>
+    <span class="site-nav__cart-text">Carrito</span>
+    <span class="site-nav__cart-count" data-cart-count hidden>0</span>
+  `;
+
+  button.addEventListener("click", () => {
+    const openEvent = new CustomEvent("mosaicosmc:open-quote-cart", {
+      bubbles: true,
+      cancelable: true,
+      detail: { source: "header" },
+    });
+
+    const handled = !document.dispatchEvent(openEvent);
+
+    if (!handled && brandLink?.href) {
+      window.location.href = new URL("productos/", brandLink.href).href;
+    }
+  });
+
+  whatsappButton.insertAdjacentElement("beforebegin", button);
+  syncHeaderCartButton(button);
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === quoteCartStorageKey) {
+      syncHeaderCartButton(button);
+    }
+  });
+
+  document.addEventListener("mosaicosmc:cart-updated", () => {
+    syncHeaderCartButton(button);
+  });
+};
+
+createHeaderCartButton();
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {

@@ -985,6 +985,12 @@
 
   const writeQuoteCart = (items) => {
     writeStoredJson(quoteCartStorageKey, Array.isArray(items) ? items : []);
+    document.dispatchEvent(
+      new CustomEvent("mosaicosmc:cart-updated", {
+        bubbles: true,
+        detail: { count: Array.isArray(items) ? items.length : 0 },
+      })
+    );
   };
 
   const readQuoteLead = () => {
@@ -1660,6 +1666,10 @@
       return;
     }
 
+    if (drawer.parentElement !== document.body) {
+      document.body.appendChild(drawer);
+    }
+
     const compute = () => {
       const area = parseNumericValue(areaInput.value);
       const waste = parseNumericValue(wasteInput.value);
@@ -1817,6 +1827,12 @@
     });
 
     openCartButton.addEventListener("click", () => {
+      renderCartItems();
+      openDrawer("cart");
+    });
+
+    document.addEventListener("mosaicosmc:open-quote-cart", (event) => {
+      event.preventDefault();
       renderCartItems();
       openDrawer("cart");
     });
