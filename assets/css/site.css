@@ -2761,6 +2761,58 @@ body.is-ready .shell {
   color: var(--graphite-600);
 }
 
+.quote-extras {
+  display: grid;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: rgba(48, 41, 38, 0.05);
+}
+
+.quote-extras--muted {
+  gap: 6px;
+}
+
+.quote-extras__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quote-extras__header strong {
+  font-size: 0.95rem;
+}
+
+.quote-extras__header span {
+  color: var(--graphite-500);
+  font-size: 0.78rem;
+}
+
+.quote-extras__list {
+  display: grid;
+  gap: 8px;
+}
+
+.quote-extras__item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--graphite-700);
+}
+
+.quote-extras__item strong {
+  white-space: nowrap;
+  font-size: 0.94rem;
+}
+
+.quote-extras__note {
+  margin: 0;
+  color: var(--graphite-600);
+  font-size: 0.92rem;
+}
+
 .quote-inline--embedded .quote-inline__actions {
   margin-top: 18px;
 }
@@ -2938,6 +2990,21 @@ body.is-ready .shell {
   margin: 12px 0 0;
   color: var(--graphite-600);
   font-size: 0.94rem;
+}
+
+.quote-drawer__item-copy .quote-extras {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+}
+
+.quote-drawer__item-copy .quote-extras__header strong {
+  font-size: 0.88rem;
+}
+
+.quote-drawer__item-copy .quote-extras__header span,
+.quote-drawer__item-copy .quote-extras__note {
+  font-size: 0.82rem;
 }
 
 .quote-drawer__footer,

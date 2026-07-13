@@ -1005,6 +1005,45 @@
   const formatSquareMeters = (value) => `${formatNumber(value, 2)} m2`;
   const formatUnits = (value) => `${formatNumber(value, 0)} un`;
   const getCartItemId = (line, product) => `${line.slug}:${product.slug}`;
+  const defaultSuggestedExtras = [
+    { name: "Pegamento para Mosaico", quantity: "1 bolsa" },
+    { name: "Pastina Gris", quantity: "1 bolsa 5kg" },
+    { name: "Impermeabilizante", quantity: "1 bolsa" },
+  ];
+
+  const getSuggestedExtras = (_product) =>
+    defaultSuggestedExtras.map((item) => ({ ...item }));
+
+  const renderSuggestedExtrasMarkup = (items, noteText) => `
+    <div class="quote-extras">
+      <div class="quote-extras__header">
+        <strong>Adicionales</strong>
+        <span>Sugeridos para esta consulta</span>
+      </div>
+      <div class="quote-extras__list">
+        ${items
+          .map(
+            (item) => `
+              <div class="quote-extras__item">
+                <span>${item.name}</span>
+                <strong>${item.quantity}</strong>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+      <p class="quote-extras__note">${noteText}</p>
+    </div>
+  `;
+
+  const renderNoExtrasMarkup = (noteText) => `
+    <div class="quote-extras quote-extras--muted">
+      <div class="quote-extras__header">
+        <strong>Sin adicionales</strong>
+      </div>
+      <p class="quote-extras__note">${noteText}</p>
+    </div>
+  `;
 
   const buildQuoteCartItem = (line, product, payload) => ({
     id: getCartItemId(line, product),
@@ -1019,6 +1058,7 @@
     units: payload.units,
     unitsPerM2: payload.unitsPerM2,
     includeExtras: payload.includeExtras,
+    extras: payload.includeExtras ? getSuggestedExtras(product) : [],
   });
 
   const renderLegacyQuoteBuilder = (line, product) => {
@@ -1144,7 +1184,7 @@
               <button class="button button--dark" type="button" data-add-to-cart>Agregar al carrito</button>
               <button class="button button--sand" type="button" data-open-cart disabled>Ver carrito</button>
             </div>
-            <p class="quote-inline__note" data-quote-extras-output>Incluye adicionales sugeridos. Los precios se env&#237;an al solicitar el presupuesto.</p>
+            <div class="quote-inline__note" data-quote-extras-output></div>
           </div>
         </div>
         <div class="quote-drawer" data-quote-drawer hidden>
@@ -1697,9 +1737,12 @@
       }
 
       if (extrasOutput) {
-        extrasOutput.textContent = extrasInput.checked
-          ? "Incluye adicionales sugeridos. Los precios se env\u00EDan al solicitar el presupuesto."
-          : "Sin adicionales sugeridos. Los precios se env\u00EDan al solicitar el presupuesto.";
+        extrasOutput.innerHTML = extrasInput.checked
+          ? renderSuggestedExtrasMarkup(
+              getSuggestedExtras(product),
+              "Incluye adicionales sugeridos. Los precios se envian al solicitar el presupuesto."
+            )
+          : renderNoExtrasMarkup("Los precios se envian al solicitar el presupuesto.");
       }
 
       return { area, waste, totalArea, units, unitsPerM2, includeExtras: extrasInput.checked };
@@ -1763,7 +1806,14 @@
       if (cartList) {
         cartList.innerHTML = cartItems
           .map(
-            (item) => `
+            (item) => {
+              const extras = item.includeExtras
+                ? Array.isArray(item.extras) && item.extras.length
+                  ? item.extras
+                  : getSuggestedExtras(product)
+                : [];
+
+              return `
               <article class="quote-drawer__item" data-quote-item="${item.id}">
                 <div class="quote-drawer__item-media">
                   <img src="${item.image}" alt="${item.productName}" loading="lazy" />
@@ -1781,10 +1831,15 @@
                     <span>${formatSquareMeters(item.totalArea)} con desperdicio</span>
                     <span>${item.unitsPerM2 > 0 ? formatUnits(item.units) : "Cantidad a cotizar"}</span>
                   </div>
-                  <p>${item.includeExtras ? "Incluye adicionales sugeridos" : "Sin adicionales sugeridos"}</p>
+                  ${
+                    item.includeExtras
+                      ? renderSuggestedExtrasMarkup(extras, "Incluidos como sugerencia comercial.")
+                      : renderNoExtrasMarkup("Sin adicionales sugeridos para este item.")
+                  }
                 </div>
               </article>
-            `
+            `;
+            }
           )
           .join("");
       }
@@ -1918,6 +1973,13 @@
           `   - Cantidad estimada: ${item.unitsPerM2 > 0 ? formatUnits(item.units) : "A cotizar"}`
         );
         lines.push(`   - Adicionales: ${item.includeExtras ? "Si" : "No"}`);
+
+        if (item.includeExtras) {
+          const extras = Array.isArray(item.extras) && item.extras.length ? item.extras : getSuggestedExtras(product);
+          extras.forEach((extra) => {
+            lines.push(`     * ${extra.name}: ${extra.quantity}`);
+          });
+        }
       });
 
       lines.push("");
