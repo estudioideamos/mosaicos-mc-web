@@ -1505,9 +1505,23 @@
     carousels.forEach((carousel) => {
       const viewport = carousel.querySelector(".related-carousel__viewport");
       const track = carousel.querySelector(".related-carousel__track");
-      const cards = Array.from(track?.children || []).filter((card) => card.nodeType === 1);
       const prevButton = carousel.querySelector("[data-related-prev]");
       const nextButton = carousel.querySelector("[data-related-next]");
+
+      if (track) {
+        const originalCards = Array.from(track.children).filter((card) => card.nodeType === 1);
+
+        // If there are too few cards to move on desktop, clone them so autoplay is still visible.
+        if (originalCards.length > 1 && originalCards.length <= 3) {
+          while (track.children.length <= 3) {
+            originalCards.forEach((card) => {
+              track.appendChild(card.cloneNode(true));
+            });
+          }
+        }
+      }
+
+      const cards = Array.from(track?.children || []).filter((card) => card.nodeType === 1);
 
       if (!viewport || !track || cards.length <= 1) {
         if (prevButton) prevButton.disabled = true;
