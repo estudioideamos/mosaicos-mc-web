@@ -8,6 +8,7 @@
   --graphite-900: #171311;
   --ochre-400: #3d49ff;
   --ochre-500: #0000b6;
+  --accent-blue: #0000b6;
   --white: #fffdfa;
   --shadow-soft: 0 24px 80px rgba(23, 19, 17, 0.12);
   --shadow-card: 0 18px 40px rgba(23, 19, 17, 0.1);
@@ -187,8 +188,8 @@ body.is-ready .shell {
 
 .site-nav__link:hover,
 .site-nav__link[aria-current="page"] {
-  background: rgba(48, 41, 38, 0.08);
-  color: var(--graphite-900);
+  background: rgba(0, 0, 182, 0.08);
+  color: var(--accent-blue);
 }
 
 .site-nav__whatsapp,
@@ -210,7 +211,7 @@ body.is-ready .shell {
 
 .site-nav__cart {
   position: relative;
-  border-color: rgba(48, 41, 38, 0.14);
+  border-color: rgba(0, 0, 182, 0.18);
   color: var(--graphite-900);
 }
 
@@ -225,8 +226,9 @@ body.is-ready .shell {
 }
 
 .site-nav__cart:hover {
-  background: rgba(48, 41, 38, 0.06);
-  border-color: rgba(48, 41, 38, 0.28);
+  background: rgba(0, 0, 182, 0.08);
+  border-color: rgba(0, 0, 182, 0.34);
+  color: var(--accent-blue);
 }
 
 .site-nav__whatsapp-icon,
@@ -842,6 +844,11 @@ body.is-ready .shell {
   transform: translateY(-2px);
 }
 
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 182, 0.16);
+}
+
 .button--light {
   background: var(--white);
   color: var(--graphite-900);
@@ -858,9 +865,31 @@ body.is-ready .shell {
   color: var(--white);
 }
 
+.button--dark:hover,
+.button--dark:focus-visible {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
 .button--sand {
   background: var(--sand-100);
   color: var(--graphite-900);
+}
+
+.button--sand:hover,
+.button--sand:focus-visible,
+.button--light:hover,
+.button--light:focus-visible {
+  background: rgba(0, 0, 182, 0.08);
+  border-color: rgba(0, 0, 182, 0.22);
+  color: var(--accent-blue);
+}
+
+.button--ghost:hover,
+.button--ghost:focus-visible {
+  border-color: rgba(0, 0, 182, 0.42);
+  background: rgba(0, 0, 182, 0.12);
+  color: var(--white);
 }
 
 .hero__panel {
@@ -1490,8 +1519,8 @@ body.is-ready .shell {
 .product-line-nav__link:hover,
 .product-line-nav__link[aria-current="page"] {
   transform: translateY(-2px);
-  background: var(--graphite-900);
-  border-color: var(--graphite-900);
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
   color: var(--white);
 }
 
@@ -2269,6 +2298,8 @@ body.is-ready .shell {
 
 .contact-social__link:hover {
   transform: translateY(-2px);
+  border-color: rgba(0, 0, 182, 0.22);
+  box-shadow: 0 16px 30px rgba(0, 0, 182, 0.12);
 }
 
 .contact-form {
@@ -3003,8 +3034,8 @@ body.is-ready .shell {
 
 .footer__social-link:hover {
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.26);
+  background: rgba(0, 0, 182, 0.16);
+  border-color: rgba(0, 0, 182, 0.4);
 }
 
 .footer__social-mark {
