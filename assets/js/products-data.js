@@ -250,7 +250,7 @@ window.productCatalog = {
       description:
         "Piezas de terminación rustica para interior y exterior, con textura irregular y una expresión mineral que remite a la piedra natural con refinamiento.",
       heroImage:
-        "@/assets/img/generated/line-rusticos-hero.svg",
+        "@/assets/img/generated/line-rusticos-hero.png",
       overviewTitle: "Textura mineral y presencia natural para pisos y expansiones.",
       overviewText:
         "Los rústicos trabajan bien en interiores con impronta material y también en exteriores donde se busca una lectura cercana a la piedra.",

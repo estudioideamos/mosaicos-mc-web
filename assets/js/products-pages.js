@@ -41,9 +41,9 @@
       heroSummary:
         "Una de las piezas más representativas de Exterior pulida, con trama de 64 panes y lenguaje técnico.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior7-150x150.jpg",
+        "@/assets/img/generated/product-64-panes.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior14-150x150.jpg",
+        "@/assets/img/generated/product-64-panes.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
@@ -74,9 +74,9 @@
       heroSummary:
         "Placa de 16 panes para exterior pulido, pensada para quienes buscan una grilla más abierta.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior2-150x150.jpg",
+        "@/assets/img/generated/product-16-panes.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior17-150x150.jpg",
+        "@/assets/img/generated/product-16-panes.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
@@ -107,9 +107,9 @@
       heroSummary:
         "Producto lineal de Exterior pulida con lectura de barras, muy útil para paños de gran carácter.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior6-150x150.jpg",
+        "@/assets/img/generated/product-8-barras.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior18-150x150.jpg",
+        "@/assets/img/generated/product-8-barras.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
@@ -140,9 +140,9 @@
       heroSummary:
         "Una pieza expresiva con dibujo de ondas, pensada para proyectos donde la textura es protagonista.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior10-150x150.jpg",
+        "@/assets/img/generated/product-ondas.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior3-150x150.jpg",
+        "@/assets/img/generated/product-ondas.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
@@ -173,9 +173,9 @@
       heroSummary:
         "Modelo de dibujo espigado para quienes buscan una placa exterior pulida con personalidad propia.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior15-150x150.jpg",
+        "@/assets/img/generated/product-espiga.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior12-150x150.jpg",
+        "@/assets/img/generated/product-espiga.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
@@ -206,9 +206,9 @@
       heroSummary:
         "Pieza de lectura lisa y despojada para superficies exteriores que necesitan simpleza y continuidad.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior1-150x150.jpg",
+        "@/assets/img/generated/product-1-pan.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/exterior20-150x150.jpg",
+        "@/assets/img/generated/product-1-pan.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Exterior"],
       specs: [
         ["Peso unitario", "12 Kg aprox. por unidad."],
@@ -241,9 +241,9 @@
       heroSummary:
         "El sistema bicapa aporta dureza y durabilidad, y se completa con pulido final en obra para lograr la terminación deseada.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa1.jpg",
+        "@/assets/img/generated/product-bicapa.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/bicapa3.jpg",
+        "@/assets/img/generated/product-bicapa.png",
       meta: ["40 x 40 x 3,3 cm", "12 kg aprox.", "75 kg/m²", "6,25 un/m²"],
       specs: [
         ["Terminación", "Semi pulida; normalmente se termina pulido en obra."],
@@ -274,9 +274,9 @@
       heroSummary:
         "Una línea de mosaicos de terminación ya pulida, con gran variedad de colores y dos formatos base según la referencia.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto1.jpg",
+        "@/assets/img/generated/product-mosaico-compacto.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/compacto18.jpg",
+        "@/assets/img/generated/product-mosaico-compacto.png",
       meta: ["30 x 30 x 1,8 cm", "43 kg/m²", "11,11 un/m²", "40 x 40 x 2,2 cm"],
       specs: [
         ["Formato 30 x 30", "30 x 30 x 1,8 cm, 43 kg por m² y 11,11 unidades por m²."],
@@ -309,9 +309,9 @@
       heroSummary:
         "Una pieza desarrollada para acompa&ntilde;ar piscinas y expansiones exteriores con confort de uso, imagen limpia y resoluciones consistentes en cada encuentro.",
       image:
-        "@/assets/img/generated/line-atermicos-hero.png",
+        "@/assets/img/generated/product-para-decks-y-piletas.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/ater1.jpg",
+        "@/assets/img/generated/product-para-decks-y-piletas.png",
       meta: ["50 x 50 x 3 cm", "14 kg aprox.", "4 un/m2", "2 un/ml"],
       specs: [
         ["Medida", "50 x 50 x 3 cm."],
@@ -344,9 +344,9 @@
       heroSummary:
         "Una pieza rustica pensada para proyectos que buscan textura, carácter y una terminación cercana a la piedra natural.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin1.jpg",
+        "@/assets/img/generated/product-simil-adoquin-rustico.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/adoquin3.jpg",
+        "@/assets/img/generated/product-simil-adoquin-rustico.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Rustico"],
       specs: [
         ["Peso unitario", "12 kg aprox. por unidad."],
@@ -377,9 +377,9 @@
       heroSummary:
         "Una loseta sobria y técnica que conserva el espíritu mineral de la línea mientras suma una imagen más serena y contemporánea.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/lose2.jpg",
+        "@/assets/img/generated/product-loseta-lisa-biselada.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/lose3.jpg",
+        "@/assets/img/generated/product-loseta-lisa-biselada.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Biselada"],
       specs: [
         ["Peso unitario", "12 kg aprox. por unidad."],
@@ -410,9 +410,9 @@
       heroSummary:
         "Una familia funcional para resolver circulaciones accesibles mediante losetas guía y piezas táctiles de clara lectura.",
       image:
-        "https://images.unsplash.com/photo-1592595896616-c37162298647?auto=format&fit=crop&w=1200&q=80",
+        "@/assets/img/generated/product-accesibilidad.png",
       detailImage:
-        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1400&q=80",
+        "@/assets/img/generated/product-accesibilidad.png",
       meta: ["40 x 40 x 3,6 cm", "12 kg aprox.", "6,25 un/m²", "Accesibilidad"],
       specs: [
         ["Peso unitario", "12 kg aprox. por unidad."],
@@ -445,9 +445,9 @@
       heroSummary:
         "Una soluci&oacute;n robusta para exteriores de alto tr&aacute;nsito, pensada para aportar resistencia, orden visual y continuidad en grandes pa&ntilde;os.",
       image:
-        "@/assets/img/generated/line-bloques-hormigon-hero.png",
+        "@/assets/img/generated/product-adoquin-holanda.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/holanda2.jpg",
+        "@/assets/img/generated/product-adoquin-holanda.png",
       meta: ["10 x 20 x 6 cm", "123 kg/m2", "50 un/m2", "Exterior"],
       specs: [
         ["Medida", "10 x 20 x 6 cm."],
@@ -478,9 +478,9 @@
       heroSummary:
         "Una solucion funcional para combinar hormigon y cesped en superficies exteriores con transito controlado, drenaje eficiente y una presencia prolija.",
       image:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped1.jpg",
+        "@/assets/img/generated/product-bloque-cesped.png",
       detailImage:
-        "https://mosaicosmc.com/wp-content/uploads/2023/12/cesped2.jpg",
+        "@/assets/img/generated/product-bloque-cesped.png",
       meta: ["40 x 30 x 8 cm", "105 kg/m2", "8 un/m2", "Exterior"],
       specs: [
         ["Medida", "40 x 30 x 8 cm."],
@@ -998,7 +998,7 @@
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${resolveAsset("@/assets/img/generated/home-brand-editorial.png")}');">
+      <section class="page-hero" style="--hero-image: url('${resolveAsset("@/assets/img/generated/catalog-products-hero.png")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catálogo</span>
           <h1>Líneas de producto</h1>
