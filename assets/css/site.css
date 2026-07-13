@@ -1589,6 +1589,16 @@ body.is-ready .shell {
 .product-detail-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 28px;
+  align-items: start;
+}
+
+.product-detail-grid > .split-card {
+  align-self: start;
+}
+
+.product-detail-grid > .split-card--copy {
+  position: sticky;
+  top: calc(var(--nav-height) + 18px);
 }
 
 .spec-grid {
@@ -3427,6 +3437,11 @@ body.is-ready .shell {
   .quote-inline,
   .variant-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-detail-grid > .split-card--copy {
+    position: static;
+    top: auto;
   }
 
   .home-slide__content {
