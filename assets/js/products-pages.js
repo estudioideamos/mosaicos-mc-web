@@ -1268,6 +1268,14 @@
   const getSpecIconType = (label) => {
     const normalized = normalizeText(label);
 
+    if (normalized.includes("rendimiento")) {
+      return "performance";
+    }
+
+    if (normalized.includes("terminaci")) {
+      return "finish";
+    }
+
     if (normalized.includes("medida")) {
       return "dimension";
     }
