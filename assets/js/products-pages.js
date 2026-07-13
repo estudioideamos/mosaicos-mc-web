@@ -13,6 +13,8 @@
   const contactHref = `${basePrefix}contacto/`;
   const downloadsHref = `${basePrefix}descargas/`;
   const whatsappNumber = "5491138789057";
+  const quoteCartStorageKey = "mosaicosMcQuoteCart";
+  const quoteLeadStorageKey = "mosaicosMcQuoteLead";
 
   const lineHref = (lineSlug) => `${productsRoot}${lineSlug}/`;
   const productHref = (lineSlug, productSlug) => `${productsRoot}${lineSlug}/${productSlug}/`;
@@ -959,7 +961,61 @@
     return 0;
   };
 
-  const renderQuoteBuilder = (line, product) => {
+  const readStoredJson = (key, fallback) => {
+    try {
+      const raw = window.localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (_error) {
+      return fallback;
+    }
+  };
+
+  const writeStoredJson = (key, value) => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (_error) {
+      // Ignore storage issues so the quote flow still works.
+    }
+  };
+
+  const readQuoteCart = () => {
+    const items = readStoredJson(quoteCartStorageKey, []);
+    return Array.isArray(items) ? items : [];
+  };
+
+  const writeQuoteCart = (items) => {
+    writeStoredJson(quoteCartStorageKey, Array.isArray(items) ? items : []);
+  };
+
+  const readQuoteLead = () => {
+    const lead = readStoredJson(quoteLeadStorageKey, {});
+    return lead && typeof lead === "object" ? lead : {};
+  };
+
+  const writeQuoteLead = (lead) => {
+    writeStoredJson(quoteLeadStorageKey, lead && typeof lead === "object" ? lead : {});
+  };
+
+  const formatSquareMeters = (value) => `${formatNumber(value, 2)} m2`;
+  const formatUnits = (value) => `${formatNumber(value, 0)} un`;
+  const getCartItemId = (line, product) => `${line.slug}:${product.slug}`;
+
+  const buildQuoteCartItem = (line, product, payload) => ({
+    id: getCartItemId(line, product),
+    lineSlug: line.slug,
+    productSlug: product.slug,
+    lineName: line.name,
+    productName: product.name,
+    image: resolveAsset(product.image || product.detailImage || line.heroImage),
+    area: payload.area,
+    waste: payload.waste,
+    totalArea: payload.totalArea,
+    units: payload.units,
+    unitsPerM2: payload.unitsPerM2,
+    includeExtras: payload.includeExtras,
+  });
+
+  const renderLegacyQuoteBuilder = (line, product) => {
     const unitsPerM2 = getUnitsPerSquareMeter(product);
     const defaultWaste = 10;
 
@@ -1038,6 +1094,131 @@
             <div class="quote-builder__foot">
               <span data-quote-extras-output>Incluye adicionales sugeridos</span>
               <span>Respuesta comercial por WhatsApp</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    `;
+  };
+
+  const renderQuoteBuilder = (line, product) => {
+    const unitsPerM2 = getUnitsPerSquareMeter(product);
+    const defaultWaste = 10;
+
+    return `
+      <div class="product-detail-block">
+        <div class="quote-inline reveal is-visible" id="quote-builder">
+          <div class="quote-inline__copy">
+            <span class="eyebrow eyebrow--dark">presupuesto rapido</span>
+            <h2>Solicitar presupuesto</h2>
+            <p>Carga la superficie del proyecto, define el desperdicio y agrega esta pieza al carrito comercial para enviar la consulta por WhatsApp en un solo paso.</p>
+          </div>
+          <div class="quote-inline__card">
+            <div class="form-grid quote-inline__grid">
+              <div class="form-field">
+                <label for="quote-area">Cantidad requerida (m&sup2;)</label>
+                <input id="quote-area" name="area" type="number" min="0" step="0.01" placeholder="Ej. 25" data-quote-area required />
+              </div>
+              <div class="form-field">
+                <label for="quote-waste">Desperdicio (%)</label>
+                <input id="quote-waste" name="waste" type="number" min="0" step="1" value="${defaultWaste}" data-quote-waste required />
+              </div>
+              <div class="form-field form-field--full">
+                <label class="quote-inline__toggle">
+                  <input type="checkbox" data-quote-extras checked />
+                  <span>Incluir adicionales sugeridos y asesoramiento complementario</span>
+                </label>
+              </div>
+            </div>
+            <div class="quote-inline__summary">
+              <div class="quote-inline__summary-pill">
+                <span>Resumen</span>
+                <strong data-quote-total-output>0 m&sup2;</strong>
+              </div>
+              <div class="quote-inline__summary-meta">
+                <span data-quote-area-output>0 m&sup2; cargados</span>
+                <span data-quote-units-output>${unitsPerM2 ? "0 un" : "Consultar"}</span>
+              </div>
+            </div>
+            <div class="hero__actions product-detail__actions quote-inline__actions">
+              <button class="button button--dark" type="button" data-add-to-cart>Agregar al carrito</button>
+              <button class="button button--sand" type="button" data-open-cart disabled>Ver carrito</button>
+            </div>
+            <p class="quote-inline__note" data-quote-extras-output>Incluye adicionales sugeridos. Los precios se envian al solicitar el presupuesto.</p>
+          </div>
+        </div>
+        <div class="quote-drawer" data-quote-drawer hidden>
+          <button class="quote-drawer__backdrop" type="button" data-quote-close aria-label="Cerrar panel"></button>
+          <aside class="quote-drawer__panel" aria-live="polite" aria-label="Panel de presupuesto">
+            <div class="quote-drawer__view" data-quote-view="cart">
+              <header class="quote-drawer__header">
+                <div>
+                  <span class="eyebrow eyebrow--dark">carrito</span>
+                  <h3>Carrito <span data-quote-count>(0)</span></h3>
+                </div>
+                <button class="quote-drawer__close" type="button" data-quote-close aria-label="Cerrar panel">&times;</button>
+              </header>
+              <div class="quote-drawer__body">
+                <div class="quote-drawer__empty" data-quote-empty>
+                  <h4>Todavia no agregaste productos.</h4>
+                  <p>Define metros cuadrados y desperdicio para sumar esta pieza al carrito de presupuesto.</p>
+                </div>
+                <div class="quote-drawer__cart-list" data-quote-cart-list></div>
+              </div>
+              <footer class="quote-drawer__footer">
+                <p>Armamos el resumen del pedido y luego completamos tus datos comerciales en este mismo panel.</p>
+                <div class="quote-drawer__footer-actions">
+                  <button class="button button--sand" type="button" data-quote-clear disabled>Vaciar carrito</button>
+                  <button class="button button--dark" type="button" data-quote-to-form disabled>Solicitar presupuesto</button>
+                </div>
+              </footer>
+            </div>
+            <div class="quote-drawer__view" data-quote-view="form" hidden>
+              <header class="quote-drawer__header">
+                <div>
+                  <span class="eyebrow eyebrow--dark">presupuesto</span>
+                  <h3>Completa tus datos</h3>
+                </div>
+                <button class="quote-drawer__close" type="button" data-quote-close aria-label="Cerrar panel">&times;</button>
+              </header>
+              <form class="quote-drawer__form" data-quote-lead-form>
+                <div class="quote-drawer__resume" data-quote-form-summary></div>
+                <div class="form-grid">
+                  <div class="form-field form-field--full">
+                    <label for="quote-name">Nombre completo</label>
+                    <input id="quote-name" name="name" type="text" placeholder="Tu nombre y apellido" data-quote-name required />
+                  </div>
+                  <div class="form-field">
+                    <label for="quote-phone">Telefono</label>
+                    <input id="quote-phone" name="phone" type="tel" placeholder="+54 9 11..." data-quote-phone required />
+                  </div>
+                  <div class="form-field">
+                    <label for="quote-email">Email</label>
+                    <input id="quote-email" name="email" type="email" placeholder="tu@email.com" data-quote-email />
+                  </div>
+                  <div class="form-field">
+                    <label for="quote-location">Localidad</label>
+                    <input id="quote-location" name="location" type="text" placeholder="Ciudad / Zona" data-quote-location />
+                  </div>
+                  <div class="form-field">
+                    <label for="quote-timing">Cuando lo necesitas</label>
+                    <select id="quote-timing" name="timing" data-quote-timing>
+                      <option value="Lo antes posible">Lo antes posible</option>
+                      <option value="En 15 a 30 dias">En 15 a 30 dias</option>
+                      <option value="En mas de 30 dias">En mas de 30 dias</option>
+                      <option value="Estoy evaluando opciones">Estoy evaluando opciones</option>
+                    </select>
+                  </div>
+                  <div class="form-field form-field--full">
+                    <label for="quote-notes">Comentarios del proyecto</label>
+                    <textarea id="quote-notes" name="notes" rows="4" placeholder="Contanos si es vereda, pileta, interior, obra nueva o reposicion." data-quote-notes></textarea>
+                  </div>
+                </div>
+                <div class="quote-drawer__footer-actions">
+                  <button class="button button--sand" type="button" data-quote-back>Volver al carrito</button>
+                  <button class="button button--dark" type="submit">Enviar por WhatsApp</button>
+                </div>
+              </form>
             </div>
           </aside>
         </div>
@@ -1341,7 +1522,7 @@
     `;
   };
 
-  const initQuoteBuilder = (line, product) => {
+  const initLegacyQuoteBuilder = (line, product) => {
     const form = shell.querySelector("[data-quote-form]");
 
     if (!form) {
@@ -1439,6 +1620,316 @@
       window.open(href, "_blank", "noopener");
     });
 
+    compute();
+  };
+
+  const initQuoteBuilder = (line, product) => {
+    const areaInput = shell.querySelector("[data-quote-area]");
+    const wasteInput = shell.querySelector("[data-quote-waste]");
+    const extrasInput = shell.querySelector("[data-quote-extras]");
+    const addToCartButton = shell.querySelector("[data-add-to-cart]");
+    const openCartButton = shell.querySelector("[data-open-cart]");
+    const drawer = shell.querySelector("[data-quote-drawer]");
+    const cartView = drawer?.querySelector('[data-quote-view="cart"]');
+    const formView = drawer?.querySelector('[data-quote-view="form"]');
+    const cartList = drawer?.querySelector("[data-quote-cart-list]");
+    const emptyState = drawer?.querySelector("[data-quote-empty]");
+    const countOutput = drawer?.querySelector("[data-quote-count]");
+    const clearButton = drawer?.querySelector("[data-quote-clear]");
+    const toFormButton = drawer?.querySelector("[data-quote-to-form]");
+    const closeButtons = drawer ? Array.from(drawer.querySelectorAll("[data-quote-close]")) : [];
+    const backButton = drawer?.querySelector("[data-quote-back]");
+    const leadForm = drawer?.querySelector("[data-quote-lead-form]");
+    const nameInput = drawer?.querySelector("[data-quote-name]");
+    const phoneInput = drawer?.querySelector("[data-quote-phone]");
+    const emailInput = drawer?.querySelector("[data-quote-email]");
+    const locationInput = drawer?.querySelector("[data-quote-location]");
+    const timingInput = drawer?.querySelector("[data-quote-timing]");
+    const notesInput = drawer?.querySelector("[data-quote-notes]");
+    const formSummary = drawer?.querySelector("[data-quote-form-summary]");
+    const areaOutput = shell.querySelector("[data-quote-area-output]");
+    const totalOutput = shell.querySelector("[data-quote-total-output]");
+    const unitsOutput = shell.querySelector("[data-quote-units-output]");
+    const extrasOutput = shell.querySelector("[data-quote-extras-output]");
+    const unitsPerM2 = getUnitsPerSquareMeter(product);
+
+    if (
+      !areaInput ||
+      !wasteInput ||
+      !extrasInput ||
+      !addToCartButton ||
+      !openCartButton ||
+      !drawer ||
+      !cartView ||
+      !formView ||
+      !leadForm
+    ) {
+      return;
+    }
+
+    const compute = () => {
+      const area = parseNumericValue(areaInput.value);
+      const waste = parseNumericValue(wasteInput.value);
+      const totalArea = area > 0 ? area * (1 + waste / 100) : 0;
+      const units = unitsPerM2 > 0 ? Math.ceil(totalArea * unitsPerM2) : 0;
+
+      if (areaOutput) {
+        areaOutput.textContent = `${formatSquareMeters(area)} cargados`;
+      }
+
+      if (totalOutput) {
+        totalOutput.textContent = formatSquareMeters(totalArea);
+      }
+
+      if (unitsOutput) {
+        unitsOutput.textContent = unitsPerM2 > 0 ? formatUnits(units) : "Consultar";
+      }
+
+      if (extrasOutput) {
+        extrasOutput.textContent = extrasInput.checked
+          ? "Incluye adicionales sugeridos. Los precios se envian al solicitar el presupuesto."
+          : "Pedido sin adicionales sugeridos. Los precios se envian al solicitar el presupuesto.";
+      }
+
+      return { area, waste, totalArea, units, unitsPerM2, includeExtras: extrasInput.checked };
+    };
+
+    const openDrawer = (view) => {
+      drawer.hidden = false;
+      window.requestAnimationFrame(() => drawer.classList.add("is-open"));
+      document.body.classList.add("drawer-open");
+      if (view === "form") {
+        cartView.hidden = true;
+        formView.hidden = false;
+      } else {
+        cartView.hidden = false;
+        formView.hidden = true;
+      }
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove("is-open");
+      document.body.classList.remove("drawer-open");
+      window.setTimeout(() => {
+        if (!drawer.classList.contains("is-open")) {
+          drawer.hidden = true;
+        }
+      }, 260);
+    };
+
+    const syncLeadForm = () => {
+      const lead = readQuoteLead();
+      if (nameInput) nameInput.value = lead.name || "";
+      if (phoneInput) phoneInput.value = lead.phone || "";
+      if (emailInput) emailInput.value = lead.email || "";
+      if (locationInput) locationInput.value = lead.location || "";
+      if (timingInput && lead.timing) timingInput.value = lead.timing;
+      if (notesInput) notesInput.value = lead.notes || "";
+    };
+
+    const renderCartItems = () => {
+      const cartItems = readQuoteCart();
+
+      openCartButton.disabled = cartItems.length === 0;
+      openCartButton.textContent = cartItems.length ? `Ver carrito (${cartItems.length})` : "Ver carrito";
+
+      if (countOutput) {
+        countOutput.textContent = `(${cartItems.length})`;
+      }
+
+      if (clearButton) {
+        clearButton.disabled = cartItems.length === 0;
+      }
+
+      if (toFormButton) {
+        toFormButton.disabled = cartItems.length === 0;
+      }
+
+      if (emptyState) {
+        emptyState.hidden = cartItems.length > 0;
+      }
+
+      if (cartList) {
+        cartList.innerHTML = cartItems
+          .map(
+            (item) => `
+              <article class="quote-drawer__item" data-quote-item="${item.id}">
+                <div class="quote-drawer__item-media">
+                  <img src="${item.image}" alt="${item.productName}" loading="lazy" />
+                </div>
+                <div class="quote-drawer__item-copy">
+                  <div class="quote-drawer__item-top">
+                    <div>
+                      <span class="quote-drawer__item-kicker">${item.lineName}</span>
+                      <h4>${item.productName}</h4>
+                    </div>
+                    <button class="quote-drawer__item-remove" type="button" data-quote-remove="${item.id}" aria-label="Quitar producto">&times;</button>
+                  </div>
+                  <div class="quote-drawer__item-metrics">
+                    <span>${formatSquareMeters(item.area)} requeridos</span>
+                    <span>${formatSquareMeters(item.totalArea)} con desperdicio</span>
+                    <span>${item.unitsPerM2 > 0 ? formatUnits(item.units) : "Cantidad a definir"}</span>
+                  </div>
+                  <p>${item.includeExtras ? "Incluye adicionales sugeridos" : "Sin adicionales sugeridos"}</p>
+                </div>
+              </article>
+            `
+          )
+          .join("");
+      }
+
+      if (formSummary) {
+        if (!cartItems.length) {
+          formSummary.innerHTML = `
+            <strong>Sin productos cargados</strong>
+            <span>Agrega al menos una pieza antes de solicitar el presupuesto.</span>
+          `;
+        } else {
+          const totalArea = cartItems.reduce((sum, item) => sum + (item.totalArea || 0), 0);
+          formSummary.innerHTML = `
+            <strong>${cartItems.length} producto${cartItems.length === 1 ? "" : "s"} en el pedido</strong>
+            <span>${formatSquareMeters(totalArea)} totales para cotizar.</span>
+          `;
+        }
+      }
+    };
+
+    [areaInput, wasteInput, extrasInput].forEach((field) => {
+      field?.addEventListener("input", compute);
+      field?.addEventListener("change", compute);
+    });
+
+    addToCartButton.addEventListener("click", () => {
+      const snapshot = compute();
+
+      if (!snapshot.area) {
+        areaInput.reportValidity();
+        areaInput.focus();
+        return;
+      }
+
+      const cartItems = readQuoteCart();
+      const nextItem = buildQuoteCartItem(line, product, snapshot);
+      const existingIndex = cartItems.findIndex((item) => item.id === nextItem.id);
+
+      if (existingIndex >= 0) {
+        cartItems[existingIndex] = nextItem;
+      } else {
+        cartItems.push(nextItem);
+      }
+
+      writeQuoteCart(cartItems);
+      renderCartItems();
+      openDrawer("cart");
+    });
+
+    openCartButton.addEventListener("click", () => {
+      renderCartItems();
+      openDrawer("cart");
+    });
+
+    toFormButton?.addEventListener("click", () => {
+      syncLeadForm();
+      renderCartItems();
+      openDrawer("form");
+    });
+
+    backButton?.addEventListener("click", () => {
+      openDrawer("cart");
+    });
+
+    clearButton?.addEventListener("click", () => {
+      writeQuoteCart([]);
+      renderCartItems();
+    });
+
+    cartList?.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-quote-remove]");
+
+      if (!button) {
+        return;
+      }
+
+      const itemId = button.getAttribute("data-quote-remove");
+      const nextItems = readQuoteCart().filter((item) => item.id !== itemId);
+      writeQuoteCart(nextItems);
+      renderCartItems();
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", closeDrawer);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && drawer.classList.contains("is-open")) {
+        closeDrawer();
+      }
+    });
+
+    leadForm.addEventListener("input", () => {
+      writeQuoteLead({
+        name: nameInput?.value.trim() || "",
+        phone: phoneInput?.value.trim() || "",
+        email: emailInput?.value.trim() || "",
+        location: locationInput?.value.trim() || "",
+        timing: timingInput?.value || "",
+        notes: notesInput?.value.trim() || "",
+      });
+    });
+
+    leadForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const cartItems = readQuoteCart();
+
+      if (!cartItems.length || !nameInput.value.trim() || !phoneInput.value.trim()) {
+        leadForm.reportValidity();
+        return;
+      }
+
+      const lines = [
+        "Hola Mosaicos MC, quiero solicitar un presupuesto.",
+        "",
+        "Detalle del pedido:",
+      ];
+
+      cartItems.forEach((item, index) => {
+        lines.push(`${index + 1}. ${item.productName} | ${item.lineName}`);
+        lines.push(`   - Requerido: ${formatSquareMeters(item.area)}`);
+        lines.push(`   - Desperdicio: ${formatNumber(item.waste, 0)}%`);
+        lines.push(`   - Calculado: ${formatSquareMeters(item.totalArea)}`);
+        lines.push(
+          `   - Cantidad estimada: ${item.unitsPerM2 > 0 ? formatUnits(item.units) : "A definir"}`
+        );
+        lines.push(`   - Adicionales: ${item.includeExtras ? "Si" : "No"}`);
+      });
+
+      lines.push("");
+      lines.push("Datos de contacto:");
+      lines.push(`Nombre: ${nameInput.value.trim()}`);
+      lines.push(`Telefono: ${phoneInput.value.trim()}`);
+
+      if (emailInput.value.trim()) {
+        lines.push(`Email: ${emailInput.value.trim()}`);
+      }
+
+      if (locationInput.value.trim()) {
+        lines.push(`Localidad: ${locationInput.value.trim()}`);
+      }
+
+      if (timingInput.value.trim()) {
+        lines.push(`Necesidad: ${timingInput.value.trim()}`);
+      }
+
+      if (notesInput.value.trim()) {
+        lines.push(`Comentarios: ${notesInput.value.trim()}`);
+      }
+
+      const href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(href, "_blank", "noopener");
+    });
+
+    syncLeadForm();
+    renderCartItems();
     compute();
   };
 
