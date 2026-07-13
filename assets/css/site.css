@@ -2144,8 +2144,9 @@ body.is-ready .shell {
 
 .testimonial-card__rating {
   color: var(--ochre-500);
-  font-size: 1.05rem;
-  letter-spacing: 0.18em;
+  font-size: 1.38rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
 }
 
 .testimonial-card blockquote {
@@ -2157,27 +2158,37 @@ body.is-ready .shell {
   flex: 1;
 }
 
-.testimonial-card__author {
-  display: inline-flex;
+.testimonial-card__author-row {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  color: var(--graphite-900);
+  gap: 14px;
+  margin-top: auto;
 }
 
-.testimonial-card__author::before {
-  content: "";
-  display: block;
-  width: 10px;
-  height: 10px;
+.testimonial-card__avatar {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: var(--ochre-500);
-  opacity: 0.8;
+  object-fit: cover;
+  flex: 0 0 56px;
+  border: 2px solid rgba(255, 253, 250, 0.92);
+  box-shadow: 0 10px 24px rgba(23, 19, 17, 0.16);
+  background: rgba(48, 41, 38, 0.06);
+}
+
+.testimonial-card__author-copy {
+  min-width: 0;
+}
+
+.testimonial-card__author {
+  font-weight: 800;
+  color: var(--graphite-900);
 }
 
 .testimonial-card__role {
   margin-top: 4px;
   color: var(--stone-500);
+  font-size: 0.95rem;
 }
 
 .article-grid {

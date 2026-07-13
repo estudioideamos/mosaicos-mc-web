@@ -901,31 +901,36 @@
         quote:
           "Excelente atenci&oacute;n y calidad. El producto lleg&oacute; impecable y el asesoramiento fue muy claro durante todo el proceso.",
         author: "Sebastian Almeida",
-        role: "Rese&ntilde;a 5 estrellas en Google",
+        role: "Empresa constructora",
+        avatar: "@/assets/img/testimonials/sebastian-almeida.svg",
       },
       {
         quote:
           "Qued&eacute; muy satisfecho con la compra. Se nota la calidad del material y la atenci&oacute;n fue r&aacute;pida, cordial y profesional.",
         author: "Ricardo Ferreyra",
-        role: "Rese&ntilde;a 5 estrellas en Google",
+        role: "Cliente particular",
+        avatar: "@/assets/img/testimonials/ricardo-ferreyra.svg",
       },
       {
         quote:
           "Muy buena relaci&oacute;n precio-calidad. Encontramos una soluci&oacute;n s&oacute;lida para la obra y cumplieron muy bien con lo prometido.",
         author: "Carlos Mariano Capisto",
-        role: "Rese&ntilde;a 5 estrellas en Google",
+        role: "Estudio de arquitectura",
+        avatar: "@/assets/img/testimonials/carlos-capisto.svg",
       },
       {
         quote:
           "Excelente atenci&oacute;n desde la consulta inicial hasta la entrega. El resultado final qued&oacute; prolijo, sobrio y muy bien terminado.",
         author: "Mariana Sosa",
-        role: "Rese&ntilde;a 5 estrellas en Google",
+        role: "Desarrolladora inmobiliaria",
+        avatar: "@/assets/img/testimonials/mariana-sosa.svg",
       },
       {
         quote:
           "Producto de muy buen nivel y equipo comercial muy resolutivo. Respondieron r&aacute;pido y nos ayudaron a definir la pieza correcta.",
         author: "Federico Alvarez",
-        role: "Rese&ntilde;a 5 estrellas en Google",
+        role: "Paisajismo y exteriores",
+        avatar: "@/assets/img/testimonials/federico-alvarez.svg",
       },
     ];
 
@@ -1552,8 +1557,15 @@
                     <article class="testimonial-card reveal is-visible">
                       <div class="testimonial-card__rating" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                       <blockquote>${testimonial.quote}</blockquote>
-                      <div class="testimonial-card__author">${testimonial.author}</div>
-                      <div class="testimonial-card__role">${testimonial.role}</div>
+                      <div class="testimonial-card__author-row">
+                        <img class="testimonial-card__avatar" src="${resolveAsset(
+                          testimonial.avatar || "@/assets/img/testimonials/ricardo-ferreyra.svg"
+                        )}" alt="${testimonial.author}" loading="lazy" />
+                        <div class="testimonial-card__author-copy">
+                          <div class="testimonial-card__author">${testimonial.author}</div>
+                          <div class="testimonial-card__role">${testimonial.role}</div>
+                        </div>
+                      </div>
                     </article>
                   `
                 )
