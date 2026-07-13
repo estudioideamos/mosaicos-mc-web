@@ -1106,13 +1106,7 @@
     const defaultWaste = 10;
 
     return `
-      <div class="product-detail-block">
-        <div class="quote-inline reveal is-visible" id="quote-builder">
-          <div class="quote-inline__copy">
-            <span class="eyebrow eyebrow--dark">presupuesto express</span>
-            <h2>Preparar presupuesto</h2>
-            <p>Carga la superficie del proyecto, define el desperdicio y agrega esta pieza al carrito comercial para enviar la consulta por WhatsApp en un solo paso.</p>
-          </div>
+        <div class="quote-inline quote-inline--embedded reveal is-visible" id="quote-builder">
           <div class="quote-inline__card">
             <div class="form-grid quote-inline__grid">
               <div class="form-field">
@@ -1126,7 +1120,7 @@
               <div class="form-field form-field--full">
                 <label class="quote-inline__toggle">
                   <input type="checkbox" data-quote-extras checked />
-                  <span>Quiero incluir adicionales sugeridos y asesoramiento complementario</span>
+                  <span>Incluir adicionales sugeridos y asesoramiento complementario</span>
                 </label>
               </div>
             </div>
@@ -1144,7 +1138,7 @@
               <button class="button button--dark" type="button" data-add-to-cart>Agregar al carrito</button>
               <button class="button button--sand" type="button" data-open-cart disabled>Ver carrito</button>
             </div>
-            <p class="quote-inline__note" data-quote-extras-output>Podemos sumar materiales complementarios y asesoramiento según las necesidades de tu obra.</p>
+            <p class="quote-inline__note" data-quote-extras-output>Incluye adicionales sugeridos. Los precios se env&#237;an al solicitar el presupuesto.</p>
           </div>
         </div>
         <div class="quote-drawer" data-quote-drawer hidden>
@@ -1189,7 +1183,7 @@
                     <input id="quote-name" name="name" type="text" placeholder="Tu nombre y apellido" data-quote-name required />
                   </div>
                   <div class="form-field">
-                    <label for="quote-phone">Telefono</label>
+                    <label for="quote-phone">Tel&eacute;fono</label>
                     <input id="quote-phone" name="phone" type="tel" placeholder="+54 9 11..." data-quote-phone required />
                   </div>
                   <div class="form-field">
@@ -1201,17 +1195,17 @@
                     <input id="quote-location" name="location" type="text" placeholder="Ciudad / Zona" data-quote-location />
                   </div>
                   <div class="form-field">
-                    <label for="quote-timing">Cuando lo necesitas</label>
+                    <label for="quote-timing">Cu&aacute;ndo lo necesitas</label>
                     <select id="quote-timing" name="timing" data-quote-timing>
                       <option value="Lo antes posible">Lo antes posible</option>
-                      <option value="En 15 a 30 dias">En 15 a 30 dias</option>
-                      <option value="En mas de 30 dias">En mas de 30 dias</option>
+                      <option value="En 15 a 30 d&iacute;as">En 15 a 30 d&iacute;as</option>
+                      <option value="En m&aacute;s de 30 d&iacute;as">En m&aacute;s de 30 d&iacute;as</option>
                       <option value="Estoy evaluando opciones">Estoy evaluando opciones</option>
                     </select>
                   </div>
                   <div class="form-field form-field--full">
                     <label for="quote-notes">Comentarios del proyecto</label>
-                    <textarea id="quote-notes" name="notes" rows="4" placeholder="Contanos si es vereda, pileta, interior, obra nueva o reposicion." data-quote-notes></textarea>
+                    <textarea id="quote-notes" name="notes" rows="4" placeholder="Contanos si es vereda, pileta, interior, obra nueva o reposici&oacute;n." data-quote-notes></textarea>
                   </div>
                 </div>
                 <div class="quote-drawer__footer-actions">
@@ -1222,7 +1216,6 @@
             </div>
           </aside>
         </div>
-      </div>
     `;
   };
 
@@ -1687,8 +1680,8 @@
 
       if (extrasOutput) {
         extrasOutput.textContent = extrasInput.checked
-          ? "Podemos sumar materiales complementarios y asesoramiento según las necesidades de tu obra."
-          : "Presupuesto sin adicionales sugeridos. Si lo necesitas, luego podemos incorporarlos.";
+          ? "Incluye adicionales sugeridos. Los precios se env\u00EDan al solicitar el presupuesto."
+          : "Sin adicionales sugeridos. Los precios se env\u00EDan al solicitar el presupuesto.";
       }
 
       return { area, waste, totalArea, units, unitsPerM2, includeExtras: extrasInput.checked };
@@ -2118,10 +2111,9 @@
               <a class="button button--dark" href="#quote-builder">Pedir presupuesto</a>
               <a class="button button--sand" href="${downloadsHref}">Ver descargas</a>
             </div>
+            ${renderQuoteBuilder(line, product)}
           </article>
         </div>
-
-        ${renderQuoteBuilder(line, product)}
 
         <div class="spec-grid">
           ${product.specs
