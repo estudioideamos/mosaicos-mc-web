@@ -1526,17 +1526,40 @@
       `
       : "";
 
-  const renderProductCta = (line, product) => `
-    <div class="cta-strip product-cta reveal is-visible">
-      <span class="eyebrow eyebrow--dark">asesoramiento</span>
-      <h3>Asesoramiento para tu proyecto</h3>
-      <p>Cuéntanos qué superficie quieres resolver y te ayudamos a definir la mejor configuración de ${product.name} según uso, escala y terminación.</p>
-      <div class="cta-strip__actions">
-        <a class="button button--dark" href="${contactHref}">Solicitar asesoramiento</a>
-        <a class="button button--sand" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+  const renderProductCta = (line, product) => {
+    const ctaImage = resolveHeroAsset(product.heroImage || product.detailImage || product.image || line.heroImage);
+
+    return `
+      <div class="cta-strip product-cta reveal is-visible" style="--cta-image: url('${ctaImage}');">
+        <div class="product-cta__content">
+          <span class="eyebrow">asesoramiento personalizado</span>
+          <h3>Definamos la mejor soluci&oacute;n para tu obra</h3>
+          <p>Cu&eacute;ntanos qu&eacute; superficie quieres resolver y te ayudamos a especificar <strong>${product.name}</strong> con una propuesta clara, elegante y lista para cotizar desde el primer contacto.</p>
+          <div class="cta-strip__actions">
+            <a class="button button--light" href="${contactHref}">Solicitar asesoramiento</a>
+            <a class="button button--ghost" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+          </div>
+        </div>
+        <aside class="product-cta__panel" aria-label="Beneficios del asesoramiento">
+          <span class="product-cta__panel-label">acompa&ntilde;amiento Mosaicos MC</span>
+          <div class="product-cta__panel-grid">
+            <div class="product-cta__panel-item">
+              <strong>Elecci&oacute;n precisa</strong>
+              <span>Te orientamos en formato, terminaci&oacute;n y aplicaci&oacute;n seg&uacute;n el uso real del proyecto.</span>
+            </div>
+            <div class="product-cta__panel-item">
+              <strong>Respuesta &aacute;gil</strong>
+              <span>Recibe una recomendaci&oacute;n comercial clara para avanzar sin demoras ni dudas t&eacute;cnicas.</span>
+            </div>
+            <div class="product-cta__panel-item">
+              <strong>Contacto directo</strong>
+              <span>Pod&eacute;s seguir la conversaci&oacute;n por WhatsApp con contexto completo desde la primera consulta.</span>
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
-  `;
+    `;
+  };
 
   const renderTestimonials = (line, product) => {
     const testimonials = buildTestimonials(line, product);
