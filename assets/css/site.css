@@ -3142,6 +3142,19 @@ body.is-ready .shell {
   color: var(--graphite-600);
 }
 
+.quote-drawer__empty p {
+  max-width: 25rem;
+}
+
+.quote-drawer__empty-actions {
+  display: flex;
+  margin-top: 18px;
+}
+
+.quote-drawer__empty-actions .button {
+  min-width: 174px;
+}
+
 .quote-drawer__cart-list {
   display: grid;
   gap: 14px;

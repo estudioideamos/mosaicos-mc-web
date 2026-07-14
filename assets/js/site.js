@@ -216,6 +216,7 @@ const initGlobalQuoteDrawer = () => {
   const formView = drawer.querySelector('[data-quote-view="form"]');
   const cartList = drawer.querySelector("[data-quote-cart-list]");
   const emptyState = drawer.querySelector("[data-quote-empty]");
+  const cartFooter = drawer.querySelector(".quote-drawer__footer");
   const countOutput = drawer.querySelector("[data-quote-count]");
   const clearButton = drawer.querySelector("[data-quote-clear]");
   const toFormButton = drawer.querySelector("[data-quote-to-form]");
@@ -229,6 +230,22 @@ const initGlobalQuoteDrawer = () => {
   const locationInput = drawer.querySelector("[data-quote-location]");
   const timingInput = drawer.querySelector("[data-quote-timing]");
   const notesInput = drawer.querySelector("[data-quote-notes]");
+
+  if (emptyState) {
+    emptyState.innerHTML = `
+      <h4>Tu carrito de presupuesto est&aacute; vac&iacute;o.</h4>
+      <p>Guard&aacute; las piezas que m&aacute;s te interesen y arm&aacute; tu consulta en un solo lugar para recibir una respuesta comercial r&aacute;pida, clara y personalizada.</p>
+      <div class="quote-drawer__empty-actions">
+        <a class="button button--dark" href="${productsUrl}">Ver productos</a>
+      </div>
+    `;
+  }
+
+  const cartFooterNote = cartFooter?.querySelector("p");
+  if (cartFooterNote) {
+    cartFooterNote.innerHTML =
+      "Sum&aacute; una o varias piezas y envi&aacute; tu consulta completa desde este mismo panel para avanzar m&aacute;s r&aacute;pido con tu presupuesto.";
+  }
 
   const readCart = () => {
     const value = readStoredJson(quoteCartStorageKey, []);
@@ -334,6 +351,9 @@ const initGlobalQuoteDrawer = () => {
     clearButton.disabled = !hasItems;
     toFormButton.disabled = !hasItems;
     emptyState.hidden = hasItems;
+    if (cartFooter) {
+      cartFooter.hidden = !hasItems;
+    }
 
     cartList.innerHTML = hasItems
       ? cartItems
