@@ -3205,19 +3205,47 @@ body.is-ready .shell {
   position: relative;
   padding: 0;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(86, 96, 255, 0.28), transparent 24%),
+    radial-gradient(circle at 82% 82%, rgba(61, 73, 255, 0.28), transparent 26%),
+    linear-gradient(180deg, #0000b6 0%, #06067b 34%, #09092c 72%, #08080f 100%);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.06) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.06) 75%, rgba(255, 255, 255, 0.06)),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%, rgba(255, 255, 255, 0.045));
+  background-size: 160px 160px, 160px 160px;
+  background-position: 0 0, 80px 80px;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.12), transparent 28%),
+    linear-gradient(315deg, rgba(0, 0, 0, 0.22), transparent 36%);
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .footer__inner {
   position: relative;
   width: 100%;
-  padding: 46px max(24px, calc((100vw - 1180px) / 2 + 20px)) 26px;
+  padding: 56px max(24px, calc((100vw - 1180px) / 2 + 20px)) 30px;
   background:
-    linear-gradient(180deg, rgba(20, 20, 20, 0.92), rgba(12, 12, 12, 0.98)),
-    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.06), transparent 22%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05), transparent 24%),
-    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: auto, auto, auto, 120px 120px, 120px 120px;
+    linear-gradient(180deg, rgba(8, 8, 22, 0.28), rgba(5, 5, 12, 0.7)),
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 78% 72%, rgba(122, 136, 255, 0.18), transparent 26%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 74px),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 74px);
+  background-size: auto, auto, auto, 148px 148px, 148px 148px;
   background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
   color: rgba(255, 253, 250, 0.82);
   animation: footerGridDrift 22s linear infinite;
@@ -3228,9 +3256,22 @@ body.is-ready .shell {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.08) 48%, transparent 56%);
+    linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.12) 48%, transparent 56%);
   transform: translateX(-120%);
   animation: footerSweep 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.footer__inner::after {
+  content: "";
+  position: absolute;
+  inset: auto -12% -26% auto;
+  width: clamp(260px, 34vw, 520px);
+  aspect-ratio: 1;
+  border-radius: 30%;
+  background:
+    radial-gradient(circle, rgba(61, 73, 255, 0.48) 0%, rgba(61, 73, 255, 0.2) 42%, rgba(61, 73, 255, 0) 72%);
+  filter: blur(10px);
   pointer-events: none;
 }
 
@@ -3254,12 +3295,13 @@ body.is-ready .shell {
   min-height: 34px;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.12);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 253, 250, 0.92);
+  color: rgba(255, 253, 250, 0.96);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
 }
 
 .footer__wordmark {
@@ -3274,7 +3316,10 @@ body.is-ready .shell {
   font-weight: 700;
   letter-spacing: 0.015em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.14),
+    0 14px 40px rgba(0, 0, 182, 0.28);
   transform-origin: left center;
   animation: footerWordmarkFloat 9s ease-in-out infinite;
   white-space: nowrap;
@@ -3285,11 +3330,11 @@ body.is-ready .shell {
 .footer__subline {
   position: relative;
   z-index: 1;
-  max-width: 36rem;
-  margin: 12px 0 0;
-  font-size: 1rem;
+  max-width: 40rem;
+  margin: 14px 0 0;
+  font-size: 1.02rem;
   line-height: 1.7;
-  color: rgba(255, 253, 250, 0.74);
+  color: rgba(255, 253, 250, 0.8);
 }
 
 .footer__base {
@@ -3299,9 +3344,9 @@ body.is-ready .shell {
   align-items: end;
   justify-content: space-between;
   gap: 28px;
-  margin-top: 30px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.14);
 }
 
 .footer-links {
@@ -3311,13 +3356,13 @@ body.is-ready .shell {
 }
 
 .footer-links a {
-  color: rgba(255, 253, 250, 0.9);
+  color: rgba(255, 253, 250, 0.94);
   font-weight: 600;
   transition: color 180ms ease, transform 180ms ease;
 }
 
 .footer-links a:hover {
-  color: var(--white);
+  color: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
 }
 
@@ -3336,16 +3381,18 @@ body.is-ready .shell {
   min-height: 42px;
   padding: 0 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.16);
-  color: rgba(255, 253, 250, 0.92);
-  background: rgba(255,255,255,0.04);
-  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255, 253, 250, 0.96);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .footer__social-link:hover {
   transform: translateY(-2px);
-  background: rgba(0, 0, 182, 0.16);
-  border-color: rgba(0, 0, 182, 0.4);
+  background: rgba(0, 0, 182, 0.22);
+  border-color: rgba(122, 136, 255, 0.42);
+  box-shadow: 0 12px 26px rgba(0, 0, 182, 0.24);
 }
 
 .footer__social-mark {
@@ -3354,8 +3401,8 @@ body.is-ready .shell {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.12);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.06em;
