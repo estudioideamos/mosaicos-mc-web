@@ -1612,12 +1612,13 @@ body.is-ready .shell {
 }
 
 .spec-card__label {
-  display: inline-block;
-  margin-bottom: 12px;
+  display: block;
+  margin: 0;
   color: var(--ochre-500);
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -1785,6 +1786,11 @@ body.is-ready .shell {
 }
 
 .spec-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 18px;
+  row-gap: 12px;
   background:
     radial-gradient(circle at top right, rgba(0, 0, 182, 0.06), transparent 34%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 241, 233, 0.92));
@@ -1794,9 +1800,9 @@ body.is-ready .shell {
 .spec-card__icon[data-icon="dimension"],
 .spec-card__icon[data-icon="weight"],
 .spec-card__icon[data-icon="performance"] {
-  width: 58px;
-  height: 58px;
-  margin-bottom: 18px;
+  width: 54px;
+  height: 54px;
+  margin: 0;
   border-radius: 18px;
   border: 1px solid rgba(0, 0, 182, 0.16);
   color: var(--accent-blue);
@@ -1812,8 +1818,8 @@ body.is-ready .shell {
 .spec-card__icon[data-icon="dimension"]::before,
 .spec-card__icon[data-icon="weight"]::before,
 .spec-card__icon[data-icon="performance"]::before {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border: 0;
   border-radius: 0;
   background: currentColor;
@@ -1844,6 +1850,14 @@ body.is-ready .shell {
 
 .spec-card__icon[data-icon="performance"] {
   --spec-icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='10' y='16' width='22' height='22' rx='5'/%3E%3Cpath d='M16 24h10M16 29h10'/%3E%3Crect x='40' y='18' width='7' height='7' rx='2' fill='black' stroke='none'/%3E%3Crect x='49' y='18' width='7' height='7' rx='2' fill='black' stroke='none'/%3E%3Crect x='40' y='27' width='7' height='7' rx='2' fill='black' stroke='none'/%3E%3Crect x='49' y='27' width='7' height='7' rx='2' fill='black' stroke='none'/%3E%3Cpath d='M12 48h44M12 48l5-5M12 48l5 5M56 48l-5-5M56 48l-5 5'/%3E%3C/svg%3E");
+}
+
+.spec-card p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 2px;
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
 .detail-note__icon[data-icon="care"]::before {
