@@ -2223,16 +2223,26 @@
 
     if (!primaryImage) {
       return `
-        <img src="${resolveAsset(product.detailImage || product.image)}" alt="${product.name}" />
+        <button class="product-gallery__frame image-zoom-card" type="button" data-zoomable-image data-zoom-alt="${product.name}">
+          <img src="${resolveAsset(product.detailImage || product.image)}" alt="${product.name}" data-gallery-main />
+          <span class="image-zoom-trigger" aria-hidden="true">
+            <span class="image-zoom-trigger__icon"></span>
+            <span class="image-zoom-trigger__text">Ampliar foto</span>
+          </span>
+        </button>
       `;
     }
 
     return `
       <div class="product-gallery" data-product-gallery data-product-name="${product.name}">
         <div class="product-gallery__viewer">
-          <div class="product-gallery__frame">
+          <button class="product-gallery__frame image-zoom-card" type="button" data-zoomable-image data-zoom-alt="${primaryImage.label}">
             <img src="${primaryImage.image}" alt="${primaryImage.label}" data-gallery-main />
-          </div>
+            <span class="image-zoom-trigger" aria-hidden="true">
+              <span class="image-zoom-trigger__icon"></span>
+              <span class="image-zoom-trigger__text">Ampliar foto</span>
+            </span>
+          </button>
           <div class="product-gallery__caption">
             <strong data-gallery-caption>${primaryImage.label}</strong>
             <span>${galleryImages.length} vista${galleryImages.length === 1 ? "" : "s"} disponible${galleryImages.length === 1 ? "" : "s"}</span>
@@ -2274,6 +2284,7 @@
       const productName = gallery.dataset.productName || "Producto";
       const mainImage = gallery.querySelector("[data-gallery-main]");
       const caption = gallery.querySelector("[data-gallery-caption]");
+      const zoomCard = gallery.querySelector("[data-zoomable-image]");
       const thumbs = Array.from(gallery.querySelectorAll("[data-gallery-thumb]"));
 
       if (!mainImage || !thumbs.length) {
@@ -2292,6 +2303,11 @@
 
           if (caption) {
             caption.textContent = nextLabel || productName;
+          }
+
+          if (zoomCard) {
+            zoomCard.setAttribute("data-zoom-alt", nextLabel || productName);
+            zoomCard.setAttribute("aria-label", `${nextLabel || productName}. Abrir imagen ampliada`);
           }
 
           thumbs.forEach((item) => {
@@ -2469,6 +2485,7 @@
     initProductGalleries();
     initRelatedCarousels();
     initQuoteBuilder(line, product);
+    window.mosaicosMcInitImageZoom?.();
   };
 
   if (pageType === "catalog") {
