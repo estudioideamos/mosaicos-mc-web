@@ -3256,9 +3256,13 @@ body.is-ready .shell {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.12) 48%, transparent 56%);
-  transform: translateX(-120%);
-  animation: footerSweep 14s ease-in-out infinite;
+    radial-gradient(circle at 18% 24%, rgba(122, 136, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 76% 72%, rgba(255, 255, 255, 0.08), transparent 18%),
+    linear-gradient(118deg, rgba(255,255,255,0.06) 0%, transparent 34%, rgba(0,0,182,0.12) 58%, transparent 82%);
+  filter: blur(24px);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  animation: footerAura 18s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -3272,6 +3276,7 @@ body.is-ready .shell {
   background:
     radial-gradient(circle, rgba(61, 73, 255, 0.48) 0%, rgba(61, 73, 255, 0.2) 42%, rgba(61, 73, 255, 0) 72%);
   filter: blur(10px);
+  animation: footerGlowFloat 22s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -3558,22 +3563,31 @@ body.is-ready .shell {
     background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
   }
   to {
-    background-position: 0 0, 0 0, 0 0, 120px 0, 0 120px;
+    background-position: 0 0, 0 0, 0 0, 148px 0, 0 148px;
   }
 }
 
-@keyframes footerSweep {
+@keyframes footerAura {
   0%,
   100% {
-    transform: translateX(-120%);
-    opacity: 0;
+    transform: translate3d(-2%, -1%, 0) scale(1);
+    opacity: 0.72;
   }
-  12%,
-  68% {
-    opacity: 1;
+  50% {
+    transform: translate3d(2%, 2%, 0) scale(1.04);
+    opacity: 0.96;
   }
+}
+
+@keyframes footerGlowFloat {
+  0%,
   100% {
-    transform: translateX(120%);
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.82;
+  }
+  50% {
+    transform: translate3d(-4%, -5%, 0) scale(1.06);
+    opacity: 1;
   }
 }
 
