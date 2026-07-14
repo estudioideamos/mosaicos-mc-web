@@ -249,9 +249,12 @@ body.is-ready .shell {
 .whatsapp-float__icon::before,
 .footer__social-link[href*="wa.me"] .footer__social-mark::before {
   content: "";
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: var(--whatsapp-icon-size, 18px);
   height: var(--whatsapp-icon-size, 18px);
+  transform: translate(-50%, -50%);
   background-color: currentColor;
   -webkit-mask: url("../img/whatsapp.svg") center / contain no-repeat;
   mask: url("../img/whatsapp.svg") center / contain no-repeat;
@@ -286,9 +289,12 @@ body.is-ready .shell {
 .footer__social-link[href*="instagram.com"] .footer__social-mark::before,
 .footer__social-link[href^="mailto:"] .footer__social-mark::before {
   content: "";
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: var(--footer-social-icon-size, 13px);
   height: var(--footer-social-icon-size, 13px);
+  transform: translate(-50%, -50%);
   background-color: currentColor;
 }
 
@@ -703,6 +709,9 @@ body.is-ready .shell {
 }
 
 .home-slider__arrow {
+  position: relative;
+  display: grid;
+  place-items: center;
   width: 54px;
   height: 54px;
   border: 0;
@@ -710,10 +719,24 @@ body.is-ready .shell {
   background: rgba(255, 253, 250, 0.9);
   color: var(--graphite-900);
   box-shadow: var(--shadow-card);
-  font-size: 2rem;
-  line-height: 1;
   cursor: pointer;
   transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.home-slider__arrow::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.home-slider__arrow--prev::before {
+  transform: translateX(2px) rotate(-135deg);
+}
+
+.home-slider__arrow--next::before {
+  transform: translateX(-2px) rotate(45deg);
 }
 
 .home-slider__arrow:hover {
@@ -2439,6 +2462,7 @@ body.is-ready .shell {
 }
 
 .contact-icon {
+  position: relative;
   display: grid;
   width: 76px;
   height: 76px;
@@ -2449,14 +2473,26 @@ body.is-ready .shell {
   box-shadow: var(--shadow-card);
 }
 
-.contact-icon img {
-  display: block;
+.contact-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: var(--contact-icon-size, 28px);
   height: var(--contact-icon-size, 28px);
+  transform: translate(-50%, -50%);
+  background-color: currentColor;
+  -webkit-mask: var(--contact-icon-mask) center / contain no-repeat;
+  mask: var(--contact-icon-mask) center / contain no-repeat;
+}
+
+.contact-icon img {
+  display: none;
 }
 
 .contact-icon--pin {
   --contact-icon-size: 26px;
+  --contact-icon-mask: url("../img/contact-pin.svg");
 }
 
 .contact-icon--clock,
@@ -2465,8 +2501,21 @@ body.is-ready .shell {
   --contact-icon-size: 27px;
 }
 
+.contact-icon--clock {
+  --contact-icon-mask: url("../img/contact-clock.svg");
+}
+
+.contact-icon--phone {
+  --contact-icon-mask: url("../img/contact-phone.svg");
+}
+
+.contact-icon--mail {
+  --contact-icon-mask: url("../img/contact-mail.svg");
+}
+
 .contact-icon--mobile {
   --contact-icon-size: 26px;
+  --contact-icon-mask: url("../img/contact-mobile.svg");
 }
 
 .contact-item__body {
@@ -2527,16 +2576,28 @@ body.is-ready .shell {
 }
 
 .contact-social__icon {
+  position: relative;
   display: grid;
   place-items: center;
   width: 22px;
   height: 22px;
 }
 
+.contact-social__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  background-color: currentColor;
+  -webkit-mask: url("../img/contact-instagram.svg") center / contain no-repeat;
+  mask: url("../img/contact-instagram.svg") center / contain no-repeat;
+}
+
 .contact-social__icon img {
-  display: block;
-  width: 20px;
-  height: 20px;
+  display: none;
 }
 
 .contact-social__link:hover {
@@ -3401,6 +3462,7 @@ body.is-ready .shell {
 }
 
 .footer__social-mark {
+  position: relative;
   display: grid;
   place-items: center;
   width: 28px;
