@@ -3433,7 +3433,7 @@ body.is-ready .shell {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 28px;
   margin-top: 34px;
@@ -3444,6 +3444,8 @@ body.is-ready .shell {
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  min-height: 42px;
   gap: 12px 22px;
 }
 
