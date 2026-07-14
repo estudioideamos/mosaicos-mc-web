@@ -1791,6 +1791,21 @@ body.image-zoom-open {
   align-items: start;
 }
 
+.line-intro {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.line-intro > .split-card {
+  height: 100%;
+}
+
+.line-intro > .split-card--copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .product-detail-grid > .split-card {
   align-self: start;
 }
