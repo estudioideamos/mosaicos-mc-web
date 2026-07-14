@@ -3149,7 +3149,7 @@ body.is-ready .shell {
 
 .quote-drawer__item {
   display: grid;
-  grid-template-columns: 94px minmax(0, 1fr);
+  grid-template-columns: 88px minmax(0, 1fr);
   gap: 14px;
   padding: 14px;
   border-radius: 24px;
@@ -3158,16 +3158,23 @@ body.is-ready .shell {
 }
 
 .quote-drawer__item-media {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  aspect-ratio: 1;
+  padding: 8px;
   border-radius: 18px;
   overflow: hidden;
-  background: rgba(48, 41, 38, 0.06);
+  background: linear-gradient(180deg, rgba(244, 238, 230, 0.74), rgba(255, 253, 250, 0.96));
+  box-shadow: inset 0 0 0 1px rgba(48, 41, 38, 0.08);
 }
 
 .quote-drawer__item-media img {
   width: 100%;
   height: 100%;
-  min-height: 94px;
-  object-fit: cover;
+  min-height: 0;
+  object-fit: contain;
+  border-radius: 14px;
 }
 
 .quote-drawer__item-copy {
@@ -4033,6 +4040,10 @@ body.is-ready .shell {
 
   .quote-drawer__item {
     grid-template-columns: 1fr;
+  }
+
+  .quote-drawer__item-media {
+    justify-self: start;
   }
 
   .quote-drawer__panel {
