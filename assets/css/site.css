@@ -2467,7 +2467,7 @@ body.is-ready .shell {
   height: 76px;
   place-items: center;
   border-radius: 50%;
-  background: rgba(23, 19, 17, 0.92);
+  background: var(--accent-blue);
   color: var(--white);
   box-shadow: var(--shadow-card);
 }
