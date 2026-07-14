@@ -732,6 +732,73 @@ const initImageZoom = () => {
 window.mosaicosMcInitImageZoom = initImageZoom;
 initImageZoom();
 
+const initFooterWordmarkAnimation = () => {
+  const wordmarks = Array.from(document.querySelectorAll(".footer__wordmark"));
+
+  if (!wordmarks.length) {
+    return;
+  }
+
+  wordmarks.forEach((wordmark) => {
+    if (wordmark.dataset.wordmarkReady === "true") {
+      return;
+    }
+
+    const text = (wordmark.textContent || "").trim();
+
+    if (!text) {
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    Array.from(text).forEach((character, index) => {
+      const span = document.createElement("span");
+      span.className = "footer__wordmark-char";
+      span.style.setProperty("--char-index", String(index));
+
+      if (character === " ") {
+        span.classList.add("footer__wordmark-char--space");
+        span.innerHTML = "&nbsp;";
+      } else {
+        span.textContent = character;
+      }
+
+      fragment.appendChild(span);
+    });
+
+    wordmark.textContent = "";
+    wordmark.appendChild(fragment);
+    wordmark.dataset.wordmarkReady = "true";
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    wordmarks.forEach((wordmark) => wordmark.classList.add("is-visible"));
+    return;
+  }
+
+  const wordmarkObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        wordmarkObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.32,
+      rootMargin: "0px 0px -8% 0px",
+    }
+  );
+
+  wordmarks.forEach((wordmark) => wordmarkObserver.observe(wordmark));
+};
+
+initFooterWordmarkAnimation();
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
