@@ -2380,20 +2380,6 @@
 
         ${renderProductVariants(product)}
 
-        <div class="detail-notes">
-          ${product.notes
-            .map(
-              (note) => `
-                <article class="detail-note reveal is-visible">
-                  <span class="detail-note__icon" data-icon="${getNoteIconType(note.title)}" aria-hidden="true"></span>
-                  <h3>${note.title}</h3>
-                  <p>${note.text}</p>
-                </article>
-              `
-            )
-            .join("")}
-        </div>
-
         ${renderFaqs(line, product)}
 
         ${renderDownloads(line, product)}
