@@ -4298,9 +4298,11 @@ body.image-zoom-open {
   }
 
   .footer__wordmark {
-    font-size: clamp(2.4rem, 12vw, 4.4rem);
-    flex-wrap: wrap;
-    line-height: 0.96;
+    font-size: clamp(1.55rem, 6.9vw, 2.35rem);
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    line-height: 0.92;
   }
 
   .footer__subline {
