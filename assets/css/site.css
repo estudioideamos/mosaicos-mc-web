@@ -234,16 +234,14 @@ body.is-ready .shell {
 
 .site-nav__whatsapp-icon,
 .site-nav__cart-icon {
+  position: relative;
   display: grid;
   place-items: center;
+  flex: 0 0 auto;
   width: 20px;
   height: 20px;
   font-size: 0.95rem;
   line-height: 1;
-}
-
-.site-nav__cart-icon {
-  position: relative;
 }
 
 .site-nav__whatsapp-icon::before,
