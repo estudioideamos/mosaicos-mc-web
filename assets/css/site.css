@@ -123,6 +123,7 @@ body.is-ready .shell {
 .brand {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3816,7 +3817,14 @@ body.is-ready .shell {
   }
 
   .brand__logo {
-    height: 40px;
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: min(228px, calc(100vw - 144px));
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .site-nav {
