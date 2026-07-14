@@ -3821,17 +3821,33 @@ body.is-ready .shell {
   .menu-toggle {
     display: inline-grid;
     place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(0, 0, 182, 0.18);
+    border-radius: 14px;
+    background: rgba(255, 253, 250, 0.92);
+    color: var(--graphite-900);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: var(--shadow-card);
   }
 
   .brand__logo {
     display: block;
     flex: 0 0 auto;
     width: auto;
-    max-width: min(228px, calc(100vw - 144px));
+    max-width: min(188px, calc(100vw - 184px));
     height: auto;
-    max-height: 40px;
+    max-height: 36px;
     object-fit: contain;
     object-position: left center;
+  }
+
+  .menu-toggle span {
+    display: block;
+    transform: translateY(-1px);
   }
 
   .site-nav {
