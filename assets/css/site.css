@@ -1119,11 +1119,159 @@ body.is-ready .shell {
   transition: transform 260ms ease, box-shadow 260ms ease;
 }
 
+.image-zoom-card {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.image-zoom-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 34%;
+  background: linear-gradient(180deg, rgba(8, 7, 12, 0), rgba(8, 7, 12, 0.2));
+  pointer-events: none;
+}
+
 .split-card--image img {
   width: 100%;
   height: 100%;
   min-height: 420px;
   object-fit: cover;
+}
+
+.image-zoom-trigger {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 16px 0 12px;
+  border-radius: 999px;
+  color: rgba(255, 253, 250, 0.98);
+  background: rgba(12, 10, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 28px rgba(11, 9, 16, 0.22);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+.image-zoom-trigger__icon {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+
+.image-zoom-trigger__icon::before,
+.image-zoom-trigger__icon::after {
+  content: "";
+  position: absolute;
+}
+
+.image-zoom-trigger__icon::before {
+  inset: 1px 5px 5px 1px;
+  border: 1.8px solid currentColor;
+  border-radius: 50%;
+}
+
+.image-zoom-trigger__icon::after {
+  right: 1px;
+  bottom: 2px;
+  width: 8px;
+  height: 1.8px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.image-zoom-trigger__text {
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.image-zoom-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 160;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.image-zoom-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-zoom-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(10, 9, 14, 0.76);
+  backdrop-filter: blur(12px);
+}
+
+.image-zoom-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(96vw, 1100px);
+  padding: 18px;
+  border-radius: 28px;
+  background: rgba(252, 250, 247, 0.96);
+  box-shadow: 0 34px 80px rgba(10, 9, 14, 0.34);
+}
+
+.image-zoom-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(48, 41, 38, 0.08);
+  color: var(--graphite-900);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-zoom-modal__figure {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.image-zoom-modal__figure img {
+  width: 100%;
+  max-height: min(78vh, 920px);
+  object-fit: contain;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.image-zoom-modal__caption {
+  color: var(--stone-500);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+body.image-zoom-open {
+  overflow: hidden;
 }
 
 .split-card--catalog-image {
@@ -1819,6 +1967,7 @@ body.is-ready .shell {
 }
 
 .spec-card__icon[data-icon="finish"],
+.spec-card__icon[data-icon="format"],
 .spec-card__icon[data-icon="dimension"],
 .spec-card__icon[data-icon="weight"],
 .spec-card__icon[data-icon="performance"] {
@@ -1837,6 +1986,7 @@ body.is-ready .shell {
 }
 
 .spec-card__icon[data-icon="finish"]::before,
+.spec-card__icon[data-icon="format"]::before,
 .spec-card__icon[data-icon="dimension"]::before,
 .spec-card__icon[data-icon="weight"]::before,
 .spec-card__icon[data-icon="performance"]::before {
@@ -1852,6 +2002,7 @@ body.is-ready .shell {
 }
 
 .spec-card__icon[data-icon="finish"]::after,
+.spec-card__icon[data-icon="format"]::after,
 .spec-card__icon[data-icon="dimension"]::after,
 .spec-card__icon[data-icon="weight"]::after,
 .spec-card__icon[data-icon="performance"]::after {
@@ -1860,6 +2011,10 @@ body.is-ready .shell {
 
 .spec-card__icon[data-icon="finish"] {
   --spec-icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='12' y='20' width='34' height='28' rx='6'/%3E%3Cpath d='M23 26v16M31 24v20M39 26v16'/%3E%3Cpath d='M49 8l2.9 7.1L59 18l-7.1 2.9L49 28l-2.9-7.1L39 18l7.1-2.9z' fill='black' stroke='none'/%3E%3C/svg%3E");
+}
+
+.spec-card__icon[data-icon="format"] {
+  --spec-icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='12' y='16' width='18' height='18' rx='3'/%3E%3Crect x='34' y='28' width='18' height='18' rx='3'/%3E%3Cpath d='M10 50h44M10 50l5-5M10 50l5 5M54 50l-5-5M54 50l-5 5'/%3E%3C/svg%3E");
 }
 
 .spec-card__icon[data-icon="dimension"] {
@@ -2089,9 +2244,29 @@ body.is-ready .shell {
 
 .product-download-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  isolation: isolate;
   overflow: hidden;
-  padding: 28px;
-  background: rgba(255, 253, 250, 0.92);
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 182, 0.14);
+  background:
+    radial-gradient(circle at 100% 0, rgba(0, 0, 182, 0.1) 0 18%, transparent 18.5%),
+    linear-gradient(135deg, rgba(0, 0, 182, 0.04), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 242, 236, 0.96));
+  box-shadow:
+    0 22px 48px rgba(12, 20, 98, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.product-download-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 182, 0.22);
+  box-shadow:
+    0 28px 58px rgba(12, 20, 98, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
 }
 
 .product-download-card::before,
@@ -2099,23 +2274,25 @@ body.is-ready .shell {
   content: "";
   position: absolute;
   border-radius: 50%;
-  background: rgba(185, 137, 66, 0.14);
   pointer-events: none;
 }
 
 .product-download-card::before {
-  width: 130px;
-  height: 130px;
-  right: -54px;
-  top: -54px;
+  width: 156px;
+  height: 156px;
+  right: -48px;
+  top: -48px;
+  background: radial-gradient(circle at 30% 30%, rgba(61, 73, 255, 0.95), var(--accent-blue) 62%, rgba(0, 0, 128, 0.98) 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 182, 0.22);
 }
 
 .product-download-card::after {
-  width: 100px;
-  height: 100px;
-  left: -40px;
-  bottom: -46px;
-  background: rgba(123, 111, 102, 0.1);
+  width: 138px;
+  height: 138px;
+  left: -78px;
+  bottom: -76px;
+  border: 1px solid rgba(0, 0, 182, 0.12);
+  background: radial-gradient(circle at center, rgba(0, 0, 182, 0.08) 0 42%, transparent 43% 100%);
 }
 
 .download-card__eyebrow {
@@ -2125,13 +2302,14 @@ body.is-ready .shell {
   align-items: center;
   gap: 8px;
   margin-bottom: 16px;
-  padding: 8px 12px;
+  padding: 9px 14px;
   border-radius: 999px;
-  background: rgba(48, 41, 38, 0.08);
-  color: var(--graphite-700);
+  background: linear-gradient(135deg, rgba(61, 73, 255, 0.98), var(--accent-blue));
+  color: var(--white);
+  box-shadow: 0 12px 28px rgba(0, 0, 182, 0.18);
   font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
@@ -2141,8 +2319,8 @@ body.is-ready .shell {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: currentColor;
-  opacity: 0.72;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.14);
 }
 
 .product-download-card h3,
@@ -2153,8 +2331,45 @@ body.is-ready .shell {
   z-index: 1;
 }
 
+.product-download-card h3 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(1.34rem, 2vw, 1.72rem);
+}
+
+.product-download-card h3::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(61, 73, 255, 0.98), var(--accent-blue));
+  box-shadow: 0 12px 24px rgba(0, 0, 182, 0.18);
+}
+
+.product-download-card p {
+  margin: 14px 0 0;
+  max-width: 27ch;
+  color: var(--stone-500);
+  line-height: 1.72;
+}
+
 .product-download-card .download-card__meta {
-  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  margin: 22px 0 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 182, 0.1);
+  color: rgba(0, 0, 182, 0.78);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.product-download-card .button {
+  margin-top: auto;
 }
 
 .product-cta p {

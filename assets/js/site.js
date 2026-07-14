@@ -519,6 +519,106 @@ if (document.body.dataset.pageType !== "product") {
   initGlobalQuoteDrawer();
 }
 
+const initImageZoom = () => {
+  const zoomCards = Array.from(document.querySelectorAll("[data-zoomable-image]"));
+
+  if (!zoomCards.length || document.querySelector("[data-image-zoom-modal]")) {
+    return;
+  }
+
+  const modal = document.createElement("div");
+  modal.className = "image-zoom-modal";
+  modal.hidden = true;
+  modal.setAttribute("data-image-zoom-modal", "");
+  modal.innerHTML = `
+    <button class="image-zoom-modal__backdrop" type="button" data-image-zoom-close aria-label="Cerrar ampliacion"></button>
+    <div class="image-zoom-modal__panel" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+      <button class="image-zoom-modal__close" type="button" data-image-zoom-close aria-label="Cerrar ampliacion">&times;</button>
+      <figure class="image-zoom-modal__figure">
+        <img src="" alt="" />
+        <figcaption class="image-zoom-modal__caption" hidden></figcaption>
+      </figure>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const modalImage = modal.querySelector(".image-zoom-modal__figure img");
+  const modalCaption = modal.querySelector(".image-zoom-modal__caption");
+  const modalCloseButtons = Array.from(modal.querySelectorAll("[data-image-zoom-close]"));
+  const modalCloseButton = modal.querySelector(".image-zoom-modal__close");
+  let lastTrigger = null;
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    document.body.classList.remove("image-zoom-open");
+
+    window.setTimeout(() => {
+      if (!modal.classList.contains("is-open")) {
+        modal.hidden = true;
+      }
+    }, 240);
+
+    if (lastTrigger) {
+      lastTrigger.focus();
+    }
+  };
+
+  const openModal = (card) => {
+    const sourceImage = card.querySelector("img");
+    const imageSource = sourceImage?.currentSrc || sourceImage?.src || "";
+    const imageAlt = card.getAttribute("data-zoom-alt") || sourceImage?.alt || "";
+
+    if (!imageSource || !modalImage) {
+      return;
+    }
+
+    lastTrigger = card;
+    modalImage.src = imageSource;
+    modalImage.alt = imageAlt;
+
+    if (modalCaption) {
+      if (imageAlt) {
+        modalCaption.textContent = imageAlt;
+        modalCaption.hidden = false;
+      } else {
+        modalCaption.textContent = "";
+        modalCaption.hidden = true;
+      }
+    }
+
+    modal.hidden = false;
+    document.body.classList.add("image-zoom-open");
+
+    window.requestAnimationFrame(() => {
+      modal.classList.add("is-open");
+      modalCloseButton?.focus();
+    });
+  };
+
+  zoomCards.forEach((card) => {
+    const sourceImage = card.querySelector("img");
+    const imageAlt = card.getAttribute("data-zoom-alt") || sourceImage?.alt || "Imagen";
+    card.setAttribute("aria-label", `${imageAlt}. Abrir imagen ampliada`);
+
+    card.addEventListener("click", () => {
+      openModal(card);
+    });
+  });
+
+  modalCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+};
+
+initImageZoom();
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");

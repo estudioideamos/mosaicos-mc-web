@@ -1337,6 +1337,10 @@
   const getSpecIconType = (label) => {
     const normalized = normalizeText(label);
 
+    if (normalized.includes("formato")) {
+      return "format";
+    }
+
     if (normalized.includes("rendimiento")) {
       return "performance";
     }
@@ -1773,6 +1777,7 @@
     const totalOutput = shell.querySelector("[data-quote-total-output]");
     const unitsOutput = shell.querySelector("[data-quote-units-output]");
     const extrasOutput = shell.querySelector("[data-quote-extras-output]");
+    const galleryThumbs = Array.from(shell.querySelectorAll("[data-gallery-thumb]"));
     const unitsPerM2 = getUnitsPerSquareMeter(product);
     const getSelectedVariant = () => {
       const variants = Array.isArray(product.variants) ? product.variants : [];
@@ -1841,6 +1846,22 @@
         variantName: selectedVariant?.name || "",
         variantImage: selectedVariant?.image || "",
       };
+    };
+
+    const syncVariantGallery = () => {
+      if (!galleryThumbs.length) {
+        return;
+      }
+
+      const selectedVariant = getSelectedVariant();
+      const targetImage = selectedVariant?.image ? resolveAsset(selectedVariant.image) : "";
+      const targetLabel = selectedVariant?.name || "";
+      const matchingThumb =
+        galleryThumbs.find((thumb) => targetImage && thumb.dataset.galleryImage === targetImage) ||
+        galleryThumbs.find((thumb) => targetLabel && thumb.dataset.galleryLabel === targetLabel) ||
+        galleryThumbs[0];
+
+      matchingThumb?.click();
     };
 
     const openDrawer = (view) => {
@@ -1960,6 +1981,9 @@
       field?.addEventListener("input", compute);
       field?.addEventListener("change", compute);
     });
+
+    variantInput?.addEventListener("change", syncVariantGallery);
+    variantInput?.addEventListener("input", syncVariantGallery);
 
     addToCartButton.addEventListener("click", () => {
       const snapshot = compute();
@@ -2109,6 +2133,7 @@
     syncLeadForm();
     renderCartItems();
     compute();
+    syncVariantGallery();
   };
 
   const renderCatalogPage = () => {
