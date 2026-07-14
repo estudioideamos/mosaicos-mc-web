@@ -1544,16 +1544,31 @@
           <span class="product-cta__panel-label">acompa&ntilde;amiento Mosaicos MC</span>
           <div class="product-cta__panel-grid">
             <div class="product-cta__panel-item">
-              <strong>Elecci&oacute;n precisa</strong>
-              <span>Te orientamos en formato, terminaci&oacute;n y aplicaci&oacute;n seg&uacute;n el uso real del proyecto.</span>
+              <span class="product-cta__panel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 7.5h16v9H4z" />
+                  <path d="M8 11h8" />
+                  <path d="M8 14h4.5" />
+                  <path d="m15.5 13.5 1.4 1.4 2.6-3.1" />
+                </svg>
+              </span>
+              <div class="product-cta__panel-copy">
+                <strong>Elecci&oacute;n precisa</strong>
+                <span>Definimos formato, terminaci&oacute;n y aplicaci&oacute;n con criterio t&eacute;cnico seg&uacute;n el uso real de la pieza.</span>
+              </div>
             </div>
             <div class="product-cta__panel-item">
-              <strong>Respuesta &aacute;gil</strong>
-              <span>Recibe una recomendaci&oacute;n comercial clara para avanzar sin demoras ni dudas t&eacute;cnicas.</span>
-            </div>
-            <div class="product-cta__panel-item">
-              <strong>Contacto directo</strong>
-              <span>Pod&eacute;s seguir la conversaci&oacute;n por WhatsApp con contexto completo desde la primera consulta.</span>
+              <span class="product-cta__panel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 6.5h14v8H9.5L6 18v-3.5H5z" />
+                  <path d="M8.5 10.5h7" />
+                  <path d="M8.5 13.5h4.5" />
+                </svg>
+              </span>
+              <div class="product-cta__panel-copy">
+                <strong>Respuesta &aacute;gil</strong>
+                <span>Recib&iacute;s una recomendaci&oacute;n comercial clara y pod&eacute;s continuar la consulta por WhatsApp sin perder contexto.</span>
+              </div>
             </div>
           </div>
         </aside>
