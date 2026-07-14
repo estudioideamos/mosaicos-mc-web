@@ -3512,8 +3512,10 @@ body.is-ready .shell {
 }
 
 .whatsapp-float__icon {
+  position: relative;
   display: grid;
   place-items: center;
+  flex: 0 0 auto;
   width: 32px;
   height: 32px;
   border-radius: 50%;
