@@ -18,6 +18,105 @@ const siteNav = document.querySelector("[data-site-nav]");
 const brandLink = document.querySelector(".brand");
 const quoteCartStorageKey = "mosaicosMcQuoteCart";
 const quoteLeadStorageKey = "mosaicosMcQuoteLead";
+const isWebContext = /^https?:$/i.test(window.location.protocol);
+const siteRootUrl = (() => {
+  try {
+    return new URL(brandLink?.getAttribute("href") || "./", window.location.href);
+  } catch (error) {
+    return new URL("./", window.location.href);
+  }
+})();
+
+const ensureHeadNode = (selector, tagName, attributes = {}) => {
+  let node = document.head.querySelector(selector);
+
+  if (!node) {
+    node = document.createElement(tagName);
+    Object.entries(attributes).forEach(([key, value]) => {
+      node.setAttribute(key, value);
+    });
+    document.head.appendChild(node);
+  }
+
+  return node;
+};
+
+const resolveFromRoot = (href) => {
+  try {
+    return new URL(href, siteRootUrl).href;
+  } catch (error) {
+    return href;
+  }
+};
+
+const applyGlobalHeadEnhancements = () => {
+  const faviconHref = resolveFromRoot("assets/img/favicon.svg");
+
+  ensureHeadNode('link[rel="icon"]', "link", {
+    rel: "icon",
+    type: "image/svg+xml",
+  }).setAttribute("href", faviconHref);
+
+  ensureHeadNode('link[rel="shortcut icon"]', "link", {
+    rel: "shortcut icon",
+    type: "image/svg+xml",
+  }).setAttribute("href", faviconHref);
+
+  ensureHeadNode('meta[name="theme-color"]', "meta", {
+    name: "theme-color",
+  }).setAttribute("content", "#0000B6");
+
+  ensureHeadNode('meta[name="referrer"]', "meta", {
+    name: "referrer",
+  }).setAttribute("content", "strict-origin-when-cross-origin");
+
+  ensureHeadNode('meta[name="robots"]', "meta", {
+    name: "robots",
+  }).setAttribute("content", "index,follow");
+
+  ensureHeadNode('meta[property="og:site_name"]', "meta", {
+    property: "og:site_name",
+  }).setAttribute("content", "Mosaicos MC");
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Mosaicos MC",
+    url: isWebContext ? siteRootUrl.href : undefined,
+    logo: resolveFromRoot("assets/img/logo-negro.png"),
+    sameAs: ["https://www.instagram.com/mosaicosmcsrl"],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+54 9 11 3878-9057",
+        contactType: "sales",
+        availableLanguage: ["es"],
+        areaServed: "AR",
+      },
+    ],
+  };
+
+  const schemaNode = ensureHeadNode('script[data-seo-payload="organization"]', "script", {
+    type: "application/ld+json",
+    "data-seo-payload": "organization",
+  });
+  schemaNode.textContent = JSON.stringify(organizationSchema);
+};
+
+const hardenExternalLinks = () => {
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    const currentRel = (link.getAttribute("rel") || "")
+      .split(/\s+/)
+      .filter(Boolean);
+    const relSet = new Set(currentRel);
+    relSet.add("noopener");
+    relSet.add("noreferrer");
+    link.setAttribute("rel", Array.from(relSet).join(" "));
+  });
+};
+
+applyGlobalHeadEnhancements();
+hardenExternalLinks();
 
 const readHeaderCartItems = () => {
   try {
@@ -487,7 +586,7 @@ const initGlobalQuoteDrawer = () => {
       }
     });
 
-    window.open(`https://wa.me/5491138789057?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noreferrer");
+    window.open(`https://wa.me/5491138789057?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener,noreferrer");
   });
 
   document.addEventListener("mosaicosmc:open-quote-cart", (event) => {
