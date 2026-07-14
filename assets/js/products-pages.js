@@ -1009,7 +1009,8 @@
 
   const formatSquareMeters = (value) => `${formatNumber(value, 2)} m2`;
   const formatUnits = (value) => `${formatNumber(value, 0)} un`;
-  const getCartItemId = (line, product) => `${line.slug}:${product.slug}`;
+  const getCartItemId = (line, product, variantName = "") =>
+    `${line.slug}:${product.slug}:${normalizeText(variantName || "base")}`;
   const defaultSuggestedExtras = [
     { name: "Pegamento para Mosaico", quantity: "1 bolsa" },
     { name: "Pastina Gris", quantity: "1 bolsa 5kg" },
@@ -1051,12 +1052,13 @@
   `;
 
   const buildQuoteCartItem = (line, product, payload) => ({
-    id: getCartItemId(line, product),
+    id: getCartItemId(line, product, payload.variantName),
     lineSlug: line.slug,
     productSlug: product.slug,
     lineName: line.name,
     productName: product.name,
-    image: resolveAsset(product.image || product.detailImage || line.heroImage),
+    variantName: payload.variantName || "",
+    image: resolveAsset(payload.variantImage || product.image || product.detailImage || line.heroImage),
     area: payload.area,
     waste: payload.waste,
     totalArea: payload.totalArea,
@@ -1155,11 +1157,33 @@
   const renderQuoteBuilder = (line, product) => {
     const unitsPerM2 = getUnitsPerSquareMeter(product);
     const defaultWaste = 10;
+    const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
+    const variantOptions = hasVariants
+      ? product.variants
+          .map(
+            (variant, index) => `
+              <option value="${String(index)}">${variant.name}</option>
+            `
+          )
+          .join("")
+      : "";
 
     return `
         <div class="quote-inline quote-inline--embedded reveal is-visible" id="quote-builder">
           <div class="quote-inline__card">
             <div class="form-grid quote-inline__grid">
+              ${
+                hasVariants
+                  ? `
+                    <div class="form-field form-field--full">
+                      <label for="quote-variant">Color / variante</label>
+                      <select id="quote-variant" name="variant" data-quote-variant>
+                        ${variantOptions}
+                      </select>
+                    </div>
+                  `
+                  : ""
+              }
               <div class="form-field">
                 <label for="quote-area">Cantidad requerida (m&sup2;)</label>
                 <input id="quote-area" name="area" type="number" min="0" step="0.01" placeholder="Ej. 25" data-quote-area required />
@@ -1724,6 +1748,7 @@
     const areaInput = shell.querySelector("[data-quote-area]");
     const wasteInput = shell.querySelector("[data-quote-waste]");
     const extrasInput = shell.querySelector("[data-quote-extras]");
+    const variantInput = shell.querySelector("[data-quote-variant]");
     const addToCartButton = shell.querySelector("[data-add-to-cart]");
     const openCartButton = shell.querySelector("[data-open-cart]");
     const drawer = shell.querySelector("[data-quote-drawer]");
@@ -1749,6 +1774,15 @@
     const unitsOutput = shell.querySelector("[data-quote-units-output]");
     const extrasOutput = shell.querySelector("[data-quote-extras-output]");
     const unitsPerM2 = getUnitsPerSquareMeter(product);
+    const getSelectedVariant = () => {
+      const variants = Array.isArray(product.variants) ? product.variants : [];
+      if (!variants.length) {
+        return null;
+      }
+
+      const selectedIndex = Number.parseInt(variantInput?.value ?? "0", 10);
+      return variants[selectedIndex] || variants[0] || null;
+    };
 
     if (
       !areaInput ||
@@ -1795,7 +1829,18 @@
           : renderNoExtrasMarkup("Los precios se envian al solicitar el presupuesto.");
       }
 
-      return { area, waste, totalArea, units, unitsPerM2, includeExtras: extrasInput.checked };
+      const selectedVariant = getSelectedVariant();
+
+      return {
+        area,
+        waste,
+        totalArea,
+        units,
+        unitsPerM2,
+        includeExtras: extrasInput.checked,
+        variantName: selectedVariant?.name || "",
+        variantImage: selectedVariant?.image || "",
+      };
     };
 
     const openDrawer = (view) => {
@@ -1873,6 +1918,7 @@
                     <div>
                       <span class="quote-drawer__item-kicker">${item.lineName}</span>
                       <h4>${item.productName}</h4>
+                      ${item.variantName ? `<p class="quote-drawer__item-variant">Variante: ${item.variantName}</p>` : ""}
                     </div>
                     <button class="quote-drawer__item-remove" type="button" data-quote-remove="${item.id}" aria-label="Quitar producto">&times;</button>
                   </div>
@@ -1910,7 +1956,7 @@
       }
     };
 
-    [areaInput, wasteInput, extrasInput].forEach((field) => {
+    [areaInput, wasteInput, extrasInput, variantInput].forEach((field) => {
       field?.addEventListener("input", compute);
       field?.addEventListener("change", compute);
     });
@@ -2016,6 +2062,9 @@
 
       cartItems.forEach((item, index) => {
         lines.push(`${index + 1}. ${item.productName} | ${item.lineName}`);
+        if (item.variantName) {
+          lines.push(`   - Variante: ${item.variantName}`);
+        }
         lines.push(`   - Requerido: ${formatSquareMeters(item.area)}`);
         lines.push(`   - Desperdicio: ${formatNumber(item.waste, 0)}%`);
         lines.push(`   - Calculado: ${formatSquareMeters(item.totalArea)}`);

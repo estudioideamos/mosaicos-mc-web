@@ -3237,10 +3237,17 @@ body.is-ready .shell {
   font-size: 0.94rem;
 }
 
-.quote-drawer__item-copy p {
+.quote-drawer__item-copy p:not(.quote-drawer__item-variant) {
   margin: 12px 0 0;
   color: var(--graphite-600);
   font-size: 0.94rem;
+}
+
+.quote-drawer__item-copy .quote-drawer__item-variant {
+  margin: 8px 0 0;
+  color: var(--graphite-600);
+  font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .quote-drawer__item-copy .quote-extras {

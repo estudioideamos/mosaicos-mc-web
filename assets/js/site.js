@@ -368,6 +368,7 @@ const initGlobalQuoteDrawer = () => {
                     <div>
                       <span class="quote-drawer__item-kicker">${item.lineName || "Mosaicos MC"}</span>
                       <h4>${item.productName || "Producto"}</h4>
+                      ${item.variantName ? `<p class="quote-drawer__item-variant">Variante: ${item.variantName}</p>` : ""}
                     </div>
                     <button class="quote-drawer__item-remove" type="button" data-quote-remove="${item.id}" aria-label="Quitar producto">&times;</button>
                   </div>
@@ -473,6 +474,10 @@ const initGlobalQuoteDrawer = () => {
         `- m² con desperdicio: ${formatArea(Number(item.totalArea) || 0)}`,
         `- Cantidad estimada: ${formatNumber(Number(item.units) || 0, 0)} un`
       );
+
+      if (item.variantName) {
+        lines.splice(lines.length - 3, 0, `- Variante: ${item.variantName}`);
+      }
 
       if (item.includeExtras && item.extras?.length) {
         lines.push("- Adicionales:");
