@@ -17,6 +17,7 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
 const brandLink = document.querySelector(".brand");
 const quoteCartStorageKey = "mosaicosMcQuoteCart";
+const quoteLeadStorageKey = "mosaicosMcQuoteLead";
 
 const readHeaderCartItems = () => {
   try {
@@ -39,6 +40,23 @@ const syncHeaderCartButton = (button) => {
   if (countBadge) {
     countBadge.textContent = String(count);
     countBadge.hidden = count === 0;
+  }
+};
+
+const readStoredJson = (key, fallback) => {
+  try {
+    const raw = window.localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (error) {
+    return fallback;
+  }
+};
+
+const writeStoredJson = (key, value) => {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    // Ignore storage write issues.
   }
 };
 
@@ -93,6 +111,388 @@ const createHeaderCartButton = () => {
 };
 
 createHeaderCartButton();
+
+const initGlobalQuoteDrawer = () => {
+  if (document.querySelector("[data-quote-drawer]")) {
+    return;
+  }
+
+  const shell = document.querySelector(".shell");
+
+  if (!shell) {
+    return;
+  }
+
+  const rootHref = brandLink?.getAttribute("href") || "./";
+  const rootUrl = new URL(rootHref, window.location.href);
+  const productsUrl = new URL("productos/", rootUrl).href;
+
+  const drawer = document.createElement("div");
+  drawer.className = "quote-drawer";
+  drawer.hidden = true;
+  drawer.setAttribute("data-quote-drawer", "");
+  drawer.innerHTML = `
+    <button class="quote-drawer__backdrop" type="button" data-quote-close aria-label="Cerrar panel"></button>
+    <aside class="quote-drawer__panel" aria-live="polite" aria-label="Panel de presupuesto">
+      <div class="quote-drawer__view" data-quote-view="cart">
+        <header class="quote-drawer__header">
+          <div>
+            <span class="eyebrow eyebrow--dark">presupuesto</span>
+            <h3>Carrito <span data-quote-count>(0)</span></h3>
+          </div>
+          <button class="quote-drawer__close" type="button" data-quote-close aria-label="Cerrar panel">&times;</button>
+        </header>
+        <div class="quote-drawer__body">
+          <div class="quote-drawer__empty" data-quote-empty>
+            <h4>Tu carrito de presupuesto está vacío.</h4>
+            <p>Podés abrir este panel desde cualquier página para revisar piezas agregadas o comenzar una consulta cuando lo necesites.</p>
+            <div class="hero__actions">
+              <a class="button button--dark" href="${productsUrl}">Ver productos</a>
+            </div>
+          </div>
+          <div class="quote-drawer__cart-list" data-quote-cart-list></div>
+        </div>
+        <footer class="quote-drawer__footer">
+          <p>Agrega una o varias piezas y envía la consulta completa desde este mismo panel.</p>
+          <div class="quote-drawer__footer-actions">
+            <button class="button button--sand" type="button" data-quote-clear disabled>Vaciar carrito</button>
+            <button class="button button--dark" type="button" data-quote-to-form disabled>Continuar con mis datos</button>
+          </div>
+        </footer>
+      </div>
+      <div class="quote-drawer__view" data-quote-view="form" hidden>
+        <header class="quote-drawer__header">
+          <div>
+            <span class="eyebrow eyebrow--dark">datos de contacto</span>
+            <h3>Solicitar presupuesto</h3>
+          </div>
+          <button class="quote-drawer__close" type="button" data-quote-close aria-label="Cerrar panel">&times;</button>
+        </header>
+        <form class="quote-drawer__form" data-quote-lead-form>
+          <div class="quote-drawer__resume" data-quote-form-summary></div>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="global-quote-name">Nombre completo</label>
+              <input id="global-quote-name" name="name" type="text" placeholder="Tu nombre y apellido" data-quote-name required />
+            </div>
+            <div class="form-field">
+              <label for="global-quote-phone">Teléfono</label>
+              <input id="global-quote-phone" name="phone" type="tel" placeholder="+54 9 11..." data-quote-phone required />
+            </div>
+            <div class="form-field">
+              <label for="global-quote-email">Email</label>
+              <input id="global-quote-email" name="email" type="email" placeholder="tu@email.com" data-quote-email />
+            </div>
+            <div class="form-field">
+              <label for="global-quote-location">Localidad</label>
+              <input id="global-quote-location" name="location" type="text" placeholder="Ciudad / Zona" data-quote-location />
+            </div>
+            <div class="form-field">
+              <label for="global-quote-timing">Cuándo lo necesitas</label>
+              <select id="global-quote-timing" name="timing" data-quote-timing>
+                <option value="">Seleccionar</option>
+                <option value="Inmediato">Inmediato</option>
+                <option value="Dentro de 30 días">Dentro de 30 días</option>
+                <option value="En planificación">En planificación</option>
+              </select>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="global-quote-notes">Comentarios del proyecto</label>
+              <textarea id="global-quote-notes" name="notes" rows="4" placeholder="Contanos si es vereda, pileta, interior, obra nueva o reposición." data-quote-notes></textarea>
+            </div>
+          </div>
+          <div class="quote-drawer__footer-actions">
+            <button class="button button--sand" type="button" data-quote-back>Volver al carrito</button>
+            <button class="button button--dark" type="submit">Enviar por WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  `;
+
+  document.body.appendChild(drawer);
+
+  const cartView = drawer.querySelector('[data-quote-view="cart"]');
+  const formView = drawer.querySelector('[data-quote-view="form"]');
+  const cartList = drawer.querySelector("[data-quote-cart-list]");
+  const emptyState = drawer.querySelector("[data-quote-empty]");
+  const countOutput = drawer.querySelector("[data-quote-count]");
+  const clearButton = drawer.querySelector("[data-quote-clear]");
+  const toFormButton = drawer.querySelector("[data-quote-to-form]");
+  const closeButtons = Array.from(drawer.querySelectorAll("[data-quote-close]"));
+  const backButton = drawer.querySelector("[data-quote-back]");
+  const leadForm = drawer.querySelector("[data-quote-lead-form]");
+  const formSummary = drawer.querySelector("[data-quote-form-summary]");
+  const nameInput = drawer.querySelector("[data-quote-name]");
+  const phoneInput = drawer.querySelector("[data-quote-phone]");
+  const emailInput = drawer.querySelector("[data-quote-email]");
+  const locationInput = drawer.querySelector("[data-quote-location]");
+  const timingInput = drawer.querySelector("[data-quote-timing]");
+  const notesInput = drawer.querySelector("[data-quote-notes]");
+
+  const readCart = () => {
+    const value = readStoredJson(quoteCartStorageKey, []);
+    return Array.isArray(value) ? value : [];
+  };
+
+  const writeCart = (items) => {
+    writeStoredJson(quoteCartStorageKey, Array.isArray(items) ? items : []);
+    document.dispatchEvent(
+      new CustomEvent("mosaicosmc:cart-updated", {
+        detail: { items: Array.isArray(items) ? items : [] },
+      })
+    );
+  };
+
+  const readLead = () => {
+    const value = readStoredJson(quoteLeadStorageKey, {});
+    return value && typeof value === "object" ? value : {};
+  };
+
+  const writeLead = (lead) => {
+    writeStoredJson(quoteLeadStorageKey, lead && typeof lead === "object" ? lead : {});
+  };
+
+  const formatNumber = (value, digits = 2) =>
+    new Intl.NumberFormat("es-AR", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: digits,
+    }).format(Number.isFinite(value) ? value : 0);
+
+  const formatArea = (value) => `${formatNumber(value, 2)} m²`;
+
+  const renderNoExtrasMarkup = (noteText) => `
+    <div class="quote-extras quote-extras--muted">
+      <div class="quote-extras__header">
+        <strong>Sin adicionales</strong>
+      </div>
+      <p class="quote-extras__note">${noteText}</p>
+    </div>
+  `;
+
+  const renderExtrasMarkup = (extras, noteText) => {
+    if (!extras?.length) {
+      return renderNoExtrasMarkup(noteText);
+    }
+
+    return `
+      <div class="quote-extras">
+        <div class="quote-extras__header">
+          <strong>Adicionales sugeridos</strong>
+          <span>${extras.length} item${extras.length === 1 ? "" : "s"}</span>
+        </div>
+        <div class="quote-extras__list">
+          ${extras
+            .map(
+              (extra) => `
+                <div class="quote-extras__item">
+                  <strong>${extra.name}</strong>
+                  <span>${extra.quantityLabel || ""}</span>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+        <p class="quote-extras__note">${noteText}</p>
+      </div>
+    `;
+  };
+
+  const syncLeadForm = () => {
+    const lead = readLead();
+    nameInput.value = lead.name || "";
+    phoneInput.value = lead.phone || "";
+    emailInput.value = lead.email || "";
+    locationInput.value = lead.location || "";
+    timingInput.value = lead.timing || "";
+    notesInput.value = lead.notes || "";
+  };
+
+  const openDrawer = (view = "cart") => {
+    drawer.hidden = false;
+    window.requestAnimationFrame(() => drawer.classList.add("is-open"));
+    document.body.classList.add("drawer-open");
+    cartView.hidden = view !== "cart";
+    formView.hidden = view !== "form";
+  };
+
+  const closeDrawer = () => {
+    drawer.classList.remove("is-open");
+    document.body.classList.remove("drawer-open");
+    window.setTimeout(() => {
+      if (!drawer.classList.contains("is-open")) {
+        drawer.hidden = true;
+      }
+    }, 260);
+  };
+
+  const renderCartItems = () => {
+    const cartItems = readCart();
+    const hasItems = cartItems.length > 0;
+
+    countOutput.textContent = `(${cartItems.length})`;
+    clearButton.disabled = !hasItems;
+    toFormButton.disabled = !hasItems;
+    emptyState.hidden = hasItems;
+
+    cartList.innerHTML = hasItems
+      ? cartItems
+          .map(
+            (item) => `
+              <article class="quote-drawer__item" data-quote-item="${item.id}">
+                <div class="quote-drawer__item-media">
+                  <img src="${item.image || ""}" alt="${item.productName || "Producto"}" />
+                </div>
+                <div class="quote-drawer__item-copy">
+                  <div class="quote-drawer__item-top">
+                    <div>
+                      <span class="quote-drawer__item-kicker">${item.lineName || "Mosaicos MC"}</span>
+                      <h4>${item.productName || "Producto"}</h4>
+                    </div>
+                    <button class="quote-drawer__item-remove" type="button" data-quote-remove="${item.id}" aria-label="Quitar producto">&times;</button>
+                  </div>
+                  <div class="quote-drawer__item-metrics">
+                    <span>${formatArea(Number(item.area) || 0)} requeridos</span>
+                    <span>${formatArea(Number(item.totalArea) || 0)} con desperdicio</span>
+                    <span>${formatNumber(Number(item.units) || 0, 0)} un</span>
+                  </div>
+                  ${
+                    item.includeExtras
+                      ? renderExtrasMarkup(item.extras, "Incluye adicionales sugeridos. Los precios se envían al solicitar el presupuesto.")
+                      : renderNoExtrasMarkup("Los precios se envían al solicitar el presupuesto.")
+                  }
+                </div>
+              </article>
+            `
+          )
+          .join("")
+      : "";
+
+    if (!hasItems) {
+      formSummary.innerHTML = `
+        <strong>Sin productos cargados</strong>
+        <span>Agrega piezas desde Productos para preparar tu consulta.</span>
+      `;
+      return;
+    }
+
+    const totalArea = cartItems.reduce((sum, item) => sum + (Number(item.totalArea) || 0), 0);
+    formSummary.innerHTML = `
+      <strong>${cartItems.length} producto${cartItems.length === 1 ? "" : "s"} en el pedido</strong>
+      <span>${formatArea(totalArea)} totales con desperdicio incluido.</span>
+    `;
+  };
+
+  closeButtons.forEach((button) => button.addEventListener("click", closeDrawer));
+
+  clearButton.addEventListener("click", () => {
+    writeCart([]);
+    renderCartItems();
+  });
+
+  toFormButton.addEventListener("click", () => {
+    syncLeadForm();
+    renderCartItems();
+    openDrawer("form");
+  });
+
+  backButton.addEventListener("click", () => {
+    renderCartItems();
+    openDrawer("cart");
+  });
+
+  cartList.addEventListener("click", (event) => {
+    const removeButton = event.target.closest("[data-quote-remove]");
+    if (!removeButton) return;
+
+    const itemId = removeButton.getAttribute("data-quote-remove");
+    const nextItems = readCart().filter((item) => item.id !== itemId);
+    writeCart(nextItems);
+    renderCartItems();
+  });
+
+  leadForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const cartItems = readCart();
+
+    if (!cartItems.length || !nameInput.value.trim() || !phoneInput.value.trim()) {
+      renderCartItems();
+      openDrawer("cart");
+      return;
+    }
+
+    const lead = {
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      email: emailInput.value.trim(),
+      location: locationInput.value.trim(),
+      timing: timingInput.value.trim(),
+      notes: notesInput.value.trim(),
+    };
+
+    writeLead(lead);
+
+    const lines = [
+      "Hola Mosaicos MC, quiero solicitar un presupuesto.",
+      "",
+      `Nombre: ${lead.name}`,
+      `Teléfono: ${lead.phone}`,
+      lead.email ? `Email: ${lead.email}` : "",
+      lead.location ? `Localidad: ${lead.location}` : "",
+      lead.timing ? `Necesidad: ${lead.timing}` : "",
+      lead.notes ? `Comentarios: ${lead.notes}` : "",
+      "",
+      "Detalle del pedido:",
+    ].filter(Boolean);
+
+    cartItems.forEach((item, index) => {
+      lines.push(
+        "",
+        `${index + 1}. ${item.productName || "Producto"} (${item.lineName || "Mosaicos MC"})`,
+        `- m² requeridos: ${formatArea(Number(item.area) || 0)}`,
+        `- m² con desperdicio: ${formatArea(Number(item.totalArea) || 0)}`,
+        `- Cantidad estimada: ${formatNumber(Number(item.units) || 0, 0)} un`
+      );
+
+      if (item.includeExtras && item.extras?.length) {
+        lines.push("- Adicionales:");
+        item.extras.forEach((extra) => {
+          lines.push(`  • ${extra.name}${extra.quantityLabel ? ` - ${extra.quantityLabel}` : ""}`);
+        });
+      }
+    });
+
+    window.open(`https://wa.me/5491138789057?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noreferrer");
+  });
+
+  document.addEventListener("mosaicosmc:open-quote-cart", (event) => {
+    event.preventDefault();
+    renderCartItems();
+    openDrawer("cart");
+  });
+
+  document.addEventListener("mosaicosmc:cart-updated", () => {
+    renderCartItems();
+  });
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === quoteCartStorageKey || event.key === quoteLeadStorageKey) {
+      renderCartItems();
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && drawer.classList.contains("is-open")) {
+      closeDrawer();
+    }
+  });
+
+  renderCartItems();
+};
+
+if (document.body.dataset.pageType !== "product") {
+  initGlobalQuoteDrawer();
+}
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
