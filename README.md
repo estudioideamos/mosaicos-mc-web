@@ -1,14 +1,44 @@
 # Mosaicos MC
 
-Sitio estatico demo para una marca de revestimientos y mosaicos.
+Sitio editorial multipágina para **Mosaicos MC**, marca de mosaicos y revestimientos para pisos, paredes, interiores, exteriores, piscinas y proyectos de alta exigencia.
 
-## Incluye
+**Demo publicada:** [estudioideamos.github.io/mosaicos-mc-web](https://estudioideamos.github.io/mosaicos-mc-web/)
 
-- Home editorial
-- Paginas internas: Nosotros, Productos, Obras, Descargas, Blog y Contacto
-- Subpaginas de segundo nivel para coleccion, producto y articulo
-- Fotos de ejemplo listas para reemplazar
+## Contenido
 
-## Publicacion
+Home editorial, historia de marca, catálogo de productos y colecciones, obras, descargas, blog, contacto y páginas de segundo nivel para colecciones, productos y artículos.
 
-El proyecto esta preparado para alojarse como sitio estatico en GitHub Pages o cualquier hosting simple.
+## Tecnología
+
+Sitio estático construido con HTML, CSS y JavaScript. No requiere dependencias ni compilación.
+
+## Estructura
+
+```text
+.
+├── index.html
+├── assets/
+├── nosotros/
+├── productos/
+├── obras/
+├── descargas/
+└── contacto/
+```
+
+Los estilos, scripts y recursos compartidos están en `assets/`. Las rutas son relativas, por lo que conviene probar desde un servidor HTTP local.
+
+## Publicación
+
+La rama `main` se publica con GitHub Pages. El proyecto también puede alojarse en cualquier hosting estático.
+
+## Personalización
+
+Las fotografías y contenidos de demostración pueden reemplazarse por material definitivo. Al hacerlo se deben conservar proporciones y nombres, o actualizar todas sus referencias.
+
+## Verificación
+
+Revisar navegación entre niveles, formularios, imágenes, versión móvil y ausencia de enlaces rotos antes de publicar.
+
+## Créditos
+
+Diseño y desarrollo por [Estudio Ideamos](https://ideamos.com.ar/).
