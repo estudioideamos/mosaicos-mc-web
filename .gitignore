@@ -1,1 +1,12 @@
 .codex-remote-attachments/
+
+_site/
+node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+*.log

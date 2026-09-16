@@ -1,43 +1,46 @@
 # Mosaicos MC
 
-Sitio editorial multipágina para **Mosaicos MC**, marca de mosaicos y revestimientos para pisos, paredes, interiores, exteriores, piscinas y proyectos de alta exigencia.
+Web estática de Mosaicos MC, desarrollada con HTML, CSS y JavaScript, sin dependencias de aplicación.
 
-**Demo publicada:** [estudioideamos.github.io/mosaicos-mc-web](https://estudioideamos.github.io/mosaicos-mc-web/)
+[Ver la web](https://estudioideamos.github.io/mosaicos-mc-web/) · [Preguntas frecuentes](https://estudioideamos.github.io/mosaicos-mc-web/preguntas-frecuentes/) · [Estado de publicación](https://github.com/estudioideamos/mosaicos-mc-web/actions/workflows/website.yml)
 
 ## Contenido
 
-Home editorial, historia de marca, catálogo de productos y colecciones, obras, descargas, blog, contacto y páginas de segundo nivel para colecciones, productos y artículos.
-
-## Tecnología
-
-Sitio estático construido con HTML, CSS y JavaScript. No requiere dependencias ni compilación.
+Inicio, nosotros, catálogo de productos, obras, descargas, contacto y preguntas frecuentes. Las preguntas frecuentes incluyen productos, fabricación, pedidos, colocación y logística.
 
 ## Estructura
 
-```text
-.
-├── index.html
-├── assets/
-├── nosotros/
-├── productos/
-├── obras/
-├── descargas/
-└── contacto/
-```
+- assets/: estilos, JavaScript, imágenes, video y documentos.
+- productos/: catálogo y fichas de producto.
+- nosotros/, obras/, descargas/, contacto/: páginas institucionales.
+- preguntas-frecuentes/: preguntas agrupadas y asesoramiento.
+- scripts/: verificación y preparación de archivos públicos.
+- .github/: publicación, análisis de seguridad y actualizaciones automáticas.
 
-Los estilos, scripts y recursos compartidos están en `assets/`. Las rutas son relativas, por lo que conviene probar desde un servidor HTTP local.
+## Desarrollo y validación
+
+Requiere Node.js para las verificaciones; no requiere instalar paquetes.
+
+    node scripts/check-site.mjs
+    python -m http.server 8000 --bind 127.0.0.1
+
+Abrir http://127.0.0.1:8000/. Revisar escritorio y móvil. Las rutas absolutas heredadas de imágenes de portada usan /mosaicos-mc-web/; para verificar esas portadas localmente, servir desde un directorio que contenga el proyecto con ese nombre.
 
 ## Publicación
 
-La rama `main` se publica con GitHub Pages. El proyecto también puede alojarse en cualquier hosting estático.
+El workflow **Website** valida títulos, configuración móvil, enlaces locales y sintaxis JavaScript. Prepara _site con los archivos públicos, excluyendo documentación, herramientas y configuración interna. Publica en GitHub Pages únicamente desde main, después de una validación correcta.
 
-## Personalización
+Los pull requests se validan sin permisos de publicación. Las acciones están fijadas a versiones concretas mediante SHA. Dependabot propone sus actualizaciones semanalmente.
 
-Las fotografías y contenidos de demostración pueden reemplazarse por material definitivo. Al hacerlo se deben conservar proporciones y nombres, o actualizar todas sus referencias.
+## Seguridad y mantenimiento
 
-## Verificación
+Consultar [SECURITY.md](SECURITY.md) para reportes privados y [CONTRIBUTING.md](CONTRIBUTING.md) para el proceso de cambios.
 
-Revisar navegación entre niveles, formularios, imágenes, versión móvil y ausencia de enlaces rotos antes de publicar.
+GitHub Pages usa HTTPS. CodeQL revisa JavaScript en cada cambio y semanalmente. La rama principal debe recibir cambios mediante pull requests con las verificaciones aprobadas.
+
+## Contenido pendiente de producción
+
+La web conserva contenidos y documentos de demostración. El formulario de contacto es visual y no envía mensajes; los enlaces de WhatsApp y correo son los canales operativos. Revisar y sustituir material de demostración antes de presentar esta versión como sitio definitivo.
 
 ## Créditos
 

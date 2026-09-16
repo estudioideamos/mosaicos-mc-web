@@ -4474,3 +4474,92 @@ body.image-zoom-open {
     animation-duration: 22s;
   }
 }
+
+/* Keep the expanded navigation usable on tablets. */
+@media (min-width: 821px) and (max-width: 1180px) {
+  :root {
+    --content-width: min(100vw - 26px, 100vw - 26px);
+    --nav-height: 78px;
+  }
+
+  .site-header__inner {
+    gap: 12px;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(0, 0, 182, 0.18);
+    border-radius: 14px;
+    background: rgba(255, 253, 250, 0.92);
+    color: var(--graphite-900);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .brand__logo {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: min(188px, calc(100vw - 184px));
+    height: auto;
+    max-height: 36px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .menu-toggle span {
+    display: block;
+    transform: translateY(-1px);
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 14px;
+    left: 14px;
+    padding: 16px;
+    border-radius: 24px;
+    background: rgba(255, 253, 250, 0.98);
+    border: 1px solid rgba(48, 41, 38, 0.08);
+    box-shadow: var(--shadow-card);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-header__actions {
+    gap: 10px;
+  }
+
+  .site-nav__whatsapp {
+    min-width: 46px;
+    min-height: 46px;
+    padding: 0 14px;
+  }
+
+  .site-nav__cart {
+    min-width: 46px;
+    min-height: 46px;
+    padding: 0 14px;
+  }
+
+  .site-nav__whatsapp-text,
+  .site-nav__cart-text {
+    display: none;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding: 14px 16px;
+  }
+
+}
