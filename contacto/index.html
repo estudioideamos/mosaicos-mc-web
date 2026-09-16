@@ -102,18 +102,18 @@
               </div>
             </article>
 
-            <form class="contact-form reveal">
+            <form class="contact-form reveal" data-contact-form>
               <span class="kicker">consulta</span>
               <h2>Dejanos tu consulta</h2>
-              <p>Este formulario sigue siendo visual por ahora, pero el contenido ya est&aacute; alineado con el contacto real de la empresa.</p>
+              <p>Completá tus datos y contanos qué necesitás. Prepararemos tu consulta en WhatsApp para que puedas revisarla antes de enviarla.</p>
               <div class="form-grid">
                 <div class="form-field">
                   <label for="nombre">Nombre</label>
-                  <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
+                  <input id="nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required placeholder="Tu nombre" />
                 </div>
                 <div class="form-field">
                   <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="tu@email.com" />
+                  <input id="email" name="email" type="email" autocomplete="email" maxlength="200" placeholder="tu@email.com" />
                 </div>
                 <div class="form-field">
                   <label for="tipo">Tipo de proyecto</label>
@@ -126,14 +126,14 @@
                 </div>
                 <div class="form-field">
                   <label for="telefono">Tel&eacute;fono</label>
-                  <input id="telefono" name="telefono" type="text" placeholder="Tu tel&eacute;fono" />
+                  <input id="telefono" name="telefono" type="tel" autocomplete="tel" maxlength="40" placeholder="Tu tel&eacute;fono" />
                 </div>
                 <div class="form-field form-field--full">
                   <label for="mensaje">Mensaje</label>
-                  <textarea id="mensaje" name="mensaje" rows="7" placeholder="Contanos qu&eacute; producto te interesa o qu&eacute; consulta quer&eacute;s realizar"></textarea>
+                  <textarea id="mensaje" name="mensaje" rows="7" maxlength="3000" required placeholder="Contanos qu&eacute; producto te interesa o qu&eacute; consulta quer&eacute;s realizar"></textarea>
                 </div>
                 <div class="form-field form-field--full">
-                  <button class="button button--dark" type="button">Enviar consulta</button>
+                  <button class="button button--dark" type="submit">Continuar en WhatsApp</button><p data-contact-status role="status" aria-live="polite"></p><noscript><p>Consultanos por <a href="https://wa.me/5491138789057">WhatsApp</a> o <a href="mailto:info@mosaicosmc.com">email</a>.</p></noscript>
                 </div>
               </div>
             </form>
@@ -185,7 +185,7 @@
       </a>
     </div>
     <script src="../assets/js/site.js?v=20260713s"></script>
-  </body>
+  <script src="../assets/js/contact.js?v=20260916"></script></body>
 </html>
 
 

@@ -40,7 +40,7 @@ GitHub Pages usa HTTPS. CodeQL revisa JavaScript en cada cambio y semanalmente. 
 
 ## Contenido pendiente de producción
 
-La web conserva contenidos y documentos de demostración. El formulario de contacto es visual y no envía mensajes; los enlaces de WhatsApp y correo son los canales operativos. Revisar y sustituir material de demostración antes de presentar esta versión como sitio definitivo.
+El formulario prepara la consulta para revisarla y enviarla por WhatsApp, sin guardar datos ni afirmar que el mensaje fue enviado. Catálogo, fichas y manual están pendientes de recibir los archivos definitivos; por ahora se solicitan por WhatsApp. Los PDFs de prueba se conservan en el repositorio como referencia histórica, pero se excluyen de la publicación.
 
 ## Créditos
 
