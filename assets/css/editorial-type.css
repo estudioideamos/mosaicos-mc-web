@@ -24,3 +24,8 @@ body.downloads-page .page-hero h1{font-size:clamp(2rem,4.2vw,3.5rem);line-height
 body.downloads-page .page-hero__inner{padding-block:44px}
 body.downloads-page .page-hero p{font-size:.9rem;line-height:1.75;max-width:650px;margin-bottom:0}
 @media(max-width:600px){body.downloads-page .page-hero__inner{padding-block:36px}body.downloads-page .page-hero h1{font-size:clamp(1.85rem,7.8vw,2.6rem)}body.downloads-page .page-hero p{font-size:.83rem}}
+
+/* The company cover follows the same restrained editorial hierarchy. */
+body .about-hero h1{font-size:clamp(2.8rem,5.2vw,4.75rem);font-weight:400;line-height:1.1;letter-spacing:-.055em;margin:28px 0 22px}
+body .about-hero h1 em{color:#eeeadd;line-height:1.08}
+@media(max-width:600px){body .about-hero h1{font-size:clamp(2.4rem,10.6vw,3.5rem);margin:24px 0 20px}}
