@@ -44,11 +44,8 @@
   const lines = catalog.lines;
   // Category imagery always shows an environment, independently of product samples.
   const categoryImages = {
-    "exterior-pulida": "@/assets/img/editorial-verified/64-panes.webp",
-    "mosaicos": "@/assets/img/editorial-verified/mosaico-compacto.webp",
-    "rusticos": "@/assets/img/editorial-verified/loseta-lisa-biselada.webp",
-    "atermicos": "@/assets/img/client-2026/atermicos/borde-con-nariz-50x50-cm.webp",
-    "bloques-de-hormigon": "@/assets/img/client-2026/adoquines-y-bloques/adoquin-holanda-gris-claro-10x20x6-cm.webp",
+    "exterior-pulida": "@/assets/img/generated/exterior-espacio-2026.webp",
+    "mosaicos": "@/assets/img/generated/mosaicos-espacio-2026.webp",
   };
   lines.forEach((line) => {
     line.heroImage = categoryImages[line.slug] || line.heroImage;
@@ -341,7 +338,7 @@
 
   const readQuoteCart = () => {
     const items = readStoredJson(quoteCartStorageKey, []);
-    return Array.isArray(items) ? items : [];
+    return Array.isArray(items) ? items.map(window.mcNormalizeQuoteItem) : [];
   };
 
   const writeQuoteCart = (items) => {
@@ -367,14 +364,7 @@
   const formatUnits = (value) => `${formatNumber(value, 0)} un`;
   const getCartItemId = (line, product, variantName = "") =>
     `${line.slug}:${product.slug}:${normalizeText(variantName || "base")}`;
-  const defaultSuggestedExtras = [
-    { name: "Pegamento para Mosaico", quantity: "1 bolsa" },
-    { name: "Pastina Gris", quantity: "1 bolsa 5kg" },
-    { name: "Impermeabilizante", quantity: "1 bolsa" },
-  ];
-
-  const getSuggestedExtras = (_product) =>
-    defaultSuggestedExtras.map((item) => ({ ...item }));
+  const getSuggestedExtras = (_product, area) => window.mcQuoteMaterials(area);
 
   const renderSuggestedExtrasMarkup = (items, noteText) => `
     <div class="quote-extras">
@@ -421,7 +411,7 @@
     units: payload.units,
     unitsPerM2: payload.unitsPerM2,
     includeExtras: payload.includeExtras,
-    extras: payload.includeExtras ? getSuggestedExtras(product) : [],
+    extras: payload.includeExtras ? getSuggestedExtras(product, payload.area) : [],
   });
 
   const renderLegacyQuoteBuilder = (line, product) => {
@@ -688,6 +678,16 @@
     }
 
     return "application";
+  };
+
+  const renderSpecIcon = (label) => {
+    const name = normalizeText(label);
+    const drawing = name.includes("peso")
+      ? '<g class="spec-icon__motion"><path d="M22 22h20l8 30H14z"/><circle cx="32" cy="16" r="6"/><path d="M25 37h14M28 43h8"/></g>'
+      : name.includes("medida")
+        ? '<rect x="21" y="20" width="28" height="28" rx="2"/><g class="spec-icon__motion"><path d="M21 11h28m-24-4-4 4 4 4m20-8 4 4-4 4M11 20v28m-4-24 4-4 4 4m-8 20 4 4 4-4"/></g><path d="M30 20v5m10-5v5M21 30h5m-5 10h5"/>'
+        : '<rect x="9" y="15" width="46" height="34" rx="5"/><path d="M17 24v16m5-16v16m7-16v16m6-16v16m4-16v16m8-16v16"/><path class="spec-icon__motion" d="M14 54h36"/>';
+    return '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + drawing + '</svg>';
   };
 
   const getSpecIconType = (label) => {
@@ -1159,8 +1159,8 @@
       if (extrasOutput) {
         extrasOutput.innerHTML = extrasInput.checked
           ? renderSuggestedExtrasMarkup(
-              getSuggestedExtras(product),
-              "Incluye adicionales sugeridos. Los precios se envian al solicitar el presupuesto."
+              getSuggestedExtras(product, area),
+              "Calculados sobre los m² requeridos, sin desperdicio de baldosas. Los precios se envían al solicitar el presupuesto."
             )
           : renderNoExtrasMarkup("Los precios se envian al solicitar el presupuesto.");
       }
@@ -1257,7 +1257,7 @@
               const extras = item.includeExtras
                 ? Array.isArray(item.extras) && item.extras.length
                   ? item.extras
-                  : getSuggestedExtras(product)
+                  : getSuggestedExtras(product, item.area)
                 : [];
 
               return `
@@ -1444,7 +1444,7 @@
         lines.push(`   - Adicionales: ${item.includeExtras ? "Si" : "No"}`);
 
         if (item.includeExtras) {
-          const extras = Array.isArray(item.extras) && item.extras.length ? item.extras : getSuggestedExtras(product);
+          const extras = Array.isArray(item.extras) && item.extras.length ? item.extras : getSuggestedExtras(product, item.area);
           extras.forEach((extra) => {
             lines.push(`     * ${extra.name}: ${extra.quantity}`);
           });
@@ -1771,12 +1771,17 @@
     const relatedProducts = line.products.filter((item) => item.slug !== product.slug);
     const productDetailImage = resolveAsset(product.detailImage || product.image);
     const productHeroImage = resolveHeroAsset(product.environmentImage || product.heroImage || product.detailImage || product.image);
+    const formatSuffix = product.name.match(/\s+(\d+\s*[×x]\s*\d+(?:\s*cm)?)$/i);
+    const heroName = formatSuffix ? product.name.slice(0, formatSuffix.index) : product.name;
+    const heroFormat = formatSuffix ? '<span class="product-hero-format">Formato ' + formatSuffix[1] + ' cm</span>' : '';
+
 
     shell.innerHTML = `
       <section class="page-hero page-hero--product" style="--hero-image: url('${productHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">${line.name}</span>
-          <h1>${product.name}</h1>
+          <h1>${heroName}</h1>
+          ${heroFormat}
           <p>${product.heroSummary}</p>
           <span class="page-hero__caption">${product.environmentCaption || "Ambiente ilustrativo"}</span>
         </div>
@@ -1810,7 +1815,7 @@
             .map(
               (spec) => `
                 <article class="spec-card reveal is-visible">
-                  <span class="spec-card__icon" data-icon="${getSpecIconType(spec[0])}" aria-hidden="true"></span>
+                  <span class="spec-card__icon" data-icon="${getSpecIconType(spec[0])}" aria-hidden="true">${renderSpecIcon(spec[0])}</span>
                   <span class="spec-card__label">${spec[0]}</span>
                   <p>${spec[1]}</p>
                 </article>
@@ -1884,5 +1889,11 @@
     }
 
     renderProductPage(line, product);
+  }
+  if ('IntersectionObserver' in window) {
+    const iconObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('spec-icon--visible'); iconObserver.unobserve(entry.target); }
+    }), { threshold: .4 });
+    document.querySelectorAll('.spec-card__icon').forEach(icon => iconObserver.observe(icon));
   }
 })();

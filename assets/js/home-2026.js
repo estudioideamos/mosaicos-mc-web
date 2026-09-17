@@ -77,3 +77,15 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
   document.addEventListener("visibilitychange", auto);
   motion.addEventListener("change", auto);
 })();
+
+(() => {
+ const section=document.querySelector('.mc-social');
+ if(!section)return;
+ const motion=matchMedia('(prefers-reduced-motion: reduce)');
+ let frame=0;
+ section.addEventListener('pointermove',event=>{
+  if(motion.matches || event.pointerType!=='mouse')return;
+  cancelAnimationFrame(frame);
+  frame=requestAnimationFrame(()=>{const box=section.getBoundingClientRect();section.style.setProperty('--social-x',((event.clientX-box.left)/box.width*100)+'%');section.style.setProperty('--social-y',((event.clientY-box.top)/box.height*100)+'%');});
+ });
+})();
