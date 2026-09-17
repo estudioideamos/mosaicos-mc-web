@@ -575,8 +575,7 @@
               </header>
               <div class="quote-drawer__body">
                 <div class="quote-drawer__empty" data-quote-empty>
-                  <h4>Tu carrito de presupuesto está vacío.</h4>
-                  <p>Ingresa los metros cuadrados y agrega la pieza para preparar una consulta comercial clara y completa.</p>
+                  ${window.mcEmptyQuoteMarkup(productsRoot)}
                 </div>
                 <div class="quote-drawer__cart-list" data-quote-cart-list></div>
               </div>
@@ -1248,6 +1247,8 @@
 
       if (emptyState) {
         emptyState.hidden = cartItems.length > 0;
+        const footer = drawer.querySelector(".quote-drawer__footer");
+        if (footer) footer.hidden = cartItems.length === 0;
       }
 
       if (cartList) {
@@ -1889,6 +1890,13 @@
     }
 
     renderProductPage(line, product);
+  }
+  const stickyGallery = document.querySelector('.product-gallery-card');
+  if (stickyGallery && 'ResizeObserver' in window) {
+    const updateStickyGallery = () => stickyGallery.style.setProperty('--gallery-sticky-top', Math.min(104, innerHeight - stickyGallery.offsetHeight - 20) + 'px');
+    new ResizeObserver(updateStickyGallery).observe(stickyGallery);
+    window.addEventListener('resize', updateStickyGallery, {passive:true});
+    updateStickyGallery();
   }
   if ('IntersectionObserver' in window) {
     const iconObserver = new IntersectionObserver(entries => entries.forEach(entry => {
