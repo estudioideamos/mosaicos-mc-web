@@ -24,5 +24,13 @@
  document.addEventListener('visibilitychange',sync);
  motion.addEventListener('change',()=>{paused=motion.matches;sync();});
  new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;sync();},{threshold:.15}).observe(root);
+ const whatsapp=document.querySelector('.whatsapp-float');
+ const updateFloatingContact=onHero=>{
+  document.body.classList.toggle('mc-hero-in-view',onHero);
+  if(whatsapp)whatsapp.inert=onHero;
+ };
+ const bounds=root.getBoundingClientRect();
+ updateFloatingContact(bounds.bottom>0&&bounds.top<innerHeight);
+ new IntersectionObserver(([entry])=>updateFloatingContact(entry.isIntersecting),{threshold:0}).observe(root);
  sync();
 })();
