@@ -63,7 +63,7 @@ select {
 .shell {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
   opacity: 0;
   transition: opacity 700ms ease;
 }
