@@ -50,3 +50,30 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
  document.querySelector('[data-space-status]').textContent='Opciones para '+key+' disponibles debajo.';
 }));
 })();
+(() => {
+  const video = document.querySelector("[data-home-film]");
+  const control = document.querySelector("[data-film-control]");
+  if (!video || !control) return;
+  const motion = matchMedia("(prefers-reduced-motion: reduce)");
+  let manualPause = false;
+  let visible = false;
+  const sync = () => {
+    const paused = video.paused;
+    control.textContent = paused ? "Reproducir ↗" : "Pausar Ⅱ";
+    control.setAttribute("aria-label", paused ? "Reproducir video" : "Pausar video");
+  };
+  const play = () => video.play().catch(sync);
+  const auto = () => {
+    if (visible && !document.hidden && !motion.matches && !manualPause) play();
+    else video.pause();
+  };
+  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; auto(); }, {threshold:.2}).observe(video);
+  control.addEventListener("click", () => {
+    if (video.paused) { manualPause = false; play(); }
+    else { manualPause = true; video.pause(); }
+  });
+  video.addEventListener("play", sync);
+  video.addEventListener("pause", sync);
+  document.addEventListener("visibilitychange", auto);
+  motion.addEventListener("change", auto);
+})();

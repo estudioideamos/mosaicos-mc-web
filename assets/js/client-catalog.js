@@ -3,6 +3,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "64-panes",
+      "environmentImage": "@/assets/img/generated/product-environments/64-panes.webp",
       "name": "64 Panes",
       "kicker": "64 Panes",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -77,6 +78,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "16-panes",
+      "environmentImage": "@/assets/img/generated/product-environments/16-panes.webp",
       "name": "16 Panes",
       "kicker": "16 Panes",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -145,6 +147,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "2-barras",
+      "environmentImage": "@/assets/img/generated/product-environments/2-barras.webp",
       "name": "2 Barras",
       "kicker": "2 Barras",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -201,6 +204,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "8-barras",
+      "environmentImage": "@/assets/img/generated/product-environments/8-barras.webp",
       "name": "8 Barras",
       "kicker": "8 Barras",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -263,6 +267,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "espiga",
+      "environmentImage": "@/assets/img/generated/product-environments/espiga.webp",
       "name": "Espiga",
       "kicker": "Espiga",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -319,6 +324,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "ondas",
+      "environmentImage": "@/assets/img/generated/product-environments/ondas.webp",
       "name": "Ondas",
       "kicker": "Ondas",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -381,6 +387,7 @@ window.clientCatalog = {
     {
       "line": "exterior-pulida",
       "slug": "1-pan",
+      "environmentImage": "@/assets/img/generated/product-environments/1-pan.webp",
       "name": "1 Pan",
       "kicker": "1 Pan",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
@@ -437,6 +444,7 @@ window.clientCatalog = {
     {
       "line": "mosaicos",
       "slug": "mosaico-compacto",
+      "environmentImage": "@/assets/img/generated/product-environments/mosaico-compacto.webp",
       "name": "Mosaico compacto 40 × 40",
       "kicker": "Mosaico compacto 40 × 40",
       "cardSummary": "Granito pulido de estructura compacta. Una superficie durable para interiores, con distintos colores y agregados pétreos.",
@@ -577,6 +585,7 @@ window.clientCatalog = {
     {
       "line": "mosaicos",
       "slug": "mosaico-compacto-30",
+      "environmentImage": "@/assets/img/generated/product-environments/mosaico-compacto-30.webp",
       "name": "Mosaico compacto 30 × 30",
       "kicker": "Mosaico compacto 30 × 30",
       "cardSummary": "Granito pulido de estructura compacta. Una superficie durable para interiores, con distintos colores y agregados pétreos.",
@@ -717,6 +726,7 @@ window.clientCatalog = {
     {
       "line": "mosaicos",
       "slug": "bicapa",
+      "environmentImage": "@/assets/img/generated/product-environments/bicapa.webp",
       "name": "Mosaico bicapa semipulido",
       "kicker": "Mosaico bicapa semipulido",
       "cardSummary": "Mosaico bicapa gris claro con terminación semipulida.",
@@ -763,6 +773,7 @@ window.clientCatalog = {
     {
       "line": "mosaicos",
       "slug": "compacto-granallado",
+      "environmentImage": "@/assets/img/generated/product-environments/compacto-granallado.webp",
       "name": "Compacto granallado",
       "kicker": "Compacto granallado",
       "cardSummary": "Terminación rústica granallada. Consultanos por la variante y su aplicación.",
@@ -814,6 +825,7 @@ window.clientCatalog = {
     {
       "line": "atermicos",
       "slug": "para-decks-y-piletas",
+      "environmentImage": "@/assets/img/generated/product-environments/para-decks-y-piletas.webp",
       "name": "Solárium y bordes atérmicos",
       "kicker": "Solárium y bordes atérmicos",
       "cardSummary": "Piezas para solárium y bordes de piscina. Confirmá la pieza y terminación para cada sector.",
@@ -866,6 +878,7 @@ window.clientCatalog = {
     {
       "line": "atermicos",
       "slug": "liston-atermico",
+      "environmentImage": "@/assets/img/generated/product-environments/liston-atermico.webp",
       "name": "Listón atérmico",
       "kicker": "Listón atérmico",
       "cardSummary": "Listones atérmicos para proyectos de solárium y expansiones de piscina.",
@@ -911,6 +924,7 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "loseta-lisa-biselada",
+      "environmentImage": "@/assets/img/generated/product-environments/loseta-lisa-biselada.webp",
       "name": "Loseta lisa biselada",
       "kicker": "Loseta lisa biselada",
       "cardSummary": "Baldosa rústica de alto tránsito, compactada a 300 toneladas. Para patios, galerías, veredas y accesos. Admite colocación flotante sobre tacos plásticos.",
@@ -961,6 +975,7 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "simil-adoquin-rustico",
+      "environmentImage": "@/assets/img/generated/product-environments/simil-adoquin-rustico.webp",
       "name": "Símil adoquín rústico",
       "kicker": "Símil adoquín rústico",
       "cardSummary": "Piso rústico de alto tránsito, prensado y compactado a 300 toneladas. Para patios, galerías, veredas y accesos.",
@@ -1019,6 +1034,7 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "accesibilidad",
+      "environmentImage": "@/assets/img/generated/product-environments/accesibilidad.webp",
       "name": "Accesibilidad",
       "kicker": "Accesibilidad",
       "cardSummary": "Baldosas de seis barras y táctiles para proyectos de accesibilidad. Confirmá la disposición con el profesional a cargo.",
@@ -1071,6 +1087,7 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "terracota",
+      "environmentImage": "@/assets/img/generated/product-environments/terracota.webp",
       "name": "Terracota",
       "kicker": "Terracota",
       "cardSummary": "Baldosa premoldeada de tono terracota para patios, galerías, veredas, pasillos, terrazas y espacios comerciales.",
@@ -1116,6 +1133,7 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "6-vainillas",
+      "environmentImage": "@/assets/img/generated/product-environments/6-vainillas.webp",
       "name": "6 vainillas",
       "kicker": "6 vainillas",
       "cardSummary": "Modelo en rojo. Consultá también por blanco, gris, negro y amarillo; los códigos de esos colores se confirman al cotizar.",
@@ -1162,6 +1180,7 @@ window.clientCatalog = {
     {
       "line": "bloques-de-hormigon",
       "slug": "adoquin-gris",
+      "environmentImage": "@/assets/img/generated/product-environments/adoquin-gris.webp",
       "name": "Adoquín Holanda",
       "kicker": "Adoquín Holanda",
       "cardSummary": "Adoquín Holanda gris claro. Consultá su especificación según tránsito, base y proyecto.",
@@ -1207,6 +1226,7 @@ window.clientCatalog = {
     {
       "line": "bloques-de-hormigon",
       "slug": "trama-urbana",
+      "environmentImage": "@/assets/img/generated/product-environments/trama-urbana.webp",
       "name": "Bloque de césped",
       "kicker": "Bloque de césped",
       "cardSummary": "Bloque de césped para combinar superficies de circulación y áreas verdes.",

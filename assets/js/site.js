@@ -237,7 +237,7 @@ const initGlobalQuoteDrawer = () => {
         <header class="quote-drawer__header">
           <div>
             <span class="eyebrow eyebrow--dark">presupuesto</span>
-            <h3>Carrito <span data-quote-count>(0)</span></h3>
+            <h3>Tu selección <span data-quote-count>(0)</span></h3><p class="quote-drawer__intro">El primer paso de tu próximo espacio.</p>
           </div>
           <button class="quote-drawer__close" type="button" data-quote-close aria-label="Cerrar panel">&times;</button>
         </header>
@@ -252,7 +252,7 @@ const initGlobalQuoteDrawer = () => {
           <div class="quote-drawer__cart-list" data-quote-cart-list></div>
         </div>
         <footer class="quote-drawer__footer">
-          <p>Agrega una o varias piezas y envía la consulta completa desde este mismo panel.</p>
+          <p>Tu proyecto, bien acompañado. Completá tus datos y te preparamos un presupuesto.</p>
           <div class="quote-drawer__footer-actions">
             <button class="button button--sand" type="button" data-quote-clear disabled>Vaciar carrito</button>
             <button class="button button--dark" type="button" data-quote-to-form disabled>Continuar con mis datos</button>
