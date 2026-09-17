@@ -1,0 +1,20 @@
+/* Uses the original logo unchanged. The mask frame isolates its 250 × 208 symbol. */
+.mc-lines,.about-history,.faq-help,.contact-map__header{position:relative;isolation:isolate}
+.mc-lines::before,.about-history::before,.faq-help::before,.contact-map__header::before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ width:clamp(260px,30vw,440px);aspect-ratio:250 / 208;
+ background:#1717b9;opacity:.045;
+ -webkit-mask:url('../img/logo-negro.png') left top / 470% 100% no-repeat;
+ mask:url('../img/logo-negro.png') left top / 470% 100% no-repeat;
+}
+.mc-lines::before{top:42px;right:3.5%}
+.about-history::before{top:54px;right:5%;width:clamp(250px,29vw,410px);opacity:.045}
+.faq-help::before{top:48px;right:5%;width:clamp(280px,36vw,510px);background:#d0c9ff;opacity:.08}
+.contact-map__header::before{right:6%;top:12px;width:clamp(210px,22vw,300px);opacity:.045}
+@media(max-width:820px){
+ .mc-lines::before{width:210px;top:24px;right:12px;opacity:.035}
+ .about-history::before{width:220px;top:22px;right:12px;opacity:.035}
+ .faq-help::before{width:230px;top:32px;right:16px;opacity:.06}
+ .contact-map__header::before{width:200px;right:0;top:24px;opacity:.035}
+}
+@media(forced-colors:active){.mc-lines::before,.about-history::before,.faq-help::before,.contact-map__header::before{display:none}}
