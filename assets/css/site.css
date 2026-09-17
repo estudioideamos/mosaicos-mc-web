@@ -4562,4 +4562,22 @@ body.image-zoom-open {
     padding: 14px 16px;
   }
 
-}
+}/* Shared editorial action buttons, matching the product advice section. */
+.button{min-height:56px;padding:16px 24px;gap:24px;justify-content:space-between;border-radius:4px;font-size:.78rem;font-weight:600;line-height:1.5;letter-spacing:0;cursor:pointer;text-align:left}
+.button::after{content:"";display:block;flex:0 0 14px;width:14px;height:14px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M6 6h12v12' fill='none' stroke='black' stroke-width='1.7'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s}
+.button:hover::after{transform:translate(2px,-2px)}
+.button--dark{background:#10102e;color:#fff;border-color:transparent}
+.button--dark:hover,.button--dark:focus-visible{background:#0000b6;color:#fff;border-color:transparent}
+.button--light{background:#fff;color:#10102e}
+.button--light:hover,.button--light:focus-visible{background:#e9e9ff;color:#10102e;border-color:transparent}
+.button--sand,.button--ghost{background:transparent;border:0;border-bottom:1px solid currentColor;border-radius:0;padding:12px 0;min-height:48px;box-shadow:none}
+.button--sand{color:#10102e;border-bottom-color:#10102e55}
+.button--ghost{color:#fff;border-bottom-color:#ffffff60}
+.button--sand:hover,.button--sand:focus-visible{background:transparent;color:#0000b6;border-color:currentColor;transform:none}
+.button--ghost:hover,.button--ghost:focus-visible{background:transparent;color:#fff;border-color:#fff;transform:none}
+.button:focus-visible{outline:2px solid #8888ed;outline-offset:5px;box-shadow:none}
+.button:disabled,.button[aria-disabled="true"]{opacity:.45;cursor:not-allowed;transform:none}
+.button:disabled::after,.button[aria-disabled="true"]::after{transform:none}
+.hero__actions{align-items:center;gap:24px}
+@media(max-width:600px){.button{gap:18px;max-width:100%}.hero__actions{gap:16px}.quote-drawer__footer-actions .button{justify-content:center;text-align:center}}
+@media(prefers-reduced-motion:reduce){.button,.button::after{transition:none}.button:hover,.button:hover::after{transform:none}}
