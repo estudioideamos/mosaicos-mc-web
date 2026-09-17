@@ -137,3 +137,17 @@
 @media(max-width:700px){.mc-hero-copy h1>em{display:inline-block;white-space:nowrap}.mc-hero-copy h1>em:before{content:none}}
 .mc-film__control{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:132px;min-height:44px;line-height:1;padding:12px 18px}
 .mc-film__control svg{display:block;width:16px;height:16px;flex:0 0 16px}
+/* A tighter collection spread without reducing its editorial hierarchy. */
+@media(min-width:821px){
+ .mc-lines{padding-top:76px;padding-bottom:34px}
+ .mc-lines__heading{margin-bottom:40px}
+ .mc-lines__grid{gap:48px}
+ .mc-lines__preview{min-height:500px}
+ .mc-line-choice{min-height:100px;padding-block:18px;gap:20px}
+ .mc-line-text strong{font-size:clamp(1.5rem,2.2vw,2.1rem)}
+ .mc-line-text small{margin-top:6px}
+ .mc-line-arrow{width:40px;height:40px}
+ .mc-lines__preview figcaption{padding:26px}
+ .mc-lines__base{margin-top:26px;padding-top:20px}
+}
+@media(max-width:820px){.mc-line-thumb{height:265px}.mc-lines__heading{margin-bottom:28px}.mc-lines{padding-top:48px}.mc-line-choice{padding-bottom:18px!important}}
