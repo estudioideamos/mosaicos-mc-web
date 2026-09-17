@@ -802,20 +802,6 @@ const initFooterWordmarkAnimation = () => {
 
 initFooterWordmarkAnimation();
 
-if (menuToggle && siteNav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
 const revealItems = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window && revealItems.length > 0) {
