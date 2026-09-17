@@ -44,8 +44,11 @@
   const lines = catalog.lines;
   // Category imagery always shows an environment, independently of product samples.
   const categoryImages = {
-    "exterior-pulida": "@/assets/img/generated/exterior-espacio-2026.webp",
-    "mosaicos": "@/assets/img/generated/mosaicos-espacio-2026.webp",
+    "exterior-pulida": "@/assets/img/editorial-verified/64-panes.webp",
+    "mosaicos": "@/assets/img/editorial-verified/mosaico-compacto.webp",
+    "rusticos": "@/assets/img/editorial-verified/loseta-lisa-biselada.webp",
+    "atermicos": "@/assets/img/client-2026/atermicos/borde-con-nariz-50x50-cm.webp",
+    "bloques-de-hormigon": "@/assets/img/client-2026/adoquines-y-bloques/adoquin-holanda-gris-claro-10x20x6-cm.webp",
   };
   lines.forEach((line) => {
     line.heroImage = categoryImages[line.slug] || line.heroImage;
@@ -1775,7 +1778,7 @@
           <span class="eyebrow">${line.name}</span>
           <h1>${product.name}</h1>
           <p>${product.heroSummary}</p>
-          <span class="page-hero__caption">Ambiente ilustrativo</span>
+          <span class="page-hero__caption">${product.environmentCaption || "Ambiente ilustrativo"}</span>
         </div>
       </section>
 
