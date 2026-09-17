@@ -84,7 +84,7 @@
           return `
             <article class="line-card reveal is-visible">
               <a class="line-card__media" href="${lineHref(line.slug)}" aria-label="Ver coleccion ${line.name}">
-                <img src="${lineImage}" alt="${line.name}" />
+                <img decoding="async" loading="lazy" src="${lineImage}" alt="${line.name}" />
               </a>
               <div class="line-card__body">
                 <span class="kicker">línea de producto</span>
@@ -108,7 +108,7 @@
           (product) => `
             <article class="product-card reveal is-visible">
               <a class="product-card__media" href="${productHref(line.slug, product.slug)}" aria-label="Ver detalle ${product.name}">
-                <img src="${resolveAsset(product.image)}" alt="${product.name}" />
+                <img decoding="async" loading="lazy" src="${resolveAsset(product.image)}" alt="${product.name}" />
               </a>
               <div class="product-card__body">
                 <span class="kicker">${line.name}</span>
@@ -816,7 +816,7 @@
               (variant) => `
                 <article class="variant-card reveal is-visible">
                   <div class="variant-card__media">
-                    <img src="${resolveAsset(variant.image)}" alt="${variant.name}" loading="lazy" />
+                    <img decoding="async" src="${resolveAsset(variant.image)}" alt="${variant.name}" loading="lazy" />
                   </div>
                   <div class="variant-card__body">
                     <span class="variant-card__eyebrow">variante</span>
@@ -881,7 +881,7 @@
                 (related) => `
                   <article class="product-card reveal is-visible">
                     <a class="product-card__media" href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
-                      <img src="${resolveAsset(related.image)}" alt="${related.name}" />
+                      <img decoding="async" loading="lazy" src="${resolveAsset(related.image)}" alt="${related.name}" />
                     </a>
                     <div class="product-card__body">
                       <span class="kicker">${line.name}</span>
@@ -954,7 +954,7 @@
                       <div class="testimonial-card__rating" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                       <blockquote>${testimonial.quote}</blockquote>
                       <div class="testimonial-card__author-row">
-                        <img class="testimonial-card__avatar" src="${resolveAsset(
+                        <img decoding="async" class="testimonial-card__avatar" src="${resolveAsset(
                           testimonial.avatar || "@/assets/img/testimonials/ricardo-ferreyra.svg"
                         )}" alt="${testimonial.author}" loading="lazy" />
                         <div class="testimonial-card__author-copy">
@@ -1264,7 +1264,7 @@
               return `
               <article class="quote-drawer__item" data-quote-item="${item.id}">
                 <div class="quote-drawer__item-media">
-                  <img src="${item.image}" alt="${item.productName}" loading="lazy" />
+                  <img decoding="async" src="${item.image}" alt="${item.productName}" loading="lazy" />
                 </div>
                 <div class="quote-drawer__item-copy">
                   <div class="quote-drawer__item-top">
@@ -1491,7 +1491,7 @@
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/generated/catalog-products-hero.png")}');">
+      <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/generated/catalog-products-hero.webp")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catálogo</span>
           <h1>Líneas de <em>producto</em></h1>
@@ -1532,7 +1532,7 @@
             </div>
           </article>
           <article class="split-card split-card--image reveal is-visible">
-            <img src="${lineImage}" alt="${line.name}" />
+            <img decoding="async" loading="lazy" src="${lineImage}" alt="${line.name}" />
           </article>
         </div>
 
@@ -1581,7 +1581,7 @@
     if (!primaryImage) {
       return `
         <button class="product-gallery__frame image-zoom-card" type="button" data-zoomable-image data-zoom-alt="${product.name}">
-          <img src="${resolveAsset(product.detailImage || product.image)}" alt="${product.name}" data-gallery-main />
+          <img decoding="async" loading="lazy" src="${resolveAsset(product.detailImage || product.image)}" alt="${product.name}" data-gallery-main />
           <span class="image-zoom-trigger" aria-hidden="true">
             <span class="image-zoom-trigger__icon"></span>
             <span class="image-zoom-trigger__text">Ampliar foto</span>
@@ -1594,7 +1594,7 @@
       <div class="product-gallery" data-product-gallery data-product-name="${product.name}">
         <div class="product-gallery__viewer">
           <button class="product-gallery__frame image-zoom-card" type="button" data-zoomable-image data-zoom-alt="${primaryImage.label}">
-            <img src="${primaryImage.image}" alt="${primaryImage.label}" data-gallery-main />
+            <img decoding="async" loading="lazy" src="${primaryImage.image}" alt="${primaryImage.label}" data-gallery-main />
             <span class="image-zoom-trigger" aria-hidden="true">
               <span class="image-zoom-trigger__icon"></span>
               <span class="image-zoom-trigger__text">Ampliar foto</span>
@@ -1621,7 +1621,7 @@
                         aria-label="${item.label}"
                         aria-pressed="${index === 0 ? "true" : "false"}"
                       >
-                        <img src="${item.image}" alt="${item.label}" loading="lazy" />
+                        <img decoding="async" src="${item.image}" alt="${item.label}" loading="lazy" />
                       </button>
                     `
                   )
@@ -1846,6 +1846,7 @@
       ${renderProductCta(line, product)}
     `;
 
+    if (window.__STATIC_BUILD__) return;
     initProductGalleries();
     initRelatedCarousels();
     initQuoteBuilder(line, product);
@@ -1897,6 +1898,7 @@
 
     renderProductPage(line, product);
   }
+  if (window.__STATIC_BUILD__) return;
   const stickyGallery = document.querySelector('.product-gallery-card');
   if (stickyGallery && 'ResizeObserver' in window) {
     const updateStickyGallery = () => stickyGallery.style.setProperty('--gallery-sticky-top', Math.min(104, innerHeight - stickyGallery.offsetHeight - 20) + 'px');

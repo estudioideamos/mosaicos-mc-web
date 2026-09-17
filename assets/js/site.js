@@ -81,7 +81,7 @@ const applyGlobalHeadEnhancements = () => {
 
   ensureHeadNode('meta[name="robots"]', "meta", {
     name: "robots",
-  }).setAttribute("content", "index,follow");
+  }).setAttribute("content", "index, follow, max-image-preview:large");
 
   ensureHeadNode('meta[property="og:site_name"]', "meta", {
     property: "og:site_name",

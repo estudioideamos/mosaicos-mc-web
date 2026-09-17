@@ -7,7 +7,7 @@ fs.mkdirSync(output);
 const files = execFileSync('git',['ls-files','--cached','--others','--exclude-standard'],{encoding:'utf8'}).trim().split(/\r?\n/);
 for (const file of files) {
   if (['assets/docs/catalogo-general-demo.pdf','assets/docs/ficha-marea-caliza.pdf','assets/docs/guia-instalacion-demo.pdf'].includes(file)) continue;
-  if (!(file.startsWith('assets/') || file.endsWith('.html') || ['robots.txt','sitemap.xml','.nojekyll'].includes(file))) continue;
+  if (!(file.startsWith('assets/') || file.endsWith('.html') || ['robots.txt','sitemap.xml','llms.txt','.nojekyll'].includes(file))) continue;
   if (file.split('/').some(part=>part.startsWith('.')) && file!=='.nojekyll') continue;
   if (!/\.(?:html|css|js|svg|png|jpe?g|webp|avif|gif|ico|pdf|mp4|webm|woff2?|ttf|xml|txt)$/i.test(file) && file!=='.nojekyll') continue;
   const stat = fs.lstatSync(file);

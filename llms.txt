@@ -1,0 +1,17 @@
+# Mosaicos MC
+
+> Fabricante de mosaicos y baldosas desde 1978, en El Palomar, Buenos Aires, Argentina.
+
+## Sitio y catálogo
+- [Inicio](https://estudioideamos.github.io/mosaicos-mc-web/)
+- [Productos](https://estudioideamos.github.io/mosaicos-mc-web/productos/): exterior pulida, mosaicos, atérmicos, rústicos y bloques de hormigón. Las fichas incluyen medidas y variantes reales.
+- [Nosotros](https://estudioideamos.github.io/mosaicos-mc-web/nosotros/)
+- [Preguntas frecuentes](https://estudioideamos.github.io/mosaicos-mc-web/preguntas-frecuentes/)
+- [Catálogos y documentación](https://estudioideamos.github.io/mosaicos-mc-web/descargas/)
+- [Contacto](https://estudioideamos.github.io/mosaicos-mc-web/contacto/)
+- [Mapa del sitio](https://estudioideamos.github.io/mosaicos-mc-web/sitemap.xml)
+
+## Información comercial
+Los precios se consultan mediante presupuesto. No hay compra ni pago online. Las imágenes marcadas como ambientes ilustrativos no sustituyen las fotografías, medidas y especificaciones de cada producto. Confirmar aplicaciones y colocación con el equipo comercial.
+Dirección: Ing. Guillermo Marconi 1962, El Palomar, Buenos Aires.
+WhatsApp: +54 9 11 3878-9057. Email: info@mosaicosmc.com.
