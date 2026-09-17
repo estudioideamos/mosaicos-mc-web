@@ -111,7 +111,7 @@
                 <img src="${resolveAsset(product.image)}" alt="${product.name}" />
               </a>
               <div class="product-card__body">
-                <span class="kicker">${product.kicker}</span>
+                <span class="kicker">${line.name}</span>
                 <h3><a class="product-card__title-link" href="${productHref(line.slug, product.slug)}">${product.name}</a></h3>
                 <p>${product.cardSummary}</p>
                 <div class="product-meta">
@@ -882,7 +882,7 @@
                       <img src="${resolveAsset(related.image)}" alt="${related.name}" />
                     </a>
                     <div class="product-card__body">
-                      <span class="kicker">${related.kicker}</span>
+                      <span class="kicker">${line.name}</span>
                       <h3><a class="product-card__title-link" href="${productHref(line.slug, related.slug)}">${related.name}</a></h3>
                       <p>${related.cardSummary}</p>
                       <div class="product-meta">
