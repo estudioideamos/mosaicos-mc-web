@@ -917,3 +917,13 @@ if (homeSlider) {
   setSlide(currentIndex);
   restartAutoplay();
 }
+
+// Keep the footer navigation expanded on desktop and collapsed on mobile entry.
+(() => {
+ const media=matchMedia('(max-width:600px)');
+ document.querySelectorAll('.mc-footer__explore').forEach(details=>{
+  const sync=()=>{details.open=!media.matches;};
+  sync();media.addEventListener('change',sync);
+  details.querySelector('summary').addEventListener('click',event=>{if(!media.matches)event.preventDefault();});
+ });
+})();

@@ -20,7 +20,7 @@ for (const file of files.filter(f=>f.endsWith('.js') || f.endsWith('.mjs'))) {
   try { execFileSync(process.execPath,['--check',file],{stdio:'pipe'}); }
   catch { errors.push(file+': invalid JavaScript'); }
 }
-const faq = fs.readFileSync('preguntas-frecuentes/index.html','utf8');
+const faq = fs.readFileSync('preguntas-frecuentes/index.html','utf8').split('<footer')[0];
 if ((faq.match(/<details\b/g)||[]).length !== 20) errors.push('FAQ: expected 20 questions');
 if ((faq.match(/<summary\b/g)||[]).length !== 20) errors.push('FAQ: each question needs a summary');
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
