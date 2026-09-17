@@ -4581,3 +4581,4 @@ body.image-zoom-open {
 .hero__actions{align-items:center;gap:24px}
 @media(max-width:600px){.button{gap:18px;max-width:100%}.hero__actions{gap:16px}.quote-drawer__footer-actions .button{justify-content:center;text-align:center}}
 @media(prefers-reduced-motion:reduce){.button,.button::after{transition:none}.button:hover,.button:hover::after{transform:none}}
+.product-card img[src*="/retouched/"]{padding:26px}

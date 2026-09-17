@@ -149,9 +149,9 @@ window.clientCatalog = {
       "kicker": "2 Barras",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
       "heroSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
-      "image": "@/assets/img/client-2026/loseta-exterior-pulida/2-barras/2-barras-blanco-pulido-p2b204.webp",
-      "detailImage": "@/assets/img/client-2026/loseta-exterior-pulida/2-barras/2-barras-blanco-pulido-p2b204.webp",
-      "heroImage": "@/assets/img/client-2026/loseta-exterior-pulida/2-barras/2-barras-blanco-pulido-p2b204.webp",
+      "image": "@/assets/img/retouched/2-barras-blanco-p2b204.webp",
+      "detailImage": "@/assets/img/retouched/2-barras-blanco-p2b204.webp",
+      "heroImage": "@/assets/img/retouched/2-barras-blanco-p2b204.webp",
       "meta": [
         "40 × 40 × 3,6 cm",
         "6,25 un/m²"
@@ -174,7 +174,7 @@ window.clientCatalog = {
         {
           "name": "2 Barras Blanco Pulido · P2B204",
           "code": "P2B204",
-          "image": "@/assets/img/client-2026/loseta-exterior-pulida/2-barras/2-barras-blanco-pulido-p2b204.webp",
+          "image": "@/assets/img/retouched/2-barras-blanco-p2b204.webp",
           "source": "LOSETA EXTERIOR PULIDA/2 Barras/2 Barras Blanco Pulido (P2B204).jpeg"
         },
         {
@@ -205,9 +205,9 @@ window.clientCatalog = {
       "kicker": "8 Barras",
       "cardSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
       "heroSummary": "Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.",
-      "image": "@/assets/img/client-2026/loseta-exterior-pulida/8-barras/8-barras-gris-claro-pulido-p8bg200.webp",
-      "detailImage": "@/assets/img/client-2026/loseta-exterior-pulida/8-barras/8-barras-gris-claro-pulido-p8bg200.webp",
-      "heroImage": "@/assets/img/client-2026/loseta-exterior-pulida/8-barras/8-barras-gris-claro-pulido-p8bg200.webp",
+      "image": "@/assets/img/retouched/8-barras-gris-p8bg200.webp",
+      "detailImage": "@/assets/img/retouched/8-barras-gris-p8bg200.webp",
+      "heroImage": "@/assets/img/retouched/8-barras-gris-p8bg200.webp",
       "meta": [
         "40 × 40 × 3,6 cm",
         "6,25 un/m²"
@@ -230,7 +230,7 @@ window.clientCatalog = {
         {
           "name": "8 Barras Gris Claro Pulido · P8BG200",
           "code": "P8BG200",
-          "image": "@/assets/img/client-2026/loseta-exterior-pulida/8-barras/8-barras-gris-claro-pulido-p8bg200.webp",
+          "image": "@/assets/img/retouched/8-barras-gris-p8bg200.webp",
           "source": "LOSETA EXTERIOR PULIDA/8 barras/8 Barras Gris Claro Pulido (P8BG200).jpeg"
         },
         {
