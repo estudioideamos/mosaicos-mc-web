@@ -89,3 +89,21 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
   frame=requestAnimationFrame(()=>{const box=section.getBoundingClientRect();section.style.setProperty('--social-x',((event.clientX-box.left)/box.width*100)+'%');section.style.setProperty('--social-y',((event.clientY-box.top)/box.height*100)+'%');});
  });
 })();
+
+(() => {
+ const section=document.querySelector('.mc-lines');if(!section)return;
+ const preview=section.querySelector('.mc-lines__preview>img');
+ const caption=section.querySelector('[data-line-caption]');
+ let current=preview.getAttribute('src');
+ section.querySelectorAll('.mc-line-choice').forEach(link=>{
+  const show=()=>{
+   section.querySelectorAll('.mc-line-choice').forEach(item=>item.classList.toggle('is-active',item===link));
+   if(current===link.dataset.lineImage)return;
+   current=link.dataset.lineImage;preview.src=current;
+   preview.alt='Ambiente ilustrativo de la línea '+link.dataset.lineName;
+   caption.textContent=link.dataset.lineName;
+   if(!matchMedia('(prefers-reduced-motion:reduce)').matches)preview.animate([{opacity:.5,transform:'scale(1.03)'},{opacity:1,transform:'scale(1)'}],{duration:500,easing:'ease-out'});
+  };
+  link.addEventListener('pointerenter',show);link.addEventListener('focus',show);
+ });
+})();
