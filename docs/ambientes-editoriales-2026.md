@@ -1,5 +1,7 @@
 # Ambientes editoriales por producto
 
+**Retirados de uso el 17/09/2026 tras la revision de fidelidad.** Ver `revision-fidelidad-2026.md`. Estas escenas se conservan como historial, no como referencia del producto.
+
 Generados con la herramienta integrada de imagen, 17/09/2026. Escenas conceptuales ilustrativas; no son fotografias de obras ejecutadas ni reemplazan las muestras y especificaciones reales. Se conservan las imagenes originales del catalogo. Exportacion WebP 1536x1024, calidad 85.
 
 ## 64-panes
