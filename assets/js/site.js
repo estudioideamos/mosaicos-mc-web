@@ -927,3 +927,30 @@ if (homeSlider) {
   details.querySelector('summary').addEventListener('click',event=>{if(!media.matches)event.preventDefault();});
  });
 })();
+
+// Decorative cursor: never replaces touch, keyboard, text-editing or reduced-motion behavior.
+(() => {
+ const root=document.documentElement;
+ const media=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) and (forced-colors:none)');
+ let cursor,frame=0,x=0,y=0,active=false;
+ const hide=()=>{active=false;root.classList.remove('mc-cursor-ready');cursor?.classList.remove('is-pressed');};
+ const draw=()=>{
+  frame=0;if(!active||!media.matches)return;
+  const target=document.elementFromPoint(x,y);
+  if(!target||target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"]),iframe,video,audio,[disabled],[aria-disabled="true"]')){root.classList.remove('mc-cursor-ready');return;}
+  if(!cursor){cursor=document.createElement('div');cursor.className='mc-cursor';cursor.setAttribute('aria-hidden','true');cursor.innerHTML='<span class="mc-cursor__ring"></span><span class="mc-cursor__dot"></span>';document.body.appendChild(cursor);}
+  cursor.style.transform='translate3d('+x+'px,'+y+'px,0)';
+  cursor.classList.toggle('is-interactive',Boolean(target.closest('a,button,summary,[role="button"],[role="tab"],label')));
+  cursor.classList.toggle('is-zoom',Boolean(target.closest('[data-zoomable-image]')));
+  root.classList.add('mc-cursor-ready');
+ };
+ const schedule=()=>{if(!frame)frame=requestAnimationFrame(draw);};
+ document.addEventListener('pointermove',event=>{if(!media.matches||event.pointerType!=='mouse'){hide();return;}x=event.clientX;y=event.clientY;active=true;schedule();},{passive:true});
+ document.addEventListener('pointerdown',event=>{if(event.pointerType!=='mouse'){hide();return;}cursor?.classList.add('is-pressed');},{passive:true});
+ document.addEventListener('pointerup',()=>cursor?.classList.remove('is-pressed'),{passive:true});
+ document.addEventListener('pointerout',event=>{if(!event.relatedTarget)hide();},{passive:true});
+ document.addEventListener('keydown',event=>{if(event.key==='Tab'||event.key==='Escape')hide();});
+ window.addEventListener('blur',hide);document.addEventListener('visibilitychange',()=>{if(document.hidden)hide();});
+ window.addEventListener('scroll',()=>{if(active)schedule();},{passive:true});
+ media.addEventListener('change',hide);
+})();

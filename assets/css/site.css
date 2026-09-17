@@ -4672,3 +4672,17 @@ body.image-zoom-open {
 @keyframes mc-spec-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @media(max-width:600px){.page-hero--product h1{font-size:clamp(2.3rem,9.5vw,3.4rem)}.product-hero-format{font-size:.87rem}.spec-card .spec-card__icon{width:62px;height:62px}.spec-card__icon svg{width:46px;height:46px}}
 @media(prefers-reduced-motion:reduce){.spec-card,.spec-card *{animation:none!important;transition:none!important}}
+
+/* Fine-pointer enhancement. Native cursor remains the fallback until mouse input. */
+.mc-cursor{display:none;position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:2147483647;mix-blend-mode:difference;color:#fff}
+.mc-cursor__ring,.mc-cursor__dot{position:absolute;left:0;top:0;pointer-events:none;transform:translate(-50%,-50%);border-radius:50%}
+.mc-cursor__ring{width:28px;height:28px;border:1px solid currentColor;opacity:.7;transition:width .18s ease,height .18s ease,background .18s ease,opacity .18s ease}
+.mc-cursor__dot{width:4px;height:4px;background:currentColor;transition:width .18s,height .18s}
+.mc-cursor.is-interactive .mc-cursor__ring{width:44px;height:44px;opacity:1;background:#ffffff12}
+.mc-cursor.is-pressed .mc-cursor__ring{width:22px;height:22px;background:#ffffff30}
+.mc-cursor.is-zoom .mc-cursor__dot{width:12px;height:1px;border-radius:0}
+.mc-cursor.is-zoom .mc-cursor__dot:after{content:'';position:absolute;left:5.5px;top:-5.5px;width:1px;height:12px;background:currentColor}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) and (forced-colors:none){
+ html.mc-cursor-ready,html.mc-cursor-ready *{cursor:none!important}
+ html.mc-cursor-ready .mc-cursor{display:block}
+}
