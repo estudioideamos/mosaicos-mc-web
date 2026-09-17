@@ -8,6 +8,8 @@ if(gallery){
  const load=i=>{const img=slides[i].querySelector('img');if(img.dataset.src){img.src=img.dataset.src;delete img.dataset.src;}};
  const show=i=>{
   index=(i+slides.length)%slides.length;load(index);
+  const label=gallery.querySelector("[data-hero-caption]");
+  if(label)label.textContent=slides[index].classList.contains("mc-slide--space")?"Espacios para inspirarte · Ambiente ilustrativo":"La materia de cerca · Mosaicos MC";
   slides.forEach((s,n)=>{s.classList.toggle('is-active',n===index);s.setAttribute('aria-hidden',String(n!==index));});
   gallery.querySelector('[data-slide-count]').textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
   load((index+1)%slides.length);
@@ -94,6 +96,7 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
  const section=document.querySelector('.mc-lines');if(!section)return;
  const preview=section.querySelector('.mc-lines__preview>img');
  const caption=section.querySelector('[data-line-caption]');
+ const collectionLink=section.querySelector('[data-line-link]');
  let current=preview.getAttribute('src');
  section.querySelectorAll('.mc-line-choice').forEach(link=>{
   const show=()=>{
@@ -102,8 +105,22 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
    current=link.dataset.lineImage;preview.src=current;
    preview.alt='Ambiente ilustrativo de la línea '+link.dataset.lineName;
    caption.textContent=link.dataset.lineName;
+   collectionLink.href=link.href;
    if(!matchMedia('(prefers-reduced-motion:reduce)').matches)preview.animate([{opacity:.5,transform:'scale(1.03)'},{opacity:1,transform:'scale(1)'}],{duration:500,easing:'ease-out'});
   };
   link.addEventListener('pointerenter',show);link.addEventListener('focus',show);
  });
+})();
+
+(() => {
+ const section=document.querySelector('.mc-lines');if(!section)return;
+ const nav=section.querySelector('nav');
+ const cards=[...nav.querySelectorAll('.mc-line-choice')];
+ const move=direction=>{
+  const width=cards[0].getBoundingClientRect().width+18;
+  const target=Math.max(0,Math.min(cards.length-1,Math.round(nav.scrollLeft/width)+direction));
+  nav.scrollTo({left:target*width,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
+ };
+ section.querySelector('[data-lines-prev]').addEventListener('click',()=>move(-1));
+ section.querySelector('[data-lines-next]').addEventListener('click',()=>move(1));
 })();

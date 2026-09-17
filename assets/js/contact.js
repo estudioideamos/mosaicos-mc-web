@@ -25,3 +25,10 @@ if (contactForm) {
     if(typeof event.target.setCustomValidity==='function') event.target.setCustomValidity('');
   });
 }
+
+// Keep a tall form usable on shorter screens while it follows its column.
+if(contactForm && 'ResizeObserver' in window){
+ const updateContactSticky=()=>contactForm.style.setProperty('--contact-sticky-top',Math.min(104,window.innerHeight-contactForm.offsetHeight-24)+'px');
+ new ResizeObserver(updateContactSticky).observe(contactForm);
+ window.addEventListener('resize',updateContactSticky,{passive:true});updateContactSticky();
+}
