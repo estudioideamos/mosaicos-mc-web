@@ -61,7 +61,7 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
   let visible = false;
   const sync = () => {
     const paused = video.paused;
-    control.textContent = paused ? "Reproducir ↗" : "Pausar Ⅱ";
+    control.innerHTML = paused ? '<span>Reproducir</span><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M6 3.5 16 10 6 16.5Z" fill="currentColor"/></svg>' : '<span>Pausar</span><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="5" y="4" width="3" height="12" rx=".7" fill="currentColor"/><rect x="12" y="4" width="3" height="12" rx=".7" fill="currentColor"/></svg>';
     control.setAttribute("aria-label", paused ? "Reproducir video" : "Pausar video");
   };
   const play = () => video.play().catch(sync);

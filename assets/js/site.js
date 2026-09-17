@@ -1,3 +1,12 @@
+window.mcEmptyQuoteMarkup = href => `
+ <div class="quote-empty-art" aria-hidden="true"><svg viewBox="0 0 180 130" fill="none"><path d="m26 77 64-36 64 36-64 36Z" fill="#e5e0f4"/><path d="m26 61 64-36 64 36-64 36Z" fill="#f7f5fc" stroke="#a39ac9"/><path d="m26 45 64-36 64 36-64 36Z" fill="#fff" stroke="#6557a7"/><path d="m47 33 64 36M69 21l64 36M47 57l64-36M69 69l64-36" stroke="#bdb4d6"/><path d="M152 17v16m-8-8h16" stroke="#1515b8" stroke-width="1.5"/></svg></div>
+ <span class="quote-empty-kicker">Una selección con tu identidad</span>
+ <h4>Tu próxima obra<br><em>empieza con una pieza.</em></h4>
+ <p>Todavía no agregaste productos. Explorá las líneas, guardá tus favoritos y reuní todo para pedir tu presupuesto.</p>
+ <div class="quote-drawer__empty-actions"><a class="button button--dark" href="${href}">Explorar productos</a></div>
+ <div class="quote-empty-steps" aria-hidden="true"><span><b>01</b> Elegí</span><span><b>02</b> Sumá</span><span><b>03</b> Consultá</span></div>
+`;
+
 window.addEventListener("load", () => {
   document.body.classList.add("is-ready");
 });
@@ -331,13 +340,7 @@ const initGlobalQuoteDrawer = () => {
   const notesInput = drawer.querySelector("[data-quote-notes]");
 
   if (emptyState) {
-    emptyState.innerHTML = `
-      <h4>Tu carrito de presupuesto est&aacute; vac&iacute;o.</h4>
-      <p>Guard&aacute; las piezas que m&aacute;s te interesen y arm&aacute; tu consulta en un solo lugar para recibir una respuesta comercial r&aacute;pida, clara y personalizada.</p>
-      <div class="quote-drawer__empty-actions">
-        <a class="button button--dark" href="${productsUrl}">Ver productos</a>
-      </div>
-    `;
+    emptyState.innerHTML = window.mcEmptyQuoteMarkup(productsUrl);
   }
 
   const cartFooterNote = cartFooter?.querySelector("p");
