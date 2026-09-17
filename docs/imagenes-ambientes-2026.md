@@ -1,0 +1,12 @@
+# Imágenes de ambientes — septiembre 2026
+Generadas con la herramienta integrada image_gen. Fotografías conceptuales para las tarjetas de categorías; las fotografías y códigos de las fichas de producto permanecen intactos.
+
+Archivos:
+- assets/img/generated/exterior-espacio-2026.webp
+- assets/img/generated/mosaicos-espacio-2026.webp
+
+## Prompt Exterior pulida
+Create one premium architectural editorial PHOTOGRAPH for an Argentine paving brand website category Exterior pulida. Landscape 3:2. Contemporary residential sidewalk and entrance courtyard, warm ivory stucco architecture, simple oak entrance door, restrained olive planting, no people. Floor dominates lower 65% of composition: light warm gray cement terrazzo paving tiles, 40x40cm modules, each tile subdivided with precise shallow grooves into an 8x8 square grid, small realistic stone aggregate, subdued satin finish, not wet. Natural warm daylight, long soft diagonal shadows, restrained beige cream gray palette, elegant minimal architectural photography, tactile real materials, realistic perspective from eye height angled slightly down, 35mm architectural lens. Calm sophisticated magazine aesthetic matching a warm neutral premium material catalog. No text, no labels, no logos, no collage. This is an inspirational architectural space rather than a product sample photo.
+
+## Prompt Mosaicos
+Generate one photorealistic premium architectural editorial photograph for an Argentine mosaic flooring website category Mosaicos. Landscape 3:2. Airy contemporary living and dining room, warm ivory plaster walls, large black slim-frame window to leafy courtyard, low cream linen sofa at edge, oak table, one sculptural ceramic vessel. Floor is main subject covering lower 65 percent: polished light ivory cement terrazzo tiles, fine and medium warm beige gray charcoal stone aggregate, visible precise joints of 40x40cm square modules, natural subtle satin reflection, not marble veining. Composition from eye height angled down, expansive uncluttered floor foreground, honest realistic materials, soft warm daylight and elegant long diagonal shadows. Restrained warm cream beige gray palette, understated architectural magazine photography, calm sophisticated premium aesthetic matching an exterior cream-stucco courtyard with olive trees. No people, no text, no logos, no collage. Inspirational space, not a product sample photograph.

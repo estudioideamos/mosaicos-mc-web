@@ -73,7 +73,7 @@
     const renderLineCards = () =>
       `<div class="line-grid">${lines
         .map((line) => {
-          const lineImage = resolveAsset(line.heroImage);
+          const lineImage = resolveAsset(({"exterior-pulida":"@/assets/img/generated/exterior-espacio-2026.webp","mosaicos":"@/assets/img/generated/mosaicos-espacio-2026.webp"})[line.slug] || line.heroImage);
           return `
             <article class="line-card reveal is-visible">
               <a class="line-card__media" href="${lineHref(line.slug)}" aria-label="Ver coleccion ${line.name}">
@@ -904,49 +904,24 @@
     const ctaImage = resolveHeroAsset(product.heroImage || product.detailImage || product.image || line.heroImage);
 
     return `
-      <div class="cta-strip product-cta reveal is-visible" style="--cta-image: url('${ctaImage}');">
-        <div class="product-cta__content">
-          <span class="eyebrow">asesoramiento personalizado</span>
-          <h3>Definamos la mejor soluci&oacute;n para tu obra</h3>
-          <p>Cu&eacute;ntanos qu&eacute; superficie quieres resolver y te ayudamos a especificar <strong>${product.name}</strong> con una propuesta clara, elegante y lista para cotizar desde el primer contacto.</p>
-          <div class="cta-strip__actions">
-            <a class="button button--light" href="${contactHref}">Solicitar asesoramiento</a>
-            <a class="button button--ghost" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+      <section class="mc-advice" style="--cta-image: url('${ctaImage}');" aria-labelledby="mc-advice-title">
+        <div class="mc-advice__inner">
+          <div class="mc-advice__intro">
+            <span class="mc-advice__eyebrow"><span aria-hidden="true"></span> Asesoramiento personalizado</span>
+            <h2 id="mc-advice-title">Tu proyecto.<br>La mejor <em>base.</em></h2>
+            <p>Encontrá la terminación ideal para tu obra. Te acompañamos a elegir <strong>${product.name}</strong> con el formato y la aplicación que necesitás.</p>
+            <div class="mc-advice__actions">
+              <a class="mc-advice__primary" href="${contactHref}">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
+              <a class="mc-advice__secondary" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="mc-advice__signature" aria-hidden="true"><span>MATERIALES CON IDENTIDAD</span><strong>Mosaicos MC</strong><span>DESDE 1978</span></div>
+          <div class="mc-advice__benefits">
+            <div><span class="mc-advice__number">01</span><div><h3>Elegí con confianza</h3><p>Formato, terminación y aplicación según el uso de tu espacio.</p></div></div>
+            <div><span class="mc-advice__number">02</span><div><h3>Conversemos sobre tu obra</h3><p>Asesoramiento directo de nuestro equipo, de la idea al presupuesto.</p></div></div>
           </div>
         </div>
-        <aside class="product-cta__panel" aria-label="Beneficios del asesoramiento">
-          <span class="product-cta__panel-label">acompa&ntilde;amiento Mosaicos MC</span>
-          <div class="product-cta__panel-grid">
-            <div class="product-cta__panel-item">
-              <span class="product-cta__panel-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                  <path d="M4 7.5h16v9H4z" />
-                  <path d="M8 11h8" />
-                  <path d="M8 14h4.5" />
-                  <path d="m15.5 13.5 1.4 1.4 2.6-3.1" />
-                </svg>
-              </span>
-              <div class="product-cta__panel-copy">
-                <strong>Elecci&oacute;n precisa</strong>
-                <span>Definimos formato, terminaci&oacute;n y aplicaci&oacute;n con criterio t&eacute;cnico seg&uacute;n el uso real de la pieza.</span>
-              </div>
-            </div>
-            <div class="product-cta__panel-item">
-              <span class="product-cta__panel-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                  <path d="M5 6.5h14v8H9.5L6 18v-3.5H5z" />
-                  <path d="M8.5 10.5h7" />
-                  <path d="M8.5 13.5h4.5" />
-                </svg>
-              </span>
-              <div class="product-cta__panel-copy">
-                <strong>Respuesta &aacute;gil</strong>
-                <span>Recib&iacute;s una recomendaci&oacute;n comercial clara y pod&eacute;s continuar la consulta por WhatsApp sin perder contexto.</span>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
+      </section>
     `;
   };
 
@@ -1841,10 +1816,11 @@
 
         ${renderRelatedProducts(line, relatedProducts)}
 
-        ${renderProductCta(line, product)}
+
 
         ${product.testimonials?.length ? renderTestimonials(line, product) : ""}
       </section>
+      ${renderProductCta(line, product)}
     `;
 
     initProductGalleries();
