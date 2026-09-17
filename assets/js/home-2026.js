@@ -18,6 +18,14 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
  const items=[...space.links,['Consultar por mi '+key,'https://wa.me/5491138789057?text='+encodeURIComponent('Hola Mosaicos MC, necesito asesoramiento para '+key+'.')]];
  for(const [label,href] of items){const a=document.createElement('a');a.href=href;a.textContent=label+' ↗';if(href.startsWith('https:')){a.target='_blank';a.rel='noopener noreferrer';}links.appendChild(a);}
  document.querySelector('[data-space-status]').textContent='Opciones para '+key+' disponibles debajo.';
+ if(matchMedia('(max-width: 700px)').matches){
+  requestAnimationFrame(()=>{
+   result.querySelector('[data-space-title]').focus({preventScroll:true});
+   const headerHeight=document.querySelector('.site-header')?.getBoundingClientRect().height||80;
+   window.scrollTo({top:result.getBoundingClientRect().top+window.scrollY-headerHeight-20,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  });
+ }
+
 }));
 })();
 (() => {
