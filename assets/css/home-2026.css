@@ -100,3 +100,23 @@
 @media(max-width:800px){.mc-social__heading{gap:35px;grid-template-columns:1fr}.mc-social__intro{max-width:500px}.mc-social__gallery{gap:16px}.mc-social__caption h3{font-size:.95rem}}
 @media(max-width:600px){.mc-social{padding:56px 24px 36px}.mc-social__heading{margin-bottom:32px}.mc-social h2{font-size:clamp(2.3rem,9.5vw,3.2rem)}.mc-social__gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding-bottom:20px}.mc-social__card{flex:0 0 83%;scroll-snap-align:start}.mc-social__card:nth-child(2){margin-top:0}.mc-social__caption h3{font-size:1.1rem}.mc-social__base{flex-direction:column;margin-top:24px}}
 @media(prefers-reduced-motion:reduce){.mc-social *{transition:none!important}}
+
+/* Instagram: a full-width brand moment, with a restrained interactive glow. */
+.mc-social{position:relative;isolation:isolate;overflow:hidden;background:#0b0b28;color:#fff;padding-top:100px}
+.mc-social:before{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse at var(--social-x,85%) var(--social-y,15%),#5945ab55,transparent 55%),linear-gradient(140deg,#10102d,#08081b)}
+.mc-social:after{content:'';position:absolute;z-index:-1;pointer-events:none;width:560px;height:560px;border:1px solid #a89cff1c;border-radius:50%;top:-280px;right:-50px;box-shadow:0 0 0 60px #a89cff05,0 0 0 120px #a89cff04}
+.mc-social .mc-eyebrow{color:#c6bfff;display:inline-flex;gap:12px;align-items:center}.mc-social .mc-eyebrow:before{content:'';width:7px;height:7px;border-radius:50%;background:#b7aaff;box-shadow:0 0 18px #b7aaff}
+.mc-social h2{font-size:clamp(4rem,7.6vw,7.2rem);line-height:.99;letter-spacing:-.065em;margin-top:32px}
+.mc-social h2 em{color:#b8adff}
+.mc-social__heading{grid-template-columns:1.3fr 1fr;gap:110px;align-items:center;margin-bottom:66px}
+.mc-social__intro p{color:#c2bed3;max-width:350px;font-size:.92rem}
+.mc-social__follow{color:#fff;border-color:#a79bc94a;background:#ffffff05;padding:22px 18px;transition:background .3s,border-color .3s}
+.mc-social__follow:hover{background:#ffffff0c;border-color:#b8adff}.mc-social__follow svg{color:#c5baff;width:38px;height:38px}.mc-social__follow strong{font-size:1.15rem}
+.mc-social__gallery{gap:30px}.mc-social__card{transition:transform .5s}.mc-social__card:nth-child(1){transform:rotate(-1.5deg)}.mc-social__card:nth-child(3){transform:rotate(1.5deg)}.mc-social__card:hover,.mc-social__card:focus-visible{transform:translateY(-8px) rotate(0)}
+.mc-social__image{border:6px solid #f2f0f9;box-shadow:0 25px 65px #0005;aspect-ratio:4/4.6}
+.mc-social__caption>span{color:#b8adff}.mc-social__caption h3{color:#fff;font-size:1.12rem}
+.mc-social__base{border-color:#c2b5ff30;color:#a19bb8}.mc-social__base a{color:#d1c9ff}
+.mc-social a:focus-visible{outline-color:#d1c9ff}
+@media(max-width:800px){.mc-social__heading{grid-template-columns:1fr;gap:30px}.mc-social__intro{max-width:520px}.mc-social__intro p{max-width:none}.mc-social__gallery{gap:18px}}
+@media(max-width:600px){.mc-social{padding-top:60px}.mc-social h2{font-size:clamp(3.5rem,15vw,5rem)}.mc-social__heading{margin-bottom:36px}.mc-social__gallery{padding-top:10px}.mc-social__card:nth-child(n){transform:none}.mc-social__image{border-width:4px}.mc-social__follow strong{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.mc-social *{animation:none!important;transition:none!important}.mc-social__card:nth-child(n){transform:none}}

@@ -4657,3 +4657,18 @@ body.image-zoom-open {
 .page-hero--product .eyebrow{align-self:flex-start;background:none;padding:0;border-radius:0}
 .quote-drawer .quote-extras__item{font-size:.74rem;line-height:1.5;gap:12px}
 .quote-drawer .quote-extras__note{font-size:.67rem;line-height:1.6;margin-bottom:0}
+
+/* Product identity and bespoke technical pictograms. */
+.page-hero--product h1{font-size:clamp(2.7rem,5.4vw,5rem);max-width:20ch;text-wrap:balance}
+.product-hero-format{display:block;width:fit-content;white-space:nowrap;font-size:1rem;letter-spacing:.045em;color:#d8d3ff;margin:0 0 20px;padding-bottom:10px;border-bottom:1px solid #c5bcff70}
+.spec-card .spec-card__icon{width:70px;height:70px;flex-shrink:0;border:1px solid #d7d2eb;border-radius:18px;background:linear-gradient(145deg,#fff,#eeebfb);color:#16115b;box-shadow:0 8px 20px #17105006}
+.spec-card__icon::before,.spec-card__icon::after{display:none!important}
+.spec-card__icon svg{width:52px;height:52px;overflow:visible}
+.spec-icon__motion{transform-origin:center;transform-box:fill-box}
+.spec-icon--visible .spec-icon__motion{animation:mc-spec-settle 1.8s ease-out 1}
+.spec-card:hover .spec-icon__motion{animation:mc-spec-float 1.5s ease-in-out infinite}
+.spec-card{transition:box-shadow .3s,transform .3s}.spec-card:hover{box-shadow:0 18px 45px #20134b0b;transform:translateY(-3px)}
+@keyframes mc-spec-settle{0%{opacity:0;transform:translateY(5px)}100%{opacity:1;transform:none}}
+@keyframes mc-spec-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(max-width:600px){.page-hero--product h1{font-size:clamp(2.3rem,9.5vw,3.4rem)}.product-hero-format{font-size:.87rem}.spec-card .spec-card__icon{width:62px;height:62px}.spec-card__icon svg{width:46px;height:46px}}
+@media(prefers-reduced-motion:reduce){.spec-card,.spec-card *{animation:none!important;transition:none!important}}

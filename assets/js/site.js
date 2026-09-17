@@ -348,7 +348,7 @@ const initGlobalQuoteDrawer = () => {
 
   const readCart = () => {
     const value = readStoredJson(quoteCartStorageKey, []);
-    return Array.isArray(value) ? value : [];
+    return Array.isArray(value) ? value.map(window.mcNormalizeQuoteItem) : [];
   };
 
   const writeCart = (items) => {
@@ -403,7 +403,7 @@ const initGlobalQuoteDrawer = () => {
               (extra) => `
                 <div class="quote-extras__item">
                   <strong>${extra.name}</strong>
-                  <span>${extra.quantityLabel || ""}</span>
+                  <span>${(extra.quantity || extra.quantityLabel) || ""}</span>
                 </div>
               `
             )
@@ -581,7 +581,7 @@ const initGlobalQuoteDrawer = () => {
       if (item.includeExtras && item.extras?.length) {
         lines.push("- Adicionales:");
         item.extras.forEach((extra) => {
-          lines.push(`  • ${extra.name}${extra.quantityLabel ? ` - ${extra.quantityLabel}` : ""}`);
+          lines.push(`  • ${extra.name}${(extra.quantity || extra.quantityLabel) ? ` - ${(extra.quantity || extra.quantityLabel)}` : ""}`);
         });
       }
     });

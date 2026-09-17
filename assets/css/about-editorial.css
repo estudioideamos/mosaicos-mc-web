@@ -63,3 +63,13 @@
 @media(max-width:900px){.about-hero__copy{padding:50px 30px}.about-hero__signature{flex-direction:column;gap:12px}.about-intro,.about-section-heading{grid-template-columns:1fr;gap:24px}.about-visit__copy{padding:50px 30px}.about-values__grid{gap:18px}.about-value{padding-right:0}}
 @media(max-width:600px){.about-hero{grid-template-columns:1fr}.about-hero__copy{padding:50px 24px 30px}.about-hero h1{font-size:3.6rem}.about-hero__signature{padding-top:35px;flex-direction:row}.about-hero__image{min-height:370px}.about-hero__year{font-size:7rem}.about-intro,.about-values{padding-block:60px}.about-history{padding-block:56px}.about-years button{font-size:2.15rem;padding:24px 12px}.about-years button span{font-size:.58rem;min-height:28px;max-width:12ch}.about-years button i{right:10px;top:10px;font-size:.85rem}.about-history__panels article{grid-template-columns:1fr;gap:18px;padding:30px 0 0;min-height:260px}.about-history__number{font-size:2.3rem}.about-history__panels h3{font-size:1.6rem}.about-values__grid{grid-template-columns:1fr}.about-value{padding:28px 0}.about-value p{max-width:none}.about-value h3{max-width:none}.about-visit{grid-template-columns:1fr}.about-visit figure{min-height:0;height:340px}.about-visit__copy{padding:48px 24px}.about-visit .button{width:100%;justify-content:space-between}}
 @media(prefers-reduced-motion:reduce){.about-editorial *, .about-motion [data-about-reveal]{animation:none!important;transition:none!important}.about-motion [data-about-reveal]{opacity:1;transform:none}}
+
+/* The photo fills the text row without imposing its intrinsic height. */
+.about-visit{align-items:stretch}
+.about-visit figure{position:relative;min-height:0}
+.about-visit img{position:absolute;inset:0;display:block}
+.about-visit__copy{padding-block:56px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.about-visit__copy .button{margin-top:0}
+.about-visit h2{font-size:clamp(2.6rem,4vw,3.7rem);margin:24px 0}
+.about-visit__address{margin:20px 0 26px}
+@media(max-width:600px){.about-visit figure{height:320px}.about-visit__copy{padding:40px 24px}}
