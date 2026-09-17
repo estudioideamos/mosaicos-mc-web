@@ -8,6 +8,14 @@ for (const file of htmlFiles) {
   const html = fs.readFileSync(file,'utf8');
   if (!/<title>[^<]+<\/title>/i.test(html)) errors.push(file+': missing title');
   if (!/name=["']viewport["']/i.test(html)) errors.push(file+': missing viewport');
+  if (!/http-equiv=["']refresh/i.test(html)) {
+    if ((html.match(/<h1\b/g) || []).length !== 1) errors.push(file+': expected one static h1');
+    if (!/<link rel="canonical" href="https:\/\/estudioideamos.github.io\/mosaicos-mc-web\//.test(html)) errors.push(file+': missing canonical');
+    if (!html.includes('property="og:image"')) errors.push(file+': missing share image');
+    for (const schema of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      try { JSON.parse(schema[1]); } catch { errors.push(file+': invalid structured data'); }
+    }
+  }
   for (const match of html.matchAll(/\b(?:href|src|poster)=["']([^"']+)["']/gi)) {
     const ref = match[1].split(/[?#]/)[0];
     if (!ref || /^(?:[a-z]+:|\/\/)/i.test(ref)) continue;

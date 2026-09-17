@@ -14,7 +14,8 @@
    details.innerHTML=`<summary><span class="mc-mobile-menu__number">${number}</span><span>Productos</span><span class="mc-mobile-menu__plus" aria-hidden="true"></span></summary><div class="mc-mobile-menu__sub"><a href="${url('productos/')}">Ver todas las líneas <span aria-hidden="true">↗</span></a>${lines.map(([name,slug])=>`<a href="${url('productos/'+slug+'/')}">${name}<span aria-hidden="true">↗</span></a>`).join('')}</div>`;
    links.append(details);
   }else{
-   const link=document.createElement('a');link.href=source.href;link.innerHTML=`<span class="mc-mobile-menu__number">${number}</span><span>${label}</span><span class="mc-mobile-menu__arrow" aria-hidden="true">↗</span>`;
+   const link=document.createElement('a');link.href=source.href;link.innerHTML=`<span class="mc-mobile-menu__number">${number}</span><span data-menu-label></span><span class="mc-mobile-menu__arrow" aria-hidden="true">↗</span>`;
+   link.querySelector('[data-menu-label]').textContent=label;
    if(new URL(source.href).pathname===location.pathname)link.setAttribute('aria-current','page');
    links.append(link);
   }

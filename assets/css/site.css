@@ -64,7 +64,7 @@ select {
   position: relative;
   min-height: 100vh;
   overflow: clip;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 700ms ease;
 }
 
