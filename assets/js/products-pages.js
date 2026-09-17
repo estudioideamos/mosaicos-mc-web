@@ -1483,12 +1483,18 @@
     syncVariantGallery();
   };
 
+  const editorialTitle = (name) => {
+    const words = name.trim().split(/\s+/);
+    const accent = words.pop();
+    return `${words.join(' ')}${words.length ? ' ' : ''}<em>${accent}</em>`;
+  };
+
   const renderCatalogPage = () => {
     shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/generated/catalog-products-hero.png")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catálogo</span>
-          <h1>Líneas de producto</h1>
+          <h1>Líneas de <em>producto</em></h1>
           <p>Estas son las familias principales de Mosaicos MC. Cada línea abre su propia página con productos y cada pieza lleva a su detalle individual.</p>
         </div>
       </section>
@@ -1507,7 +1513,7 @@
       <section class="page-hero" style="--hero-image: url('${lineHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">línea de producto</span>
-          <h1>${line.name}</h1>
+          <h1>${editorialTitle(line.name)}</h1>
           <p>${line.description}</p>
         </div>
       </section>
@@ -1781,7 +1787,7 @@
       <section class="page-hero page-hero--product" style="--hero-image: url('${productHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">${line.name}</span>
-          <h1>${heroName}</h1>
+          <h1>${editorialTitle(heroName)}</h1>
           ${heroFormat}
           <p>${product.heroSummary}</p>
           <span class="page-hero__caption">${product.environmentCaption || "Ambiente ilustrativo"}</span>

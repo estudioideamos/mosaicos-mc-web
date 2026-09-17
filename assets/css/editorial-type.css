@@ -1,0 +1,20 @@
+/* One editorial accent shared by the home and internal page covers. */
+body .about-hero h1 em,
+body .contact-page .page-hero h1 em,
+body.contact-page .page-hero h1 em,
+body .faq-hero h1 em,
+body .page-hero h1 em,
+body .mc-lines h2 em,
+body .mc-lines__intro-lead em,
+body .mc-social h2 em{
+ font-family:Georgia,'Times New Roman',serif;
+ font-style:italic;
+ font-weight:400;
+ letter-spacing:-.045em;
+}
+body .page-hero h1{font-weight:400;line-height:1.1;text-wrap:balance}
+body .page-hero h1 em{color:#eeeadd}
+body.contact-page .page-hero h1 em{color:#b7afff}
+body .page-hero--product h1 em{white-space:nowrap}
+body .mc-lines h2 em,body .mc-social h2 em{line-height:1.08}
+@media(max-width:600px){body .page-hero h1{font-size:clamp(2.5rem,10vw,3.8rem)}body .page-hero--product h1{font-size:clamp(2.3rem,9vw,3.5rem)}}
