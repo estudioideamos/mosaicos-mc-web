@@ -4596,7 +4596,7 @@ body.image-zoom-open {
 .mc-marquee__group{display:flex;align-items:center;flex-shrink:0;gap:40px;padding-right:40px;white-space:nowrap}
 .mc-marquee__group>span{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,3.4rem);font-weight:600;line-height:1.2;letter-spacing:-.04em}
 .mc-marquee__group>i{font-size:1.9rem;font-style:normal;font-weight:400}
-.mc-marquee__outline{color:transparent;-webkit-text-stroke:1px #08082a}
+.mc-marquee__outline{color:inherit;-webkit-text-stroke:0}
 .mc-marquee__pause{position:absolute;right:18px;top:50%;transform:translateY(-50%);width:36px;height:36px;border:1px solid #08082a60;border-radius:50%;background:#aaaaff;color:#08082a;cursor:pointer;display:grid;place-items:center}
 .mc-marquee__pause:focus-visible{outline:2px solid #08082a;outline-offset:4px}
 .mc-marquee:hover .mc-marquee__track,.mc-marquee:focus-within .mc-marquee__track,.mc-marquee.is-paused .mc-marquee__track{animation-play-state:paused}
