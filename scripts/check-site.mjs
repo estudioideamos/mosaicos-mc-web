@@ -25,3 +25,23 @@ if ((faq.match(/<details\b/g)||[]).length !== 20) errors.push('FAQ: expected 20 
 if ((faq.match(/<summary\b/g)||[]).length !== 20) errors.push('FAQ: each question needs a summary');
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 console.log('Validated '+htmlFiles.length+' HTML pages, local links, JavaScript syntax and FAQ.');
+import vm from 'node:vm';
+const context={window:{}};
+vm.runInNewContext(fs.readFileSync('assets/js/client-catalog.js','utf8'),context);
+const received=context.window.clientCatalog;
+const seenProducts=new Set();
+for(const p of received.products){
+ const id=p.line+'/'+p.slug;
+ if(seenProducts.has(id)) throw new Error('Duplicate product: '+id);
+ seenProducts.add(id);
+ if(!fs.existsSync('productos/'+id+'/index.html')) throw new Error('Missing product route: '+id);
+ for(const image of [p.image,p.detailImage,...p.variants.map(v=>v.image)]){
+  if(!fs.existsSync(image.replace(/^@\//,''))) throw new Error('Missing client photo: '+image);
+ }
+ for(const v of p.variants){
+  if(v.code && !v.name.includes(v.code)) throw new Error('Variant code not visible: '+id);
+  if(!v.source) throw new Error('Missing variant provenance: '+id);
+ }
+}
+for(const b of received.banners) if(!fs.existsSync(b.image.replace(/^@\//,''))) throw new Error('Missing banner');
+console.log('Client catalog validated: '+seenProducts.size+' products; codes, routes, photographs and source references.');

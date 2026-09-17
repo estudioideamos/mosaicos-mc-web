@@ -40,7 +40,7 @@ GitHub Pages usa HTTPS. CodeQL revisa JavaScript en cada cambio y semanalmente. 
 
 ## Contenido pendiente de producción
 
-El formulario prepara la consulta para revisarla y enviarla por WhatsApp, sin guardar datos ni afirmar que el mensaje fue enviado. Catálogo, fichas y manual están pendientes de recibir los archivos definitivos; por ahora se solicitan por WhatsApp. Los PDFs de prueba se conservan en el repositorio como referencia histórica, pero se excluyen de la publicación.
+El formulario prepara la consulta para revisarla y enviarla por WhatsApp, sin guardar datos ni afirmar que el mensaje fue enviado. El material del cliente de septiembre de 2026 ya está integrado: fotos optimizadas, selector de ambientes, catálogo PDF, ficha técnica de compactos y documento original de mortero/colocación. Los códigos faltantes se muestran como consulta; ver docs/material-cliente-2026.md para la trazabilidad y las confirmaciones pendientes. Los PDFs de prueba se conservan en el repositorio como referencia histórica, pero se excluyen de la publicación.
 
 ## Créditos
 
