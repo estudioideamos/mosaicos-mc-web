@@ -908,7 +908,7 @@
       : "";
 
   const renderProductCta = (line, product) => {
-    const ctaImage = resolveHeroAsset(product.heroImage || product.detailImage || product.image || line.heroImage);
+    const ctaImage = resolveHeroAsset(product.environmentImage || line.heroImage);
 
     return `
       <section class="mc-advice" style="--cta-image: url('${ctaImage}');" aria-labelledby="mc-advice-title">
