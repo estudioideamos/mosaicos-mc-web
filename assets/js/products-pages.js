@@ -42,13 +42,20 @@
     }
   };
   const lines = catalog.lines;
+  // Category imagery always shows an environment, independently of product samples.
+  const categoryImages = {
+    "exterior-pulida": "@/assets/img/generated/exterior-espacio-2026.webp",
+    "mosaicos": "@/assets/img/generated/mosaicos-espacio-2026.webp",
+  };
+  lines.forEach((line) => {
+    line.heroImage = categoryImages[line.slug] || line.heroImage;
+  });
   // Client-supplied catalog supersedes legacy display data.
   if (window.clientCatalog) {
     lines.forEach(line => {
       const received = window.clientCatalog.products.filter(p => p.line === line.slug);
       if (!received.length) return;
       line.products = received;
-      line.heroImage = received[0].detailImage;
       received.forEach(product => {
         product.downloads = [{kicker:"catálogo",title:"Catálogo Mosaicos MC",text:"Productos, formatos, fotografías y códigos disponibles.",meta:["PDF","Edición 2026"],href:basePrefix+"assets/docs/catalogo-mosaicos-mc-2026.pdf",cta:"Descargar catálogo",external:true}];
         if (["mosaico-compacto","mosaico-compacto-30"].includes(product.slug)) product.downloads.push({kicker:"ficha técnica",title:"Mosaicos compactos",text:"Formatos, códigos, espesores y rendimiento.",meta:["PDF","OC300 / OD300"],href:basePrefix+"assets/docs/ficha-tecnica-compactos.pdf",cta:"Descargar ficha",external:true});
@@ -73,7 +80,7 @@
     const renderLineCards = () =>
       `<div class="line-grid">${lines
         .map((line) => {
-          const lineImage = resolveAsset(({"exterior-pulida":"@/assets/img/generated/exterior-espacio-2026.webp","mosaicos":"@/assets/img/generated/mosaicos-espacio-2026.webp"})[line.slug] || line.heroImage);
+          const lineImage = resolveAsset(line.heroImage);
           return `
             <article class="line-card reveal is-visible">
               <a class="line-card__media" href="${lineHref(line.slug)}" aria-label="Ver coleccion ${line.name}">
