@@ -1,36 +1,4 @@
 (() => {
-const gallery=document.querySelector('.mc-hero-gallery');
-if(gallery){
- const slides=[...gallery.querySelectorAll('.mc-slide')];
- const pause=gallery.querySelector('[data-slide-pause]');
- const motion=matchMedia('(prefers-reduced-motion: reduce)');
- let index=0,timer,paused=motion.matches,hovered=false,focused=false;
- const load=i=>{const img=slides[i].querySelector('img');if(img.dataset.src){img.src=img.dataset.src;delete img.dataset.src;}};
- const show=i=>{
-  index=(i+slides.length)%slides.length;load(index);
-  const label=gallery.querySelector("[data-hero-caption]");
-  if(label)label.textContent=slides[index].classList.contains("mc-slide--space")?"Espacios para inspirarte · Ambiente ilustrativo":"La materia de cerca · Mosaicos MC";
-  slides.forEach((s,n)=>{s.classList.toggle('is-active',n===index);s.setAttribute('aria-hidden',String(n!==index));});
-  gallery.querySelector('[data-slide-count]').textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
-  load((index+1)%slides.length);
- };
- const sync=()=>{
-  clearInterval(timer);
-  pause.textContent=paused?'Reproducir':'Pausar';
-  pause.setAttribute('aria-label',paused?'Reproducir presentación':'Pausar presentación');
-  if(!paused&&!hovered&&!focused&&!document.hidden)timer=setInterval(()=>show(index+1),6000);
- };
- gallery.querySelector('[data-slide-prev]').addEventListener('click',()=>{show(index-1);sync();});
- gallery.querySelector('[data-slide-next]').addEventListener('click',()=>{show(index+1);sync();});
- pause.addEventListener('click',()=>{paused=!paused;sync();});
- gallery.addEventListener('mouseenter',()=>{hovered=true;sync();});
- gallery.addEventListener('mouseleave',()=>{hovered=false;sync();});
- gallery.addEventListener('focusin',()=>{focused=true;sync();});
- gallery.addEventListener('focusout',event=>{if(!gallery.contains(event.relatedTarget)){focused=false;sync();}});
- document.addEventListener('visibilitychange',sync);
- motion.addEventListener('change',()=>{paused=motion.matches;sync();});
- show(0);sync();
-}
 const spaces={
  vereda:{title:'Una vereda con identidad.',text:'Explorá losetas de exterior y opciones rústicas. Confirmá el modelo según circulación, terminación y condiciones de colocación.',links:[['Exterior pulida','productos/exterior-pulida/'],['Línea rústica','productos/rusticos/']]},
  living:{title:'Texturas para vivir todos los días.',text:'Los mosaicos compactos pulidos están indicados para interiores. Elegí formato y color para tu living.',links:[['Compactos de 40 × 40 · OC300','productos/mosaicos/mosaico-compacto/'],['Compactos de 30 × 30 · OD300','productos/mosaicos/mosaico-compacto-30/']]},
