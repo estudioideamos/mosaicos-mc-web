@@ -1328,6 +1328,21 @@
       field?.addEventListener("change", compute);
     });
 
+    // A thumbnail and the quote selector must represent the same variant.
+    // Update the value directly: dispatching change here would click it again.
+    galleryThumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        if (!variantInput) return;
+        const variants = product.variants || [];
+        const index = variants.findIndex(
+          (variant) => resolveAsset(variant.image) === thumb.dataset.galleryImage
+        );
+        if (index < 0) return; // General product views do not select a variant.
+        variantInput.value = String(index);
+        compute();
+      });
+    });
+
     variantInput?.addEventListener("change", syncVariantGallery);
     variantInput?.addEventListener("input", syncVariantGallery);
 
@@ -1546,7 +1561,11 @@
     const pushItem = (image, label) => {
       if (!image) return;
       const resolved = resolveAsset(image);
-      if (seen.has(resolved)) return;
+      if (seen.has(resolved)) {
+        const existing = items.find((item) => item.image === resolved);
+        if (label) existing.label = label;
+        return;
+      }
       seen.add(resolved);
       items.push({
         image: resolved,
