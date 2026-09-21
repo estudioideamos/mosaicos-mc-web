@@ -6,7 +6,8 @@
   window.addEventListener("pageshow", update);
   button.addEventListener("click", () => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduced ? "instant" : "smooth" });
+    if (window.mcScrollTo) window.mcScrollTo(0);
+    else window.scrollTo({ top: 0, behavior: reduced ? "instant" : "smooth" });
     document.querySelector(".brand")?.focus({ preventScroll: true });
   });
   update();

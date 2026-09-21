@@ -50,7 +50,17 @@ for(const file of files){
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <!-- seo:end -->`;
  html=html.replace(/<!-- seo:start -->[\s\S]*?<!-- seo:end -->\s*/,'').replace('</head>',metadata+'\n</head>');
- html=html.replace(/site.css\?v=[^"']+/g,'site.css?v=20260917-performance').replace(/mobile-menu.js\?v=[^"']+/g,'mobile-menu.js?v=20260917-security').replace(/site.js\?v=[^"']+/g,'site.js?v=20260921-wheel').replace(/products-pages.js\?v=[^"']+/g,'products-pages.js?v=20260917-performance');
+ const prefix=path.relative(path.dirname(file),'.').replaceAll('\\','/');
+ const assetRoot=prefix ? prefix+'/' : '';
+ html=html.replace(/\s*<!-- smooth-scroll:start -->[\s\S]*?<!-- smooth-scroll:end -->/,'');
+ html=html.replace('</body>',`<!-- smooth-scroll:start -->
+<script defer src="${assetRoot}assets/vendor/lenis/lenis.min.js?v=1.3.26"></script>
+<script defer src="${assetRoot}assets/js/smooth-scroll.js?v=20260921-2"></script>
+<!-- smooth-scroll:end -->\n</body>`);
+ html=html.replace(/\s*<link rel="stylesheet" href="[^"]*assets\/css\/smooth-scroll.css[^"]*"\s*\/>/g,'');
+ html=html.replace('</head>',`<link rel="stylesheet" href="${assetRoot}assets/css/smooth-scroll.css?v=20260921-2" />\n</head>`);
+ html=html.replace(/site.css\?v=[^"']+/g,'site.css?v=20260917-performance').replace(/mobile-menu.js\?v=[^"']+/g,'mobile-menu.js?v=20260917-security').replace(/site.js\?v=[^"']+/g,'site.js?v=20260921-scroll-engine').replace(/products-pages.js\?v=[^"']+/g,'products-pages.js?v=20260917-performance');
+ html=html.replace(/back-to-top.js\?v=[^"']+/g,'back-to-top.js?v=20260921-scroll-engine');
  fs.writeFileSync(file,html.replace(/[ \t]+$/gm,''));urls.push(url);
 }
 fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(url=>`  <url><loc>${url}</loc></url>`).join('\n')+'\n</urlset>\n');

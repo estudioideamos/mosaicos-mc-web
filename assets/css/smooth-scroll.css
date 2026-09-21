@@ -1,0 +1,4 @@
+/* One document scroller; no transformed wrappers or competing CSS animation. */
+@import url('../vendor/lenis/lenis.css');
+html.lenis { scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
