@@ -50,7 +50,7 @@ for(const file of files){
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <!-- seo:end -->`;
  html=html.replace(/<!-- seo:start -->[\s\S]*?<!-- seo:end -->\s*/,'').replace('</head>',metadata+'\n</head>');
- html=html.replace(/site.css\?v=[^"']+/g,'site.css?v=20260917-performance').replace(/mobile-menu.js\?v=[^"']+/g,'mobile-menu.js?v=20260917-security').replace(/site.js\?v=[^"']+/g,'site.js?v=20260917-performance').replace(/products-pages.js\?v=[^"']+/g,'products-pages.js?v=20260917-performance');
+ html=html.replace(/site.css\?v=[^"']+/g,'site.css?v=20260917-performance').replace(/mobile-menu.js\?v=[^"']+/g,'mobile-menu.js?v=20260917-security').replace(/site.js\?v=[^"']+/g,'site.js?v=20260921-wheel').replace(/products-pages.js\?v=[^"']+/g,'products-pages.js?v=20260917-performance');
  fs.writeFileSync(file,html.replace(/[ \t]+$/gm,''));urls.push(url);
 }
 fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(url=>`  <url><loc>${url}</loc></url>`).join('\n')+'\n</urlset>\n');
