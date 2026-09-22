@@ -44,8 +44,8 @@
   const lines = catalog.lines;
   // Category imagery always shows an environment, independently of product samples.
   const categoryImages = {
-    "exterior-pulida": "@/assets/img/generated/exterior-espacio-2026.webp",
-    "mosaicos": "@/assets/img/generated/mosaicos-espacio-2026.webp",
+    "exterior-pulida": "@/assets/img/client-covers/exterior.webp",
+    "mosaicos": "@/assets/img/client-covers/mosaicos.webp",
   };
   lines.forEach((line) => {
     line.heroImage = categoryImages[line.slug] || line.heroImage;
@@ -430,7 +430,7 @@
             <div class="form-grid">
               <div class="form-field">
                 <label for="quote-area">Cantidad requerida (m²)</label>
-                <input id="quote-area" name="area" type="number" min="0" step="0.01" placeholder="Ej. 25" data-quote-area required />
+                <input id="quote-area" name="area" type="number" min="10" step="0.01" value="10" aria-describedby="quote-minimum" data-quote-area required /><small id="quote-minimum" class="quote-minimum">Mínimo de compra: 10 m² por modelo.</small>
               </div>
               <div class="form-field">
                 <label for="quote-waste">Desperdicio (%)</label>
@@ -532,7 +532,7 @@
               }
               <div class="form-field">
                 <label for="quote-area">Cantidad requerida (m&sup2;)</label>
-                <input id="quote-area" name="area" type="number" min="0" step="0.01" placeholder="Ej. 25" data-quote-area required />
+                <input id="quote-area" name="area" type="number" min="10" step="0.01" value="10" aria-describedby="quote-minimum" data-quote-area required /><small id="quote-minimum" class="quote-minimum">Mínimo de compra: 10 m² por modelo.</small>
               </div>
               <div class="form-field">
                 <label for="quote-waste">Desperdicio (%)</label>
@@ -1242,7 +1242,7 @@
       }
 
       if (toFormButton) {
-        toFormButton.disabled = cartItems.length === 0;
+        toFormButton.disabled = !window.mcValidQuoteCart(cartItems);
       }
 
       if (emptyState) {
@@ -1252,7 +1252,7 @@
       }
 
       if (cartList) {
-        cartList.innerHTML = cartItems
+        cartList.innerHTML = window.mcQuoteMinimumWarning(cartItems) + cartItems
           .map(
             (item) => {
               const extras = item.includeExtras
@@ -1335,7 +1335,7 @@
     addToCartButton.addEventListener("click", () => {
       const snapshot = compute();
 
-      if (!snapshot.area) {
+      if (!areaInput.checkValidity() || !window.mcValidQuoteArea(snapshot.area)) {
         areaInput.reportValidity();
         areaInput.focus();
         return;
@@ -1368,6 +1368,7 @@
     });
 
     toFormButton?.addEventListener("click", () => {
+      if (!window.mcValidQuoteCart(readQuoteCart())) return;
       syncLeadForm();
       renderCartItems();
       openDrawer("form");
@@ -1420,7 +1421,7 @@
       event.preventDefault();
       const cartItems = readQuoteCart();
 
-      if (!cartItems.length || !nameInput.value.trim() || !phoneInput.value.trim()) {
+      if (!window.mcValidQuoteCart(cartItems) || !nameInput.value.trim() || !phoneInput.value.trim()) {
         leadForm.reportValidity();
         return;
       }
@@ -1491,7 +1492,7 @@
 
   const renderCatalogPage = () => {
     shell.innerHTML = `
-      <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/generated/catalog-products-hero.webp")}');">
+      <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/client-covers/mosaicos.webp")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catálogo</span>
           <h1>Líneas de <em>producto</em></h1>
@@ -1790,7 +1791,7 @@
           <h1>${editorialTitle(heroName)}</h1>
           ${heroFormat}
           <p>${product.heroSummary}</p>
-          <span class="page-hero__caption">${product.environmentCaption || "Ambiente ilustrativo"}</span>
+          <span class="page-hero__caption">${product.environmentCaption || "Fotografía de Mosaicos MC"}</span>
         </div>
       </section>
 

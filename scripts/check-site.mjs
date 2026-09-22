@@ -54,3 +54,14 @@ for(const p of received.products){
 }
 for(const b of received.banners) if(!fs.existsSync(b.image.replace(/^@\//,''))) throw new Error('Missing banner');
 console.log('Client catalog validated: '+seenProducts.size+' products; codes, routes, photographs and source references.');
+// Client purchasing rule: validate required area, not area including waste.
+vm.runInNewContext(fs.readFileSync('assets/js/quote-materials.js','utf8'),context);
+for (const value of [0,5,9.99,'',NaN,Infinity]) if(context.window.mcValidQuoteArea(value)) throw new Error('Invalid minimum accepted: '+value);
+for (const value of [10,10.01,25]) if(!context.window.mcValidQuoteArea(value)) throw new Error('Valid minimum rejected: '+value);
+if(context.window.mcValidQuoteCart([{area:5,totalArea:10}])) throw new Error('Waste cannot satisfy minimum');
+if(context.window.mcValidQuoteCart([{area:10},{area:5}])) throw new Error('Each selection must satisfy minimum');
+for(const p of received.products){
+ const html=fs.readFileSync('productos/'+p.line+'/'+p.slug+'/index.html','utf8');
+ if(!/min="10"[^>]*value="10"[^>]*data-quote-area/.test(html)) throw new Error('Missing static minimum: '+p.slug);
+}
+console.log('Minimum purchase validated: 10 square metres per model, before waste.');

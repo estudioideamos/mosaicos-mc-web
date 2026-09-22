@@ -6,6 +6,7 @@ if (fs.existsSync(output)) throw new Error('_site already exists; use a clean bu
 fs.mkdirSync(output);
 const files = execFileSync('git',['ls-files','--cached','--others','--exclude-standard'],{encoding:'utf8'}).trim().split(/\r?\n/);
 for (const file of files) {
+  if (file.startsWith('assets/img/generated/') || file.startsWith('assets/img/editorial-verified/') || file.startsWith('assets/img/retouched/') || file === 'assets/video/video-mcmosaicos.mp4') continue;
   if (['assets/docs/catalogo-general-demo.pdf','assets/docs/ficha-marea-caliza.pdf','assets/docs/guia-instalacion-demo.pdf'].includes(file)) continue;
   if (!(file.startsWith('assets/') || file.endsWith('.html') || ['robots.txt','sitemap.xml','llms.txt','.nojekyll'].includes(file))) continue;
   if (file.split('/').some(part=>part.startsWith('.')) && file!=='.nojekyll') continue;

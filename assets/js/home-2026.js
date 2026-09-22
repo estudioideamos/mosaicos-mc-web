@@ -79,7 +79,7 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
    section.querySelectorAll('.mc-line-choice').forEach(item=>item.classList.toggle('is-active',item===link));
    if(current===link.dataset.lineImage)return;
    current=link.dataset.lineImage;preview.src=current;
-   preview.alt='Ambiente ilustrativo de la línea '+link.dataset.lineName;
+   preview.alt='Fotografía de Mosaicos MC de la línea '+link.dataset.lineName;
    caption.textContent=link.dataset.lineName;
    collectionLink.href=link.href;
    if(!matchMedia('(prefers-reduced-motion:reduce)').matches)preview.animate([{opacity:.5,transform:'scale(1.03)'},{opacity:1,transform:'scale(1)'}],{duration:500,easing:'ease-out'});

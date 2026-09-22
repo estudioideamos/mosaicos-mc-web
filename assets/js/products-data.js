@@ -7,7 +7,7 @@ window.productCatalog = {
       description:
         "Una línea de exterior pulido pensada para veredas, ingresos y superficies de uso intenso, con una imagen ordenada, técnica y de presencia contemporánea.",
       heroImage:
-        "@/assets/img/generated/line-exterior-pulida-hero.webp",
+        "@/assets/img/client-covers/exterior.webp",
       overviewTitle: "Terminación pulida para espacios exteriores exigentes.",
       overviewText:
         "Es una línea pensada para veredas, galerías, entradas y sectores de circulación intensa. Combina buena presencia visual con una lectura pareja en superficies amplias.",
@@ -88,7 +88,7 @@ window.productCatalog = {
       description:
         "Superficies de gran resistencia y terminación cuidada, desarrolladas para pisos y paredes con lenguaje atemporal, nobleza material y una lectura sobria de alta calidad.",
       heroImage:
-        "@/assets/img/generated/line-mosaicos-hero.webp",
+        "@/assets/img/client-covers/mosaicos.webp",
       overviewTitle: "La línea más versátil para pisos y paredes con identidad propia.",
       overviewText:
         "Los mosaicos MC trabajan muy bien en interiores, sectores comerciales y proyectos donde se busca resistencia, durabilidad y una terminación cuidada.",
@@ -169,7 +169,7 @@ window.productCatalog = {
       description:
         "Superficies at&eacute;rmicas para piscinas y expansiones exteriores, pensadas para aportar confort, seguridad y una presencia serena en proyectos residenciales y comerciales de alto nivel.",
       heroImage:
-        "@/assets/img/generated/line-atermicos-hero.webp",
+        "@/assets/img/client-covers/atermicos.webp",
       overviewTitle: "Piezas para bordes, sol&aacute;riums y recorridos exteriores junto al agua.",
       overviewText:
         "La linea at&eacute;rmica de Mosaicos MC resuelve piscinas y expansiones con un lenguaje limpio, noble y funcional, priorizando confort de uso y continuidad visual.",
@@ -250,7 +250,7 @@ window.productCatalog = {
       description:
         "Piezas de terminación rustica para interior y exterior, con textura irregular y una expresión mineral que remite a la piedra natural con refinamiento.",
       heroImage:
-        "@/assets/img/generated/line-rusticos-hero.webp",
+        "@/assets/img/client-covers/rusticos.webp",
       overviewTitle: "Textura mineral y presencia natural para pisos y expansiones.",
       overviewText:
         "Los rústicos trabajan bien en interiores con impronta material y también en exteriores donde se busca una lectura cercana a la piedra.",
@@ -331,7 +331,7 @@ window.productCatalog = {
       description:
         "Bloques de hormig&oacute;n para exteriores exigentes, desarrollados para aportar resistencia estructural, orden visual y una lectura modular sobria en patios, circulaciones y accesos.",
       heroImage:
-        "@/assets/img/generated/line-bloques-hormigon-hero.webp",
+        "@/assets/img/client-covers/holanda.webp",
       overviewTitle: "Tramas resistentes para patios, veredas y superficies de uso intenso.",
       overviewText:
         "Es una linea pensada para proyectos donde la durabilidad, la estabilidad y la calidad de terminacion tienen que convivir con una imagen urbana prolija y contemporanea.",
