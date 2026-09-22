@@ -451,14 +451,14 @@ const initGlobalQuoteDrawer = () => {
 
     countOutput.textContent = `(${cartItems.length})`;
     clearButton.disabled = !hasItems;
-    toFormButton.disabled = !hasItems;
+    toFormButton.disabled = !window.mcValidQuoteCart(cartItems);
     emptyState.hidden = hasItems;
     if (cartFooter) {
       cartFooter.hidden = !hasItems;
     }
 
     cartList.innerHTML = hasItems
-      ? cartItems
+      ? window.mcQuoteMinimumWarning(cartItems) + cartItems
           .map(
             (item) => `
               <article class="quote-drawer__item" data-quote-item="${item.id}">
@@ -514,6 +514,7 @@ const initGlobalQuoteDrawer = () => {
   });
 
   toFormButton.addEventListener("click", () => {
+    if (!window.mcValidQuoteCart(readCart())) return;
     syncLeadForm();
     renderCartItems();
     openDrawer("form");
@@ -538,7 +539,7 @@ const initGlobalQuoteDrawer = () => {
     event.preventDefault();
     const cartItems = readCart();
 
-    if (!cartItems.length || !nameInput.value.trim() || !phoneInput.value.trim()) {
+    if (!window.mcValidQuoteCart(cartItems) || !nameInput.value.trim() || !phoneInput.value.trim()) {
       renderCartItems();
       openDrawer("cart");
       return;
