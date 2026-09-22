@@ -102,12 +102,18 @@
         })
         .join("")}</div>`;
 
-    const renderProductCards = (line) =>
+    // Frame the actual piece rather than the original photograph's white margins.
+  const photoFrameStyle = (src) => {
+    const frame = window.clientCatalog?.photoFrames?.[src];
+    return frame ? `style="--photo-width:${frame.width}%;--photo-x:-${frame.x}%;--photo-y:-${frame.y}%"` : "";
+  };
+
+  const renderProductCards = (line) =>
       `<div class="product-grid">${line.products
         .map(
           (product) => `
             <article class="product-card reveal is-visible">
-              <a class="product-card__media" href="${productHref(line.slug, product.slug)}" aria-label="Ver detalle ${product.name}">
+              <a class="product-card__media catalog-photo-frame" ${photoFrameStyle(product.image)} href="${productHref(line.slug, product.slug)}" aria-label="Ver detalle ${product.name}">
                 <img decoding="async" loading="lazy" src="${resolveAsset(product.image)}" alt="${product.name}" />
               </a>
               <div class="product-card__body">
@@ -815,7 +821,7 @@
             .map(
               (variant) => `
                 <article class="variant-card reveal is-visible">
-                  <div class="variant-card__media">
+                  <div class="variant-card__media catalog-photo-frame" ${photoFrameStyle(variant.image)}>
                     <img decoding="async" src="${resolveAsset(variant.image)}" alt="${variant.name}" loading="lazy" />
                   </div>
                   <div class="variant-card__body">
@@ -880,7 +886,7 @@
               .map(
                 (related) => `
                   <article class="product-card reveal is-visible">
-                    <a class="product-card__media" href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
+                    <a class="product-card__media catalog-photo-frame" ${photoFrameStyle(related.image)} href="${productHref(line.slug, related.slug)}" aria-label="Ver detalle ${related.name}">
                       <img decoding="async" loading="lazy" src="${resolveAsset(related.image)}" alt="${related.name}" />
                     </a>
                     <div class="product-card__body">
