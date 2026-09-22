@@ -131,10 +131,10 @@ body[data-line-slug="mosaicos"] .variant-grid{grid-template-columns:repeat(3,min
 .quote-inline__summary-pill,.quote-extras{background:#eeeef2}
 .button--dark,.contact-page .contact-map__header .button{background:#0000b6;color:#fff}
 
-/* Restore the medium editorial weight while keeping serif accents regular. */
-body .mc-factory h2,body .mc-cinema__title,body .page-hero h1,
+/* Semibold editorial titles with regular serif accents. */
+body .mc-factory h2,body .mc-cinema__title,body .page-hero h1,body.contact-page .page-hero h1,
 body .about-hero h1,body .faq-hero h1,body .mc-social h2,
-body .mc-construction h1{font-weight:500}
+body .mc-construction h1{font-weight:600}
 body .mc-factory h2 em,body .mc-cinema__title em,body .page-hero h1 em,
 body .about-hero h1 em,body .faq-hero h1 em,body .mc-social h2 em,
 body .mc-construction h1 em{font-weight:400}
