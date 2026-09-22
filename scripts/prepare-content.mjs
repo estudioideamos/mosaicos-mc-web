@@ -62,7 +62,7 @@ for(const file of files){
  html=html.replace(/site.css\?v=[^"']+/g,'site.css?v=20260917-performance').replace(/mobile-menu.js\?v=[^"']+/g,'mobile-menu.js?v=20260917-security').replace(/site.js\?v=[^"']+/g,'site.js?v=20260921-scroll-engine').replace(/products-pages.js\?v=[^"']+/g,'products-pages.js?v=20260917-performance');
  html=html.replace(/\s*<link rel="stylesheet" href="[^"]*assets\/css\/client-2026.css[^"]*"\s*\/>/g,'');
  html=html.replace('</head>',`<link rel="stylesheet" href="${assetRoot}assets/css/client-2026.css?v=20260922-1" />\n</head>`);
- html=html.replace(/(assets\/(?:js|css)\/[\w-]+\.(?:js|css))\?v=[^"']+/g,(match,asset)=>asset.includes('smooth-scroll')?match:asset+'?v='+(asset.endsWith('client-2026.css')?'20260922-weight600':/(?:client-catalog.js|products-pages.js)$/.test(asset)?'20260922-photo-scale':'20260922-client'));
+ html=html.replace(/(assets\/(?:js|css)\/[\w-]+\.(?:js|css))\?v=[^"']+/g,(match,asset)=>asset.includes('smooth-scroll')?match:asset+'?v='+(asset.endsWith('client-2026.css')?'20260922-fullwidth':/(?:client-catalog.js|products-pages.js)$/.test(asset)?'20260922-photo-scale':'20260922-client'));
  html=html.replace(/back-to-top.js\?v=[^"']+/g,'back-to-top.js?v=20260921-scroll-engine');
  fs.writeFileSync(file,html.replace(/[ \t]+$/gm,''));urls.push(url);
 }
