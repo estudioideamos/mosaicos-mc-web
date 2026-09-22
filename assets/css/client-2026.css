@@ -168,3 +168,6 @@ body.downloads-page .page-hero p,.mc-institutional p,.mc-social__intro p,
 /* Keep the environment chooser background full-width and its content aligned. */
 .mc-space-section{box-sizing:border-box;width:100%;margin-inline:0;padding-inline:max(40px,calc((100% - 1280px)/2))}
 @media(max-width:700px){.mc-space-section{padding-inline:20px}}
+
+/* Keep short introduction columns in view beside taller line photographs. */
+@media(min-width:981px){.line-intro{align-items:start;grid-auto-rows:auto}.line-intro>.split-card--copy,.mc-factory>div:first-child,.mc-institutional>div:first-child{position:sticky;top:calc(var(--nav-height) + 18px);align-self:start;height:auto;justify-content:flex-start}}
