@@ -159,3 +159,8 @@ body.downloads-page .page-hero p,.mc-institutional p,.mc-social__intro p,
 .mc-footer a:focus-visible,.mc-footer__explore summary:focus-visible{outline-color:#fff}
 @media(min-width:601px){.mc-footer__explore a,.mc-footer__contact>a{width:fit-content;min-height:32px;padding-block:5px}.mc-footer__contact>a{width:100%}.mc-footer__explore a:hover,.mc-footer__contact>a:hover{background:transparent}}
 @media(max-width:600px){.mc-footer__contact>a{background:#ffffff07}.mc-footer__contact>a:first-of-type{background:#fff;color:#080855}.mc-footer__contact>a:first-of-type .mc-footer__contact-icon{color:#0000b6;border-color:#0000b630}.mc-footer__contact>a:first-of-type:hover{background:#e6edff;color:#080855}.mc-footer__explore a{padding-block:16px;border-bottom-color:#ffffff20}}
+
+/* Equal visible product scale, compensating for each original photo's margins. */
+.product-card__media.catalog-photo-frame,.variant-card__media.catalog-photo-frame{position:relative;aspect-ratio:1;overflow:hidden;padding:0;background:#fff}
+.catalog-photo-frame img{position:absolute;left:50%;top:50%;width:var(--photo-width,78%);height:auto;max-width:none;max-height:none;aspect-ratio:auto;object-fit:contain;padding:0;translate:var(--photo-x,-50%) var(--photo-y,-50%);transform:none}
+.product-card:hover .catalog-photo-frame img{transform:none}

@@ -1323,5 +1323,272 @@ window.clientCatalog = {
       "image": "@/assets/img/client-2026/imagenes-banner-portada/whatsapp-image-2026-09-06-at-6-22-11-pm.webp",
       "source": "IMAGENES BANNER PORTADA/WhatsApp Image 2026-09-06 at 6.22.11 PM.jpeg"
     }
-  ]
+  ],
+  "photoFrames": {
+    "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-blanco-pulido-p64pb204.webp": {
+      "width": 91.527,
+      "x": 49.523,
+      "y": 47.556
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-gris-claro-pulido-p64pg200.webp": {
+      "width": 93.942,
+      "x": 52.333,
+      "y": 49.333
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-gris-plomo-pulido-p64pgp200.webp": {
+      "width": 84.096,
+      "x": 50.297,
+      "y": 46.222
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-negro-pulido-p64pn201.webp": {
+      "width": 96.618,
+      "x": 47.889,
+      "y": 49.556
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-rojo-pulido-p64pr202.webp": {
+      "width": 92.155,
+      "x": 51.556,
+      "y": 51.778
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/16-panes/16-panes-blanco-pulido-p16pbl204.webp": {
+      "width": 91.639,
+      "x": 50.0,
+      "y": 47.778
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/16-panes/16-panes-gris-claro-pulido-p16pg200.webp": {
+      "width": 90.833,
+      "x": 51.946,
+      "y": 49.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/16-panes/16-panes-gris-plomo-p16pgp200.webp": {
+      "width": 93.424,
+      "x": 51.667,
+      "y": 50.667
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/16-panes/16-panes-negro-pulido-p16pn201.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-covers/2-barras-blanco-p2b204.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/2-barras/2-barras-negro-pulido-p2bn201.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-covers/8-barras-gris-p8bg200.webp": {
+      "width": 75.027,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/8-barras/8-barras-negro-pulido-p8bn201.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/8-barras/8-barras-rojo-pulido-p8br202.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/espiga/peg200.webp": {
+      "width": 104.67,
+      "x": 49.889,
+      "y": 49.556
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/espiga/pen201.webp": {
+      "width": 86.873,
+      "x": 51.25,
+      "y": 52.111
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/ondas/ondas-gris-claro-pulido-pog200.webp": {
+      "width": 96.618,
+      "x": 49.667,
+      "y": 49.111
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/ondas/ondas-gris-plomo-pogp205.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/ondas/ondas-negro-pulido-pon201.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/1-pan-gris-pulido-atc-40x40x3-6-cm.webp": {
+      "width": 94.995,
+      "x": 49.667,
+      "y": 48.333
+    },
+    "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/1-pan-gris-pulido-gm-40x40x3-6-cm.webp": {
+      "width": 80.363,
+      "x": 50.0,
+      "y": 51.582
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/arizona/compacto-blanco-arizona.webp": {
+      "width": 94.203,
+      "x": 51.111,
+      "y": 50.667
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/beige-medano/compacto-beige-medano.webp": {
+      "width": 87.405,
+      "x": 51.0,
+      "y": 50.667
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/blanco-con-rosa/compacto-blanco-con-rosa.webp": {
+      "width": 90.435,
+      "x": 51.889,
+      "y": 51.556
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/blanco-natural/compacto-blanco-natural.webp": {
+      "width": 88.778,
+      "x": 51.333,
+      "y": 51.0
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/chiampo-rosa/compacto-chiampo-rosa.webp": {
+      "width": 91.164,
+      "x": 51.556,
+      "y": 51.0
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-bardiglio/compacto-gris-bardiglio.webp": {
+      "width": 92.155,
+      "x": 51.556,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-chiampo/compacto-gris-chiampo.webp": {
+      "width": 90.677,
+      "x": 50.889,
+      "y": 49.778
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-claro/compacto-gris-claro.webp": {
+      "width": 92.912,
+      "x": 51.222,
+      "y": 50.111
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-glaciar/compacto-gris-glaciar.webp": {
+      "width": 91.41,
+      "x": 51.222,
+      "y": 51.444
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-plomo/compacto-gris-plomo.webp": {
+      "width": 89.955,
+      "x": 52.111,
+      "y": 51.444
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/negro-alpes/compacto-negro-alpes.webp": {
+      "width": 91.41,
+      "x": 50.667,
+      "y": 49.889
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/rojo-dragon/compacto-rojo-dragon.webp": {
+      "width": 95.261,
+      "x": 50.0,
+      "y": 49.556
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/rosa-firenze/compacto-rosa-firenze.webp": {
+      "width": 89.955,
+      "x": 51.0,
+      "y": 49.333
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/sahara/compacto-sahara.webp": {
+      "width": 92.659,
+      "x": 50.667,
+      "y": 49.556
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/terra/compacto-terra.webp": {
+      "width": 90.677,
+      "x": 50.778,
+      "y": 49.778
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/torino/compacto-torino.webp": {
+      "width": 93.168,
+      "x": 50.778,
+      "y": 49.778
+    },
+    "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mg300.webp": {
+      "width": 75.699,
+      "x": 49.778,
+      "y": 51.245
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/granallados/blanco-natural-granallado.webp": {
+      "width": 90.92,
+      "x": 51.444,
+      "y": 50.778
+    },
+    "@/assets/img/client-2026/mosaicos/mosaicos-compactos/granallados/blanco-natural-gris-claro-negro-granallados.webp": {
+      "width": 80.173,
+      "x": 50.333,
+      "y": 48.333
+    },
+    "@/assets/img/client-2026/atermicos/borde-con-nariz-50x50-cm.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/atermicos/solarium-50x50-cm.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/atermicos/liston-atermico/liston-1-20x0-20-m.webp": {
+      "width": 79.051,
+      "x": 52.333,
+      "y": 53.444
+    },
+    "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp": {
+      "width": 60.625,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/linea-rustica/linea-rustica/simil-adoquin-rustico/cag104.webp": {
+      "width": 84.995,
+      "x": 50.333,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/linea-rustica/linea-rustica/simil-adoquin-rustico/can105.webp": {
+      "width": 85.423,
+      "x": 50.333,
+      "y": 50.23
+    },
+    "@/assets/img/client-2026/linea-rustica/linea-rustica/simil-adoquin-rustico/car106.webp": {
+      "width": 85.423,
+      "x": 50.333,
+      "y": 49.887
+    },
+    "@/assets/img/client-2026/linea-rustica/linea-rustica/accesibilidad/6-barras-40x40-cm.webp": {
+      "width": 78.141,
+      "x": 50.111,
+      "y": 49.778
+    },
+    "@/assets/img/client-2026/linea-rustica/linea-rustica/accesibilidad/tactil-ocre-40x40-cm.webp": {
+      "width": 84.783,
+      "x": 50.667,
+      "y": 52.0
+    },
+    "@/assets/img/client-2026/linea-rustica/terracota/piso-completo.webp": {
+      "width": 75.362,
+      "x": 50.0,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/linea-rustica/6-vainillas-rojas-20x20-cm-m6vr-colores-disponible-blanco-gris-negro-amarillo-y-rojo.webp": {
+      "width": 86.826,
+      "x": 50.978,
+      "y": 46.889
+    },
+    "@/assets/img/client-2026/adoquines-y-bloques/adoquin-holanda-gris-claro-10x20x6-cm.webp": {
+      "width": 88.373,
+      "x": 50.417,
+      "y": 50.0
+    },
+    "@/assets/img/client-2026/adoquines-y-bloques/bloque-de-cesped-40x30x8-cm-bc200.webp": {
+      "width": 84.106,
+      "x": 49.752,
+      "y": 49.889
+    }
+  }
 };
