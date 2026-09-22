@@ -130,3 +130,32 @@ body[data-line-slug="mosaicos"] .variant-grid{grid-template-columns:repeat(3,min
 .form-field input,.form-field select,.form-field textarea{background:#fff;border-color:#d5d5dd}
 .quote-inline__summary-pill,.quote-extras{background:#eeeef2}
 .button--dark,.contact-page .contact-map__header .button{background:#0000b6;color:#fff}
+
+/* Restore the medium editorial weight while keeping serif accents regular. */
+body .mc-factory h2,body .mc-cinema__title,body .page-hero h1,
+body .about-hero h1,body .faq-hero h1,body .mc-social h2,
+body .mc-construction h1{font-weight:500}
+body .mc-factory h2 em,body .mc-cinema__title em,body .page-hero h1 em,
+body .about-hero h1 em,body .faq-hero h1 em,body .mc-social h2 em,
+body .mc-construction h1 em{font-weight:400}
+.mc-factory p,.mc-cinema__bottom p,.page-hero p,.page-hero--product p,
+body.downloads-page .page-hero p,.mc-institutional p,.mc-social__intro p,
+.mc-lines__intro-note,.mc-line-text small,.mc-construction p{color:#4c4c55}
+/* A distinct blue closing section; links sit on the background, without white strips. */
+.mc-footer{background:#080855;color:#fff;border-top:0}
+.mc-footer:before{background:radial-gradient(ellipse at 95% 95%,#0000b6 0%,transparent 65%),linear-gradient(130deg,#060632,#101072);opacity:1}
+.mc-footer h2,.mc-footer__invitation,.mc-footer__details a,.mc-footer__contact-heading,.mc-footer__explore summary{color:#fff}
+.mc-footer h2 em,.mc-footer__eyebrow,.mc-footer__label,.mc-footer__edition-mark,.mc-footer__contact-heading em,.mc-footer__contact-icon{color:#bccfff}
+.mc-footer__details p,.mc-footer__contact>p,.mc-footer__contact>p a,.mc-footer__base,.mc-footer__edition,.mc-footer__credit,.mc-footer__credit>span>span{color:#d2d9ee}
+.mc-footer__opening,.mc-footer__signature,.mc-footer__base,.mc-footer__nav,.mc-footer__story>a,.mc-footer__contact>p,.mc-footer__circle,.mc-footer__explore summary span{border-color:#ffffff35}
+.mc-footer__base a,.mc-footer__credit a{color:#fff}
+.mc-footer__wordmark text{fill:#fff}.mc-footer__wordmark tspan,.mc-footer__wordmark:hover tspan{fill:#94b4ff}
+.mc-footer__contact>a,.mc-footer__contact>a:first-of-type,.mc-footer__explore a{background:transparent;color:#fff;border-color:#ffffff28;box-shadow:none}
+.mc-footer__contact>a:hover,.mc-footer__contact>a:first-of-type:hover,.mc-footer__explore a:hover{background:#ffffff0d;color:#fff}
+.mc-footer__details a:hover{color:#bccfff}
+.mc-footer__contact>a:first-of-type .mc-footer__contact-icon{color:#fff;border-color:#ffffff50}
+.mc-footer__invitation:hover .mc-footer__circle{background:#fff;color:#0000b6}
+.mc-footer__credit img{filter:brightness(0) invert(1);opacity:1}
+.mc-footer a:focus-visible,.mc-footer__explore summary:focus-visible{outline-color:#fff}
+@media(min-width:601px){.mc-footer__explore a,.mc-footer__contact>a{width:fit-content;min-height:32px;padding-block:5px}.mc-footer__contact>a{width:100%}.mc-footer__explore a:hover,.mc-footer__contact>a:hover{background:transparent}}
+@media(max-width:600px){.mc-footer__contact>a{background:#ffffff07}.mc-footer__contact>a:first-of-type{background:#fff;color:#080855}.mc-footer__contact>a:first-of-type .mc-footer__contact-icon{color:#0000b6;border-color:#0000b630}.mc-footer__contact>a:first-of-type:hover{background:#e6edff;color:#080855}.mc-footer__explore a{padding-block:16px;border-bottom-color:#ffffff20}}
