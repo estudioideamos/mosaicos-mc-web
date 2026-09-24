@@ -67,7 +67,7 @@ body .about-hero h1 em,body .about-hero .about-eyebrow{color:#0000b6}
 .about-history h2 em,.about-years button.is-active,.about-history__number{color:#0000b6}
 .about-years button,.about-history__panels article{border-color:#cfcfd8}
 .about-value__top span,.about-value svg{color:#0000b6}
-.mc-institutional{padding-block:72px;display:grid;grid-template-columns:1fr 1.3fr;gap:72px;background:white}
+.mc-institutional{width:100%;box-sizing:border-box;padding-inline:max(24px,calc((100% - 1180px)/2));padding-block:72px;display:grid;grid-template-columns:1fr 1.3fr;gap:72px;background:white}
 .mc-institutional h2{font-size:clamp(30px,3vw,43px);line-height:1.18;margin-top:25px;max-width:15ch}
 .mc-institutional p{font-size:15px;line-height:1.95;color:#555560;margin:0 0 22px}
 body .faq-hero{background:#f5f5f6;color:#19191f}
