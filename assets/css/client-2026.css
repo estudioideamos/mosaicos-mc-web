@@ -216,3 +216,23 @@ body .about-hero__copy{padding-top:52px;padding-bottom:36px}
 @media(max-width:600px){.about-hero__image{min-height:300px}.about-hero__signature{margin-top:28px}.about-hero__year{font-size:6rem}}
 .quote-inline__summary-pill{background:transparent}
 .image-zoom-card::after{border-top-left-radius:0;border-top-right-radius:0}
+
+/* Editorial FAQ invitation: two clear next steps. */
+.faq-page .faq-help{padding:76px 24px 84px;background:#f2f2f5;isolation:isolate}
+.faq-help__heading{display:grid;grid-template-columns:1.7fr 1fr;align-items:end;gap:40px;margin-bottom:38px}
+.faq-page .faq-help .eyebrow{color:#0000b6;font-size:10px;letter-spacing:.16em}
+.faq-page .faq-help h2{font-size:clamp(36px,4.8vw,66px);font-weight:600;line-height:1.08;max-width:none;margin:24px 0 0;letter-spacing:-.05em}
+.faq-page .faq-help h2 em{font-family:Georgia,serif;font-weight:400;font-style:italic;color:#0000b6}
+.faq-help__heading>p{border-left:1px solid #0000b630;padding-left:24px;margin:0 0 5px;font-size:14px;color:#555560;line-height:1.8}
+.faq-page .faq-help__grid{gap:20px;border:0;padding:0}
+.faq-help__option{display:flex;flex-direction:column;align-items:flex-start;position:relative;padding:36px 38px;background:#fff;border:1px solid #dddde5;border-radius:4px;overflow:hidden}
+.faq-page .faq-help__option--blue{background:#0000b6;border-color:#0000b6;color:#fff}
+.faq-help__step{font-size:9px;font-weight:600;letter-spacing:.14em;color:#0000b6}
+.faq-page .faq-help__option h3{font-family:var(--font-display);font-size:clamp(25px,2.6vw,36px);font-weight:600;line-height:1.18;letter-spacing:-.04em;color:#19191f;margin:32px 0 18px}
+.faq-page .faq-help__option h3 em{font-family:Georgia,serif;font-weight:400;font-style:italic;color:#0000b6}
+.faq-page .faq-help__option p{font-size:14px;line-height:1.8;color:#555560;max-width:44ch;margin:0 0 28px}
+.faq-help__option .button{margin-top:auto;min-width:220px}
+.faq-page .faq-help__option--blue :is(h3,h3 em,p,.faq-help__step){color:#fff}
+.faq-help__option--blue .button{background:#fff;color:#0000b6;border-color:#fff}
+.faq-help__option--blue .button:hover{background:#ededff}
+@media(max-width:820px){.faq-page .faq-help{padding:52px 24px}.faq-help__heading{grid-template-columns:1fr;gap:24px;margin-bottom:28px}.faq-help__heading>p{font-size:13px}.faq-page .faq-help__grid{grid-template-columns:1fr;gap:16px}.faq-help__option{padding:28px 24px}.faq-page .faq-help__option h3{margin-top:26px}.faq-help__option .button{width:100%;min-width:0}}
