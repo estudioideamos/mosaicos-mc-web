@@ -1190,6 +1190,11 @@
       }
 
       const selectedVariant = getSelectedVariant();
+      const selectedIndex = Math.max(0, (product.variants || []).indexOf(selectedVariant));
+      galleryThumbs.forEach(thumb => { thumb.hidden = Number(thumb.dataset.galleryVariant) !== selectedIndex; });
+      const count = galleryThumbs.filter(thumb => !thumb.hidden).length;
+      const countLabel = shell.querySelector('[data-gallery-count]');
+      if (countLabel) countLabel.textContent = count + (count === 1 ? ' vista del modelo seleccionado' : ' vistas del modelo seleccionado');
       const targetImage = selectedVariant?.image ? resolveAsset(selectedVariant.image) : "";
       const targetLabel = selectedVariant?.name || "";
       const matchingThumb =
@@ -1326,10 +1331,8 @@
       thumb.addEventListener("click", () => {
         if (!variantInput) return;
         const variants = product.variants || [];
-        const index = variants.findIndex(
-          (variant) => resolveAsset(variant.image) === thumb.dataset.galleryImage
-        );
-        if (index < 0) return; // General product views do not select a variant.
+        const index = Number(thumb.dataset.galleryVariant);
+        if (!Number.isInteger(index) || index < 0 || index >= variants.length) return;
         variantInput.value = String(index);
         compute();
       });
@@ -1554,31 +1557,12 @@
   };
 
   const getProductGalleryImages = (product) => {
-    const seen = new Set();
-    const items = [];
-
-    const pushItem = (image, label) => {
-      if (!image) return;
-      const resolved = resolveAsset(image);
-      if (seen.has(resolved)) {
-        const existing = items.find((item) => item.image === resolved);
-        if (label) existing.label = label;
-        return;
-      }
-      seen.add(resolved);
-      items.push({
-        image: resolved,
-        label: label || product.name,
-      });
-    };
-
-    pushItem(product.detailImage || product.image, product.name);
-
-    (product.variants || []).forEach((variant, index) => {
-      pushItem(variant.image, variant.name || `${product.name} ${index + 1}`);
+    const variants = product.variants?.length ? product.variants : [{name:product.name,image:product.detailImage || product.image}];
+    return variants.flatMap((variant, variantIndex) => {
+      const items = [{image:resolveAsset(variant.image),label:variant.name + " — Pieza",kind:"Pieza",variantIndex}];
+      if (variant.applicationImage) items.push({image:resolveAsset(variant.applicationImage),label:variant.name + " — Piso presentado",kind:"Piso presentado",variantIndex});
+      return items;
     });
-
-    return items;
   };
 
   const renderProductGallery = (product) => {
@@ -1609,7 +1593,7 @@
           </button>
           <div class="product-gallery__caption">
             <strong data-gallery-caption>${primaryImage.label}</strong>
-            <span>${galleryImages.length} vista${galleryImages.length === 1 ? "" : "s"} disponible${galleryImages.length === 1 ? "" : "s"}</span>
+            <span data-gallery-count>${galleryImages.filter(item => item.variantIndex === 0).length} vista${galleryImages.filter(item => item.variantIndex === 0).length === 1 ? "" : "s"} del modelo seleccionado</span>
           </div>
         </div>
         ${
@@ -1623,12 +1607,14 @@
                         class="product-gallery__thumb${index === 0 ? " is-active" : ""}"
                         type="button"
                         data-gallery-thumb
+                        data-gallery-variant="${item.variantIndex}"
+                        ${item.variantIndex === 0 ? "" : "hidden"}
                         data-gallery-image="${item.image}"
                         data-gallery-label="${item.label}"
                         aria-label="${item.label}"
                         aria-pressed="${index === 0 ? "true" : "false"}"
                       >
-                        <img decoding="async" src="${item.image}" alt="${item.label}" loading="lazy" />
+                        <img decoding="async" src="${item.image}" alt="" loading="lazy" /><span>${item.kind}</span>
                       </button>
                     `
                   )

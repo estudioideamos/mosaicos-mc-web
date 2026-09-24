@@ -65,3 +65,18 @@ for(const p of received.products){
  if(!/min="10"[^>]*value="10"[^>]*data-quote-area/.test(html)) throw new Error('Missing static minimum: '+p.slug);
 }
 console.log('Minimum purchase validated: 10 square metres per model, before waste.');
+
+// Client additions: application photos stay tied to their variant and codes are color-specific.
+for (const p of received.products) {
+ for (const v of p.variants) if (v.applicationImage) {
+  if (!v.applicationSource || !fs.existsSync(v.applicationImage.replace(/^@\//,''))) throw new Error('Missing application provenance/photo: '+p.slug);
+ }
+ if (['mosaico-compacto','mosaico-compacto-30'].includes(p.slug)) {
+  const prefix=p.slug==='mosaico-compacto'?'OC':'OD';
+  if (new Set(p.variants.map(v=>v.code)).size!==p.variants.length) throw new Error('Duplicate compact color code');
+  for (const v of p.variants) if (!v.code.startsWith(prefix)||!v.codeSource) throw new Error('Missing client color code source');
+ }
+}
+const refreshed=context.window.mcNormalizeQuoteItem({area:10,includeExtras:true,extras:[{name:'Impermeabilizante',quantity:'1 bolsa'}]});
+if (refreshed.extras.length!==2 || refreshed.extras.some(e=>e.name==='Impermeabilizante')) throw new Error('Removed material remains in saved quote');
+console.log('Client additions validated: application photos, compact color codes and refreshed quote materials.');
