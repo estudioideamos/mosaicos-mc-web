@@ -27,13 +27,13 @@
 .mc-cinema__credit{position:absolute;right:clamp(24px,5.5vw,100px);bottom:108px;font-size:8px;text-transform:uppercase;letter-spacing:.13em;color:#ffffffb3}
 .mc-cinema a:focus-visible,.mc-cinema button:focus-visible{outline:2px solid white;outline-offset:6px}
 @keyframes cinema-drift{from{transform:scale(1.04)}to{transform:scale(1)}}
-@media(min-width:1100px){body:has(.mc-cinema) .site-header{margin-bottom:calc(-1 * var(--nav-height,88px))}body:has(.mc-cinema) .site-header:not(.is-scrolled){background:transparent;backdrop-filter:none;border-color:#ffffff35}body:has(.mc-cinema) .site-header:not(.is-scrolled) .brand__logo{filter:brightness(0) invert(1)}body:has(.mc-cinema) .site-header:not(.is-scrolled) :is(.site-nav__link,.site-nav__whatsapp,.quote-cart-trigger){color:white}body:has(.mc-cinema) .site-header:not(.is-scrolled) .quote-cart-trigger{background:#ffffff12}.mc-cinema{height:100svh;min-height:780px}.mc-cinema__content{padding-top:140px}}
+@media(min-width:1100px){.mc-cinema{height:100svh;min-height:780px}.mc-cinema__content{padding-top:140px}}
 @media(max-width:700px){.mc-cinema{min-height:650px;height:calc(100svh - 74px);max-height:850px}.mc-cinema__content{padding:48px 24px 160px;justify-content:center}.mc-cinema__eyebrow{font-size:9px;margin-bottom:30px}.mc-cinema__eyebrow span{display:none}.mc-cinema__title{font-size:clamp(38px,10.5vw,68px);line-height:1.08;letter-spacing:-.055em}.mc-cinema__title em{margin-top:7px}.mc-cinema__bottom{display:flex;flex-direction:column;align-items:stretch;gap:18px;margin-top:30px}.mc-cinema__bottom p{font-size:13px;max-width:290px}.mc-cinema__link{max-width:290px;font-size:12px;padding:12px 0}.mc-cinema__navigation{left:24px;right:24px;bottom:30px;padding-top:16px}.mc-cinema__discover{max-width:95px;font-size:8px;line-height:1.6;gap:8px}.mc-cinema__controls{gap:8px}.mc-cinema__controls button{width:32px;height:32px}.mc-cinema__credit{left:24px;right:auto;bottom:106px;font-size:7px}.mc-cinema__media:after{background:linear-gradient(90deg,#0b0b1caa,#0b0b1c45),linear-gradient(0deg,#0b0b1ca0,transparent 65%)}}
 @media(prefers-reduced-motion:reduce){.mc-cinema__slide,.mc-cinema__link span{transition:none}.mc-cinema__slide.is-active .mc-cinema__media img{animation:none}}
 .mc-cinema__slide.is-active .mc-cinema__media img{animation-play-state:var(--cinema-play-state,running)}
 
 
-@media(min-width:1100px){body:has(.mc-cinema) .site-header:not(.is-scrolled) .site-nav__whatsapp{background:transparent;border-color:#ffffff70}}
+
 
 
 
@@ -41,13 +41,6 @@
 .mc-cinema__controls{flex-shrink:0}
 .mc-cinema__controls button{line-height:1}
 body.mc-hero-in-view .whatsapp-float{opacity:0;visibility:hidden;pointer-events:none}
-/* Align the home wordmark with the cinematic cover's text column. */
-@media(min-width:1100px){
- body:has(.mc-cinema) .site-header__inner{width:100%;max-width:1800px;padding-inline:clamp(24px,5.5vw,100px)}
- body:has(.mc-cinema) .brand__logo{height:38px;width:auto}
-}
-@media(min-width:1100px) and (max-width:1250px){body:has(.mc-cinema) .site-header__actions{gap:10px}body:has(.mc-cinema) .site-nav{gap:2px}body:has(.mc-cinema) .site-nav__link{font-size:13px;padding-inline:10px}}
-
 /* Center the mobile hero without changing desktop or form layouts. */
 @media (max-width: 767px) {
   .mc-cinema__content{text-align:center;align-items:center}

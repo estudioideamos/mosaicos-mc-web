@@ -32,11 +32,21 @@ body,body.contact-page,body.faq-page{background:#fff;color:#19191f}
 .mc-cinema__controls button:hover{background:#0000b60a}
 .mc-cinema__credit{bottom:113px;right:25px;color:white;text-shadow:0 1px 5px #000}
 .mc-cinema a:focus-visible,.mc-cinema button:focus-visible{outline-color:#0000b6}
-body:has(.mc-cinema) .site-header{margin-bottom:0}
-body:has(.mc-cinema) .site-header:not(.is-scrolled){background:#fff;border-color:#e4e4e8}
-body:has(.mc-cinema) .site-header:not(.is-scrolled) .brand__logo{filter:none}
-body:has(.mc-cinema) .site-header:not(.is-scrolled) :is(.site-nav__link,.site-nav__whatsapp,.quote-cart-trigger){color:#19191f}
-body:has(.mc-cinema) .site-header:not(.is-scrolled) .site-nav__whatsapp{border-color:#b9ccbf;background:#fff}
+/* One header across the home and every internal page. */
+.site-header,.site-header.is-scrolled{background:#fff;border-color:#e4e4e8;margin-bottom:0}
+.site-header .brand__logo{filter:none}
+.site-header :is(.site-nav__link,.site-nav__whatsapp,.quote-cart-trigger){color:#19191f}
+.site-header .site-nav__link:is(:hover,[aria-current="page"]){color:var(--accent-blue)}
+.site-header .site-nav__whatsapp{border-color:#b9ccbf;background:#fff}
+@media(min-width:1100px){
+ .site-header__inner{width:100%;max-width:1800px;padding-inline:clamp(24px,5.5vw,100px)}
+ .site-header .brand__logo{height:38px;width:auto}
+}
+@media(min-width:1100px) and (max-width:1250px){
+ .site-header__actions{gap:10px}
+ .site-nav{gap:2px}
+ .site-nav__link{font-size:13px;padding-inline:10px}
+}
 /* Shared light internal covers, with a clear photographic area. */
 .page-hero .page-hero__inner,.page-hero--product .page-hero__inner{background:linear-gradient(90deg,#f5f5f6 0%,#f5f5f6 44%,#f5f5f6e6 50%,#f5f5f600 64%),var(--hero-image) right center/55% auto no-repeat;min-height:410px;color:#19191f;padding-block:55px}
 body .page-hero h1{color:#19191f;max-width:49%;font-size:clamp(32px,4.5vw,62px)}
