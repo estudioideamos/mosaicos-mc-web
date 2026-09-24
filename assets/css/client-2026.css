@@ -204,3 +204,15 @@ body[data-page-type="line"] .shell,body[data-page-type="product"] .shell{backgro
 .about-hero__image img{object-position:center 65%}
 .mc-factory video{aspect-ratio:16/9;object-fit:contain;background:#f2f2f4}
 @media(max-width:600px){.about-visit{grid-template-columns:1fr}.about-visit figure{height:auto}.product-card__body,.variant-card__body{padding:22px}.product-gallery__thumb{width:110px;flex-basis:110px}}
+/* Keep decorative backgrounds inside their rounded card. */
+.quote-inline{background:transparent}
+.image-zoom-card::after{border-radius:inherit}
+/* Let the editorial copy determine the shared height of the cover. */
+body .about-hero{min-height:0}
+body .about-hero__copy{padding-top:52px;padding-bottom:36px}
+.about-hero__signature{margin-top:32px;padding-top:0}
+.about-hero__image{min-height:0}
+.about-hero__year{font-size:clamp(5rem,10vw,9rem)}
+@media(max-width:600px){.about-hero__image{min-height:300px}.about-hero__signature{margin-top:28px}.about-hero__year{font-size:6rem}}
+.quote-inline__summary-pill{background:transparent}
+.image-zoom-card::after{border-top-left-radius:0;border-top-right-radius:0}
