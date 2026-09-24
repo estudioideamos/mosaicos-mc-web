@@ -13,7 +13,6 @@
     return [
       { name: "Pegamento para Mosaico", quantity: adhesive + (adhesive === 1 ? " bolsa" : " bolsas") },
       { name: "Pastina Gris", quantity: grout + (grout === 1 ? " bolsa de 5 kg" : " bolsas de 5 kg") },
-      { name: "Impermeabilizante", quantity: "1 bolsa" },
     ];
   };
   // Recalculate saved selections too, so old fixed quantities never reach a quote.

@@ -171,3 +171,26 @@ body.downloads-page .page-hero p,.mc-institutional p,.mc-social__intro p,
 
 /* Keep short introduction columns in view beside taller line photographs. */
 @media(min-width:981px){.line-intro{align-items:start;grid-auto-rows:auto}.line-intro>.split-card--copy,.mc-factory>div:first-child,.mc-institutional>div:first-child{position:sticky;top:calc(var(--nav-height) + 18px);align-self:start;height:auto;justify-content:flex-start}}
+
+/* September 24 client review: electric blue branding and a quieter catalogue. */
+.site-header .brand,.mc-mobile-menu__header>a{position:relative}
+.site-header .brand:after,.mc-mobile-menu__header>a:after{content:"";position:absolute;inset:0;background:#0000b6;mask:url('../img/logo-negro.png') center/contain no-repeat;-webkit-mask:url('../img/logo-negro.png') center/contain no-repeat;pointer-events:none}
+.site-header .brand__logo,.mc-mobile-menu__header>a>img{opacity:0}
+body[data-page-type="line"] .shell,body[data-page-type="product"] .shell{background:linear-gradient(135deg,#f2f3f8,#fafafa 55%,#f0f1fa)}
+.product-grid,.variant-grid{gap:26px}
+.product-card,.variant-card{border-radius:14px;border-color:#dfe1ec;overflow:hidden;box-shadow:0 10px 30px #11113b06}
+.product-card__body,.variant-card__body{border-top:1px solid #ededf5;padding:26px}
+.product-card .kicker,.variant-card .kicker{color:#0000b6;letter-spacing:.14em}
+.product-card__body h3,.variant-card__body h3{font-weight:600}
+.product-card:hover,.variant-card:hover{border-color:#b8b8e3;box-shadow:0 16px 36px #0000b60a}
+.product-gallery__thumbs{display:flex;gap:12px;flex-wrap:wrap}
+.product-gallery__thumb{width:118px;flex:0 0 118px;height:auto;overflow:hidden;border-radius:10px;background:#fff;padding:8px}
+.product-gallery__thumb img{width:100%;height:78px;object-fit:contain}
+.product-gallery__thumb span{display:block;font-size:11px;font-weight:600;padding:8px 0 2px;line-height:1.4}
+.product-gallery__thumb[hidden]{display:none}
+.mc-history-photo{margin:30px 0 0}.mc-history-photo img{display:block;width:100%;height:auto;border-radius:0}.mc-history-photo figcaption{font-size:11px;color:#65656d;margin-top:12px;line-height:1.6}
+.about-values__photo{transform:none}.about-values__photo img{object-position:center}
+.about-visit{grid-template-columns:1fr 1fr;align-items:stretch}.about-visit figure{min-height:0;align-self:center}.about-visit img{position:static;display:block;height:auto;width:100%;object-fit:contain}
+.about-hero__image img{object-position:center 65%}
+.mc-factory video{aspect-ratio:16/9;object-fit:contain;background:#f2f2f4}
+@media(max-width:600px){.about-visit{grid-template-columns:1fr}.about-visit figure{height:auto}.product-card__body,.variant-card__body{padding:22px}.product-gallery__thumb{width:110px;flex-basis:110px}}

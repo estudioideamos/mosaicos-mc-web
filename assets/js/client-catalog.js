@@ -34,13 +34,17 @@ window.clientCatalog = {
           "name": "64 panes blanco pulido · P64PB204",
           "code": "P64PB204",
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-blanco-pulido-p64pb204.webp",
-          "source": "LOSETA EXTERIOR PULIDA/64 panes/64 panes blanco pulido (p64pb204).jpeg"
+          "source": "LOSETA EXTERIOR PULIDA/64 panes/64 panes blanco pulido (p64pb204).jpeg",
+          "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-64-panes-piso-64-panes-blanco-pulido.webp",
+          "applicationSource": "LOSETA EXTERIOR PULIDA/64 panes/piso 64 panes blanco pulido.jpeg"
         },
         {
           "name": "64 panes gris claro pulido · P64PG200",
           "code": "P64PG200",
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/64-panes/64-panes-gris-claro-pulido-p64pg200.webp",
-          "source": "LOSETA EXTERIOR PULIDA/64 panes/64 panes gris claro pulido (P64PG200).jpeg"
+          "source": "LOSETA EXTERIOR PULIDA/64 panes/64 panes gris claro pulido (P64PG200).jpeg",
+          "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-64-panes-piso-64-panes-gris-claro-pulido.webp",
+          "applicationSource": "LOSETA EXTERIOR PULIDA/64 panes/Piso 64 panes gris claro pulido.jpeg"
         },
         {
           "name": "64 panes gris plomo pulido · P64PGP200",
@@ -186,7 +190,9 @@ window.clientCatalog = {
           "name": "2 Barras Negro Pulido · P2BN201",
           "code": "P2BN201",
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/2-barras/2-barras-negro-pulido-p2bn201.webp",
-          "source": "LOSETA EXTERIOR PULIDA/2 Barras/2 Barras Negro Pulido (P2BN201).jpeg"
+          "source": "LOSETA EXTERIOR PULIDA/2 Barras/2 Barras Negro Pulido (P2BN201).jpeg",
+          "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-2-barras-whatsapp-image-2026-09-06-at-5-33-06-pm.webp",
+          "applicationSource": "LOSETA EXTERIOR PULIDA/2 Barras/WhatsApp Image 2026-09-06 at 5.33.06 PM.jpeg"
         }
       ],
       "notes": [],
@@ -308,7 +314,9 @@ window.clientCatalog = {
           "name": "PEN201",
           "code": "PEN201",
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/espiga/pen201.webp",
-          "source": "LOSETA EXTERIOR PULIDA/Espiga/PEN201.jpeg"
+          "source": "LOSETA EXTERIOR PULIDA/Espiga/PEN201.jpeg",
+          "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-espiga-piso-espiga-negro-pulido.webp",
+          "applicationSource": "LOSETA EXTERIOR PULIDA/Espiga/Piso Espiga Negro Pulido.jpeg"
         }
       ],
       "notes": [],
@@ -424,13 +432,17 @@ window.clientCatalog = {
           "name": "1 PAN GRIS PULIDO ATC 40X40X3,6 CM · Consultar código",
           "code": null,
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/1-pan-gris-pulido-atc-40x40x3-6-cm.webp",
-          "source": "LOSETA EXTERIOR PULIDA/1 pan/1 PAN GRIS PULIDO ATC 40X40X3,6 CM..jpeg"
+          "source": "LOSETA EXTERIOR PULIDA/1 pan/1 PAN GRIS PULIDO ATC 40X40X3,6 CM..jpeg",
+          "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-1-pan-1-pan-atc.webp",
+          "applicationSource": "LOSETA EXTERIOR PULIDA/1 pan/1 pan ATC.jpeg"
         },
         {
           "name": "1 PAN GRIS PULIDO GM 40X40X3,6 CM · Consultar código",
           "code": null,
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/1-pan-gris-pulido-gm-40x40x3-6-cm.webp",
-          "source": "LOSETA EXTERIOR PULIDA/1 pan/1 PAN GRIS PULIDO GM 40X40X3,6 CM..jpeg"
+          "source": "LOSETA EXTERIOR PULIDA/1 pan/1 PAN GRIS PULIDO GM 40X40X3,6 CM..jpeg",
+          "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-1-pan-1pan5.webp",
+          "applicationSource": "LOSETA EXTERIOR PULIDA/1 pan/1pan5.jpg"
         }
       ],
       "notes": [],
@@ -470,7 +482,7 @@ window.clientCatalog = {
         ],
         [
           "Código de formato",
-          "OC300"
+          "OC315, OC362, OC308, OC307, OC301, OC310, OC324, OC300, OC363, OC305, OC302, OC304, OC320, OC323, OC358, OC322"
         ],
         [
           "Peso",
@@ -479,100 +491,148 @@ window.clientCatalog = {
       ],
       "variants": [
         {
-          "name": "Arizona · OC300",
-          "code": "OC300",
+          "name": "Arizona · OC315",
+          "code": "OC315",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/arizona/compacto-blanco-arizona.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Arizona/Compacto Blanco Arizona.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Arizona/Compacto Blanco Arizona.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-arizona-piso-arizona.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Arizona/Piso Arizona.jpeg"
         },
         {
-          "name": "Beige Medano · OC300",
-          "code": "OC300",
+          "name": "Beige Medano · OC362",
+          "code": "OC362",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/beige-medano/compacto-beige-medano.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Beige Medano/Compacto Beige Medano.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Beige Medano/Compacto Beige Medano.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-beige-medano-piso-beige-medano.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Beige Medano/Piso Beige Medano.jpeg"
         },
         {
-          "name": "Blanco con Rosa · OC300",
-          "code": "OC300",
+          "name": "Blanco con Rosa · OC308",
+          "code": "OC308",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/blanco-con-rosa/compacto-blanco-con-rosa.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco con Rosa/Compacto Blanco con rosa.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco con Rosa/Compacto Blanco con rosa.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-blanco-con-rosa-piso-blanco-con-rosa.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Blanco con Rosa/Piso Blanco con Rosa.jpeg"
         },
         {
-          "name": "Blanco Natural · OC300",
-          "code": "OC300",
+          "name": "Blanco Natural · OC307",
+          "code": "OC307",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/blanco-natural/compacto-blanco-natural.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco Natural/Compacto Blanco Natural.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco Natural/Compacto Blanco Natural.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-blanco-natural-piso-blanco-natural.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Blanco Natural/Piso Blanco Natural.jpeg"
         },
         {
-          "name": "Chiampo Rosa · OC300",
-          "code": "OC300",
+          "name": "Chiampo Rosa · OC301",
+          "code": "OC301",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/chiampo-rosa/compacto-chiampo-rosa.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Chiampo Rosa/Compacto Chiampo Rosa.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Chiampo Rosa/Compacto Chiampo Rosa.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-chiampo-rosa-piso-chiampo-rosa.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Chiampo Rosa/Piso Chiampo Rosa.jpeg"
         },
         {
-          "name": "Gris Bardiglio · OC300",
-          "code": "OC300",
+          "name": "Gris Bardiglio · OC310",
+          "code": "OC310",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-bardiglio/compacto-gris-bardiglio.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Bardiglio/Compacto Gris Bardiglio.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Bardiglio/Compacto Gris Bardiglio.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-bardiglio-piso-gris-bardiglio.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Bardiglio/Piso Gris Bardiglio.jpeg"
         },
         {
-          "name": "Gris Chiampo · OC300",
-          "code": "OC300",
+          "name": "Gris Chiampo · OC324",
+          "code": "OC324",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-chiampo/compacto-gris-chiampo.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Chiampo/Compacto Gris Chiampo.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Chiampo/Compacto Gris Chiampo.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-chiampo-piso-gris-chiampo.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Chiampo/Piso Gris Chiampo.jpeg"
         },
         {
           "name": "Gris Claro · OC300",
           "code": "OC300",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-claro/compacto-gris-claro.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Claro/Compacto Gris Claro.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Claro/Compacto Gris Claro.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-claro-piso-gris-claro.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Claro/Piso Gris Claro.jpeg"
         },
         {
-          "name": "Gris Glaciar · OC300",
-          "code": "OC300",
+          "name": "Gris Glaciar · OC363",
+          "code": "OC363",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-glaciar/compacto-gris-glaciar.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Glaciar/Compacto Gris Glaciar.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Glaciar/Compacto Gris Glaciar.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-glaciar-piso-gris-glaciar.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Glaciar/Piso Gris Glaciar.jpeg"
         },
         {
-          "name": "Gris Plomo · OC300",
-          "code": "OC300",
+          "name": "Gris Plomo · OC305",
+          "code": "OC305",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-plomo/compacto-gris-plomo.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Plomo/Compacto Gris Plomo.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Plomo/Compacto Gris Plomo.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-plomo-piso-gris-plomo.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Plomo/Piso Gris Plomo.jpeg"
         },
         {
-          "name": "Negro Alpes · OC300",
-          "code": "OC300",
+          "name": "Negro Alpes · OC302",
+          "code": "OC302",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/negro-alpes/compacto-negro-alpes.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Negro Alpes/Compacto Negro Alpes.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Negro Alpes/Compacto Negro Alpes.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-negro-alpes-piso-negro-alpes.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Negro Alpes/Piso Negro Alpes.jpeg"
         },
         {
-          "name": "Rojo Dragon · OC300",
-          "code": "OC300",
+          "name": "Rojo Dragon · OC304",
+          "code": "OC304",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/rojo-dragon/compacto-rojo-dragon.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rojo Dragon/Compacto Rojo Dragon.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rojo Dragon/Compacto Rojo Dragon.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-rojo-dragon-piso-rodo-dragon.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Rojo Dragon/Piso Rodo Dragon.jpeg"
         },
         {
-          "name": "Rosa Firenze · OC300",
-          "code": "OC300",
+          "name": "Rosa Firenze · OC320",
+          "code": "OC320",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/rosa-firenze/compacto-rosa-firenze.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rosa Firenze/Compacto Rosa Firenze.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rosa Firenze/Compacto Rosa Firenze.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-rosa-firenze-piso-rosa-firenze.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Rosa Firenze/Piso Rosa Firenze.jpeg"
         },
         {
-          "name": "Sahara · OC300",
-          "code": "OC300",
+          "name": "Sahara · OC323",
+          "code": "OC323",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/sahara/compacto-sahara.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Sahara/compacto sahara.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Sahara/compacto sahara.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-sahara-piso-sahara.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Sahara/piso sahara.jpeg"
         },
         {
-          "name": "Terra · OC300",
-          "code": "OC300",
+          "name": "Terra · OC358",
+          "code": "OC358",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/terra/compacto-terra.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Terra/Compacto Terra.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Terra/Compacto Terra.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-terra-piso-terra.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Terra/Piso Terra.jpeg"
         },
         {
-          "name": "Torino · OC300",
-          "code": "OC300",
+          "name": "Torino · OC322",
+          "code": "OC322",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/torino/compacto-torino.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Torino/Compacto Torino.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Torino/Compacto Torino.jpeg",
+          "codeSource": "Agregados/codigos compactos 40x40.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-torino-piso-torino.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Torino/Piso Torino.jpeg"
         }
       ],
       "notes": [],
@@ -612,7 +672,7 @@ window.clientCatalog = {
         ],
         [
           "Código de formato",
-          "OD300"
+          "OD315, OD362, OD308, OD307, OD301, OD310, OD324, OD300, OD363, OD305, OD302, OD304, OD320, OD323, OD358, OD322"
         ],
         [
           "Peso",
@@ -621,100 +681,148 @@ window.clientCatalog = {
       ],
       "variants": [
         {
-          "name": "Arizona · OD300",
-          "code": "OD300",
+          "name": "Arizona · OD315",
+          "code": "OD315",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/arizona/compacto-blanco-arizona.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Arizona/Compacto Blanco Arizona.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Arizona/Compacto Blanco Arizona.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-arizona-piso-arizona.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Arizona/Piso Arizona.jpeg"
         },
         {
-          "name": "Beige Medano · OD300",
-          "code": "OD300",
+          "name": "Beige Medano · OD362",
+          "code": "OD362",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/beige-medano/compacto-beige-medano.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Beige Medano/Compacto Beige Medano.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Beige Medano/Compacto Beige Medano.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-beige-medano-piso-beige-medano.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Beige Medano/Piso Beige Medano.jpeg"
         },
         {
-          "name": "Blanco con Rosa · OD300",
-          "code": "OD300",
+          "name": "Blanco con Rosa · OD308",
+          "code": "OD308",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/blanco-con-rosa/compacto-blanco-con-rosa.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco con Rosa/Compacto Blanco con rosa.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco con Rosa/Compacto Blanco con rosa.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-blanco-con-rosa-piso-blanco-con-rosa.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Blanco con Rosa/Piso Blanco con Rosa.jpeg"
         },
         {
-          "name": "Blanco Natural · OD300",
-          "code": "OD300",
+          "name": "Blanco Natural · OD307",
+          "code": "OD307",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/blanco-natural/compacto-blanco-natural.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco Natural/Compacto Blanco Natural.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Blanco Natural/Compacto Blanco Natural.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-blanco-natural-piso-blanco-natural.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Blanco Natural/Piso Blanco Natural.jpeg"
         },
         {
-          "name": "Chiampo Rosa · OD300",
-          "code": "OD300",
+          "name": "Chiampo Rosa · OD301",
+          "code": "OD301",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/chiampo-rosa/compacto-chiampo-rosa.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Chiampo Rosa/Compacto Chiampo Rosa.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Chiampo Rosa/Compacto Chiampo Rosa.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-chiampo-rosa-piso-chiampo-rosa.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Chiampo Rosa/Piso Chiampo Rosa.jpeg"
         },
         {
-          "name": "Gris Bardiglio · OD300",
-          "code": "OD300",
+          "name": "Gris Bardiglio · OD310",
+          "code": "OD310",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-bardiglio/compacto-gris-bardiglio.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Bardiglio/Compacto Gris Bardiglio.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Bardiglio/Compacto Gris Bardiglio.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-bardiglio-piso-gris-bardiglio.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Bardiglio/Piso Gris Bardiglio.jpeg"
         },
         {
-          "name": "Gris Chiampo · OD300",
-          "code": "OD300",
+          "name": "Gris Chiampo · OD324",
+          "code": "OD324",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-chiampo/compacto-gris-chiampo.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Chiampo/Compacto Gris Chiampo.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Chiampo/Compacto Gris Chiampo.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-chiampo-piso-gris-chiampo.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Chiampo/Piso Gris Chiampo.jpeg"
         },
         {
           "name": "Gris Claro · OD300",
           "code": "OD300",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-claro/compacto-gris-claro.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Claro/Compacto Gris Claro.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Claro/Compacto Gris Claro.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-claro-piso-gris-claro.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Claro/Piso Gris Claro.jpeg"
         },
         {
-          "name": "Gris Glaciar · OD300",
-          "code": "OD300",
+          "name": "Gris Glaciar · OD363",
+          "code": "OD363",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-glaciar/compacto-gris-glaciar.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Glaciar/Compacto Gris Glaciar.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Glaciar/Compacto Gris Glaciar.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-glaciar-piso-gris-glaciar.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Glaciar/Piso Gris Glaciar.jpeg"
         },
         {
-          "name": "Gris Plomo · OD300",
-          "code": "OD300",
+          "name": "Gris Plomo · OD305",
+          "code": "OD305",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/gris-plomo/compacto-gris-plomo.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Plomo/Compacto Gris Plomo.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Gris Plomo/Compacto Gris Plomo.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-gris-plomo-piso-gris-plomo.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Gris Plomo/Piso Gris Plomo.jpeg"
         },
         {
-          "name": "Negro Alpes · OD300",
-          "code": "OD300",
+          "name": "Negro Alpes · OD302",
+          "code": "OD302",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/negro-alpes/compacto-negro-alpes.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Negro Alpes/Compacto Negro Alpes.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Negro Alpes/Compacto Negro Alpes.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-negro-alpes-piso-negro-alpes.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Negro Alpes/Piso Negro Alpes.jpeg"
         },
         {
-          "name": "Rojo Dragon · OD300",
-          "code": "OD300",
+          "name": "Rojo Dragon · OD304",
+          "code": "OD304",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/rojo-dragon/compacto-rojo-dragon.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rojo Dragon/Compacto Rojo Dragon.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rojo Dragon/Compacto Rojo Dragon.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-rojo-dragon-piso-rodo-dragon.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Rojo Dragon/Piso Rodo Dragon.jpeg"
         },
         {
-          "name": "Rosa Firenze · OD300",
-          "code": "OD300",
+          "name": "Rosa Firenze · OD320",
+          "code": "OD320",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/rosa-firenze/compacto-rosa-firenze.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rosa Firenze/Compacto Rosa Firenze.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Rosa Firenze/Compacto Rosa Firenze.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-rosa-firenze-piso-rosa-firenze.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Rosa Firenze/Piso Rosa Firenze.jpeg"
         },
         {
-          "name": "Sahara · OD300",
-          "code": "OD300",
+          "name": "Sahara · OD323",
+          "code": "OD323",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/sahara/compacto-sahara.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Sahara/compacto sahara.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Sahara/compacto sahara.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-sahara-piso-sahara.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Sahara/piso sahara.jpeg"
         },
         {
-          "name": "Terra · OD300",
-          "code": "OD300",
+          "name": "Terra · OD358",
+          "code": "OD358",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/terra/compacto-terra.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Terra/Compacto Terra.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Terra/Compacto Terra.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-terra-piso-terra.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Terra/Piso Terra.jpeg"
         },
         {
-          "name": "Torino · OD300",
-          "code": "OD300",
+          "name": "Torino · OD322",
+          "code": "OD322",
           "image": "@/assets/img/client-2026/mosaicos/mosaicos-compactos/torino/compacto-torino.webp",
-          "source": "MOSAICOS/MOSAICOS COMPACTOS/Torino/Compacto Torino.jpeg"
+          "source": "MOSAICOS/MOSAICOS COMPACTOS/Torino/Compacto Torino.jpeg",
+          "codeSource": "Agregados/codigos compactos 30x30.jpeg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaicos-compactos-torino-piso-torino.webp",
+          "applicationSource": "MOSAICOS/MOSAICOS COMPACTOS/Torino/Piso Torino.jpeg"
         }
       ],
       "notes": [],
@@ -762,7 +870,9 @@ window.clientCatalog = {
           "name": "MG300",
           "code": "MG300",
           "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mg300.webp",
-          "source": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/MG300_.jpg"
+          "source": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/MG300_.jpg",
+          "applicationImage": "@/assets/img/client-additions/mosaicos-mosaico-bicapa-semi-pulido-40x40x3-3-cm-pisomg300.webp",
+          "applicationSource": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/PISOMG300.jpg"
         }
       ],
       "notes": [],
@@ -916,7 +1026,9 @@ window.clientCatalog = {
           "name": "Listón atérmico · Consultar código",
           "code": null,
           "image": "@/assets/img/client-2026/atermicos/liston-atermico/liston-1-20x0-20-m.webp",
-          "source": "ATERMICOS/Liston Atermico/Liston 1,20x0,20 m..jpeg"
+          "source": "ATERMICOS/Liston Atermico/Liston 1,20x0,20 m..jpeg",
+          "applicationImage": "@/assets/img/client-additions/atermicos-liston-atermico-piso-liston-portada-piscina.webp",
+          "applicationSource": "ATERMICOS/Liston Atermico/Piso Liston - PORTADA PISCINA.jpeg"
         }
       ],
       "notes": [],
@@ -968,7 +1080,9 @@ window.clientCatalog = {
           "name": "LBG104",
           "code": "LBG104",
           "image": "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp",
-          "source": "LINEA RUSTICA/Linea Rústica/Loseta Lisa Biselada 40x40x3,6 cm/LBG104.jpg"
+          "source": "LINEA RUSTICA/Linea Rústica/Loseta Lisa Biselada 40x40x3,6 cm/LBG104.jpg",
+          "applicationImage": "@/assets/img/client-additions/linea-rustica-linea-rustica-loseta-lisa-biselada-40x40x3-6-cm-lbg104.webp",
+          "applicationSource": "LINEA RUSTICA/Linea Rústica/Loseta Lisa Biselada 40x40x3,6 cm/LBG104_.jpeg"
         }
       ],
       "notes": [],
@@ -1016,7 +1130,9 @@ window.clientCatalog = {
           "name": "CAG104",
           "code": "CAG104",
           "image": "@/assets/img/client-2026/linea-rustica/linea-rustica/simil-adoquin-rustico/cag104.webp",
-          "source": "LINEA RUSTICA/Linea Rústica/Simil Adoquin rústico/CAG104.jpeg"
+          "source": "LINEA RUSTICA/Linea Rústica/Simil Adoquin rústico/CAG104.jpeg",
+          "applicationImage": "@/assets/img/client-additions/linea-rustica-piso-adoquinado-gris-imagen-portada.webp",
+          "applicationSource": "LINEA RUSTICA/piso adoquinado gris - IMAGEN PORTADA.jpeg"
         },
         {
           "name": "CAN105",
@@ -1103,14 +1219,14 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "terracota",
-      "environmentImage": "@/assets/img/client-2026/linea-rustica/terracota/piso-completo.webp",
+      "environmentImage": "@/assets/img/client-additions/linea-rustica-terracota-simil-ceramica-33x33-cm-20x20-cm.webp",
       "name": "Terracota",
       "kicker": "Terracota",
       "cardSummary": "Baldosa premoldeada de tono terracota para patios, galerías, veredas, pasillos, terrazas y espacios comerciales.",
       "heroSummary": "Baldosa premoldeada de tono terracota para patios, galerías, veredas, pasillos, terrazas y espacios comerciales.",
-      "image": "@/assets/img/client-2026/linea-rustica/terracota/piso-completo.webp",
-      "detailImage": "@/assets/img/client-2026/linea-rustica/terracota/piso-completo.webp",
-      "heroImage": "@/assets/img/client-2026/linea-rustica/terracota/piso-completo.webp",
+      "image": "@/assets/img/client-additions/linea-rustica-terracota-simil-ceramica-33x33-cm-20x20-cm.webp",
+      "detailImage": "@/assets/img/client-additions/linea-rustica-terracota-simil-ceramica-33x33-cm-20x20-cm.webp",
+      "heroImage": "@/assets/img/client-additions/linea-rustica-terracota-simil-ceramica-33x33-cm-20x20-cm.webp",
       "meta": [
         "20 × 20 cm / 33 × 33 cm"
       ],
@@ -1128,8 +1244,10 @@ window.clientCatalog = {
         {
           "name": "Terracota · Consultar código",
           "code": null,
-          "image": "@/assets/img/client-2026/linea-rustica/terracota/piso-completo.webp",
-          "source": "LINEA RUSTICA/Terracota/piso completo.jpeg"
+          "image": "@/assets/img/client-additions/linea-rustica-terracota-simil-ceramica-33x33-cm-20x20-cm.webp",
+          "source": "LINEA RUSTICA/Terracota/Simil Ceramica 33x33 cm. 20x20 cm..jpeg",
+          "applicationImage": "@/assets/img/client-additions/linea-rustica-terracota-piso-completo.webp",
+          "applicationSource": "LINEA RUSTICA/Terracota/piso completo.jpeg"
         }
       ],
       "notes": [],
@@ -1224,7 +1342,9 @@ window.clientCatalog = {
           "name": "Adoquín Holanda · Consultar código",
           "code": null,
           "image": "@/assets/img/client-2026/adoquines-y-bloques/adoquin-holanda-gris-claro-10x20x6-cm.webp",
-          "source": "Adoquines y bloques/Adoquin Holanda Gris Claro 10x20x6 cm.jpeg"
+          "source": "Adoquines y bloques/Adoquin Holanda Gris Claro 10x20x6 cm.jpeg",
+          "applicationImage": "@/assets/img/client-additions/adoquines-y-bloques-adoquin-holanda-gris-plaza.webp",
+          "applicationSource": "Adoquines y bloques/Adoquin Holanda Gris Plaza.jpeg"
         }
       ],
       "notes": [],
@@ -1271,7 +1391,9 @@ window.clientCatalog = {
           "name": "Bloque de cesped 40x30x8 cm · BC200",
           "code": "BC200",
           "image": "@/assets/img/client-2026/adoquines-y-bloques/bloque-de-cesped-40x30x8-cm-bc200.webp",
-          "source": "Adoquines y bloques/Bloque de cesped 40x30x8 cm (BC200).jpeg"
+          "source": "Adoquines y bloques/Bloque de cesped 40x30x8 cm (BC200).jpeg",
+          "applicationImage": "@/assets/img/client-additions/adoquines-y-bloques-piso-bloque-de-cesped.webp",
+          "applicationSource": "Adoquines y bloques/Piso bloque de cesped.jpeg"
         }
       ],
       "notes": [],
@@ -1589,6 +1711,11 @@ window.clientCatalog = {
       "width": 84.106,
       "x": 49.752,
       "y": 49.889
+    },
+    "@/assets/img/client-additions/linea-rustica-terracota-simil-ceramica-33x33-cm-20x20-cm.webp": {
+      "width": 90,
+      "x": 50,
+      "y": 50
     }
   }
 };
