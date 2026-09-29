@@ -325,26 +325,13 @@
     return 0;
   };
 
-  const readStoredJson = (key, fallback) => {
-    try {
-      const raw = window.localStorage.getItem(key);
-      return raw ? JSON.parse(raw) : fallback;
-    } catch (_error) {
-      return fallback;
-    }
-  };
+  const readStoredJson = window.mcReadQuoteStorage;
 
-  const writeStoredJson = (key, value) => {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    } catch (_error) {
-      // Ignore storage issues so the quote flow still works.
-    }
-  };
+  const writeStoredJson = window.mcWriteQuoteStorage;
 
   const readQuoteCart = () => {
     const items = readStoredJson(quoteCartStorageKey, []);
-    return Array.isArray(items) ? items.map(window.mcNormalizeQuoteItem) : [];
+    return window.mcNormalizeQuoteCart(items);
   };
 
   const writeQuoteCart = (items) => {
@@ -1273,18 +1260,18 @@
                 : [];
 
               return `
-              <article class="quote-drawer__item" data-quote-item="${item.id}">
+              <article class="quote-drawer__item" data-quote-item="${window.mcEscapeHtml(item.id)}">
                 <div class="quote-drawer__item-media">
-                  <img decoding="async" src="${item.image}" alt="${item.productName}" loading="lazy" />
+                  <img decoding="async" src="${window.mcEscapeHtml(item.image)}" alt="${window.mcEscapeHtml(item.productName)}" loading="lazy" />
                 </div>
                 <div class="quote-drawer__item-copy">
                   <div class="quote-drawer__item-top">
                     <div>
-                      <span class="quote-drawer__item-kicker">${item.lineName}</span>
-                      <h4>${item.productName}</h4>
-                      ${item.variantName ? `<p class="quote-drawer__item-variant">Variante: ${item.variantName}</p>` : ""}
+                      <span class="quote-drawer__item-kicker">${window.mcEscapeHtml(item.lineName)}</span>
+                      <h4>${window.mcEscapeHtml(item.productName)}</h4>
+                      ${item.variantName ? `<p class="quote-drawer__item-variant">Variante: ${window.mcEscapeHtml(item.variantName)}</p>` : ""}
                     </div>
-                    <button class="quote-drawer__item-remove" type="button" data-quote-remove="${item.id}" aria-label="Quitar producto">&times;</button>
+                    <button class="quote-drawer__item-remove" type="button" data-quote-remove="${window.mcEscapeHtml(item.id)}" aria-label="Quitar producto">&times;</button>
                   </div>
                   <div class="quote-drawer__item-metrics">
                     <span>${formatSquareMeters(item.area)} requeridos</span>
@@ -1609,12 +1596,12 @@
                         data-gallery-thumb
                         data-gallery-variant="${item.variantIndex}"
                         ${item.variantIndex === 0 ? "" : "hidden"}
-                        data-gallery-image="${item.image}"
+                        data-gallery-image="${window.mcEscapeHtml(item.image)}"
                         data-gallery-label="${item.label}"
                         aria-label="${item.label}"
                         aria-pressed="${index === 0 ? "true" : "false"}"
                       >
-                        <img decoding="async" src="${item.image}" alt="" loading="lazy" /><span>${item.kind}</span>
+                        <img decoding="async" src="${window.mcEscapeHtml(item.image)}" alt="" loading="lazy" /><span>${item.kind}</span>
                       </button>
                     `
                   )

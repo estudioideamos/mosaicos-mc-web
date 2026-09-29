@@ -127,15 +127,7 @@ const hardenExternalLinks = () => {
 applyGlobalHeadEnhancements();
 hardenExternalLinks();
 
-const readHeaderCartItems = () => {
-  try {
-    const raw = window.localStorage.getItem(quoteCartStorageKey);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (error) {
-    return [];
-  }
-};
+const readHeaderCartItems = () => window.mcNormalizeQuoteCart(window.mcReadQuoteStorage(quoteCartStorageKey, []));
 
 const syncHeaderCartButton = (button) => {
   if (!button) return;
@@ -151,22 +143,9 @@ const syncHeaderCartButton = (button) => {
   }
 };
 
-const readStoredJson = (key, fallback) => {
-  try {
-    const raw = window.localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : fallback;
-  } catch (error) {
-    return fallback;
-  }
-};
+const readStoredJson = window.mcReadQuoteStorage;
 
-const writeStoredJson = (key, value) => {
-  try {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  } catch (error) {
-    // Ignore storage write issues.
-  }
-};
+const writeStoredJson = window.mcWriteQuoteStorage;
 
 const createHeaderCartButton = () => {
   if (!siteHeader || siteHeader.querySelector("[data-open-header-cart]")) {
@@ -351,7 +330,7 @@ const initGlobalQuoteDrawer = () => {
 
   const readCart = () => {
     const value = readStoredJson(quoteCartStorageKey, []);
-    return Array.isArray(value) ? value.map(window.mcNormalizeQuoteItem) : [];
+    return window.mcNormalizeQuoteCart(value);
   };
 
   const writeCart = (items) => {
@@ -461,18 +440,18 @@ const initGlobalQuoteDrawer = () => {
       ? window.mcQuoteMinimumWarning(cartItems) + cartItems
           .map(
             (item) => `
-              <article class="quote-drawer__item" data-quote-item="${item.id}">
+              <article class="quote-drawer__item" data-quote-item="${window.mcEscapeHtml(item.id)}">
                 <div class="quote-drawer__item-media">
-                  <img src="${item.image || ""}" alt="${item.productName || "Producto"}" />
+                  <img src="${window.mcEscapeHtml(item.image || "")}" alt="${window.mcEscapeHtml(item.productName || "Producto")}" />
                 </div>
                 <div class="quote-drawer__item-copy">
                   <div class="quote-drawer__item-top">
                     <div>
-                      <span class="quote-drawer__item-kicker">${item.lineName || "Mosaicos MC"}</span>
-                      <h4>${item.productName || "Producto"}</h4>
-                      ${item.variantName ? `<p class="quote-drawer__item-variant">Variante: ${item.variantName}</p>` : ""}
+                      <span class="quote-drawer__item-kicker">${window.mcEscapeHtml(item.lineName || "Mosaicos MC")}</span>
+                      <h4>${window.mcEscapeHtml(item.productName || "Producto")}</h4>
+                      ${item.variantName ? `<p class="quote-drawer__item-variant">Variante: ${window.mcEscapeHtml(item.variantName)}</p>` : ""}
                     </div>
-                    <button class="quote-drawer__item-remove" type="button" data-quote-remove="${item.id}" aria-label="Quitar producto">&times;</button>
+                    <button class="quote-drawer__item-remove" type="button" data-quote-remove="${window.mcEscapeHtml(item.id)}" aria-label="Quitar producto">&times;</button>
                   </div>
                   <div class="quote-drawer__item-metrics">
                     <span>${formatArea(Number(item.area) || 0)} requeridos</span>

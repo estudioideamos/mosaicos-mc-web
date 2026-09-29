@@ -29,7 +29,6 @@ for(const file of files){
  const graph=[{'@type':'Organization','@id':root+'#organization',name:'Mosaicos MC',url:root,logo:root+'assets/img/logo-negro.png',sameAs:['https://www.instagram.com/mosaicosmcsrl/']},{'@type':'WebPage','@id':url+'#webpage',url,name:title,description,inLanguage:'es-AR',isPartOf:{'@id':root+'#website'}},{'@type':'WebSite','@id':root+'#website',url:root,name:'Mosaicos MC',inLanguage:'es-AR',publisher:{'@id':root+'#organization'}}];
  if(product)graph.push({'@type':'Product',name:product.name,description:product.heroSummary,image:new URL(product.image.replace('@/',''),root).href,url,brand:{'@type':'Brand',name:'Mosaicos MC'},category:product.line,additionalProperty:product.specs.map(([name,value])=>({'@type':'PropertyValue',name,value}))});
  const metadata=`<!-- seo:start -->
-<meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'; upgrade-insecure-requests" />
 <link rel="canonical" href="${url}" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -50,8 +49,13 @@ for(const file of files){
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <!-- seo:end -->`;
  html=html.replace(/<!-- seo:start -->[\s\S]*?<!-- seo:end -->\s*/,'').replace('</head>',metadata+'\n</head>');
+ // Enforce the policy before stylesheets, scripts and embedded resources.
+ html=html.replace(/<meta http-equiv="Content-Security-Policy"[^>]*>\s*/gi,'');
+ const policy="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests";
+ html=html.replace(/(<meta charset="UTF-8"\s*\/>)/i, '$1\n<meta http-equiv="Content-Security-Policy" content="'+policy+'" />');
  const prefix=path.relative(path.dirname(file),'.').replaceAll('\\','/');
  const assetRoot=prefix ? prefix+'/' : '';
+ html=html.replaceAll("url('"+root+"assets/","url('"+assetRoot+"assets/");
  html=html.replace(/\s*<!-- smooth-scroll:start -->[\s\S]*?<!-- smooth-scroll:end -->/,'');
  html=html.replace('</body>',`<!-- smooth-scroll:start -->
 <script defer src="${assetRoot}assets/vendor/lenis/lenis.min.js?v=1.3.26"></script>
@@ -63,6 +67,7 @@ for(const file of files){
  html=html.replace(/\s*<link rel="stylesheet" href="[^"]*assets\/css\/client-2026.css[^"]*"\s*\/>/g,'');
  html=html.replace('</head>',`<link rel="stylesheet" href="${assetRoot}assets/css/client-2026.css?v=20260922-1" />\n</head>`);
  html=html.replace(/(assets\/(?:js|css)\/[\w-]+\.(?:js|css))\?v=[^"']+/g,(match,asset)=>asset.includes('smooth-scroll')?match:/(?:client-2026|home-cinema)\.css$/.test(asset)?asset+'?v=20260928-copy':asset+'?v='+(/(?:client-2026.css|client-catalog.js|products-pages.js|quote-materials.js|factory-film.js)$/.test(asset)?'20260924-additions':'20260922-client'));
+ html=html.replace(/(site|products-pages|quote-materials)\.js\?v=[^"']+/g,'$1.js?v=20260929-security');
  html=html.replace(/back-to-top.js\?v=[^"']+/g,'back-to-top.js?v=20260921-scroll-engine');
  fs.writeFileSync(file,html.replace(/[ \t]+$/gm,''));urls.push(url);
 }
