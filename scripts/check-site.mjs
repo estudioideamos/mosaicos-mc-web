@@ -80,3 +80,24 @@ for (const p of received.products) {
 const refreshed=context.window.mcNormalizeQuoteItem({area:10,includeExtras:true,extras:[{name:'Impermeabilizante',quantity:'1 bolsa'}]});
 if (refreshed.extras.length!==2 || refreshed.extras.some(e=>e.name==='Impermeabilizante')) throw new Error('Removed material remains in saved quote');
 console.log('Client additions validated: application photos, compact color codes and refreshed quote materials.');
+
+// Security regressions: browser storage is untrusted input.
+const securityContext = { URL, window: { location: {href:'https://estudioideamos.github.io/mosaicos-mc-web/'}, localStorage: {getItem(){throw Error('denied')},setItem(){throw Error('quota')}} } };
+vm.runInNewContext(fs.readFileSync('assets/js/quote-materials.js','utf8'),securityContext);
+const q=securityContext.window;
+for(const bad of [null,{},42,'bad',[null,17,[]]]) if(q.mcNormalizeQuoteCart(bad).length) throw Error('Malformed cart accepted');
+const clean=q.mcNormalizeQuoteCart([{id:'one',productName:'A & B',area:10,includeExtras:true,image:'https://example.org/tracker.png',extras:[{name:'<img onerror=alert(1)>'}]}])[0];
+if(clean.image || clean.extras.length!==2 || clean.extras.some(e=>e.name.includes('<'))) throw Error('Persisted image/extras trusted');
+for(const url of ['javascript:alert(1)','data:image/svg+xml,<svg/>','//example.org/a.jpg']) if(q.mcQuoteImage(url)) throw Error('Unsafe image URL');
+if(!q.mcQuoteImage('assets/img/client-additions/baldosa-marca.webp')) throw Error('Local photo rejected');
+if(q.mcEscapeHtml('<img x="a" onerror=\'x\'>&')!=='&lt;img x=&quot;a&quot; onerror=&#39;x&#39;&gt;&amp;') throw Error('HTML encoding failed');
+q.mcWriteQuoteStorage('cart',[clean]);
+if(q.mcReadQuoteStorage('cart',[]).length!==1) throw Error('Storage fallback lost cart');
+for(const file of htmlFiles){
+ const html=fs.readFileSync(file,'utf8');
+ if(/http-equiv=["']refresh/i.test(html))continue;
+ const policies=[...html.matchAll(/<meta http-equiv="Content-Security-Policy" content="([^"]+)"/g)];
+ if(policies.length!==1 || !policies[0][1].includes("script-src 'self';") || policies[0].index>html.indexOf('<link')) throw Error('Missing/late script policy: '+file);
+ if(/\son(?:click|error|load)\s*=/i.test(html)) throw Error('Inline event handler: '+file);
+}
+console.log('Security validated: malformed carts, HTML encoding, image URLs, denied storage and early CSP.');
