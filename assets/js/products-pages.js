@@ -1811,6 +1811,18 @@
             .join("")}
         </div>
 
+        ${product.installation ? `
+          <section class="product-installation" aria-labelledby="installation-title">
+            <div class="section-title">
+              <span class="eyebrow eyebrow--dark">opción de colocación</span>
+              <h2 id="installation-title">${window.mcEscapeHtml(product.installation.title)}</h2>
+              <p>${window.mcEscapeHtml(product.installation.text)}</p>
+            </div>
+            <div class="product-installation__photos">
+              ${product.installation.images.map(photo => `<figure><img src="${resolveAsset(photo.image)}" alt="${window.mcEscapeHtml(photo.alt)}" loading="lazy" decoding="async" width="1024" height="935"><figcaption>${window.mcEscapeHtml(photo.caption)}</figcaption></figure>`).join("")}
+            </div>
+          </section>` : ""}
+
         ${renderProductVariants(product)}
 
         ${renderFaqs(line, product)}

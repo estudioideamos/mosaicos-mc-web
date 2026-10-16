@@ -458,7 +458,26 @@ window.clientCatalog = {
           "answer": "Consultá la terminación, el soporte y el uso previsto con nuestro equipo. Encontrá los documentos disponibles en Descargas."
         }
       ],
-      "environmentCaption": "Fotografía de producto · Mosaicos MC"
+      "environmentCaption": "Fotografía de producto · Mosaicos MC",
+      "installation": {
+        "title": "También sobre tacos plásticos",
+        "text": "La baldosa 1 Pan también se puede colocar flotante sobre tacos plásticos. Consultanos por esta opción para tu proyecto.",
+        "source": "LOSETA EXTERIOR PULIDA/1 pan/Descripción de producto.txt",
+        "images": [
+          {
+            "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/tp-1.webp",
+            "alt": "Baldosa 1 Pan apoyada sobre tacos plásticos",
+            "caption": "Vista de la pieza sobre soportes",
+            "source": "LOSETA EXTERIOR PULIDA/1 pan/TP 1.jpeg"
+          },
+          {
+            "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/tp-2.webp",
+            "alt": "Detalle del apoyo de la baldosa 1 Pan sobre un taco plástico",
+            "caption": "Detalle del soporte plástico",
+            "source": "LOSETA EXTERIOR PULIDA/1 pan/TP 2.jpeg"
+          }
+        ]
+      }
     },
     {
       "line": "mosaicos",
