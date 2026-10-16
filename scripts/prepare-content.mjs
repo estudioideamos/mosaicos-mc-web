@@ -68,6 +68,7 @@ for(const file of files){
  html=html.replace('</head>',`<link rel="stylesheet" href="${assetRoot}assets/css/client-2026.css?v=20260922-1" />\n</head>`);
  html=html.replace(/(assets\/(?:js|css)\/[\w-]+\.(?:js|css))\?v=[^"']+/g,(match,asset)=>asset.includes('smooth-scroll')?match:/(?:client-2026|home-cinema)\.css$/.test(asset)?asset+'?v=20260928-copy':asset+'?v='+(/(?:client-2026.css|client-catalog.js|products-pages.js|quote-materials.js|factory-film.js)$/.test(asset)?'20260924-additions':'20260922-client'));
  html=html.replace(/(site|products-pages|quote-materials)\.js\?v=[^"']+/g,'$1.js?v=20260929-security');
+ html=html.replace(/(client-catalog\.js|products-pages\.js|client-2026\.css)\?v=[^"']+/g,'$1?v=20261016-installation');
  html=html.replace(/back-to-top.js\?v=[^"']+/g,'back-to-top.js?v=20260921-scroll-engine');
  fs.writeFileSync(file,html.replace(/[ \t]+$/gm,''));urls.push(url);
 }
