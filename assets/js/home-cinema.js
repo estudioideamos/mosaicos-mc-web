@@ -1,7 +1,7 @@
 (() => {
  const root=document.querySelector('.mc-cinema');if(!root)return;
  const slides=[...root.querySelectorAll('.mc-cinema__slide')],pause=root.querySelector('[data-cinema-pause]'),motion=matchMedia('(prefers-reduced-motion: reduce)');
- let index=0,paused=motion.matches,timer,visible=true;
+ let index=0,paused=motion.matches || navigator.connection?.saveData,timer,visible=true;
  const playing=()=>!paused&&visible&&!document.hidden;
  const sync=()=>{
   clearTimeout(timer);
@@ -13,6 +13,8 @@
  };
  const show=i=>{
   index=(i+slides.length)%slides.length;
+  const image=slides[index].querySelector('[data-cinema-src]');
+  if(image){image.src=image.dataset.cinemaSrc;image.removeAttribute('data-cinema-src');image.loading='eager';}
   slides.forEach((slide,n)=>{slide.classList.toggle('is-active',n===index);slide.inert=n!==index;slide.setAttribute('aria-hidden',String(n!==index));});
   root.querySelector('[data-cinema-count]').textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
   sync();

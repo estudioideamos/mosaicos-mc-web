@@ -1487,7 +1487,7 @@
   };
 
   const renderCatalogPage = () => {
-    shell.innerHTML = `
+    if (window.__STATIC_BUILD__ || !shell.querySelector('h1')) shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${resolveHeroAsset("@/assets/img/client-covers/mosaicos.webp")}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">catálogo</span>
@@ -1506,7 +1506,7 @@
   const renderLinePage = (line) => {
     const lineImage = resolveAsset(line.heroImage);
     const lineHeroImage = resolveHeroAsset(line.heroImage);
-    shell.innerHTML = `
+    if (window.__STATIC_BUILD__ || !shell.querySelector('h1')) shell.innerHTML = `
       <section class="page-hero" style="--hero-image: url('${lineHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">línea de producto</span>
@@ -1764,7 +1764,7 @@
     const heroFormat = formatSuffix ? '<span class="product-hero-format">Formato ' + formatSuffix[1] + ' cm</span>' : '';
 
 
-    shell.innerHTML = `
+    if (window.__STATIC_BUILD__ || !shell.querySelector('h1')) shell.innerHTML = `
       <section class="page-hero page-hero--product" style="--hero-image: url('${productHeroImage}');">
         <div class="page-hero__inner reveal is-visible">
           <span class="eyebrow">${line.name}</span>
@@ -1854,7 +1854,7 @@
   const line = findLine(body.dataset.lineSlug || "");
 
   if (!line) {
-    shell.innerHTML = `
+    if (window.__STATIC_BUILD__ || !shell.querySelector('h1')) shell.innerHTML = `
       <section class="section">
         <div class="split-card split-card--copy reveal is-visible">
           <span class="eyebrow eyebrow--dark">productos</span>
@@ -1876,7 +1876,7 @@
     const product = findProduct(line, body.dataset.productSlug || "");
 
     if (!product) {
-      shell.innerHTML = `
+      if (window.__STATIC_BUILD__ || !shell.querySelector('h1')) shell.innerHTML = `
         <section class="section">
           <div class="split-card split-card--copy reveal is-visible">
             <span class="eyebrow eyebrow--dark">${line.name}</span>

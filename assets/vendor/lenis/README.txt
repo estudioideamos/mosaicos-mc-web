@@ -1,5 +1,4 @@
-# Lenis 1.3.26
-Vendored from the published lenis@1.3.26 package (MIT; see LICENSE.txt).
-Sources: https://github.com/darkroomengineering/lenis and https://www.npmjs.com/package/lenis/v/1.3.26
-Files: dist/lenis.min.js and dist/lenis.css, unmodified.
-The version is pinned and served locally, with no third-party runtime request.
+# Lenis 1.3.27
+Vendored from https://registry.npmjs.org/lenis/-/lenis-1.3.27.tgz (MIT).
+Sources: https://github.com/darkroomengineering/lenis/releases/tag/v1.3.27
+Files: dist/lenis.min.js and dist/lenis.css, unmodified. Served locally.

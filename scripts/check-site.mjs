@@ -11,7 +11,7 @@ for (const file of htmlFiles) {
   if (!/http-equiv=["']refresh/i.test(html)) {
     if ((html.match(/<h1\b/g) || []).length !== 1) errors.push(file+': expected one static h1');
     if (!/<link rel="canonical" href="https:\/\/estudioideamos.github.io\/mosaicos-mc-web\//.test(html)) errors.push(file+': missing canonical');
-    if (!html.includes('assets/js/smooth-scroll.js?v=20260921-2') || !html.includes('assets/vendor/lenis/lenis.min.js?v=1.3.26')) errors.push(file+': missing shared scroll controller');
+    if (!/assets\/js\/smooth-scroll.js\?v=[a-f0-9]{12}/.test(html) || !/assets\/vendor\/lenis\/lenis.min.js\?v=[a-f0-9]{12}/.test(html)) errors.push(file+': missing shared scroll controller');
     if (!html.includes('property="og:image"')) errors.push(file+': missing share image');
     for (const schema of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
       try { JSON.parse(schema[1]); } catch { errors.push(file+': invalid structured data'); }
@@ -101,3 +101,7 @@ for(const file of htmlFiles){
  if(/\son(?:click|error|load)\s*=/i.test(html)) throw Error('Inline event handler: '+file);
 }
 console.log('Security validated: malformed carts, HTML encoding, image URLs, denied storage and early CSP.');
+
+for(const p of received.products) for(const v of p.variants) for(const photo of v.additionalImages||[]) {
+ if(!photo.label||!photo.source||!fs.existsSync(photo.image.replace(/^@\//,''))) throw Error('Additional gallery photo missing source or asset: '+p.slug);
+}

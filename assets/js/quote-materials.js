@@ -47,16 +47,19 @@
     ? items.slice(0, 200).map(window.mcNormalizeQuoteItem).filter(item => item && item.id && item.productName) : [];
   // Keep the current page usable when browser storage is denied or full.
   const pending = new Map();
+  const storageFor = key => key === 'mosaicosMcQuoteLead' ? window.sessionStorage : window.localStorage;
+  try { window.localStorage.removeItem('mosaicosMcQuoteLead'); } catch {}
+
   window.mcReadQuoteStorage = (key, fallback) => {
     if (pending.has(key)) return pending.get(key);
     try {
-      const raw = window.localStorage.getItem(key);
+      const raw = storageFor(key).getItem(key);
       return raw && raw.length <= 1000000 ? JSON.parse(raw) : fallback;
     } catch { return fallback; }
   };
   window.mcWriteQuoteStorage = (key, value) => {
     try {
-      window.localStorage.setItem(key, JSON.stringify(value));
+      storageFor(key).setItem(key, JSON.stringify(value));
       pending.delete(key);
     } catch { pending.set(key, value); }
   };

@@ -3,7 +3,7 @@
   if (!video) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let visible = false, userPaused = false, automaticPause = false;
-  const play = () => { if (visible && !document.hidden && !reduced.matches && !userPaused) video.play().catch(() => {}); };
+  const play = () => { if (visible && !document.hidden && !reduced.matches && !navigator.connection?.saveData && !userPaused) video.play().catch(() => {}); };
   const pause = () => { if (!video.paused) { automaticPause = true; video.pause(); } };
   video.addEventListener('pause', () => { if (automaticPause) automaticPause = false; else userPaused = true; });
   video.addEventListener('play', () => { userPaused = false; });
