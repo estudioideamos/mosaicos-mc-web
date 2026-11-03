@@ -420,7 +420,7 @@ window.clientCatalog = {
         ],
         [
           "Códigos",
-          "Consultar al solicitar presupuesto."
+          "P1PPATC, P1PPGM"
         ],
         [
           "Peso",
@@ -429,20 +429,22 @@ window.clientCatalog = {
       ],
       "variants": [
         {
-          "name": "1 PAN GRIS PULIDO ATC 40X40X3,6 CM · Consultar código",
-          "code": null,
+          "name": "1 PAN GRIS PULIDO ATC 40X40X3,6 CM · P1PPATC",
+          "code": "P1PPATC",
           "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/1-pan-gris-pulido-atc-40x40x3-6-cm.webp",
           "source": "LOSETA EXTERIOR PULIDA/1 pan/1 PAN GRIS PULIDO ATC 40X40X3,6 CM..jpeg",
           "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-1-pan-1-pan-atc.webp",
-          "applicationSource": "LOSETA EXTERIOR PULIDA/1 pan/1 pan ATC.jpeg"
+          "applicationSource": "LOSETA EXTERIOR PULIDA/1 pan/1 pan ATC.jpeg",
+          "codeSource": "Confirmación del cliente, noviembre de 2026"
         },
         {
-          "name": "1 PAN GRIS PULIDO GM 40X40X3,6 CM · Consultar código",
-          "code": null,
-          "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/1-pan-gris-pulido-gm-40x40x3-6-cm.webp",
-          "source": "LOSETA EXTERIOR PULIDA/1 pan/1 PAN GRIS PULIDO GM 40X40X3,6 CM..jpeg",
+          "name": "1 PAN GRIS PULIDO GM 40X40X3,6 CM · P1PPGM",
+          "code": "P1PPGM",
+          "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/tp-1.webp",
+          "source": "LOSETA EXTERIOR PULIDA/1 pan/TP 1.jpeg",
           "applicationImage": "@/assets/img/client-additions/loseta-exterior-pulida-1-pan-1pan5.webp",
-          "applicationSource": "LOSETA EXTERIOR PULIDA/1 pan/1pan5.jpg"
+          "applicationSource": "LOSETA EXTERIOR PULIDA/1 pan/1pan5.jpg",
+          "codeSource": "Confirmación del cliente, noviembre de 2026"
         }
       ],
       "notes": [],
@@ -460,14 +462,14 @@ window.clientCatalog = {
       ],
       "environmentCaption": "Fotografía de producto · Mosaicos MC",
       "installation": {
-        "title": "También sobre tacos plásticos",
-        "text": "La baldosa 1 Pan también se puede colocar flotante sobre tacos plásticos. Consultanos por esta opción para tu proyecto.",
+        "title": "1 Pan GM sobre tacos plásticos",
+        "text": "La baldosa 1 Pan GM, código P1PPGM, también se puede colocar flotante sobre tacos plásticos. Consultanos por esta opción para tu proyecto.",
         "source": "LOSETA EXTERIOR PULIDA/1 pan/Descripción de producto.txt",
         "images": [
           {
             "image": "@/assets/img/client-2026/loseta-exterior-pulida/1-pan/tp-1.webp",
             "alt": "Baldosa 1 Pan apoyada sobre tacos plásticos",
-            "caption": "Vista de la pieza sobre soportes",
+            "caption": "1 Pan GM · P1PPGM sobre soportes",
             "source": "LOSETA EXTERIOR PULIDA/1 pan/TP 1.jpeg"
           },
           {
@@ -862,14 +864,14 @@ window.clientCatalog = {
     {
       "line": "mosaicos",
       "slug": "bicapa",
-      "environmentImage": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mg300.webp",
+      "environmentImage": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mosaicos-bicapa-gris-claro-semi-pulido-40x40x3-3-cm-mg300.webp",
       "name": "Mosaico bicapa semipulido",
       "kicker": "Mosaico bicapa semipulido",
       "cardSummary": "Mosaico bicapa gris claro con terminación semipulida.",
       "heroSummary": "Mosaico bicapa gris claro con terminación semipulida.",
-      "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mg300.webp",
-      "detailImage": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/pisomg300.webp",
-      "heroImage": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/pisomg300.webp",
+      "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mosaicos-bicapa-gris-claro-semi-pulido-40x40x3-3-cm-mg300.webp",
+      "detailImage": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mosaicos-bicapa-gris-claro-semi-pulido-40x40x3-3-cm-mg300.webp",
+      "heroImage": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mosaicos-bicapa-gris-claro-semi-pulido-40x40x3-3-cm-mg300.webp",
       "meta": [
         "40 × 40 × 3,3 cm",
         "6,25 un/m²"
@@ -888,8 +890,8 @@ window.clientCatalog = {
         {
           "name": "MG300",
           "code": "MG300",
-          "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mg300.webp",
-          "source": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/MG300_.jpg",
+          "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mosaicos-bicapa-gris-claro-semi-pulido-40x40x3-3-cm-mg300.webp",
+          "source": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/Mosaicos Bicapa Gris Claro semi pulido 40x40x3,3 cm (MG300).jpg",
           "applicationImage": "@/assets/img/client-additions/mosaicos-mosaico-bicapa-semi-pulido-40x40x3-3-cm-pisomg300.webp",
           "applicationSource": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/PISOMG300.jpg"
         }
@@ -1068,14 +1070,14 @@ window.clientCatalog = {
     {
       "line": "rusticos",
       "slug": "loseta-lisa-biselada",
-      "environmentImage": "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp",
+      "environmentImage": "@/assets/img/client-additions/loseta-lbg104-frente.jpg",
       "name": "Loseta lisa biselada",
       "kicker": "Loseta lisa biselada",
       "cardSummary": "Baldosa rústica de alto tránsito, compactada a 300 toneladas. Para patios, galerías, veredas y accesos. Admite colocación flotante sobre tacos plásticos.",
       "heroSummary": "Baldosa rústica de alto tránsito, compactada a 300 toneladas. Para patios, galerías, veredas y accesos. Admite colocación flotante sobre tacos plásticos.",
-      "image": "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp",
-      "detailImage": "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp",
-      "heroImage": "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp",
+      "image": "@/assets/img/client-additions/loseta-lbg104-frente.jpg",
+      "detailImage": "@/assets/img/client-additions/loseta-lbg104-frente.jpg",
+      "heroImage": "@/assets/img/client-additions/loseta-lbg104-frente.jpg",
       "meta": [
         "40 × 40 × 3,6 cm",
         "6,25 un/m²"
@@ -1098,7 +1100,7 @@ window.clientCatalog = {
         {
           "name": "LBG104",
           "code": "LBG104",
-          "image": "@/assets/img/client-2026/linea-rustica/linea-rustica/loseta-lisa-biselada-40x40x3-6-cm/lbg104.webp",
+          "image": "@/assets/img/client-additions/loseta-lbg104-frente.jpg",
           "source": "LINEA RUSTICA/Linea Rústica/Loseta Lisa Biselada 40x40x3,6 cm/LBG104.jpg",
           "applicationImage": "@/assets/img/client-additions/linea-rustica-linea-rustica-loseta-lisa-biselada-40x40x3-6-cm-lbg104.webp",
           "applicationSource": "LINEA RUSTICA/Linea Rústica/Loseta Lisa Biselada 40x40x3,6 cm/LBG104_.jpeg"
