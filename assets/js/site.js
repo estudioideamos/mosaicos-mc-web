@@ -87,6 +87,8 @@ const applyGlobalHeadEnhancements = () => {
     property: "og:site_name",
   }).setAttribute("content", "Mosaicos MC");
 
+  // The static build already supplies the complete, canonical entity graph.
+  if (document.querySelector('script[type="application/ld+json"]')) return;
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",

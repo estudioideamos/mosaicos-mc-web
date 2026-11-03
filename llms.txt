@@ -15,3 +15,28 @@
 Los precios se consultan mediante presupuesto. No hay compra ni pago online. Compra mínima: 10 m² por modelo, antes del desperdicio. Las fotografías fueron suministradas por Mosaicos MC. Confirmar aplicaciones y colocación con el equipo comercial.
 Dirección: Ing. Guillermo Marconi 1962, El Palomar, Buenos Aires.
 WhatsApp: +54 9 11 3878-9057. Email: info@mosaicosmc.com.
+
+## Fichas de productos
+- [64 Panes](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/64-panes/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [16 Panes](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/16-panes/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [2 Barras](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/2-barras/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [8 Barras](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/8-barras/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [Espiga](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/espiga/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [Ondas](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/ondas/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [1 Pan](https://estudioideamos.github.io/mosaicos-mc-web/productos/exterior-pulida/1-pan/): Baldosa granítica biselada, prensada y compactada a 300 toneladas. Terminación pulida con brillo para proyectos residenciales y comerciales.
+- [Mosaico compacto 40 × 40](https://estudioideamos.github.io/mosaicos-mc-web/productos/mosaicos/mosaico-compacto/): Granito pulido de estructura compacta. Una superficie durable para interiores, con distintos colores y agregados pétreos.
+- [Mosaico compacto 30 × 30](https://estudioideamos.github.io/mosaicos-mc-web/productos/mosaicos/mosaico-compacto-30/): Granito pulido de estructura compacta. Una superficie durable para interiores, con distintos colores y agregados pétreos.
+- [Mosaico bicapa semipulido](https://estudioideamos.github.io/mosaicos-mc-web/productos/mosaicos/bicapa/): Mosaico bicapa gris claro con terminación semipulida.
+- [Compacto granallado](https://estudioideamos.github.io/mosaicos-mc-web/productos/mosaicos/compacto-granallado/): Terminación rústica granallada. Consultanos por la variante y su aplicación.
+- [Solárium y bordes atérmicos](https://estudioideamos.github.io/mosaicos-mc-web/productos/atermicos/para-decks-y-piletas/): Piezas para solárium y bordes de piscina. Confirmá la pieza y terminación para cada sector.
+- [Listón atérmico](https://estudioideamos.github.io/mosaicos-mc-web/productos/atermicos/liston-atermico/): Listones atérmicos para proyectos de solárium y expansiones de piscina.
+- [Loseta lisa biselada](https://estudioideamos.github.io/mosaicos-mc-web/productos/rusticos/loseta-lisa-biselada/): Baldosa rústica de alto tránsito, compactada a 300 toneladas. Para patios, galerías, veredas y accesos. Admite colocación flotante sobre tacos plásticos.
+- [Símil adoquín rústico](https://estudioideamos.github.io/mosaicos-mc-web/productos/rusticos/simil-adoquin-rustico/): Piso rústico de alto tránsito, prensado y compactado a 300 toneladas. Para patios, galerías, veredas y accesos.
+- [Accesibilidad](https://estudioideamos.github.io/mosaicos-mc-web/productos/rusticos/accesibilidad/): Baldosas de seis barras y táctiles para proyectos de accesibilidad. Confirmá la disposición con el profesional a cargo.
+- [Terracota](https://estudioideamos.github.io/mosaicos-mc-web/productos/rusticos/terracota/): Baldosa premoldeada de tono terracota para patios, galerías, veredas, pasillos, terrazas y espacios comerciales.
+- [6 vainillas](https://estudioideamos.github.io/mosaicos-mc-web/productos/rusticos/6-vainillas/): Modelo en rojo. Consultá también por blanco, gris, negro y amarillo; los códigos de esos colores se confirman al cotizar.
+- [Adoquín Holanda](https://estudioideamos.github.io/mosaicos-mc-web/productos/bloques-de-hormigon/adoquin-gris/): Adoquín Holanda gris claro. Consultá su especificación según tránsito, base y proyecto.
+- [Bloque de césped](https://estudioideamos.github.io/mosaicos-mc-web/productos/bloques-de-hormigon/trama-urbana/): Bloque de césped para combinar superficies de circulación y áreas verdes.
+
+## Datos verificados del catálogo
+- [Catálogo en texto](https://estudioideamos.github.io/mosaicos-mc-web/llms-full.txt): medidas, variantes y códigos confirmados; no incluye precios.

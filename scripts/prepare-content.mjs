@@ -1,3 +1,4 @@
+import {enhanceOutput} from './enhance-output.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import path from 'node:path';
@@ -25,7 +26,7 @@ for(const file of files){
   if(product)html=html.replace(/(<meta name="description" content=")[^"]*/,(_,a)=>a+esc(product.heroSummary));
  }
  const title=html.match(/<title>(.*?)<\/title>/s)[1];
- const description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Mosaicos y baldosas desde 1978. Conocé las líneas de productos de Mosaicos MC.';
+ const description=html.match(/<meta\s+name="description"\s+content="([^"]*)"/)?.[1]||'Mosaicos y baldosas desde 1978. Conocé las líneas de productos de Mosaicos MC.';
  const graph=[{'@type':'Organization','@id':root+'#organization',name:'Mosaicos MC',url:root,logo:root+'assets/img/logo-negro.png',sameAs:['https://www.instagram.com/mosaicosmcsrl/']},{'@type':'WebPage','@id':url+'#webpage',url,name:title,description,inLanguage:'es-AR',isPartOf:{'@id':root+'#website'}},{'@type':'WebSite','@id':root+'#website',url:root,name:'Mosaicos MC',inLanguage:'es-AR',publisher:{'@id':root+'#organization'}}];
  if(product)graph.push({'@type':'Product',name:product.name,description:product.heroSummary,image:new URL(product.image.replace('@/',''),root).href,url,brand:{'@type':'Brand',name:'Mosaicos MC'},category:product.line,additionalProperty:product.specs.map(([name,value])=>({'@type':'PropertyValue',name,value}))});
  const metadata=`<!-- seo:start -->
@@ -58,7 +59,7 @@ for(const file of files){
  html=html.replaceAll("url('"+root+"assets/","url('"+assetRoot+"assets/");
  html=html.replace(/\s*<!-- smooth-scroll:start -->[\s\S]*?<!-- smooth-scroll:end -->/,'');
  html=html.replace('</body>',`<!-- smooth-scroll:start -->
-<script defer src="${assetRoot}assets/vendor/lenis/lenis.min.js?v=1.3.26"></script>
+<script defer src="${assetRoot}assets/vendor/lenis/lenis.min.js?v=1.3.27"></script>
 <script defer src="${assetRoot}assets/js/smooth-scroll.js?v=20260921-2"></script>
 <!-- smooth-scroll:end -->\n</body>`);
  html=html.replace(/\s*<link rel="stylesheet" href="[^"]*assets\/css\/smooth-scroll.css[^"]*"\s*\/>/g,'');
@@ -74,3 +75,5 @@ for(const file of files){
 }
 fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(url=>`  <url><loc>${url}</loc></url>`).join('\n')+'\n</urlset>\n');
 console.log(`Prepared ${urls.length} static pages with canonical metadata and structured data.`);
+
+enhanceOutput(files, root);
