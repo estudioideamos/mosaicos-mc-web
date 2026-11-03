@@ -893,7 +893,14 @@ window.clientCatalog = {
           "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mosaicos-bicapa-gris-claro-semi-pulido-40x40x3-3-cm-mg300.webp",
           "source": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/Mosaicos Bicapa Gris Claro semi pulido 40x40x3,3 cm (MG300).jpg",
           "applicationImage": "@/assets/img/client-additions/mosaicos-mosaico-bicapa-semi-pulido-40x40x3-3-cm-pisomg300.webp",
-          "applicationSource": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/PISOMG300.jpg"
+          "applicationSource": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/PISOMG300.jpg",
+          "additionalImages": [
+            {
+              "image": "@/assets/img/client-2026/mosaicos/mosaico-bicapa-semi-pulido-40x40x3-3-cm/mg300.webp",
+              "label": "Vista lateral",
+              "source": "MOSAICOS/MOSAICO BICAPA SEMI PULIDO 40X40X3,3 CM/MG300_.jpg"
+            }
+          ]
         }
       ],
       "notes": [],

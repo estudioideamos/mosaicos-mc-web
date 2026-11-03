@@ -98,6 +98,8 @@ body .mc-social h2 em{color:#0000b6}
 body[data-line-slug="mosaicos"] .variant-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .variant-card{border-radius:8px}
 .variant-card__body{border-top:1px solid #eeeef1;padding:20px}
+.quote-inline__grid > .form-field{align-content:start}
+@media(min-width:821px){.quote-inline__grid > .form-field:has([data-quote-area]),.quote-inline__grid > .form-field:has([data-quote-waste]){grid-row:span 3;grid-template-rows:subgrid;row-gap:8px}.quote-inline__grid > .form-field:has([data-quote-area]) label,.quote-inline__grid > .form-field:has([data-quote-waste]) label{align-self:end}}
 .quote-minimum{display:block;color:#0000b6;font-size:11px;line-height:1.65;margin-top:7px}
 .quote-minimum-warning{padding:16px;background:#f2f2f8;border-left:3px solid #0000b6;font-size:13px;line-height:1.75;color:#303040}
 /* Light footer and mobile navigation retain existing disclosure behavior. */
