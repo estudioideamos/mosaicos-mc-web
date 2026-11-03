@@ -19,3 +19,14 @@ Fuente: capturas de WhatsApp del 25 de septiembre compartidas el 16 de octubre y
 - Códigos no suministrados: 1 Pan, Compacto granallado, Solárium/bordes atérmicos, Listón atérmico, Accesibilidad, Terracota y Adoquín Holanda. Se conserva «Consultar código».
 
 No se generaron ni retocaron imágenes para esta corrección; se usaron las versiones WebP existentes de los originales del cliente.
+
+## Confirmaciones recibidas el 3 de noviembre de 2026
+
+- 1 Pan ATC: P1PPATC. 1 Pan GM (sobre tacos plásticos): P1PPGM. Códigos cargados en variantes y ficha; la imagen de GM muestra ahora TP 1.
+- 2 Barras blanco: el cliente acepta dejarlo sin foto de piso armado. Consulta cerrada.
+- Compacto 40 × 40: espesor confirmado de 2,1 cm. Consulta cerrada.
+- Loseta lisa biselada: restaurada la foto frontal LBG104.jpg con nombre único, evitando la colisión con LBG104_.jpeg (aplicación). Se conserva la aplicación como segunda vista.
+- Bicapa: se usa la foto frontal «Mosaicos Bicapa Gris Claro semi pulido 40x40x3,3 cm (MG300).jpg», ya disponible en WebP, como pieza principal. Se conserva el piso presentado.
+- Retirado el teléfono fijo de Contacto. Horario confirmado por el usuario: lunes a viernes de 8:30 a 12 y de 13:30 a 17 hs, en Contacto, Nosotros y FAQ. Se mantiene la cita previa.
+- Los códigos de otros modelos no fueron suministrados en esta respuesta y siguen como «Consultar código».
+- No se generaron ni retocaron fotos; se reutilizaron originales del cliente.
