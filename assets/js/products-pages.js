@@ -1548,6 +1548,7 @@
     return variants.flatMap((variant, variantIndex) => {
       const items = [{image:resolveAsset(variant.image),label:variant.name + " — Pieza",kind:"Pieza",variantIndex}];
       if (variant.applicationImage) items.push({image:resolveAsset(variant.applicationImage),label:variant.name + " — Piso presentado",kind:"Piso presentado",variantIndex});
+      for (const photo of variant.additionalImages || []) items.push({image:resolveAsset(photo.image),label:variant.name + " — " + photo.label,kind:photo.label,variantIndex});
       return items;
     });
   };
