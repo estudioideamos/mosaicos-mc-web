@@ -27,6 +27,18 @@ jobs:
           node scripts/check-discovery.mjs
       - name: Prepare public files
         run: node scripts/build-site.mjs
+      - name: Prepare production domain and existing tracking
+        run: node scripts/prepare-production.mjs
+      - name: Check deployment staging and rollback protections
+        run: python3 scripts/test_deploy_ftps.py
+      - name: Package hosting artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: mosaicosmc-production
+          path: _production/
+          include-hidden-files: true
+          retention-days: 7
       - name: Package Pages artifact
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: tar --dereference --hard-dereference -cvf "$RUNNER_TEMP/artifact.tar" -C _site .
@@ -53,3 +65,30 @@ jobs:
       - name: Publish to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+  deploy-production:
+    name: Deploy to client hosting
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PRODUCTION_DEPLOY_ENABLED == 'true'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: mosaicosmc-production
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: https://mosaicosmc.com/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: mosaicosmc-production
+          path: _production/
+      - name: Publish verified static files over FTPS with rollback
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: python3 scripts/deploy-ftps.py
