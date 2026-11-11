@@ -60,6 +60,21 @@ with ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90) as ftp:
     ftp.connect(os.environ['FTP_HOST'], int(os.environ.get('FTP_PORT', '21')))
     ftp.login(os.environ['FTP_USERNAME'], os.environ['FTP_PASSWORD'])
     ftp.prot_p()
+    def transfer(operation):
+        # Shared hosting can close an otherwise valid FTP control connection.
+        # Retry only isolated staging transfers; never replay a live rename.
+        for attempt in range(3):
+            try:
+                return operation()
+            except (EOFError, OSError, ftplib.error_temp):
+                if attempt == 2:
+                    raise
+                ftp.close()
+                time.sleep(2 ** attempt)
+                ftp.connect(os.environ['FTP_HOST'], int(os.environ.get('FTP_PORT', '21')))
+                ftp.login(os.environ['FTP_USERNAME'], os.environ['FTP_PASSWORD'])
+                ftp.prot_p()
+                print('Reconnected securely; retrying staging transfer.', flush=True)
     ftp.cwd(root)
     if ftp.pwd().rstrip('/') != root:
         raise RuntimeError('Unexpected web root; refusing deployment')
@@ -75,15 +90,19 @@ with ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90) as ftp:
     for directory in directories:
         ftp.mkd(stage + '/' + directory)
     for i, name in enumerate(sorted(actual), 1):
-        with (source / name).open('rb') as stream:
-            ftp.storbinary('STOR ' + stage + '/' + name, stream, blocksize=131072)
+        def upload():
+            with (source / name).open('rb') as stream:
+                ftp.storbinary('STOR ' + stage + '/' + name, stream, blocksize=131072)
+        transfer(upload)
         if i % 40 == 0:
             print('Uploaded ' + str(i) + '/' + str(len(actual)), flush=True)
     # Read every uploaded byte over protected FTPS before changing the live site.
     for i, (name, digest) in enumerate(files.items(), 1):
-        checksum = hashlib.sha256()
-        ftp.retrbinary('RETR ' + stage + '/' + name, checksum.update, blocksize=131072)
-        if checksum.hexdigest() != digest:
+        def verify():
+            checksum = hashlib.sha256()
+            ftp.retrbinary('RETR ' + stage + '/' + name, checksum.update, blocksize=131072)
+            return checksum.hexdigest()
+        if transfer(verify) != digest:
             raise RuntimeError('Remote checksum mismatch: ' + name)
         if i % 60 == 0:
             print('Verified ' + str(i) + '/' + str(len(files)), flush=True)
