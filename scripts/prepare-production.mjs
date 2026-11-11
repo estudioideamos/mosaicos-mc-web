@@ -43,6 +43,9 @@ for(const file of walk(output).filter(f=>/\.(html|xml|txt|css|js)$/.test(f))){
   if(fs.readFileSync(file,'utf8').includes('estudioideamos.github.io/mosaicos-mc-web'))throw Error('Preview URL leaked: '+file);
 }
 if(pages!==32)throw Error('Unexpected production page count '+pages);
+fs.mkdirSync(path.join(output,'api'),{recursive:true});
+fs.copyFileSync('server/contact.php',path.join(output,'api/contact.php'));
+fs.writeFileSync(path.join(output,'api/.htaccess'),'<Files "contact.php">\nRequire all granted\n</Files>\n');
 const manifest={release,files:Object.fromEntries(walk(output).map(file=>[path.relative(output,file).replaceAll('\\','/'),createHash('sha256').update(fs.readFileSync(file)).digest('hex')]))};
 fs.writeFileSync(path.join(output,'.mc-release.json'),JSON.stringify(manifest));
 console.log(`Production ready: ${pages} pages, canonical domain, original GTM, redirects and hosting headers.`);

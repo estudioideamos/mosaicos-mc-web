@@ -16,7 +16,7 @@ document.querySelectorAll('[data-space]').forEach(button=>button.addEventListene
  result.querySelector('[data-space-description]').textContent=space.text;
  const links=result.querySelector('[data-space-links]');links.replaceChildren();
  const items=[...space.links,['Consultar por mi '+key,'https://wa.me/5491138789057?text='+encodeURIComponent('Hola Mosaicos MC, necesito asesoramiento para '+key+'.')]];
- for(const [label,href] of items){const a=document.createElement('a');a.href=href;a.textContent=label+' ↗';if(href.startsWith('https:')){a.target='_blank';a.rel='noopener noreferrer';}links.appendChild(a);}
+ for(const [label,href] of items){const a=document.createElement('a');a.href=href;a.textContent=label;a.insertAdjacentHTML('beforeend',' <svg class="mc-arrow-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>');if(href.startsWith('https:')){a.target='_blank';a.rel='noopener noreferrer';}links.appendChild(a);}
  document.querySelector('[data-space-status]').textContent='Opciones para '+key+' disponibles debajo.';
  if(matchMedia('(max-width: 700px)').matches){
   requestAnimationFrame(()=>{

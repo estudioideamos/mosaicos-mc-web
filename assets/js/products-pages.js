@@ -913,14 +913,14 @@
             <h2 id="mc-advice-title">Tu proyecto.<br>La mejor <em>base.</em></h2>
             <p>Encontrá la terminación ideal para tu obra. Te acompañamos a elegir <strong>${product.name}</strong> con el formato y la aplicación que necesitás.</p>
             <div class="mc-advice__actions">
-              <a class="mc-advice__primary" href="${contactHref}">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-              <a class="mc-advice__secondary" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp <span aria-hidden="true">↗</span></a>
+              <a class="mc-advice__primary" href="${contactHref}">Hablemos de tu proyecto <span aria-hidden="true"><svg class="mc-arrow-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+              <a class="mc-advice__secondary" href="${getInquiryHref(line, product, "general")}" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp <span aria-hidden="true"><svg class="mc-arrow-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
             </div>
           </div>
           <div class="mc-advice__signature" aria-hidden="true"><span>MATERIALES CON IDENTIDAD</span><strong>Mosaicos MC</strong><span>DESDE 1978</span></div>
           <div class="mc-advice__benefits">
-            <div><span class="mc-advice__number">01</span><div><h3>Elegí con confianza</h3><p>Formato, terminación y aplicación según el uso de tu espacio.</p></div></div>
-            <div><span class="mc-advice__number">02</span><div><h3>Conversemos sobre tu obra</h3><p>Asesoramiento directo de nuestro equipo, de la idea al presupuesto.</p></div></div>
+            <div><div><h3>Elegí con confianza</h3><p>Formato, terminación y aplicación según el uso de tu espacio.</p></div></div>
+            <div><div><h3>Conversemos sobre tu obra</h3><p>Asesoramiento directo de nuestro equipo, de la idea al presupuesto.</p></div></div>
           </div>
         </div>
       </section>

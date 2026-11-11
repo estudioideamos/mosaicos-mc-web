@@ -34,7 +34,7 @@
     const payload = JSON.stringify([...new FormData(form)]);
     const previous = sent.get(form);
     if (previous && previous.payload === payload && Date.now() - previous.time < 8000) {
-      block('La consulta ya se abrió en WhatsApp. Revisala allí antes de volver a enviarla.'); return;
+      block(form.matches('[data-contact-form]') ? 'Tu consulta se está procesando. Esperá unos segundos antes de reenviarla.' : 'La consulta ya se abrió en WhatsApp. Revisala allí antes de volver a enviarla.'); return;
     }
     sent.set(form, {payload, time: Date.now()});
     const status = form.querySelector('[data-form-guard-status]'); if (status) status.textContent = '';
