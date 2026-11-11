@@ -4,7 +4,7 @@ window.mcEmptyQuoteMarkup = href => `
  <h4>Tu próxima obra<br><em>empieza con una pieza.</em></h4>
  <p>Todavía no agregaste productos. Explorá las líneas, guardá tus favoritos y reuní todo para pedir tu presupuesto.</p>
  <div class="quote-drawer__empty-actions"><a class="button button--dark" href="${href}">Explorar productos</a></div>
- <div class="quote-empty-steps" aria-hidden="true"><span><b>01</b> Elegí</span><span><b>02</b> Sumá</span><span><b>03</b> Consultá</span></div>
+ <div class="quote-empty-steps" aria-hidden="true"><span> Elegí</span><span> Sumá</span><span> Consultá</span></div>
 `;
 
 window.addEventListener("load", () => {

@@ -2,6 +2,10 @@
 
 Production is https://mosaicosmc.com/ on the client's Ferozo hosting. GitHub Pages remains a preview. WordPress is not required by the new static website.
 
+The contact form is the single server-side exception: `/api/contact.php` sends email using the hosting's PHP `mail()` transport to the fixed recipient `info@mosaicosmc.com`. No external form or email delivery service is used. The cart remains a WhatsApp inquiry. PHP 8.5 and session support were checked on the client hosting before deployment. Only this PHP endpoint is granted public access; legacy WordPress PHP remains blocked.
+
+Contact submissions require a valid email, same-origin session token, minimum completion time, an empty honeypot and bounded text fields. Headers and recipient cannot be supplied by the visitor. Per-address and global rate limits are stored outside `public_html` in `/_mc_contact_state`; no message body is stored there. That private directory must survive deployments. A successful mail response means the hosting accepted the email for delivery; inbox reception and spam placement must be checked in the recipient mailbox. GitHub Pages links to the production form because Pages does not execute PHP.
+
 The Website workflow validates the source, builds the public allowlist, then generates a separate `_production` artifact. It rewrites canonical URLs, sitemap and LLM discovery files for the definitive domain. It includes Apache redirects for the five old product-line URLs, cache/compression settings and response security headers.
 
 ## Existing tracking preserved

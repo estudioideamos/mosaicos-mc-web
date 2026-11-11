@@ -295,3 +295,9 @@ body .about-hero__copy{padding-top:52px;padding-bottom:36px}
 
 /* Keep bot-only fields outside keyboard, assistive-technology and visual flows. */
 .form-trap{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;pointer-events:none!important}
+/* Shared vector arrows; decorative section/card indices have been removed. */
+.mc-arrow-icon{display:inline-block;flex-shrink:0;vertical-align:-.12em;fill:none!important;overflow:visible;pointer-events:none}
+.mc-mobile-menu__links>a,.mc-mobile-menu__products>summary{grid-template-columns:minmax(0,1fr) 24px}
+.mc-mobile-menu__sub{margin-left:0}
+.mc-space-top{justify-content:flex-end}
+.about-history__panels article{grid-template-columns:1fr;gap:0}

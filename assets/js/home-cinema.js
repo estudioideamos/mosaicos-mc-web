@@ -16,7 +16,7 @@
   const image=slides[index].querySelector('[data-cinema-src]');
   if(image){image.src=image.dataset.cinemaSrc;image.removeAttribute('data-cinema-src');image.loading='eager';}
   slides.forEach((slide,n)=>{slide.classList.toggle('is-active',n===index);slide.inert=n!==index;slide.setAttribute('aria-hidden',String(n!==index));});
-  root.querySelector('[data-cinema-count]').textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  root.querySelector('[data-cinema-count]').textContent=String(index+1)+' / '+String(slides.length);
   sync();
  };
  root.querySelector('[data-cinema-prev]').addEventListener('click',()=>show(index-1));
