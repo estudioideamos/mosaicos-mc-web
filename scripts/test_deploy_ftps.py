@@ -21,6 +21,7 @@ class FakeFTP:
     def __exit__(self, *args): pass
     def connect(self, *args): pass
     def login(self, *args): pass
+    def close(self): pass
     def prot_p(self): pass
     def cwd(self, value): self.current = value
     def pwd(self): return self.current
@@ -80,5 +81,17 @@ class DeploymentTests(unittest.TestCase):
         ftp = FakeFTP(); before = dict(ftp.files)
         with self.assertRaisesRegex(RuntimeError, 'supervised'): self.run_deploy(ftp, legacy=False)
         self.assertEqual(ftp.files, before)
+    def test_dropped_transfer_reconnects_and_verifies_from_start(self):
+        class InterruptedFTP(FakeFTP):
+            interrupted = False
+            def retrbinary(self, command, callback, **kwargs):
+                if not self.interrupted:
+                    self.interrupted = True
+                    callback(b'partial data')
+                    raise EOFError('Control connection closed')
+                return super().retrbinary(command, callback, **kwargs)
+        ftp = InterruptedFTP(); self.run_deploy(ftp)
+        self.assertTrue(ftp.interrupted)
+        self.assertEqual(ftp.files['/public_html/index.html'], b'new site')
 
 if __name__ == '__main__': unittest.main()
