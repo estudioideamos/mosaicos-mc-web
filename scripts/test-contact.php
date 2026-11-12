@@ -4,6 +4,10 @@ require __DIR__ . '/../server/contact.php';
 function check(bool $ok, string $message): void { if (!$ok) throw new RuntimeException($message); }
 $valid=['nombre'=>'Prueba técnica','email'=>'visitor@example.com','telefono'=>'11 1234 5678','tipo'=>'Piso','mensaje'=>'Consulta de prueba.','website_confirmation'=>''];
 $fields=mc_contact_fields($valid);
+check(mc_contact_ip_limit(10000,0)===3,'Normal limit');
+check(mc_contact_ip_limit(10000,17200)===20,'Temporary testing limit');
+check(mc_contact_ip_limit(17200,17200)===3,'Testing limit expires automatically');
+check(mc_contact_ip_limit(10000,17201)===3,'Reject unbounded testing window');
 check($fields['email']==='visitor@example.com','Valid submission');
 foreach ([['email'=>"visitor@example.com\r\nBcc: other@example.com"],['nombre'=>"Prueba\nBcc: other@example.com"],['email'=>'bad'],['website_confirmation'=>'spam'],['mensaje'=>''],['mensaje'=>str_repeat('a',3001)],['tipo'=>'invalid'],['nombre'=>[]]] as $change) {
     $rejected=false; try {mc_contact_fields(array_replace($valid,$change));} catch (InvalidArgumentException $e) {$rejected=true;}

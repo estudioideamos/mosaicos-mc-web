@@ -44,6 +44,10 @@ function mc_contact_message(array $fields): string {
         . $fields['mensaje'] . "\n\nPodés responder este correo para contactar al visitante.\n";
 }
 
+function mc_contact_ip_limit(int $now, int $testingUntil): int {
+    return $testingUntil > $now && $testingUntil <= $now + 7200 ? 20 : 3;
+}
+
 function mc_contact_reply(int $status, array $data): void {
     http_response_code($status); echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); exit;
 }
@@ -128,7 +132,9 @@ function mc_contact_endpoint(): void {
         $key = file_get_contents($keyFile);
         if ($key === false || strlen($key) !== 64) throw new RuntimeException('Private key unavailable');
         $ipKey = hash_hmac('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown', $key);
-        if (!mc_contact_limit($directory, $ipKey, 3, 3600, $now) || !mc_contact_limit($directory, 'global', 40, 3600, $now)) {
+        $testingFile=$directory.'/testing-until';
+        $testingUntil=is_file($testingFile) ? (int)file_get_contents($testingFile) : 0;
+        if (!mc_contact_limit($directory, $ipKey, mc_contact_ip_limit($now, $testingUntil), 3600, $now) || !mc_contact_limit($directory, 'global', 40, 3600, $now)) {
             header('Retry-After: 3600'); mc_contact_reply(429, ['ok'=>false,'message'=>'Llegaste al límite de consultas. Podés contactarnos por WhatsApp o intentar más tarde.']);
         }
         // Never accept user-controlled recipients, sender, subject or envelope sender.
