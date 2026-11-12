@@ -24,7 +24,7 @@ if (contactForm) {
       if (sending || !contactForm.reportValidity()) return;
       const data = Object.fromEntries(new FormData(contactForm));
       if (String(data.website_confirmation || '').trim()) return;
-      sending=true;button.disabled=true;button.textContent='Enviando…';status.textContent='';
+      sending=true;button.disabled=true;button.textContent='Enviando…';status.textContent='';status.classList.remove('contact-success');
       try {
         const session = await prepare();
         const wait = Math.max(0, session.readyAt-Date.now());
@@ -35,7 +35,11 @@ if (contactForm) {
         });
         const result = await response.json();
         if (!response.ok || !result.ok) throw new Error(result.message || 'No pudimos enviar la consulta.');
-        status.textContent=result.message;contactForm.reset();sessionPromise=null;
+        status.classList.add('contact-success');
+        status.innerHTML='<span class="contact-success__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span><span class="contact-success__content"><span class="contact-success__eyebrow">Mensaje enviado</span><strong class="contact-success__title">Gracias por escribirnos.</strong><span class="contact-success__text">Tu consulta ya está en manos de nuestro equipo. Te responderemos por email.</span></span>';
+        contactForm.reset();sessionPromise=null;
+        status.focus({preventScroll:true});
+        status.scrollIntoView({behavior:'instant',block:'nearest'});
         window.dataLayer=window.dataLayer||[];
         window.dataLayer.push({event:'form_submit',form_id:'contacto'});
       } catch (error) {
