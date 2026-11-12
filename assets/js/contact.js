@@ -40,7 +40,7 @@ if (contactForm) {
         window.dataLayer.push({event:'form_submit',form_id:'contacto'});
       } catch (error) {
         sessionPromise=null;
-        status.textContent=error.name==='TimeoutError' ? 'El servidor está tardando en responder. Revisá antes de reenviar para evitar una consulta duplicada.' : (error instanceof TypeError || error instanceof SyntaxError ? 'No pudimos conectar con el servidor. Revisá tu conexión e intentá nuevamente.' : (error.message || 'No pudimos enviar la consulta. Intentá nuevamente.'));
+        status.textContent=error.name==='TimeoutError' ? 'El servidor está tardando en responder. Revisá antes de reenviar para evitar una consulta duplicada.' : (error instanceof SyntaxError ? 'El servidor no pudo confirmar el envío. Contactanos por email o WhatsApp antes de reenviar la consulta.' : (error instanceof TypeError ? 'No pudimos conectar con el servidor. Intentá nuevamente más tarde o contactanos por email o WhatsApp.' : (error.message || 'No pudimos enviar la consulta. Intentá nuevamente.')));
       } finally {sending=false;button.disabled=false;button.textContent='Enviar consulta';}
     });
   }

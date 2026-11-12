@@ -44,8 +44,53 @@ function mc_contact_message(array $fields): string {
         . $fields['mensaje'] . "\n\nPodés responder este correo para contactar al visitante.\n";
 }
 
+function mc_contact_ip_limit(int $now, int $testingUntil): int {
+    return $testingUntil > $now && $testingUntil <= $now + 7200 ? 20 : 3;
+}
+
 function mc_contact_reply(int $status, array $data): void {
     http_response_code($status); echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); exit;
+}
+
+function mc_smtp_read($stream, int $expected): void {
+    for ($i=0; $i<40; $i++) {
+        $line=fgets($stream, 1024);
+        if ($line === false || !preg_match('/^([0-9]{3})([ -])/', $line, $match)) throw new RuntimeException('Mail server did not respond');
+        if ((int)$match[1] !== $expected) throw new RuntimeException('Mail server rejected request');
+        if ($match[2] === ' ') return;
+    }
+    throw new RuntimeException('Invalid mail server response');
+}
+
+function mc_smtp_write($stream, string $data): void {
+    while ($data !== '') {
+        $written=fwrite($stream, $data);
+        if ($written === false || $written === 0) throw new RuntimeException('Mail connection interrupted');
+        $data=substr($data, $written);
+    }
+}
+
+function mc_contact_mail(array $fields): void {
+    // Loopback only: the hosting's own Exim queue, never a third-party service.
+    $stream=@stream_socket_client('tcp://127.0.0.1:25', $errno, $error, 4);
+    if (!$stream) throw new RuntimeException('Local mail server unavailable');
+    stream_set_timeout($stream, 4);
+    try {
+        mc_smtp_read($stream, 220);
+        foreach (['EHLO mosaicosmc.com','MAIL FROM:<info@mosaicosmc.com>','RCPT TO:<info@mosaicosmc.com>'] as $command) {
+            mc_smtp_write($stream, $command."\r\n"); mc_smtp_read($stream, 250);
+        }
+        mc_smtp_write($stream, "DATA\r\n"); mc_smtp_read($stream, 354);
+        $headers=['Date: '.gmdate('D, d M Y H:i:s +0000'),
+            'Message-ID: <'.bin2hex(random_bytes(16)).'@mosaicosmc.com>',
+            'From: Mosaicos MC <info@mosaicosmc.com>', 'To: info@mosaicosmc.com',
+            'Reply-To: '.$fields['email'], 'Subject: Nueva consulta desde mosaicosmc.com',
+            'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: base64'];
+        mc_smtp_write($stream, implode("\r\n", $headers)."\r\n\r\n".chunk_split(base64_encode(mc_contact_message($fields)),76,"\r\n").".\r\n");
+        // Success requires the queue acknowledgement. Never retry an uncertain delivery.
+        mc_smtp_read($stream, 250);
+        @fwrite($stream, "QUIT\r\n");
+    } finally { fclose($stream); }
 }
 
 function mc_contact_endpoint(): void {
@@ -87,12 +132,13 @@ function mc_contact_endpoint(): void {
         $key = file_get_contents($keyFile);
         if ($key === false || strlen($key) !== 64) throw new RuntimeException('Private key unavailable');
         $ipKey = hash_hmac('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown', $key);
-        if (!mc_contact_limit($directory, $ipKey, 3, 3600, $now) || !mc_contact_limit($directory, 'global', 40, 3600, $now)) {
+        $testingFile=$directory.'/testing-until';
+        $testingUntil=is_file($testingFile) ? (int)file_get_contents($testingFile) : 0;
+        if (!mc_contact_limit($directory, $ipKey, mc_contact_ip_limit($now, $testingUntil), 3600, $now) || !mc_contact_limit($directory, 'global', 40, 3600, $now)) {
             header('Retry-After: 3600'); mc_contact_reply(429, ['ok'=>false,'message'=>'Llegaste al límite de consultas. Podés contactarnos por WhatsApp o intentar más tarde.']);
         }
         // Never accept user-controlled recipients, sender, subject or envelope sender.
-        $headers = ['From'=>'Mosaicos MC <info@mosaicosmc.com>', 'Reply-To'=>$fields['email'], 'MIME-Version'=>'1.0', 'Content-Type'=>'text/plain; charset=UTF-8'];
-        if (!mail('info@mosaicosmc.com', 'Nueva consulta desde mosaicosmc.com', mc_contact_message($fields), $headers, '-finfo@mosaicosmc.com')) throw new RuntimeException('Mail transport rejected the message');
+        mc_contact_mail($fields);
         unset($_SESSION['token'], $_SESSION['issued']);
         mc_contact_reply(200, ['ok'=>true,'message'=>'Tu consulta fue enviada. Te responderemos por email.']);
     } catch (Throwable $error) {
